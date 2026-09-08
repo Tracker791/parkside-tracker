@@ -323,6 +323,7 @@
   .card a:hover { color: var(--ps-red); }
   .card .price { font-size: 19px; font-weight: 800; color: var(--ps-red); margin: 4px 0; font-family: "Barlow Condensed", sans-serif; }
   .card .category { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .card .price-converted { font-size: 11.5px; color: var(--muted); margin: -6px 0 6px; }
   .card .pricenote {
     font-size: 11px;
     font-weight: 600;
@@ -828,7 +829,7 @@
 
   const ALL_COUNTRY_CODES = window.__PARKSIDE_DATA__ ? Object.keys(window.__PARKSIDE_DATA__.countries) : [];
 
-  const COUNTRIES_KEY = "parkside_countries_v1";
+  const COUNTRIES_KEY = "parkside_countries_v2";
   function loadSelectedCountries() {
     // Privzeto (ce uporabnik se ni nikoli spreminjal izbire) so izbrane VSE
     // drzave - prazna mnozica pomeni, da je uporabnik eksplicitno kliknil
@@ -880,8 +881,31 @@
     return l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : "?";
   }
 
+  // Katero valuto prikazemo kot "pretvorjeno" ceno glede na izbran jezik
+  // vmesnika. sl/de/hr so vsi v EUR obmocju, en privzeto kaze v GBP (edina
+  // ne-EUR valuta med jeziki, ki jo dejansko spremljamo - Velika Britanija).
+  const DISPLAY_CURRENCY = { sl: "EUR", de: "EUR", hr: "EUR", en: "GBP" };
+  const EUR_TO = { EUR: 1, GBP: 1 / 1.19 };
+  const CURRENCY_SYMBOL = { EUR: "€", GBP: "£" };
+
+  function convertedPriceHtml(p) {
+    if (p.priceEur == null) return "";
+    const targetCur = DISPLAY_CURRENCY[currentLang] || "EUR";
+    if (p.currency === targetCur) return ""; // ze prikazano zgoraj, brez podvajanja
+    const amount = p.priceEur * (EUR_TO[targetCur] != null ? EUR_TO[targetCur] : 1);
+    const symbol = CURRENCY_SYMBOL[targetCur] || targetCur;
+    return `<div class="price-converted">≈ ${symbol}${amount.toFixed(2)}</div>`;
+  }
+
   function countryName(code) {
     return (COUNTRY_NAMES[currentLang] && COUNTRY_NAMES[currentLang][code]) || code.toUpperCase();
+  }
+
+  function comparablePrice(l) {
+    // Za primerjavo med drzavami z razlicno valuto uporabimo EUR-pretvorjeno
+    // ceno (priceEur), ne surove stevilke - drugace bi npr. "38 PLN" veljalo
+    // za enako kot "38 EUR", kar je narobe za priblizno 4x.
+    return l.priceEur != null ? l.priceEur : l.price;
   }
 
   function crossCountryNote(p, countryCode, catalogByKey) {
@@ -889,9 +913,9 @@
     const entry = catalogByKey[productKey(p)];
     const listings = entry && entry.currentListings;
     if (!listings || listings.length < 2) return "";
-    if (new Set(listings.map(l => l.price)).size < 2) return "";
+    if (new Set(listings.map(comparablePrice)).size < 2) return "";
 
-    const sorted = listings.slice().sort((a, b) => (a.price != null ? a.price : Infinity) - (b.price != null ? b.price : Infinity));
+    const sorted = listings.slice().sort((a, b) => (comparablePrice(a) != null ? comparablePrice(a) : Infinity) - (comparablePrice(b) != null ? comparablePrice(b) : Infinity));
     const cheapest = sorted[0];
 
     if (cheapest.country === countryCode) {
@@ -949,13 +973,13 @@
       row.className = "checklist-row" + (isOwned ? " owned" : "");
 
       const listings = (entry.currentListings || []).slice().sort((a, b) => {
-        const pa = a.price != null ? a.price : Infinity;
-        const pb = b.price != null ? b.price : Infinity;
+        const pa = comparablePrice(a) != null ? comparablePrice(a) : Infinity;
+        const pb = comparablePrice(b) != null ? comparablePrice(b) : Infinity;
         return pa - pb;
       });
       let status;
       if (entry.currentlyListed && listings.length) {
-        const distinctPrices = new Set(listings.map(l => l.price)).size;
+        const distinctPrices = new Set(listings.map(comparablePrice)).size;
         const showCheapest = listings.length > 1 && distinctPrices > 1;
         const parts = listings.map((l, i) => {
           const priceText = l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : t().priceUnknown;
@@ -1105,6 +1129,7 @@
             <h3><a href="${p.url || "#"}" target="_blank" rel="noopener">${p.title || "?"}</a></h3>
             <div class="category">${p.category || ""}</div>
             <div class="price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : t().priceUnknown}</div>
+            ${convertedPriceHtml(p)}
             ${competitorBoxHtml}
             ${reasonLines.length ? `<div class="worth-reasons">${reasonLines.join(" · ")}</div>` : ""}
             ${priceNote ? `<div class="pricenote">${priceNote}</div>` : ""}

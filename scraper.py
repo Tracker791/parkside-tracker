@@ -190,19 +190,48 @@ def is_battery_powered_title(title: str) -> bool:
     return bool(re.search(r"\baku\b", t))
 
 
-def match_competitor_reference(title: str, price):
-    if not title or price is None or not is_battery_powered_title(title):
+# Priblizni menjalni tecaji (koliko EUR je 1 enota valute), rocno preverjeni
+# sept. 2026 - NISO live tecaji, le dovolj natancni za smiselno primerjavo
+# cen med drzavami z razlicno valuto. Brez tega bi npr. "38 PLN" in "38 EUR"
+# obravnavali kot enako vredna, kar je narobe za priblizno 4x.
+EUR_PER_UNIT = {
+    "EUR": 1.0,
+    "PLN": 0.235,
+    "GBP": 1.19,
+    "CZK": 0.040,
+    "HUF": 0.00253,
+    "RON": 0.201,
+    "RSD": 0.00855,
+    "SEK": 0.0893,
+    "CHF": 1.064,
+}
+
+
+def to_eur(price, currency):
+    if price is None:
+        return None
+    rate = EUR_PER_UNIT.get((currency or "EUR").upper())
+    if rate is None:
+        return None
+    return round(price * rate, 2)
+
+
+def match_competitor_reference(title: str, price_eur):
+    """Primerja s konkurenco - COMPETITOR_REFERENCE spodnje/zgornje meje so v
+    EUR, zato mora biti tudi vhodna cena ze pretvorjena v EUR (price_eur),
+    ne surova cena v lokalni valuti."""
+    if not title or price_eur is None or not is_battery_powered_title(title):
         return None
     text = title.lower()
     for ref in COMPETITOR_REFERENCE:
         if any(kw in text for kw in ref["keywords"]):
-            if price < ref["low"]:
+            if price_eur < ref["low"]:
                 return {
                     "categoryKey": ref["key"],
                     "competitorLow": ref["low"],
                     "competitorHigh": ref["high"],
-                    "savingsMin": round(ref["low"] - price, 2),
-                    "savingsMax": round(ref["high"] - price, 2),
+                    "savingsMin": round(ref["low"] - price_eur, 2),
+                    "savingsMax": round(ref["high"] - price_eur, 2),
                 }
             return None
     return None
@@ -266,7 +295,9 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
     warranty_years = extract_warranty_years(seals)
     x20v = is_x20v_team(seals, description)
     price = (price_info or {}).get("price")
-    competitor = match_competitor_reference(title, price)
+    currency = (price_info or {}).get("currencyCode")
+    price_eur = to_eur(price, currency)
+    competitor = match_competitor_reference(title, price_eur)
 
     worth_it, worth_it_reasons = worth_it_assessment(perf, warranty_years, x20v)
     if competitor:
@@ -287,7 +318,8 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
         "image": image,
         "brand": brand,
         "price": price,
-        "currency": (price_info or {}).get("currencyCode"),
+        "priceEur": price_eur,
+        "currency": currency,
         "online": gb_data.get("online"),
         "inStoreNow": gb_data.get("store"),
         "onlineAvailable": stock.get("onlineAvailable"),
@@ -382,6 +414,7 @@ def update_catalog(catalog: dict, country_products: dict, generated_at: str) -> 
             entry["currentListings"].append({
                 "country": country_code,
                 "price": p["price"],
+                "priceEur": p["priceEur"],
                 "currency": p["currency"],
                 "url": p["url"],
                 "availableFrom": p["availableFrom"],
