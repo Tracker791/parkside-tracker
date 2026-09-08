@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parkside Tracker — Lidl SI / HR / AT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ---- Parkside Performance CGP ----
+     Barve izmerjene neposredno iz uradnih Lidl/Parkside Performance slik
+     izdelkov in pecatov: rdeca #F02028 (blagovna znamka Performance),
+     ogljeno crna #17181A (telo orodja), skrilasto modro-siva #384654
+     (uradno ozadje kampanje "PARKSIDE PERFORMANCE"). */
+  :root {
+    --ps-red: #E8232D;
+    --ps-red-dark: #B91620;
+    --ps-black: #17181A;
+    --ps-slate: #384654;
+
+    --bg: #f2f1ef;
+    --surface: #ffffff;
+    --surface-2: #f7f6f4;
+    --text: #17181a;
+    --muted: #6b6f76;
+    --border: #e3e1dd;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 6px 16px rgba(20,20,20,.06);
+
+    --accent: var(--ps-red);
+    --new: #1a8a4a;
+    --changed: #c47f00;
+    --perf-bg: rgba(232,35,45,.06);
+    --perf-border: rgba(232,35,45,.35);
+    --competitor-bg: #eafaf0;
+    --competitor-border: #bfe8cf;
+    --competitor-text: #14532d;
+    --worth-text: var(--ps-slate);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0f10;
+      --surface: #1a1b1d;
+      --surface-2: #202224;
+      --text: #f2f1ef;
+      --muted: #9a9da3;
+      --border: #2c2e31;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+      --ps-red: #FF4650;
+      --perf-bg: rgba(255,70,80,.10);
+      --perf-border: rgba(255,70,80,.4);
+      --competitor-bg: rgba(30,150,90,.12);
+      --competitor-border: rgba(30,150,90,.4);
+      --competitor-text: #6fe0a0;
+      --worth-text: #9fb3c4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e0f10;
+    --surface: #1a1b1d;
+    --surface-2: #202224;
+    --text: #f2f1ef;
+    --muted: #9a9da3;
+    --border: #2c2e31;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+    --ps-red: #FF4650;
+    --perf-bg: rgba(255,70,80,.10);
+    --perf-border: rgba(255,70,80,.4);
+    --competitor-bg: rgba(30,150,90,.12);
+    --competitor-border: rgba(30,150,90,.4);
+    --competitor-text: #6fe0a0;
+    --worth-text: #9fb3c4;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background .2s ease, color .2s ease;
+  }
+  h1, h2, h3, .headline {
+    font-family: "Barlow Condensed", "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+  }
+
+  header {
+    background: var(--ps-black);
+    color: #fff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(232,35,45,.18), transparent 55%);
+    pointer-events: none;
+  }
+  .logo-mark { flex: none; filter: drop-shadow(0 2px 6px rgba(232,35,45,.5)); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; z-index: 1; }
+  .logo-text .l1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: .03em;
+  }
+  .logo-text .l1 span { color: var(--ps-red); }
+  .logo-text .l2 {
+    font-size: 11px;
+    color: #c9cace;
+    letter-spacing: .18em;
+    margin-top: 2px;
+  }
+  header .meta-col { z-index: 1; }
+  header p#generatedAt { margin: 2px 0 0; opacity: .75; font-size: 12.5px; }
+  header .spacer { flex: 1; }
+  .theme-toggle {
+    z-index: 1;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    color: #fff;
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background .15s ease;
+  }
+  .theme-toggle:hover { background: rgba(255,255,255,.16); }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  .toolbar button, .toolbar label {
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    color: var(--text);
+    user-select: none;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+  }
+  .toolbar button:hover { border-color: var(--ps-red); transform: translateY(-1px); }
+  .toolbar button.active {
+    background: var(--ps-red);
+    color: #fff;
+    border-color: var(--ps-red);
+  }
+  .toolbar .spacer { flex: 1; }
+  .toolbar .meta { font-size: 12px; color: var(--muted); }
+  .toolbar input[type=text] {
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    min-width: 200px;
+  }
+
+  .worth-explainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  main { padding: 20px 24px 60px; max-width: 1400px; margin: 0 auto; }
+
+  .country-section { margin-bottom: 36px; }
+  .country-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 3px solid var(--ps-red);
+    padding-bottom: 6px;
+  }
+  .country-section h2 .count { font-size: 12.5px; color: var(--muted); font-weight: normal; text-transform: none; letter-spacing: 0; font-family: "Inter", sans-serif; }
+  .country-error {
+    background: #fdecec;
+    border: 1px solid #f3b4b4;
+    color: #7a1717;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,.08), 0 14px 28px rgba(0,0,0,.12); }
+  .card.performance { background: var(--perf-bg); border-color: var(--perf-border); }
+  .card img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .card .badges { position: absolute; top: 10px; left: 10px; display: flex; gap: 6px; flex-wrap: wrap; max-width: calc(100% - 20px); }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  }
+  .badge.new { background: var(--new); }
+  .badge.changed { background: var(--changed); }
+  .badge.perf { background: var(--ps-red); }
+  .badge.worth { background: var(--ps-slate); }
+  .badge.competitor { background: #1a8a4a; }
+  .badge.owned { background: #55585e; }
+  .card .worth-reasons {
+    font-size: 11px;
+    color: var(--worth-text);
+    margin: -2px 0 6px;
+  }
+  .card .competitor-box {
+    font-size: 11.5px;
+    color: var(--competitor-text);
+    background: var(--competitor-bg);
+    border: 1px solid var(--competitor-border);
+    border-radius: 6px;
+    padding: 5px 7px;
+    margin: 0 0 6px;
+    line-height: 1.35;
+  }
+
+  .card h3 {
+    font-family: "Inter", sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0 4px;
+    line-height: 1.3;
+  }
+  .card a { color: inherit; text-decoration: none; }
+  .card a:hover { color: var(--ps-red); }
+  .card .price { font-size: 19px; font-weight: 800; color: var(--ps-red); margin: 4px 0; font-family: "Barlow Condensed", sans-serif; }
+  .card .category { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .card .pricenote {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: -2px 0 6px;
+  }
+  .card .avail {
+    font-size: 12px;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+  }
+  .card .avail strong { display: block; color: var(--text); font-weight: 600; }
+  .card .diffnote {
+    font-size: 11px;
+    color: var(--changed);
+    margin-top: 4px;
+  }
+  .empty-note {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 20px 0;
+  }
+
+  .checklist-panel {
+    max-width: 1400px;
+    margin: 16px auto 0;
+    padding: 0 24px;
+  }
+  .checklist-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .checklist-box h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+  }
+  .checklist-box .sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    text-transform: none;
+  }
+  .checklist-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 6px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .checklist-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  .checklist-row:hover { background: var(--surface-2); }
+  .checklist-row.owned { background: rgba(26,138,74,.1); border-color: rgba(26,138,74,.35); }
+  .checklist-row img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    flex: none;
+  }
+  .checklist-row .info { flex: 1; min-width: 0; }
+  .checklist-row .title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .checklist-row .status {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .checklist-row .status.live { color: var(--new); }
+  .checklist-row input[type=checkbox] { width: 17px; height: 17px; flex: none; cursor: pointer; accent-color: var(--ps-red); }
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="logo-mark" width="52" height="52" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="lgBezel" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#34363b"/>
+        <stop offset="1" stop-color="#0c0d0e"/>
+      </linearGradient>
+      <linearGradient id="lgFace" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ff5158"/>
+        <stop offset=".55" stop-color="#e8232d"/>
+        <stop offset="1" stop-color="#9f1017"/>
+      </linearGradient>
+      <filter id="lgShadow" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#000" flood-opacity=".5"/>
+      </filter>
+      <style>
+        .lg-live { transform-box: fill-box; transform-origin: center; animation: lgPulse 2s ease-in-out infinite; }
+        @keyframes lgPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.3); } }
+      </style>
+    </defs>
+    <g filter="url(#lgShadow)">
+      <circle cx="60" cy="60" r="58" fill="none" stroke="#E8232D" stroke-opacity=".45" stroke-width="5" stroke-dasharray="9 8"/>
+      <polygon points="60,4.5 111,32.25 111,87.75 60,115.5 9,87.75 9,32.25" fill="url(#lgBezel)" stroke="#E8232D" stroke-width="2"/>
+      <polygon points="60,14 102.3,37 102.3,83 60,106 17.7,83 17.7,37" fill="url(#lgFace)"/>
+      <polygon points="60,14 102.3,37 102.3,60 17.7,60 17.7,37" fill="#fff" opacity=".1"/>
+      <rect x="47" y="32" width="11" height="46" rx="4" fill="#fff"/>
+      <path d="M58,32 C80,32 80,58 58,58" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+      <path d="M34,92 L45,92 L49,82 L58,100 L63,92 L86,92" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+      <circle class="lg-live" cx="102" cy="20" r="7" fill="#ff4b55"/>
+      <circle cx="102" cy="20" r="7" fill="none" stroke="#17181A" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <div class="logo-text">
+    <div class="l1">PARKSIDE <span>TRACKER</span></div>
+    <div class="l2">LIDL SI &middot; HR &middot; AT</div>
+  </div>
+  <div class="meta-col">
+    <p id="generatedAt">Podatki še niso naloženi.</p>
+  </div>
+  <div class="spacer"></div>
+  <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
+</header>
+
+<div class="toolbar">
+  <button id="filterWorth" class="active">Vredno cene</button>
+  <button id="filterPerf">Samo Parkside Performance</button>
+  <button id="filterAll">Vsi Parkside izdelki</button>
+  <label><input type="checkbox" id="onlyChanges" /> Samo novo / spremenjeno</label>
+  <label><input type="checkbox" id="showOwned" /> Pokaži tudi kar že imam</label>
+  <button id="toggleChecklist">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</button>
+  <input type="text" id="search" placeholder="Iskanje po imenu..." />
+  <div class="spacer"></div>
+  <div class="meta" id="totalsMeta"></div>
+</div>
+<div class="worth-explainer" id="worthExplainer">
+  "Vredno cene" = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.
+</div>
+
+<div class="checklist-panel" id="checklistPanel" hidden>
+  <div class="checklist-box">
+    <h2>Moja orodja — Parkside Performance</h2>
+    <div class="sub">Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.</div>
+    <div class="checklist-list" id="checklistList"></div>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const THEME_KEY = "parkside_theme_v1";
+  function applyTheme(theme) {
+    if (theme === "light" || theme === "dark") {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = theme === "dark" || (theme !== "light" && prefersDark);
+    document.getElementById("themeIcon").textContent = isDark ? "☀️" : "🌙";
+    document.getElementById("themeLabel").textContent = isDark ? "Svetla tema" : "Temna tema";
+  }
+  function loadTheme() {
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+  function saveTheme(t) {
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* ni na voljo */ }
+  }
+  let currentTheme = loadTheme();
+  applyTheme(currentTheme);
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDarkNow = currentTheme === "dark" || (currentTheme !== "light" && prefersDark);
+    currentTheme = isDarkNow ? "light" : "dark";
+    saveTheme(currentTheme);
+    applyTheme(currentTheme);
+  });
+
+  const state = {
+    filterMode: "worth", // "worth" | "performance" | "all"
+    onlyChanges: false,
+    showOwned: false,
+    query: "",
+  };
+
+  const OWNED_KEY = "parkside_owned_tools_v1";
+
+  function loadOwned() {
+    try {
+      const raw = localStorage.getItem(OWNED_KEY);
+      return new Set(raw ? JSON.parse(raw) : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveOwned(set) {
+    try {
+      localStorage.setItem(OWNED_KEY, JSON.stringify(Array.from(set)));
+    } catch (e) { /* ce localStorage ni na voljo, samo ne shranimo */ }
+  }
+
+  const owned = loadOwned();
+
+  function productKey(p) {
+    return p.key || p.ean || ("id:" + p.id);
+  }
+
+  const app = document.getElementById("app");
+  const generatedAtEl = document.getElementById("generatedAt");
+  const totalsMeta = document.getElementById("totalsMeta");
+  const checklistPanel = document.getElementById("checklistPanel");
+  const checklistList = document.getElementById("checklistList");
+  const ownedCountEl = document.getElementById("ownedCount");
+
+  function fmtDate(iso) {
+    if (!iso) return null;
+    const d = new Date(iso);
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString("sl-SI", { day: "2-digit", month: "2-digit", year: "numeric" });
+  }
+
+  function availabilityText(p) {
+    if (p.availabilityBadge) return p.availabilityBadge;
+    if (p.availableFrom || p.availableUntil) {
+      const from = fmtDate(p.availableFrom);
+      const until = fmtDate(p.availableUntil);
+      if (from && until) return `Na voljo: ${from} – ${until}`;
+      if (until) return `Na voljo do: ${until}`;
+      return `Na voljo od: ${from}`;
+    }
+    return "Brez določenega datuma (stalna ponudba)";
+  }
+
+  function fmtPrice(l) {
+    return l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : "?";
+  }
+
+  function crossCountryNote(p, countryCode, catalogByKey) {
+    if (!p.isPerformance) return "";
+    const entry = catalogByKey[productKey(p)];
+    const listings = entry && entry.currentListings;
+    if (!listings || listings.length < 2) return "";
+    if (new Set(listings.map(l => l.price)).size < 2) return "";
+
+    const sorted = listings.slice().sort((a, b) => (a.price != null ? a.price : Infinity) - (b.price != null ? b.price : Infinity));
+    const cheapest = sorted[0];
+
+    if (cheapest.country === countryCode) {
+      const others = sorted.filter(l => l.country !== countryCode)
+        .map(l => l.country.toUpperCase() + " " + fmtPrice(l)).join(", ");
+      return `Najcenejše tu (drugje: ${others})`;
+    }
+    return `Ceneje v ${cheapest.country.toUpperCase()}: ${fmtPrice(cheapest)}`;
+  }
+
+  function changeNote(p) {
+    if (p.status !== "changed" || !p.previous) return "";
+    const parts = [];
+    if ("price" in p.previous) parts.push(`cena: ${p.previous.price} → ${p.price}`);
+    if ("online" in p.previous) parts.push(`online: ${p.previous.online} → ${p.online}`);
+    if ("availableUntil" in p.previous) parts.push(`na voljo do: ${fmtDate(p.previous.availableUntil) || "–"} → ${fmtDate(p.availableUntil) || "–"}`);
+    if ("availableFrom" in p.previous) parts.push(`na voljo od: ${fmtDate(p.previous.availableFrom) || "–"} → ${fmtDate(p.availableFrom) || "–"}`);
+    return parts.join(", ");
+  }
+
+  function productMatches(p) {
+    if (state.filterMode === "performance" && !p.isPerformance) return false;
+    if (state.filterMode === "worth" && !p.worthIt) return false;
+    if (state.onlyChanges && p.status === "same") return false;
+    if (!state.showOwned && owned.has(productKey(p))) return false;
+    if (state.query) {
+      const q = state.query.toLowerCase();
+      if (!(p.title || "").toLowerCase().includes(q)) return false;
+    }
+    return true;
+  }
+
+  function renderChecklist() {
+    const data = window.__PARKSIDE_DATA__;
+    const catalog = (data && data.performanceCatalog) || [];
+    ownedCountEl.textContent = owned.size;
+
+    if (catalog.length === 0) {
+      checklistList.innerHTML = '<p class="empty-note">Kataloga Parkside Performance orodij še ni. Poženi scraper.py.</p>';
+      return;
+    }
+
+    checklistList.innerHTML = "";
+    catalog.forEach(entry => {
+      const isOwned = owned.has(entry.key);
+      const row = document.createElement("label");
+      row.className = "checklist-row" + (isOwned ? " owned" : "");
+
+      const listings = (entry.currentListings || []).slice().sort((a, b) => {
+        const pa = a.price != null ? a.price : Infinity;
+        const pb = b.price != null ? b.price : Infinity;
+        return pa - pb;
+      });
+      let status;
+      if (entry.currentlyListed && listings.length) {
+        const distinctPrices = new Set(listings.map(l => l.price)).size;
+        const showCheapest = listings.length > 1 && distinctPrices > 1;
+        const parts = listings.map((l, i) => {
+          const priceText = l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : "cena ni znana";
+          const isCheapest = showCheapest && i === 0;
+          const text = `${l.country.toUpperCase()} ${priceText}${isCheapest ? " (najceneje)" : ""}`;
+          return isCheapest ? `<strong style="color:var(--new)">${text}</strong>` : text;
+        });
+        status = `<span class="status live">Trenutno na voljo: ${parts.join(", ")}</span>`;
+      } else {
+        status = `<span class="status">Trenutno ni na voljo</span>`;
+      }
+
+      row.innerHTML = `
+        <input type="checkbox" ${isOwned ? "checked" : ""} />
+        ${entry.image ? `<img src="${entry.image}" alt="" loading="lazy" />` : ""}
+        <div class="info">
+          <div class="title">${entry.title || "(brez imena)"}</div>
+          ${status}
+        </div>
+      `;
+
+      row.querySelector("input").addEventListener("change", (e) => {
+        if (e.target.checked) owned.add(entry.key);
+        else owned.delete(entry.key);
+        saveOwned(owned);
+        renderChecklist();
+        render();
+      });
+
+      checklistList.appendChild(row);
+    });
+  }
+
+  function render() {
+    const data = window.__PARKSIDE_DATA__;
+    if (!data) {
+      app.innerHTML = '<p class="empty-note">Podatkov ni. Poženi scraper.py, da ustvariš data.js.</p>';
+      return;
+    }
+
+    generatedAtEl.textContent = "Zadnja osvežitev: " + new Date(data.generatedAt).toLocaleString("sl-SI");
+
+    const catalogByKey = {};
+    (data.performanceCatalog || []).forEach(entry => { catalogByKey[entry.key] = entry; });
+
+    let totalShown = 0;
+    let totalNew = 0;
+    let totalChanged = 0;
+
+    app.innerHTML = "";
+
+    Object.entries(data.countries).forEach(([code, country]) => {
+      const section = document.createElement("section");
+      section.className = "country-section";
+
+      const allProducts = country.products || [];
+      const shown = allProducts.filter(productMatches);
+      totalShown += shown.length;
+      totalNew += shown.filter(p => p.status === "new").length;
+      totalChanged += shown.filter(p => p.status === "changed").length;
+
+      const h2 = document.createElement("h2");
+      const perfTotal = allProducts.filter(p => p.isPerformance).length;
+      const worthTotal = allProducts.filter(p => p.worthIt).length;
+      h2.innerHTML = `${country.label} <span class="count">(${shown.length} prikazanih / ${allProducts.length} skupaj v kategoriji${country.numFound != null ? " · numFound=" + country.numFound : ""} · Performance: ${perfTotal} · Vredno cene: ${worthTotal})</span>`;
+      section.appendChild(h2);
+
+      if (country.error) {
+        const err = document.createElement("div");
+        err.className = "country-error";
+        err.textContent = `Zadnji scrape ni uspel (${country.error}). Prikazani so podatki prejšnjega uspešnega zagona.`;
+        section.appendChild(err);
+      }
+
+      if (shown.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty-note";
+        empty.textContent = "Ni izdelkov, ki bi ustrezali trenutnim filtrom.";
+        section.appendChild(empty);
+      } else {
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        shown.forEach(p => {
+          const card = document.createElement("div");
+          card.className = "card" + (p.isPerformance ? " performance" : "");
+
+          const badges = [];
+          if (p.status === "new") badges.push('<span class="badge new">NOVO</span>');
+          if (p.status === "changed") badges.push('<span class="badge changed">SPREMEMBA</span>');
+          if (p.worthIt) badges.push('<span class="badge worth">VREDNO CENE</span>');
+          if (p.competitorReference) badges.push('<span class="badge competitor">CENEJE OD KONKURENCE</span>');
+          if (p.isPerformance) badges.push('<span class="badge perf">PERFORMANCE</span>');
+          if (owned.has(productKey(p))) badges.push('<span class="badge owned">IMAM</span>');
+
+          const note = changeNote(p);
+          const priceNote = crossCountryNote(p, code, catalogByKey);
+          const otherReasons = (p.worthItReasons || []).filter(r => !r.startsWith("Cenejše od konkurence"));
+
+          card.innerHTML = `
+            <div class="badges">${badges.join("")}</div>
+            ${p.image ? `<img src="${p.image}" alt="" loading="lazy" />` : ""}
+            <h3><a href="${p.url || "#"}" target="_blank" rel="noopener">${p.title || "(brez imena)"}</a></h3>
+            <div class="category">${p.category || ""}</div>
+            <div class="price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : "cena ni znana"}</div>
+            ${p.competitorReference ? `<div class="competitor-box">Konkurenca (${p.competitorReference.note}): <strong>${p.competitorReference.competitorLow}–${p.competitorReference.competitorHigh} €</strong> · tukaj prihraniš ~${p.competitorReference.savingsMin.toFixed(0)}–${p.competitorReference.savingsMax.toFixed(0)} €</div>` : ""}
+            ${otherReasons.length ? `<div class="worth-reasons">${otherReasons.join(" · ")}</div>` : ""}
+            ${priceNote ? `<div class="pricenote">${priceNote}</div>` : ""}
+            <div class="avail">
+              <strong>${availabilityText(p)}</strong>
+              ${note ? `<div class="diffnote">${note}</div>` : ""}
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        section.appendChild(grid);
+      }
+
+      app.appendChild(section);
+    });
+
+    totalsMeta.textContent = `Prikazanih: ${totalShown} · Novih: ${totalNew} · Spremenjenih: ${totalChanged}`;
+  }
+
+  const filterButtons = {
+    worth: document.getElementById("filterWorth"),
+    performance: document.getElementById("filterPerf"),
+    all: document.getElementById("filterAll"),
+  };
+  Object.entries(filterButtons).forEach(([mode, btn]) => {
+    btn.addEventListener("click", () => {
+      state.filterMode = mode;
+      Object.entries(filterButtons).forEach(([m, b]) => b.classList.toggle("active", m === mode));
+      render();
+    });
+  });
+  document.getElementById("onlyChanges").addEventListener("change", (e) => {
+    state.onlyChanges = e.target.checked;
+    render();
+  });
+  document.getElementById("search").addEventListener("input", (e) => {
+    state.query = e.target.value;
+    render();
+  });
+  document.getElementById("showOwned").addEventListener("change", (e) => {
+    state.showOwned = e.target.checked;
+    render();
+  });
+  document.getElementById("toggleChecklist").addEventListener("click", () => {
+    checklistPanel.hidden = !checklistPanel.hidden;
+  });
+
+  renderChecklist();
+  render();
+})();
+</script>
+
+</body>
+</html>

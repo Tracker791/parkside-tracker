@@ -1,0 +1,306 @@
+{
+  "502560": {
+    "key": "502560",
+    "ean": "502560",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "si",
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "si",
+        "price": 69.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.si/p/parkside-performance-akumulatorske-skarje-za-zivo-mejo/p11118218",
+        "availableFrom": "2026-09-13T22:00:00+00:00",
+        "availableUntil": "2026-09-16T21:59:59+00:00",
+        "availabilityBadge": "V trgovini od 14.09. do 16.09."
+      },
+      {
+        "country": "at",
+        "price": 69.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-akku-heckenschere-40-v/p10054821",
+        "availableFrom": "2026-09-09T22:00:00+00:00",
+        "availableUntil": "2026-09-12T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 10.09. - 12.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Akku-Heckenschere, 40 V",
+    "image": "https://imgproxy-retcat.assets.schwarz/jp7p0EMb5lY5-ps8YhUCpHmhDE0RYpJI2QpMLR0eS0k/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS9CRUJBMjY1N0QyN0QyNEJDQjRDN0E5QTF/BM0M5QkIzNjgzMEZDOTA3RDU3QUEyQTc3MkVGRUI3MEIyNjhBNzk1LnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Gartengeräte & Gartenwerkzeuge",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "518627": {
+    "key": "518627",
+    "ean": "518627",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 129.0,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-visenamjenski-stol-za-radionicu/p11084758",
+        "availableFrom": "2026-09-13T22:00:00+00:00",
+        "availableUntil": "2026-09-20T21:59:59+00:00",
+        "availabilityBadge": "Od 14.09. do 20.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "Parkside Performance Višenamjenski stol za radionicu",
+    "image": "https://www.lidl.hr/assets/gcp581ee764aaac41709da2d61d89c94811.png",
+    "category": "Svjetovi potreba/Uradi sam i vrt/Radionica i željezna roba",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "482911": {
+    "key": "482911",
+    "ean": "482911",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr",
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 49.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-aku-pila-za-grane/p11098687",
+        "availableFrom": "2026-09-15T22:00:00+00:00",
+        "availableUntil": "2026-09-20T21:59:59+00:00",
+        "availabilityBadge": "Od 16.09. do 20.09."
+      },
+      {
+        "country": "at",
+        "price": 39.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-akku-gehoelzschneider-20-v/p10054822",
+        "availableFrom": "2026-09-09T22:00:00+00:00",
+        "availableUntil": "2026-09-12T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 10.09. - 12.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Akku-Gehölzschneider, 20 V",
+    "image": "https://imgproxy-retcat.assets.schwarz/sUiqSexxR05tqZ1hv3zAIB__bKKaA7alAAQmg6Pl3_c/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS9BNTMyMjhFNUU0MDNFODZGMDYwNjRGNjQ/4NzY1RDU3NDQzODQ4NTQyOERDNTgxNzdBRENGRkZENEIwNDUwOEVDLnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Gartengeräte & Gartenwerkzeuge",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "495521": {
+    "key": "495521",
+    "ean": "495521",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 259.0,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-usisavac-za-radionicu/p11105620",
+        "availableFrom": "2026-09-08T22:00:00+00:00",
+        "availableUntil": "2026-09-13T21:59:59+00:00",
+        "availabilityBadge": "Od 09.09. do 13.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "Parkside Performance Usisavač za radionicu",
+    "image": "https://www.lidl.hr/assets/gcp2a0b61b72f294481adea1d4753657374.png",
+    "category": "Svjetovi potreba/Uradi sam i vrt/električni alati",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "506416": {
+    "key": "506416",
+    "ean": "506416",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 49.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-aku-kombinirani-cekic/p11107732",
+        "availableFrom": "2026-09-08T22:00:00+00:00",
+        "availableUntil": "2026-09-13T21:59:59+00:00",
+        "availabilityBadge": "Od 09.09. do 13.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "Parkside Performance Aku kombinirani čekić",
+    "image": "https://www.lidl.hr/assets/gcp7705d9be7f054ae4a75abd09527a3407.png",
+    "category": "Svjetovi potreba/Uradi sam i vrt/akumulatorski alati",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "506400": {
+    "key": "506400",
+    "ean": "506400",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr",
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 89.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-aku-lancana-pila/p11107745",
+        "availableFrom": "2026-09-15T22:00:00+00:00",
+        "availableUntil": "2026-09-20T21:59:59+00:00",
+        "availabilityBadge": "Od 16.09. do 20.09."
+      },
+      {
+        "country": "at",
+        "price": 69.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-akku-kettensaege-40-v/p10054820",
+        "availableFrom": "2026-09-09T22:00:00+00:00",
+        "availableUntil": "2026-09-12T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 10.09. - 12.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Akku-Kettensäge, 40 V",
+    "image": "https://imgproxy-retcat.assets.schwarz/QVoIvFiko-Ds66PDWmPAMjtyJaf8ViFA4qYa-hv3hs0/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS8xNzc0OTgzOEVGMjBEOEFDRThFMjVGMTc/4NTlEQjVFQjk5NjYwRDdCQjRERDAzMjk1NEJCMkRFNTQ5MzE1MzAwLnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "516051": {
+    "key": "516051",
+    "ean": "516051",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr",
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 59.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-aku-puhac-lisca-s-turbinom/p11110609",
+        "availableFrom": "2026-09-15T22:00:00+00:00",
+        "availableUntil": "2026-09-20T21:59:59+00:00",
+        "availabilityBadge": "Od 16.09. do 20.09."
+      },
+      {
+        "country": "at",
+        "price": 59.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-akku-turbinenlaubblaeser-40-v/p10054823",
+        "availableFrom": "2026-09-09T22:00:00+00:00",
+        "availableUntil": "2026-09-12T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 10.09. - 12.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Akku-Turbinenlaubbläser, 40 V",
+    "image": "https://imgproxy-retcat.assets.schwarz/qxPjUcJsY_vHBca-8aRKNiKjZbV1yxrd5S2xY3CqJG4/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS81REM0OTcyNTkzMTcwOURBM0I3MkE4Nzc/0M0Y2NzdFNjA4QjQ2MkQ2RkVDMDYyMEUxREZCMDc4Nzg0NUVERUJDLnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Gartengeräte & Gartenwerkzeuge",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "530758": {
+    "key": "530758",
+    "ean": "530758",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 34.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-aku-kutna-brusilica/p11113641",
+        "availableFrom": "2026-09-10T22:00:00+00:00",
+        "availableUntil": "2026-09-13T21:59:59+00:00",
+        "availabilityBadge": "Od 11.09. do 13.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "Parkside Performance Aku kutna brusilica",
+    "image": "https://www.lidl.hr/assets/gcp414bc3d6e00f498f8de4733142fba182.png",
+    "category": "Svjetovi potreba/Uradi sam i vrt/akumulatorski alati",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "506429": {
+    "key": "506429",
+    "ean": "506429",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "hr"
+    ],
+    "currentListings": [
+      {
+        "country": "hr",
+        "price": 34.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.hr/p/parkside-performance-detektor/p11118645",
+        "availableFrom": "2026-09-08T22:00:00+00:00",
+        "availableUntil": "2026-09-13T21:59:59Z",
+        "availabilityBadge": "Od 09.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "Parkside Performance Detektor",
+    "image": "https://www.lidl.hr/assets/gcpf3b12e24c26b44eb966a0a5c778ffae4.png",
+    "category": "Svjetovi potreba/Uradi sam i vrt/električni alati",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "515658": {
+    "key": "515658",
+    "ean": "515658",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "at",
+        "price": 14.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-herren-arbeitsweste/p10054939",
+        "availableFrom": "2026-09-13T22:00:00+00:00",
+        "availableUntil": "2026-09-16T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 14.09. - 16.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Herren Arbeitsweste",
+    "image": "https://imgproxy-retcat.assets.schwarz/xcmxfXcz4a11Uots9nUosgM0uoabLLkf2z2vteLQkhQ/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS83NDc2MzI5MzNERjJCMDc5RkFCRENDQ0Y/zNjlEMUQyNjYwQzhGNDVDMTZGMTIzMkFCMTk4RUIxOTcyODcwMzFFLnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  },
+  "445894": {
+    "key": "445894",
+    "ean": "445894",
+    "firstSeenAt": "2026-09-08T20:03:03.061713+00:00",
+    "countriesSeen": [
+      "at"
+    ],
+    "currentListings": [
+      {
+        "country": "at",
+        "price": 4.99,
+        "currency": "EUR",
+        "url": "https://www.lidl.at/p/parkside-performance-saebelsaegeblaetter-3-teilig/p10054981",
+        "availableFrom": "2026-09-09T22:00:00+00:00",
+        "availableUntil": "2026-09-12T21:59:59+00:00",
+        "availabilityBadge": "in der Filiale von 10.09. - 12.09."
+      }
+    ],
+    "currentlyListed": true,
+    "title": "PARKSIDE PERFORMANCE Säbelsägeblätter, 3-teilig",
+    "image": "https://imgproxy-retcat.assets.schwarz/qrsy4CoEhuAUWOVHAcOYBlb0dQE_Fz2QbzetVYq0eM4/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYXQvMS84QjIxRDlFNUQ2RkVBRkY3MEMxRTM4MEI/zMEE5MDk1MEYxQjQ2NTg1QkEyOUQwNDkyNTZERjc2QUUxMTVFMDFGLnBuZw.png",
+    "category": "Bedürfniswelten/Baumarkt & Garten/Werkstatt & Eisenwaren",
+    "lastSeenAt": "2026-09-08T20:28:03.602723+00:00"
+  }
+}
