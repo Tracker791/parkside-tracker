@@ -347,6 +347,14 @@
     padding: 20px 0;
   }
 
+  .site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 18px 16px 28px;
+    border-top: 1px solid var(--border);
+  }
+
   .side-panel {
     max-width: 1400px;
     margin: 16px auto 0;
@@ -543,6 +551,8 @@
 
 <main id="app"></main>
 
+<footer class="site-footer" id="siteFooter">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
+
 <script src="data.js"></script>
 <script>
 (function () {
@@ -563,9 +573,10 @@
       filterWorth: "Vredno cene", filterPerf: "Samo Parkside Performance", filterAll: "Vsi Parkside izdelki",
       onlyChanges: "Samo novo / spremenjeno", showOwned: "Pokaži tudi kar že imam",
       myTools: (n) => `Moja orodja (${n} odkljukanih)`,
-      countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (vse)",
+      countriesBtn: (n, total) => n === total ? "Države (vse)" : n === 0 ? "Države (nobena)" : `Države (${n})`,
       searchPlaceholder: "Iskanje po imenu...",
       countrySearchPlaceholder: "Iskanje držav...",
+      footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
       worthExplainer: "„Vredno cene“ = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.",
       myToolsHeading: "Moja orodja — Parkside Performance",
       myToolsSub: "Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.",
@@ -611,9 +622,10 @@
       filterWorth: "Worth it", filterPerf: "Parkside Performance only", filterAll: "All Parkside items",
       onlyChanges: "New / changed only", showOwned: "Show items I already own",
       myTools: (n) => `My tools (${n} checked)`,
-      countriesBtn: (n) => n > 0 ? `Countries (${n})` : "Countries (all)",
+      countriesBtn: (n, total) => n === total ? "Countries (all)" : n === 0 ? "Countries (none)" : `Countries (${n})`,
       searchPlaceholder: "Search by name...",
       countrySearchPlaceholder: "Search countries...",
+      footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
       worthExplainer: "“Worth it” = an objective rule: a 5-year warranty (Parkside's highest confidence tier), being part of the X 20 V TEAM battery system (cheap if you already own a battery), and/or a manually verified price comparison against comparable Bosch/Einhell/Black+Decker cordless tools (ceneje.si, Sept 2026). Not limited to Parkside Performance.",
       myToolsHeading: "My tools — Parkside Performance",
       myToolsSub: "Check off what you already own. Checked tools are hidden from the recommendations above by default, until you uncheck them.",
@@ -659,9 +671,10 @@
       filterWorth: "Lohnt sich", filterPerf: "Nur Parkside Performance", filterAll: "Alle Parkside-Artikel",
       onlyChanges: "Nur neu / geändert", showOwned: "Auch Artikel zeigen, die ich schon habe",
       myTools: (n) => `Meine Werkzeuge (${n} markiert)`,
-      countriesBtn: (n) => n > 0 ? `Länder (${n})` : "Länder (alle)",
+      countriesBtn: (n, total) => n === total ? "Länder (alle)" : n === 0 ? "Länder (keine)" : `Länder (${n})`,
       searchPlaceholder: "Nach Name suchen...",
       countrySearchPlaceholder: "Länder suchen...",
+      footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
       worthExplainer: "„Lohnt sich“ = ein objektives Kriterium: 5 Jahre Garantie (höchste Vertrauensstufe bei Parkside), Teil des X 20 V TEAM Akkusystems (günstig, wenn du schon einen Akku hast), und/oder ein manuell geprüfter Preisvergleich mit vergleichbaren Akku-Werkzeugen von Bosch/Einhell/Black+Decker (ceneje.si, Sept. 2026). Nicht auf Parkside Performance beschränkt.",
       myToolsHeading: "Meine Werkzeuge — Parkside Performance",
       myToolsSub: "Hake ab, was du schon besitzt. Abgehakte Werkzeuge werden standardmäßig aus den Empfehlungen oben ausgeblendet, bis du sie wieder abwählst.",
@@ -707,9 +720,10 @@
       filterWorth: "Vrijedi cijene", filterPerf: "Samo Parkside Performance", filterAll: "Svi Parkside artikli",
       onlyChanges: "Samo novo / promijenjeno", showOwned: "Prikaži i ono što već imam",
       myTools: (n) => `Moji alati (${n} označeno)`,
-      countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (sve)",
+      countriesBtn: (n, total) => n === total ? "Države (sve)" : n === 0 ? "Države (nijedna)" : `Države (${n})`,
       searchPlaceholder: "Pretraži po nazivu...",
       countrySearchPlaceholder: "Pretraži države...",
+      footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
       worthExplainer: "„Vrijedi cijene“ = objektivan kriterij: 5-godišnje jamstvo (Parksideova najviša razina povjerenja), dio je sustava baterija X 20 V TEAM (jeftino ako već imaš bateriju), i/ili ručno provjerena usporedba cijena s usporedivim akumulatorskim alatima Bosch/Einhell/Black+Decker (ceneje.si, rujan 2026.). Nije ograničeno na Parkside Performance.",
       myToolsHeading: "Moji alati — Parkside Performance",
       myToolsSub: "Označi što već imaš. Označeni alati se prema zadanim postavkama skrivaju iz preporuka iznad, dok ih ponovno ne odznačiš.",
@@ -812,12 +826,18 @@
   }
   const owned = loadOwned();
 
+  const ALL_COUNTRY_CODES = window.__PARKSIDE_DATA__ ? Object.keys(window.__PARKSIDE_DATA__.countries) : [];
+
   const COUNTRIES_KEY = "parkside_countries_v1";
   function loadSelectedCountries() {
+    // Privzeto (ce uporabnik se ni nikoli spreminjal izbire) so izbrane VSE
+    // drzave - prazna mnozica pomeni, da je uporabnik eksplicitno kliknil
+    // "Pocisti izbiro" in torej hoce prikazati NOBENE, ne vseh.
     try {
       const raw = localStorage.getItem(COUNTRIES_KEY);
-      return new Set(raw ? JSON.parse(raw) : []);
-    } catch (e) { return new Set(); }
+      if (raw !== null) return new Set(JSON.parse(raw));
+    } catch (e) { /* ni na voljo */ }
+    return new Set(ALL_COUNTRY_CODES);
   }
   function saveSelectedCountries(set) {
     try { localStorage.setItem(COUNTRIES_KEY, JSON.stringify(Array.from(set))); } catch (e) { /* ni na voljo */ }
@@ -974,7 +994,7 @@
   function renderCountryPicker() {
     const data = window.__PARKSIDE_DATA__;
     let codes = data ? Object.keys(data.countries) : [];
-    document.getElementById("toggleCountries").textContent = t().countriesBtn(selectedCountries.size);
+    document.getElementById("toggleCountries").textContent = t().countriesBtn(selectedCountries.size, ALL_COUNTRY_CODES.length);
 
     codes = codes
       .filter(code => !countryQuery || countryName(code).toLowerCase().includes(countryQuery))
@@ -1020,7 +1040,7 @@
     app.innerHTML = "";
 
     Object.entries(data.countries).forEach(([code, country]) => {
-      if (selectedCountries.size > 0 && !selectedCountries.has(code)) return;
+      if (!selectedCountries.has(code)) return;
 
       const section = document.createElement("section");
       section.className = "country-section";
@@ -1114,6 +1134,7 @@
     document.querySelector('[data-t="showOwned"]').textContent = t().showOwned;
     document.getElementById("search").placeholder = t().searchPlaceholder;
     document.getElementById("countrySearch").placeholder = t().countrySearchPlaceholder;
+    document.getElementById("siteFooter").textContent = t().footerNote;
     document.getElementById("worthExplainer").textContent = t().worthExplainer;
     document.getElementById("myToolsHeading").textContent = t().myToolsHeading;
     document.getElementById("myToolsSub").textContent = t().myToolsSub;
