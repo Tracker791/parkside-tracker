@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   /* ---- Parkside Performance CGP ----
      Barve izmerjene neposredno iz uradnih Lidl/Parkside Performance slik
@@ -460,6 +461,74 @@
   }
   .country-row:hover { background: var(--surface-2); }
   .country-row input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--ps-red); }
+
+  .stores-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .stores-controls button {
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--ps-red);
+    color: #fff;
+    cursor: pointer;
+  }
+  .stores-controls button:hover { background: var(--ps-red-dark); }
+  .stores-controls #searchStoreLocation { background: var(--surface-2); color: var(--text); }
+  .stores-controls #searchStoreLocation:hover { border-color: var(--ps-red); }
+  .stores-controls input[type=text] {
+    flex: 1;
+    min-width: 180px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 13px;
+  }
+  .stores-status {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 8px 0;
+  }
+  .stores-status.error { color: var(--changed); }
+  .stores-map {
+    height: 320px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+  .stores-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .store-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: var(--surface-2);
+  }
+  .store-card .store-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .store-card .store-address { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .store-card .store-status { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+  .store-card .store-status.open { color: var(--new); }
+  .store-card .store-status.closed { color: var(--changed); }
+  .store-card .store-hours { font-size: 11.5px; color: var(--muted); margin-bottom: 8px; }
+  .store-card .store-actions a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--ps-red);
+    padding: 5px 12px;
+    border-radius: 14px;
+    text-decoration: none;
+  }
+  .store-card .store-actions a:hover { background: var(--ps-red-dark); }
+  .store-card .store-distance { font-size: 11.5px; color: var(--muted); float: right; }
 </style>
 </head>
 <body>
@@ -523,6 +592,7 @@
   <label><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
   <button id="toggleChecklist">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</button>
   <button id="toggleCountries">Države (0)</button>
+  <button id="toggleStores">🏬 Trgovine v bližini</button>
   <input type="text" id="search" placeholder="Iskanje po imenu..." />
   <div class="spacer"></div>
   <div class="meta" id="totalsMeta"></div>
@@ -550,11 +620,27 @@
   </div>
 </div>
 
+<div class="side-panel" id="storesPanel" hidden>
+  <div class="side-panel-box">
+    <h2 id="storesHeading">Trgovine v bližini</h2>
+    <div class="sub" id="storesSub">Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.</div>
+    <div class="stores-controls">
+      <button id="useMyLocation">📍 Uporabi mojo lokacijo</button>
+      <input type="text" id="storeLocationInput" placeholder="Ali vpiši kraj/naslov..." />
+      <button id="searchStoreLocation">Poišči</button>
+    </div>
+    <div id="storesStatus" class="stores-status" hidden></div>
+    <div id="storesMap" class="stores-map" hidden></div>
+    <div class="stores-list" id="storesList"></div>
+  </div>
+</div>
+
 <main id="app"></main>
 
 <footer class="site-footer" id="siteFooter">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
 
 <script src="data.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function () {
   const COUNTRY_NAMES = {
@@ -578,6 +664,21 @@
       searchPlaceholder: "Iskanje po imenu...",
       countrySearchPlaceholder: "Iskanje držav...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
+      toolbarStores: "🏬 Trgovine v bližini",
+      storesHeading: "Trgovine v bližini",
+      storesSub: "Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.",
+      useMyLocationBtn: "📍 Uporabi mojo lokacijo",
+      locationInputPlaceholder: "Ali vpiši kraj/naslov...",
+      searchBtn: "Poišči",
+      storeOpen: "Odprto", storeClosed: "Zaprto",
+      todayHours: "Danes", directions: "Navigacija",
+      storesLoading: "Iskanje trgovin...",
+      storesNone: "V bližini ni najdenih trgovin.",
+      storesError: "Napaka pri iskanju trgovin. Poskusi znova.",
+      geoUnsupported: "Tvoj brskalnik ne podpira geolokacije.",
+      geoLocating: "Iščem tvojo lokacijo...",
+      geoDenied: "Lokacije ni bilo mogoče pridobiti. Preveri dovoljenja brskalnika.",
+      locationNotFound: "Kraja ni bilo mogoče najti.",
       worthExplainer: "„Vredno cene“ = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.",
       myToolsHeading: "Moja orodja — Parkside Performance",
       myToolsSub: "Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.",
@@ -627,6 +728,21 @@
       searchPlaceholder: "Search by name...",
       countrySearchPlaceholder: "Search countries...",
       footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
+      toolbarStores: "🏬 Stores near you",
+      storesHeading: "Stores near you",
+      storesSub: "Find Lidl stores near you - with opening hours and directions.",
+      useMyLocationBtn: "📍 Use my location",
+      locationInputPlaceholder: "Or type a place/address...",
+      searchBtn: "Search",
+      storeOpen: "Open", storeClosed: "Closed",
+      todayHours: "Today", directions: "Directions",
+      storesLoading: "Searching for stores...",
+      storesNone: "No stores found nearby.",
+      storesError: "Error searching for stores. Please try again.",
+      geoUnsupported: "Your browser doesn't support geolocation.",
+      geoLocating: "Finding your location...",
+      geoDenied: "Couldn't get your location. Check your browser permissions.",
+      locationNotFound: "Place not found.",
       worthExplainer: "“Worth it” = an objective rule: a 5-year warranty (Parkside's highest confidence tier), being part of the X 20 V TEAM battery system (cheap if you already own a battery), and/or a manually verified price comparison against comparable Bosch/Einhell/Black+Decker cordless tools (ceneje.si, Sept 2026). Not limited to Parkside Performance.",
       myToolsHeading: "My tools — Parkside Performance",
       myToolsSub: "Check off what you already own. Checked tools are hidden from the recommendations above by default, until you uncheck them.",
@@ -676,6 +792,21 @@
       searchPlaceholder: "Nach Name suchen...",
       countrySearchPlaceholder: "Länder suchen...",
       footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
+      toolbarStores: "🏬 Filialen in der Nähe",
+      storesHeading: "Filialen in der Nähe",
+      storesSub: "Finde Lidl-Filialen in deiner Nähe - mit Öffnungszeiten und Wegbeschreibung.",
+      useMyLocationBtn: "📍 Meinen Standort verwenden",
+      locationInputPlaceholder: "Oder Ort/Adresse eingeben...",
+      searchBtn: "Suchen",
+      storeOpen: "Geöffnet", storeClosed: "Geschlossen",
+      todayHours: "Heute", directions: "Route",
+      storesLoading: "Filialen werden gesucht...",
+      storesNone: "Keine Filialen in der Nähe gefunden.",
+      storesError: "Fehler bei der Filialsuche. Bitte erneut versuchen.",
+      geoUnsupported: "Dein Browser unterstützt keine Standortbestimmung.",
+      geoLocating: "Standort wird ermittelt...",
+      geoDenied: "Standort konnte nicht ermittelt werden. Prüfe die Browser-Berechtigungen.",
+      locationNotFound: "Ort nicht gefunden.",
       worthExplainer: "„Lohnt sich“ = ein objektives Kriterium: 5 Jahre Garantie (höchste Vertrauensstufe bei Parkside), Teil des X 20 V TEAM Akkusystems (günstig, wenn du schon einen Akku hast), und/oder ein manuell geprüfter Preisvergleich mit vergleichbaren Akku-Werkzeugen von Bosch/Einhell/Black+Decker (ceneje.si, Sept. 2026). Nicht auf Parkside Performance beschränkt.",
       myToolsHeading: "Meine Werkzeuge — Parkside Performance",
       myToolsSub: "Hake ab, was du schon besitzt. Abgehakte Werkzeuge werden standardmäßig aus den Empfehlungen oben ausgeblendet, bis du sie wieder abwählst.",
@@ -725,6 +856,21 @@
       searchPlaceholder: "Pretraži po nazivu...",
       countrySearchPlaceholder: "Pretraži države...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
+      toolbarStores: "🏬 Trgovine u blizini",
+      storesHeading: "Trgovine u blizini",
+      storesSub: "Pronađi Lidl trgovine u svojoj blizini - s radnim vremenom i navigacijom.",
+      useMyLocationBtn: "📍 Koristi moju lokaciju",
+      locationInputPlaceholder: "Ili upiši mjesto/adresu...",
+      searchBtn: "Pretraži",
+      storeOpen: "Otvoreno", storeClosed: "Zatvoreno",
+      todayHours: "Danas", directions: "Navigacija",
+      storesLoading: "Tražim trgovine...",
+      storesNone: "U blizini nema pronađenih trgovina.",
+      storesError: "Greška pri pretraživanju trgovina. Pokušaj ponovno.",
+      geoUnsupported: "Tvoj preglednik ne podržava geolokaciju.",
+      geoLocating: "Tražim tvoju lokaciju...",
+      geoDenied: "Lokaciju nije bilo moguće dohvatiti. Provjeri dozvole preglednika.",
+      locationNotFound: "Mjesto nije pronađeno.",
       worthExplainer: "„Vrijedi cijene“ = objektivan kriterij: 5-godišnje jamstvo (Parksideova najviša razina povjerenja), dio je sustava baterija X 20 V TEAM (jeftino ako već imaš bateriju), i/ili ručno provjerena usporedba cijena s usporedivim akumulatorskim alatima Bosch/Einhell/Black+Decker (ceneje.si, rujan 2026.). Nije ograničeno na Parkside Performance.",
       myToolsHeading: "Moji alati — Parkside Performance",
       myToolsSub: "Označi što već imaš. Označeni alati se prema zadanim postavkama skrivaju iz preporuka iznad, dok ih ponovno ne odznačiš.",
@@ -857,6 +1003,7 @@
   const ownedCountEl = document.getElementById("ownedCount");
   const countryPanel = document.getElementById("countryPanel");
   const countryGrid = document.getElementById("countryGrid");
+  const storesPanel = document.getElementById("storesPanel");
 
   function fmtDate(iso) {
     if (!iso) return null;
@@ -1045,6 +1192,179 @@
     });
   }
 
+  // --- Trgovine v blizini ---
+  // Lidlov "stores-api" (isti, ki ga uporablja uradni store-finder widget)
+  // NE dovoli klicev iz brskalnika z druge domene (CORS je omejen na
+  // lidl.* domene) - zato smo celoten seznam trgovin (12.000+ po Evropi)
+  // vnaprej pobrali server-side (glej scrape_stores.py) v stores.js/.json.
+  // Ta datoteka se nalozi SELE, ko uporabnik prvic odpre ta panel (lazy),
+  // razdaljo do uporabnika pa izracunamo tukaj (haversine formula).
+  // Prikazujemo samo redni tedenski urnik (brez live "odprto zdaj"
+  // statusa, ki bi zahteval natancno casovno cono vsake trgovine).
+  const STORE_FIELDS = ["id", "name", "country", "street", "zip", "city", "lat", "lng", "hours"];
+  const WEEKDAY_IDX = [6, 0, 1, 2, 3, 4, 5]; // JS getDay() (0=nedelja) -> indeks v hours (0=ponedeljek..6=nedelja)
+
+  let storesData = null; // se napolni ob prvem odprtju panela
+  let storesLoadPromise = null;
+  let storesMap = null;
+  let storesMarkersLayer = null;
+
+  function haversineKm(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function todayHoursText(storeArr) {
+    const hours = storeArr[8];
+    if (!hours) return null;
+    const idx = WEEKDAY_IDX[new Date().getDay()];
+    const text = hours[idx];
+    return text ? text.replace(/-/g, "–").replace(/,/g, ", ") : null;
+  }
+
+  async function ensureStoresLoaded() {
+    if (storesData) return storesData;
+    if (!storesLoadPromise) {
+      setStoresStatus(t().storesLoading, false);
+      storesLoadPromise = fetch("data/stores.json")
+        .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(data => { storesData = data; return data; });
+    }
+    return storesLoadPromise;
+  }
+
+  function renderStoresList(stores) {
+    const list = document.getElementById("storesList");
+    list.innerHTML = "";
+    stores.forEach(([s, distanceKm]) => {
+      const hours = todayHoursText(s);
+      const addressLine = [s[3], [s[4], s[5]].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+      const mapsUrl = (s[6] != null && s[7] != null)
+        ? `https://www.google.com/maps/dir/?api=1&destination=${s[6]},${s[7]}`
+        : null;
+
+      const card = document.createElement("div");
+      card.className = "store-card";
+      card.innerHTML = `
+        <div class="store-distance">${distanceKm.toFixed(1)} km</div>
+        <div class="store-name">${s[1] || ""}</div>
+        <div class="store-address">${addressLine}</div>
+        ${hours ? `<div class="store-hours">${t().todayHours}: ${hours}</div>` : `<div class="store-hours">${t().storeClosed}</div>`}
+        ${mapsUrl ? `<div class="store-actions"><a href="${mapsUrl}" target="_blank" rel="noopener">${t().directions}</a></div>` : ""}
+      `;
+      list.appendChild(card);
+    });
+  }
+
+  function renderStoresMap(stores, userLoc) {
+    if (typeof L === "undefined") return;
+    const mapEl = document.getElementById("storesMap");
+    mapEl.hidden = false;
+    if (!storesMap) {
+      storesMap = L.map(mapEl);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 19,
+      }).addTo(storesMap);
+    }
+    if (storesMarkersLayer) storesMarkersLayer.remove();
+    storesMarkersLayer = L.layerGroup().addTo(storesMap);
+
+    const userIcon = L.divIcon({
+      className: "",
+      html: '<div style="background:#1a6b8a;width:16px;height:16px;border-radius:50%;border:3px solid white;box-shadow:0 1px 4px rgba(0,0,0,.5);"></div>',
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+    });
+    L.marker([userLoc.lat, userLoc.lng], { icon: userIcon }).addTo(storesMarkersLayer);
+
+    const bounds = [[userLoc.lat, userLoc.lng]];
+    stores.forEach(([s]) => {
+      if (s[6] == null || s[7] == null) return;
+      const marker = L.marker([s[6], s[7]]).addTo(storesMarkersLayer);
+      marker.bindPopup(`<strong>${s[1] || ""}</strong><br>${s[3] || ""}`);
+      bounds.push([s[6], s[7]]);
+    });
+    storesMap.fitBounds(bounds, { padding: [30, 30] });
+    setTimeout(() => storesMap.invalidateSize(), 100);
+  }
+
+  function setStoresStatus(text, isError) {
+    const el = document.getElementById("storesStatus");
+    el.hidden = !text;
+    el.className = "stores-status" + (isError ? " error" : "");
+    el.textContent = text || "";
+  }
+
+  async function loadStoresNear(lat, lng) {
+    setStoresStatus(t().storesLoading, false);
+    try {
+      const all = await ensureStoresLoaded();
+      const withDistance = all
+        .map(s => [s, haversineKm(lat, lng, s[6], s[7])])
+        .sort((a, b) => a[1] - b[1])
+        .slice(0, 20);
+      if (withDistance.length === 0) {
+        setStoresStatus(t().storesNone, false);
+        document.getElementById("storesMap").hidden = true;
+        document.getElementById("storesList").innerHTML = "";
+        return;
+      }
+      setStoresStatus(null, false);
+      renderStoresMap(withDistance, { lat, lng });
+      renderStoresList(withDistance);
+    } catch (e) {
+      setStoresStatus(t().storesError, true);
+    }
+  }
+
+  document.getElementById("useMyLocation").addEventListener("click", () => {
+    if (!navigator.geolocation) {
+      setStoresStatus(t().geoUnsupported, true);
+      return;
+    }
+    setStoresStatus(t().geoLocating, false);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => loadStoresNear(pos.coords.latitude, pos.coords.longitude),
+      () => setStoresStatus(t().geoDenied, true),
+      { timeout: 10000 }
+    );
+  });
+
+  async function searchStoreLocation() {
+    const q = document.getElementById("storeLocationInput").value.trim();
+    if (!q) return;
+    setStoresStatus(t().storesLoading, false);
+    try {
+      const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=1`);
+      const results = await r.json();
+      if (!results.length) {
+        setStoresStatus(t().locationNotFound, true);
+        return;
+      }
+      loadStoresNear(parseFloat(results[0].lat), parseFloat(results[0].lon));
+    } catch (e) {
+      setStoresStatus(t().storesError, true);
+    }
+  }
+  document.getElementById("searchStoreLocation").addEventListener("click", searchStoreLocation);
+  document.getElementById("storeLocationInput").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") searchStoreLocation();
+  });
+
+  document.getElementById("toggleStores").addEventListener("click", () => {
+    storesPanel.hidden = !storesPanel.hidden;
+    if (!storesPanel.hidden) {
+      checklistPanel.hidden = true;
+      countryPanel.hidden = true;
+      ensureStoresLoaded().then(() => setStoresStatus(null, false)).catch(() => setStoresStatus(t().storesError, true));
+      if (storesMap) setTimeout(() => storesMap.invalidateSize(), 50);
+    }
+  });
+
   function render() {
     const data = window.__PARKSIDE_DATA__;
     if (!data) {
@@ -1167,6 +1487,12 @@
     document.getElementById("countriesSub").textContent = t().countriesSub;
     document.getElementById("selectAllCountries").textContent = t().selectAll;
     document.getElementById("selectNoneCountries").textContent = t().selectNone;
+    document.getElementById("toggleStores").textContent = t().toolbarStores;
+    document.getElementById("storesHeading").textContent = t().storesHeading;
+    document.getElementById("storesSub").textContent = t().storesSub;
+    document.getElementById("useMyLocation").textContent = t().useMyLocationBtn;
+    document.getElementById("storeLocationInput").placeholder = t().locationInputPlaceholder;
+    document.getElementById("searchStoreLocation").textContent = t().searchBtn;
     document.getElementById("themeLabel").textContent = t().darkTheme;
     document.documentElement.lang = currentLang;
     applyTheme(currentTheme);
@@ -1211,11 +1537,11 @@
   });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
-    if (!checklistPanel.hidden) countryPanel.hidden = true;
+    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; }
   });
   document.getElementById("toggleCountries").addEventListener("click", () => {
     countryPanel.hidden = !countryPanel.hidden;
-    if (!countryPanel.hidden) checklistPanel.hidden = true;
+    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; }
   });
   document.getElementById("selectAllCountries").addEventListener("click", () => {
     const data = window.__PARKSIDE_DATA__;
