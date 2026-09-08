@@ -1208,6 +1208,7 @@
   let storesLoadPromise = null;
   let storesMap = null;
   let storesMarkersLayer = null;
+  let lastStoresShown = null; // za ponovno izrisavanje ob spremembi jezika
 
   function haversineKm(lat1, lng1, lat2, lng2) {
     const R = 6371;
@@ -1314,6 +1315,7 @@
         return;
       }
       setStoresStatus(null, false);
+      lastStoresShown = withDistance;
       renderStoresMap(withDistance, { lat, lng });
       renderStoresList(withDistance);
     } catch (e) {
@@ -1507,6 +1509,7 @@
     renderChecklist();
     renderCountryPicker();
     render();
+    if (lastStoresShown) renderStoresList(lastStoresShown);
   }
 
   document.getElementById("langSelect").addEventListener("change", (e) => setLang(e.target.value));
