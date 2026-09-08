@@ -1,11 +1,13 @@
 """
-Parkside availability scraper for Lidl Slovenija, Lidl Hrvaska in Lidl Austria.
+Parkside availability scraper for Lidl's European markets.
 
-Uporablja interni Lidl iskalni API (/q/api/search) na kategoriji
-"Vse za dom in vrt" (category.id=10068222), ki je ista za vse tri drzave.
-Ta kategorija vsebuje trenutno aktivno DIY/vrtno ponudbo (v veliki vecini
-znamke Parkside), skupaj z znamko "Parkside Performance" kot locenim
-brand-facetom.
+Uporablja interni Lidl iskalni API (/q/api/search) z generi_cnim iskanjem
+"q=parkside" (brez omejitve na kategorijo) - to smo preverili, deluje
+zanesljivo v vseh podprtih drzavah, medtem ko je konkretna kategorija
+"Vse za dom in vrt" imela v razlicnih drzavah razlicne (in ne vedno
+delujoce) ID-je. V manjsih trgih (SI/HR/AT/...) to ustreza tedenski
+rotirajoci ponudbi, v vecjih trgih (DE/FR/CZ/SK/PL/ES/BE...) pa Lidl
+prodaja precej sirsi, trajno dostopen Parkside asortiman.
 
 Za vsak izdelek izlusci ceno, kategorijo in datume veljavnosti ponudbe
 (startDate/endDate po regijah, ce so na voljo), ter zapise rezultat v
@@ -38,34 +40,48 @@ HEADERS = {
     "Accept-Language": "sl,en;q=0.8",
 }
 
-HOME_GARDEN_CATEGORY_ID = "10068222"
-
+# Vsi Lidl trgi, kjer je Parkside preverjeno na voljo prek /q/api/search
+# (preverjeno rocno, sept. 2026). Danska je izpuscena - Parkside tam ni
+# zaznan. NL/FI trenutno vracata napako (bot-zascita) - pustimo ju v
+# seznamu, saj scraper napake na posamezni drzavi obravnava locenu in ne
+# vpliva na ostale; ce Lidl kdaj odblokira dostop, bosta zafunkcionirala
+# sama od sebe.
 COUNTRIES = {
-    "si": {
-        "label": "Lidl Slovenija",
-        "domain": "https://www.lidl.si",
-        "assortment": "SI",
-        "locale": "sl_SI",
-    },
-    "hr": {
-        "label": "Lidl Hrvaška",
-        "domain": "https://www.lidl.hr",
-        "assortment": "HR",
-        "locale": "hr_HR",
-    },
-    "at": {
-        "label": "Lidl Austria",
-        "domain": "https://www.lidl.at",
-        "assortment": "AT",
-        "locale": "de_AT",
-    },
+    "si": {"label": "Lidl Slovenija", "domain": "https://www.lidl.si", "assortment": "SI", "locale": "sl_SI"},
+    "hr": {"label": "Lidl Hrvaška", "domain": "https://www.lidl.hr", "assortment": "HR", "locale": "hr_HR"},
+    "at": {"label": "Lidl Avstrija", "domain": "https://www.lidl.at", "assortment": "AT", "locale": "de_AT"},
+    "de": {"label": "Lidl Nemčija", "domain": "https://www.lidl.de", "assortment": "DE", "locale": "de_DE"},
+    "fr": {"label": "Lidl Francija", "domain": "https://www.lidl.fr", "assortment": "FR", "locale": "fr_FR"},
+    "it": {"label": "Lidl Italija", "domain": "https://www.lidl.it", "assortment": "IT", "locale": "it_IT"},
+    "pl": {"label": "Lidl Poljska", "domain": "https://www.lidl.pl", "assortment": "PL", "locale": "pl_PL"},
+    "es": {"label": "Lidl Španija", "domain": "https://www.lidl.es", "assortment": "ES", "locale": "es_ES"},
+    "gb": {"label": "Lidl Velika Britanija", "domain": "https://www.lidl.co.uk", "assortment": "GB", "locale": "en_GB"},
+    "cz": {"label": "Lidl Češka", "domain": "https://www.lidl.cz", "assortment": "CZ", "locale": "cs_CZ"},
+    "sk": {"label": "Lidl Slovaška", "domain": "https://www.lidl.sk", "assortment": "SK", "locale": "sk_SK"},
+    "pt": {"label": "Lidl Portugalska", "domain": "https://www.lidl.pt", "assortment": "PT", "locale": "pt_PT"},
+    "hu": {"label": "Lidl Madžarska", "domain": "https://www.lidl.hu", "assortment": "HU", "locale": "hu_HU"},
+    "ie": {"label": "Lidl Irska", "domain": "https://www.lidl.ie", "assortment": "IE", "locale": "en_IE"},
+    "gr": {"label": "Lidl Grčija", "domain": "https://www.lidl.gr", "assortment": "GR", "locale": "el_GR"},
+    "bg": {"label": "Lidl Bolgarija", "domain": "https://www.lidl.bg", "assortment": "BG", "locale": "bg_BG"},
+    "ro": {"label": "Lidl Romunija", "domain": "https://www.lidl.ro", "assortment": "RO", "locale": "ro_RO"},
+    "rs": {"label": "Lidl Srbija", "domain": "https://www.lidl.rs", "assortment": "RS", "locale": "sr_RS"},
+    "se": {"label": "Lidl Švedska", "domain": "https://www.lidl.se", "assortment": "SE", "locale": "sv_SE"},
+    "lt": {"label": "Lidl Litva", "domain": "https://www.lidl.lt", "assortment": "LT", "locale": "lt_LT"},
+    "lv": {"label": "Lidl Latvija", "domain": "https://www.lidl.lv", "assortment": "LV", "locale": "lv_LV"},
+    "ee": {"label": "Lidl Estonija", "domain": "https://www.lidl.ee", "assortment": "EE", "locale": "et_EE"},
+    "be": {"label": "Lidl Belgija", "domain": "https://www.lidl.be", "assortment": "BE", "locale": "nl_BE"},
+    "ch": {"label": "Lidl Švica", "domain": "https://www.lidl.ch", "assortment": "CH", "locale": "de_CH"},
+    "cy": {"label": "Lidl Ciper", "domain": "https://www.lidl.com.cy", "assortment": "CY", "locale": "el_CY"},
+    "mt": {"label": "Lidl Malta", "domain": "https://www.lidl.com.mt", "assortment": "MT", "locale": "en_MT"},
+    "lu": {"label": "Lidl Luksemburg", "domain": "https://www.lidl.lu", "assortment": "LU", "locale": "fr_LU"},
+    "nl": {"label": "Lidl Nizozemska", "domain": "https://www.lidl.nl", "assortment": "NL", "locale": "nl_NL"},
 }
 
 
 def search_api_url(domain: str, assortment: str, locale: str, extra: str = "") -> str:
     return (
-        f"{domain}/q/api/search?offset=0&fetchsize=250&locale={locale}"
-        f"&assortment={assortment}&version=2.1.0&category.id={HOME_GARDEN_CATEGORY_ID}{extra}"
+        f"{domain}/q/api/search?offset=0&fetchsize=1000&locale={locale}"
+        f"&assortment={assortment}&version=2.1.0&q=parkside{extra}"
     )
 
 
@@ -266,7 +282,6 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
         "ean": ean,
         "title": title,
         "shortTitle": keyfacts.get("title"),
-        "description": description,
         "image": image,
         "brand": brand,
         "price": price,
@@ -277,7 +292,6 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
         "availabilityBadge": badge_text,
         "category": keyfacts.get("wonCategoryPrimary"),
         "url": url,
-        "regions": regions,
         "warrantyYears": warranty_years,
         "isX20vTeam": x20v,
         "competitorReference": competitor,
@@ -407,7 +421,7 @@ def main():
 
     had_error = False
     for code, cfg in COUNTRIES.items():
-        print(f"Pobiram {cfg['label']} (category {HOME_GARDEN_CATEGORY_ID}, {cfg['assortment']}) ...")
+        print(f"Pobiram {cfg['label']} ({cfg['assortment']}, {cfg['locale']}) ...")
         try:
             products, num_found, brand_counts = scrape_country(cfg)
         except Exception as exc:  # noqa: BLE001
