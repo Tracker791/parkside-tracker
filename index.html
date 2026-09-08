@@ -4,6 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Parkside Tracker — Lidl SI / HR / AT</title>
+<meta name="description" content="Sledi razpoložljivosti in cenam Parkside ter Parkside Performance orodij v Lidl Sloveniji, Hrvaški in Avstriji. Primerjava cen med državami in s konkurenco." />
+<meta name="theme-color" content="#17181A" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpolygon points='60,4.5 111,32.25 111,87.75 60,115.5 9,87.75 9,32.25' fill='%2317181A' stroke='%23E8232D' stroke-width='3'/%3E%3Cpolygon points='60,14 102.3,37 102.3,83 60,106 17.7,83 17.7,37' fill='%23E8232D'/%3E%3Crect x='47' y='32' width='11' height='46' rx='4' fill='white'/%3E%3Cpath d='M58,32 C80,32 80,58 58,58' fill='none' stroke='white' stroke-width='11' stroke-linecap='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -190,6 +193,29 @@
   }
 
   main { padding: 20px 24px 60px; max-width: 1400px; margin: 0 auto; }
+
+  @media (max-width: 720px) {
+    header { flex-wrap: wrap; row-gap: 8px; padding: 14px 16px; }
+    header .meta-col { order: 3; flex-basis: 100%; }
+    header p#generatedAt { opacity: .6; }
+    .logo-text .l1 { font-size: 22px; }
+
+    .toolbar {
+      padding: 10px 16px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .toolbar::-webkit-scrollbar { display: none; }
+    .toolbar button, .toolbar label { flex: none; white-space: nowrap; }
+    .toolbar input[type=text] { flex: none; min-width: 150px; }
+    .toolbar .spacer { display: none; }
+    .toolbar .meta { flex: none; white-space: nowrap; }
+
+    main, .worth-explainer, .checklist-panel { padding-left: 16px; padding-right: 16px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  }
 
   .country-section { margin-bottom: 36px; }
   .country-section h2 {
