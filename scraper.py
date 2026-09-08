@@ -131,14 +131,18 @@ def worth_it_assessment(is_perf: bool, warranty_years, x20v: bool):
       - del baterijskega sistema X 20 V TEAM -> ce ze imas kompatibilno
         baterijo, je "gola" naprava veliko ceneje kot enakovredno orodje
         drugje, ker ne placas se enkrat za baterijo/polnilnik
+
+    Razlogi so vrnjeni kot strukturirani objekti (type + morebitni podatki),
+    NE kot vnaprej izpisani slovenski stavki - tako jih lahko frontend
+    prikaze v izbranem jeziku uporabnika (glej I18N v index.html).
     """
     reasons = []
     if warranty_years == 5:
-        reasons.append("5-letna garancija (Parkside najvišji nivo zaupanja)")
+        reasons.append({"type": "warranty5"})
     if is_perf:
-        reasons.append("Parkside Performance – brezkrtačni motor")
+        reasons.append({"type": "performance"})
     if x20v:
-        reasons.append("Del sistema X 20 V TEAM – poceni, če že imaš baterijo")
+        reasons.append({"type": "x20v"})
     return bool(reasons), reasons
 
 
@@ -147,33 +151,30 @@ def worth_it_assessment(is_perf: bool, warranty_years, x20v: bool):
 # (ceneje.si, preverjeno 2026-09). Ni popolna/samodejna primerjava vsakega
 # modela - gre za tipicno ceno PRIMERLJIVEGA orodja v isti kategoriji, da
 # damo realen obcutek, koliko bi isto orodje stalo pri drugi znamki.
+# "key" doloca, kateri prevedeni naziv/opombo frontend prikaze (I18N.competitorCategories).
 COMPETITOR_REFERENCE = [
     {
+        "key": "angle_grinder",
         "keywords": ["kotni brusilnik", "kutna brusilic", "winkelschleifer"],
-        "label": "akumulatorski kotni brusilnik",
         "low": 58, "high": 100,
-        "note": "Einhell/Bosch akumulatorski kotni brusilnik, brez baterije (ceneje.si)",
     },
     {
+        "key": "hedge_trimmer",
         "keywords": ["škarje za živo mejo", "škare za živic", "heckenschere"],
-        "label": "akumulatorske škarje za živo mejo",
         "low": 120, "high": 220,
-        "note": "Bosch primerljive akumulatorske škarje za živo mejo, ~55-60 cm rezilo (ceneje.si)",
     },
     {
+        "key": "chainsaw",
         "keywords": ["verižna žaga", "lančana pila", "kettensäge", "kettensaege"],
-        "label": "akumulatorska verižna žaga",
         "low": 131, "high": 164,
-        "note": "Bosch EasyChain 18V akumulatorska verižna žaga (ceneje.si)",
     },
     {
+        "key": "leaf_blower",
         "keywords": [
             "pihalnik za listje", "puhalnik za listje", "puhač lišć", "puhac lisc",
             "laubbläser", "laubblaeser", "turbinenlaubbläser",
         ],
-        "label": "akumulatorski puhalnik/sesalnik listja",
         "low": 64, "high": 137,
-        "note": "Bosch / Black+Decker akumulatorski puhalnik listja 18V (ceneje.si)",
     },
 ]
 
@@ -197,10 +198,9 @@ def match_competitor_reference(title: str, price):
         if any(kw in text for kw in ref["keywords"]):
             if price < ref["low"]:
                 return {
-                    "label": ref["label"],
+                    "categoryKey": ref["key"],
                     "competitorLow": ref["low"],
                     "competitorHigh": ref["high"],
-                    "note": ref["note"],
                     "savingsMin": round(ref["low"] - price, 2),
                     "savingsMax": round(ref["high"] - price, 2),
                 }
@@ -271,10 +271,12 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
     worth_it, worth_it_reasons = worth_it_assessment(perf, warranty_years, x20v)
     if competitor:
         worth_it = True
-        worth_it_reasons.append(
-            f"Cenejše od konkurence: {competitor['label']} pri drugih znamkah "
-            f"{competitor['competitorLow']:.0f}–{competitor['competitorHigh']:.0f}€"
-        )
+        worth_it_reasons.append({
+            "type": "competitor",
+            "categoryKey": competitor["categoryKey"],
+            "competitorLow": competitor["competitorLow"],
+            "competitorHigh": competitor["competitorHigh"],
+        })
 
     return {
         "id": pid,

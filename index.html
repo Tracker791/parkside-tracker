@@ -129,7 +129,8 @@
   header .meta-col { z-index: 1; }
   header p#generatedAt { margin: 2px 0 0; opacity: .75; font-size: 12.5px; }
   header .spacer { flex: 1; }
-  .theme-toggle {
+  header .header-controls { display: flex; align-items: center; gap: 8px; z-index: 1; }
+  .theme-toggle, .lang-select {
     z-index: 1;
     background: rgba(255,255,255,.08);
     border: 1px solid rgba(255,255,255,.18);
@@ -143,7 +144,14 @@
     gap: 6px;
     transition: background .15s ease;
   }
-  .theme-toggle:hover { background: rgba(255,255,255,.16); }
+  .lang-select {
+    padding: 7px 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+  }
+  .theme-toggle:hover, .lang-select:hover { background: rgba(255,255,255,.16); }
+  .lang-select option { background: var(--ps-black); color: #fff; }
 
   .toolbar {
     display: flex;
@@ -339,23 +347,23 @@
     padding: 20px 0;
   }
 
-  .checklist-panel {
+  .side-panel {
     max-width: 1400px;
     margin: 16px auto 0;
     padding: 0 24px;
   }
-  .checklist-box {
+  .side-panel-box {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 14px 16px;
     box-shadow: var(--shadow);
   }
-  .checklist-box h2 {
+  .side-panel-box h2 {
     margin: 0 0 4px;
     font-size: 20px;
   }
-  .checklist-box .sub {
+  .side-panel-box .sub {
     font-size: 12px;
     color: var(--muted);
     margin-bottom: 10px;
@@ -403,6 +411,36 @@
   }
   .checklist-row .status.live { color: var(--new); }
   .checklist-row input[type=checkbox] { width: 17px; height: 17px; flex: none; cursor: pointer; accent-color: var(--ps-red); }
+
+  .country-picker-actions { display: flex; gap: 8px; margin-bottom: 10px; }
+  .country-picker-actions button {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .country-picker-actions button:hover { border-color: var(--ps-red); }
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 4px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .country-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .country-row:hover { background: var(--surface-2); }
+  .country-row input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--ps-red); }
 </style>
 </head>
 <body>
@@ -441,35 +479,54 @@
   </svg>
   <div class="logo-text">
     <div class="l1">PARKSIDE <span>TRACKER</span></div>
-    <div class="l2">28 LIDL TRGOV PO EVROPI</div>
+    <div class="l2" id="tagline">28 LIDL TRGOV PO EVROPI</div>
   </div>
   <div class="meta-col">
     <p id="generatedAt">Podatki še niso naloženi.</p>
   </div>
   <div class="spacer"></div>
-  <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
+  <div class="header-controls">
+    <select class="lang-select" id="langSelect">
+      <option value="sl">🇸🇮 SL</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="hr">🇭🇷 HR</option>
+    </select>
+    <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
+  </div>
 </header>
 
 <div class="toolbar">
   <button id="filterWorth" class="active">Vredno cene</button>
   <button id="filterPerf">Samo Parkside Performance</button>
   <button id="filterAll">Vsi Parkside izdelki</button>
-  <label><input type="checkbox" id="onlyChanges" /> Samo novo / spremenjeno</label>
-  <label><input type="checkbox" id="showOwned" /> Pokaži tudi kar že imam</label>
+  <label><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
+  <label><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
   <button id="toggleChecklist">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</button>
+  <button id="toggleCountries">Države (0)</button>
   <input type="text" id="search" placeholder="Iskanje po imenu..." />
   <div class="spacer"></div>
   <div class="meta" id="totalsMeta"></div>
 </div>
-<div class="worth-explainer" id="worthExplainer">
-  "Vredno cene" = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.
+<div class="worth-explainer" id="worthExplainer"></div>
+
+<div class="side-panel" id="checklistPanel" hidden>
+  <div class="side-panel-box">
+    <h2 id="myToolsHeading">Moja orodja — Parkside Performance</h2>
+    <div class="sub" id="myToolsSub">Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.</div>
+    <div class="checklist-list" id="checklistList"></div>
+  </div>
 </div>
 
-<div class="checklist-panel" id="checklistPanel" hidden>
-  <div class="checklist-box">
-    <h2>Moja orodja — Parkside Performance</h2>
-    <div class="sub">Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.</div>
-    <div class="checklist-list" id="checklistList"></div>
+<div class="side-panel" id="countryPanel" hidden>
+  <div class="side-panel-box">
+    <h2 id="countriesHeading">Izberi države</h2>
+    <div class="sub" id="countriesSub">Prikaži samo izbrane države. Če ni nič izbrano, so prikazane vse.</div>
+    <div class="country-picker-actions">
+      <button id="selectAllCountries">Izberi vse</button>
+      <button id="selectNoneCountries">Počisti izbiro</button>
+    </div>
+    <div class="country-grid" id="countryGrid"></div>
   </div>
 </div>
 
@@ -478,6 +535,222 @@
 <script src="data.js"></script>
 <script>
 (function () {
+  const COUNTRY_NAMES = {
+    sl: {si:"Slovenija",hr:"Hrvaška",at:"Avstrija",de:"Nemčija",fr:"Francija",it:"Italija",pl:"Poljska",es:"Španija",gb:"Velika Britanija",cz:"Češka",sk:"Slovaška",pt:"Portugalska",hu:"Madžarska",ie:"Irska",gr:"Grčija",bg:"Bolgarija",ro:"Romunija",rs:"Srbija",se:"Švedska",lt:"Litva",lv:"Latvija",ee:"Estonija",be:"Belgija",ch:"Švica",cy:"Ciper",mt:"Malta",lu:"Luksemburg",nl:"Nizozemska"},
+    en: {si:"Slovenia",hr:"Croatia",at:"Austria",de:"Germany",fr:"France",it:"Italy",pl:"Poland",es:"Spain",gb:"Great Britain",cz:"Czechia",sk:"Slovakia",pt:"Portugal",hu:"Hungary",ie:"Ireland",gr:"Greece",bg:"Bulgaria",ro:"Romania",rs:"Serbia",se:"Sweden",lt:"Lithuania",lv:"Latvia",ee:"Estonia",be:"Belgium",ch:"Switzerland",cy:"Cyprus",mt:"Malta",lu:"Luxembourg",nl:"Netherlands"},
+    de: {si:"Slowenien",hr:"Kroatien",at:"Österreich",de:"Deutschland",fr:"Frankreich",it:"Italien",pl:"Polen",es:"Spanien",gb:"Großbritannien",cz:"Tschechien",sk:"Slowakei",pt:"Portugal",hu:"Ungarn",ie:"Irland",gr:"Griechenland",bg:"Bulgarien",ro:"Rumänien",rs:"Serbien",se:"Schweden",lt:"Litauen",lv:"Lettland",ee:"Estland",be:"Belgien",ch:"Schweiz",cy:"Zypern",mt:"Malta",lu:"Luxemburg",nl:"Niederlande"},
+    hr: {si:"Slovenija",hr:"Hrvatska",at:"Austrija",de:"Njemačka",fr:"Francuska",it:"Italija",pl:"Poljska",es:"Španjolska",gb:"Velika Britanija",cz:"Češka",sk:"Slovačka",pt:"Portugal",hu:"Mađarska",ie:"Irska",gr:"Grčka",bg:"Bugarska",ro:"Rumunjska",rs:"Srbija",se:"Švedska",lt:"Litva",lv:"Latvija",ee:"Estonija",be:"Belgija",ch:"Švicarska",cy:"Cipar",mt:"Malta",lu:"Luksemburg",nl:"Nizozemska"},
+  };
+
+  const LOCALES = { sl: "sl-SI", en: "en-GB", de: "de-DE", hr: "hr-HR" };
+
+  const I18N = {
+    sl: {
+      tagline: (n) => `${n} LIDL TRGOV PO EVROPI`,
+      darkTheme: "Temna tema", lightTheme: "Svetla tema",
+      lastUpdated: "Zadnja osvežitev",
+      filterWorth: "Vredno cene", filterPerf: "Samo Parkside Performance", filterAll: "Vsi Parkside izdelki",
+      onlyChanges: "Samo novo / spremenjeno", showOwned: "Pokaži tudi kar že imam",
+      myTools: (n) => `Moja orodja (${n} odkljukanih)`,
+      countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (vse)",
+      searchPlaceholder: "Iskanje po imenu...",
+      worthExplainer: "„Vredno cene“ = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.",
+      myToolsHeading: "Moja orodja — Parkside Performance",
+      myToolsSub: "Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.",
+      countriesHeading: "Izberi države",
+      countriesSub: "Prikaži samo izbrane države. Če ni nič izbrano, so prikazane vse.",
+      selectAll: "Izberi vse", selectNone: "Počisti izbiro",
+      noOwnedCatalog: "Kataloga Parkside Performance orodij še ni. Poženi scraper.py.",
+      noData: "Podatkov ni. Poženi scraper.py, da ustvariš data.js.",
+      noMatch: "Ni izdelkov, ki bi ustrezali trenutnim filtrom.",
+      scrapeError: (err) => `Zadnji scrape ni uspel (${err}). Prikazani so podatki prejšnjega uspešnega zagona.`,
+      priceUnknown: "cena ni znana",
+      noDateInfo: "Brez določenega datuma (stalna ponudba)",
+      availableRange: (f, u) => `Na voljo: ${f} – ${u}`,
+      availableUntil: (u) => `Na voljo do: ${u}`,
+      availableFrom: (f) => `Na voljo od: ${f}`,
+      notCurrentlyListed: "Trenutno ni na voljo",
+      currentlyListed: (parts) => `Trenutno na voljo: ${parts}`,
+      cheapestSuffix: " (najceneje)",
+      cheapestHere: (others) => `Najcenejše tu (drugje: ${others})`,
+      cheaperIn: (c, price) => `Ceneje v ${c}: ${price}`,
+      badgeNew: "NOVO", badgeChanged: "SPREMEMBA", badgeWorth: "VREDNO CENE", badgeCompetitor: "CENEJE OD KONKURENCE", badgePerf: "PERFORMANCE", badgeOwned: "IMAM",
+      reasonWarranty5: "5-letna garancija (Parkside najvišji nivo zaupanja)",
+      reasonPerformance: "Parkside Performance – brezkrtačni motor",
+      reasonX20v: "Del sistema X 20 V TEAM – poceni, če že imaš baterijo",
+      competitorBox: (label, low, high, sMin, sMax) => `Konkurenca (${label}): ${low}–${high} € · tukaj prihraniš ~${sMin}–${sMax} €`,
+      competitorCategories: {
+        angle_grinder: "Einhell/Bosch akumulatorski kotni brusilnik, brez baterije",
+        hedge_trimmer: "Bosch primerljive akumulatorske škarje za živo mejo, ~55-60 cm rezilo",
+        chainsaw: "Bosch EasyChain 18V akumulatorska verižna žaga",
+        leaf_blower: "Bosch / Black+Decker akumulatorski puhalnik listja 18V",
+      },
+      diffPrice: (a, b) => `cena: ${a} → ${b}`,
+      diffOnline: (a, b) => `online: ${a} → ${b}`,
+      diffUntil: (a, b) => `na voljo do: ${a} → ${b}`,
+      diffFrom: (a, b) => `na voljo od: ${a} → ${b}`,
+      totalsMeta: (s, n, c) => `Prikazanih: ${s} · Novih: ${n} · Spremenjenih: ${c}`,
+      countryHeader: (shown, total, numFound, perf, worth) => `${shown} prikazanih / ${total} skupaj v kategoriji${numFound != null ? " · numFound=" + numFound : ""} · Performance: ${perf} · Vredno cene: ${worth}`,
+    },
+    en: {
+      tagline: (n) => `${n} LIDL MARKETS ACROSS EUROPE`,
+      darkTheme: "Dark mode", lightTheme: "Light mode",
+      lastUpdated: "Last updated",
+      filterWorth: "Worth it", filterPerf: "Parkside Performance only", filterAll: "All Parkside items",
+      onlyChanges: "New / changed only", showOwned: "Show items I already own",
+      myTools: (n) => `My tools (${n} checked)`,
+      countriesBtn: (n) => n > 0 ? `Countries (${n})` : "Countries (all)",
+      searchPlaceholder: "Search by name...",
+      worthExplainer: "“Worth it” = an objective rule: a 5-year warranty (Parkside's highest confidence tier), being part of the X 20 V TEAM battery system (cheap if you already own a battery), and/or a manually verified price comparison against comparable Bosch/Einhell/Black+Decker cordless tools (ceneje.si, Sept 2026). Not limited to Parkside Performance.",
+      myToolsHeading: "My tools — Parkside Performance",
+      myToolsSub: "Check off what you already own. Checked tools are hidden from the recommendations above by default, until you uncheck them.",
+      countriesHeading: "Choose countries",
+      countriesSub: "Show only the selected countries. If none are selected, all are shown.",
+      selectAll: "Select all", selectNone: "Clear selection",
+      noOwnedCatalog: "No Parkside Performance catalog yet. Run scraper.py.",
+      noData: "No data. Run scraper.py to create data.js.",
+      noMatch: "No items match the current filters.",
+      scrapeError: (err) => `The last scrape failed (${err}). Showing data from the last successful run.`,
+      priceUnknown: "price unknown",
+      noDateInfo: "No specific date (permanent offer)",
+      availableRange: (f, u) => `Available: ${f} – ${u}`,
+      availableUntil: (u) => `Available until: ${u}`,
+      availableFrom: (f) => `Available from: ${f}`,
+      notCurrentlyListed: "Not currently available",
+      currentlyListed: (parts) => `Currently available: ${parts}`,
+      cheapestSuffix: " (cheapest)",
+      cheapestHere: (others) => `Cheapest here (elsewhere: ${others})`,
+      cheaperIn: (c, price) => `Cheaper in ${c}: ${price}`,
+      badgeNew: "NEW", badgeChanged: "CHANGED", badgeWorth: "WORTH IT", badgeCompetitor: "CHEAPER THAN COMPETITORS", badgePerf: "PERFORMANCE", badgeOwned: "OWNED",
+      reasonWarranty5: "5-year warranty (Parkside's highest confidence tier)",
+      reasonPerformance: "Parkside Performance – brushless motor",
+      reasonX20v: "Part of the X 20 V TEAM system – cheap if you already have a battery",
+      competitorBox: (label, low, high, sMin, sMax) => `Competitors (${label}): €${low}–${high} · you save ~€${sMin}–${sMax} here`,
+      competitorCategories: {
+        angle_grinder: "Einhell/Bosch cordless angle grinder, bare tool",
+        hedge_trimmer: "Comparable Bosch cordless hedge trimmer, ~55-60 cm blade",
+        chainsaw: "Bosch EasyChain 18V cordless chainsaw",
+        leaf_blower: "Bosch / Black+Decker cordless leaf blower 18V",
+      },
+      diffPrice: (a, b) => `price: ${a} → ${b}`,
+      diffOnline: (a, b) => `online: ${a} → ${b}`,
+      diffUntil: (a, b) => `available until: ${a} → ${b}`,
+      diffFrom: (a, b) => `available from: ${a} → ${b}`,
+      totalsMeta: (s, n, c) => `Shown: ${s} · New: ${n} · Changed: ${c}`,
+      countryHeader: (shown, total, numFound, perf, worth) => `${shown} shown / ${total} total in category${numFound != null ? " · numFound=" + numFound : ""} · Performance: ${perf} · Worth it: ${worth}`,
+    },
+    de: {
+      tagline: (n) => `${n} LIDL MÄRKTE IN EUROPA`,
+      darkTheme: "Dunkelmodus", lightTheme: "Hellmodus",
+      lastUpdated: "Letzte Aktualisierung",
+      filterWorth: "Lohnt sich", filterPerf: "Nur Parkside Performance", filterAll: "Alle Parkside-Artikel",
+      onlyChanges: "Nur neu / geändert", showOwned: "Auch Artikel zeigen, die ich schon habe",
+      myTools: (n) => `Meine Werkzeuge (${n} markiert)`,
+      countriesBtn: (n) => n > 0 ? `Länder (${n})` : "Länder (alle)",
+      searchPlaceholder: "Nach Name suchen...",
+      worthExplainer: "„Lohnt sich“ = ein objektives Kriterium: 5 Jahre Garantie (höchste Vertrauensstufe bei Parkside), Teil des X 20 V TEAM Akkusystems (günstig, wenn du schon einen Akku hast), und/oder ein manuell geprüfter Preisvergleich mit vergleichbaren Akku-Werkzeugen von Bosch/Einhell/Black+Decker (ceneje.si, Sept. 2026). Nicht auf Parkside Performance beschränkt.",
+      myToolsHeading: "Meine Werkzeuge — Parkside Performance",
+      myToolsSub: "Hake ab, was du schon besitzt. Abgehakte Werkzeuge werden standardmäßig aus den Empfehlungen oben ausgeblendet, bis du sie wieder abwählst.",
+      countriesHeading: "Länder auswählen",
+      countriesSub: "Zeige nur die ausgewählten Länder. Ist keines ausgewählt, werden alle angezeigt.",
+      selectAll: "Alle auswählen", selectNone: "Auswahl aufheben",
+      noOwnedCatalog: "Noch kein Parkside-Performance-Katalog. Führe scraper.py aus.",
+      noData: "Keine Daten. Führe scraper.py aus, um data.js zu erstellen.",
+      noMatch: "Keine Artikel entsprechen den aktuellen Filtern.",
+      scrapeError: (err) => `Der letzte Abruf ist fehlgeschlagen (${err}). Es werden Daten des letzten erfolgreichen Laufs angezeigt.`,
+      priceUnknown: "Preis unbekannt",
+      noDateInfo: "Kein bestimmtes Datum (dauerhaftes Angebot)",
+      availableRange: (f, u) => `Verfügbar: ${f} – ${u}`,
+      availableUntil: (u) => `Verfügbar bis: ${u}`,
+      availableFrom: (f) => `Verfügbar ab: ${f}`,
+      notCurrentlyListed: "Derzeit nicht verfügbar",
+      currentlyListed: (parts) => `Derzeit verfügbar: ${parts}`,
+      cheapestSuffix: " (am günstigsten)",
+      cheapestHere: (others) => `Hier am günstigsten (anderswo: ${others})`,
+      cheaperIn: (c, price) => `Günstiger in ${c}: ${price}`,
+      badgeNew: "NEU", badgeChanged: "GEÄNDERT", badgeWorth: "LOHNT SICH", badgeCompetitor: "GÜNSTIGER ALS KONKURRENZ", badgePerf: "PERFORMANCE", badgeOwned: "HABE ICH",
+      reasonWarranty5: "5 Jahre Garantie (höchste Vertrauensstufe bei Parkside)",
+      reasonPerformance: "Parkside Performance – bürstenloser Motor",
+      reasonX20v: "Teil des X 20 V TEAM Systems – günstig, wenn du schon einen Akku hast",
+      competitorBox: (label, low, high, sMin, sMax) => `Konkurrenz (${label}): ${low}–${high} € · du sparst hier ~${sMin}–${sMax} €`,
+      competitorCategories: {
+        angle_grinder: "Einhell/Bosch Akku-Winkelschleifer, ohne Akku",
+        hedge_trimmer: "Vergleichbare Bosch Akku-Heckenschere, ~55-60 cm Messerlänge",
+        chainsaw: "Bosch EasyChain 18V Akku-Kettensäge",
+        leaf_blower: "Bosch / Black+Decker Akku-Laubbläser 18V",
+      },
+      diffPrice: (a, b) => `Preis: ${a} → ${b}`,
+      diffOnline: (a, b) => `online: ${a} → ${b}`,
+      diffUntil: (a, b) => `verfügbar bis: ${a} → ${b}`,
+      diffFrom: (a, b) => `verfügbar ab: ${a} → ${b}`,
+      totalsMeta: (s, n, c) => `Angezeigt: ${s} · Neu: ${n} · Geändert: ${c}`,
+      countryHeader: (shown, total, numFound, perf, worth) => `${shown} angezeigt / ${total} insgesamt in Kategorie${numFound != null ? " · numFound=" + numFound : ""} · Performance: ${perf} · Lohnt sich: ${worth}`,
+    },
+    hr: {
+      tagline: (n) => `${n} LIDL TRŽIŠTA U EUROPI`,
+      darkTheme: "Tamna tema", lightTheme: "Svijetla tema",
+      lastUpdated: "Zadnje ažuriranje",
+      filterWorth: "Vrijedi cijene", filterPerf: "Samo Parkside Performance", filterAll: "Svi Parkside artikli",
+      onlyChanges: "Samo novo / promijenjeno", showOwned: "Prikaži i ono što već imam",
+      myTools: (n) => `Moji alati (${n} označeno)`,
+      countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (sve)",
+      searchPlaceholder: "Pretraži po nazivu...",
+      worthExplainer: "„Vrijedi cijene“ = objektivan kriterij: 5-godišnje jamstvo (Parksideova najviša razina povjerenja), dio je sustava baterija X 20 V TEAM (jeftino ako već imaš bateriju), i/ili ručno provjerena usporedba cijena s usporedivim akumulatorskim alatima Bosch/Einhell/Black+Decker (ceneje.si, rujan 2026.). Nije ograničeno na Parkside Performance.",
+      myToolsHeading: "Moji alati — Parkside Performance",
+      myToolsSub: "Označi što već imaš. Označeni alati se prema zadanim postavkama skrivaju iz preporuka iznad, dok ih ponovno ne odznačiš.",
+      countriesHeading: "Odaberi države",
+      countriesSub: "Prikaži samo odabrane države. Ako ništa nije odabrano, prikazuju se sve.",
+      selectAll: "Odaberi sve", selectNone: "Poništi odabir",
+      noOwnedCatalog: "Katalog Parkside Performance alata još ne postoji. Pokreni scraper.py.",
+      noData: "Nema podataka. Pokreni scraper.py za izradu data.js.",
+      noMatch: "Nema artikala koji odgovaraju trenutnim filtrima.",
+      scrapeError: (err) => `Zadnje prikupljanje nije uspjelo (${err}). Prikazani su podaci zadnjeg uspješnog pokretanja.`,
+      priceUnknown: "cijena nepoznata",
+      noDateInfo: "Bez određenog datuma (trajna ponuda)",
+      availableRange: (f, u) => `Dostupno: ${f} – ${u}`,
+      availableUntil: (u) => `Dostupno do: ${u}`,
+      availableFrom: (f) => `Dostupno od: ${f}`,
+      notCurrentlyListed: "Trenutno nije dostupno",
+      currentlyListed: (parts) => `Trenutno dostupno: ${parts}`,
+      cheapestSuffix: " (najjeftinije)",
+      cheapestHere: (others) => `Najjeftinije ovdje (drugdje: ${others})`,
+      cheaperIn: (c, price) => `Jeftinije u ${c}: ${price}`,
+      badgeNew: "NOVO", badgeChanged: "PROMJENA", badgeWorth: "VRIJEDI CIJENE", badgeCompetitor: "JEFTINIJE OD KONKURENCIJE", badgePerf: "PERFORMANCE", badgeOwned: "IMAM",
+      reasonWarranty5: "5-godišnje jamstvo (Parksideova najviša razina povjerenja)",
+      reasonPerformance: "Parkside Performance – motor bez četkica",
+      reasonX20v: "Dio sustava X 20 V TEAM – jeftino ako već imaš bateriju",
+      competitorBox: (label, low, high, sMin, sMax) => `Konkurencija (${label}): ${low}–${high} € · ovdje uštediš ~${sMin}–${sMax} €`,
+      competitorCategories: {
+        angle_grinder: "Einhell/Bosch akumulatorska kutna brusilica, bez baterije",
+        hedge_trimmer: "Usporedive Bosch akumulatorske škare za živicu, ~55-60 cm oštrica",
+        chainsaw: "Bosch EasyChain 18V akumulatorska lančana pila",
+        leaf_blower: "Bosch / Black+Decker akumulatorski puhač lišća 18V",
+      },
+      diffPrice: (a, b) => `cijena: ${a} → ${b}`,
+      diffOnline: (a, b) => `online: ${a} → ${b}`,
+      diffUntil: (a, b) => `dostupno do: ${a} → ${b}`,
+      diffFrom: (a, b) => `dostupno od: ${a} → ${b}`,
+      totalsMeta: (s, n, c) => `Prikazano: ${s} · Novo: ${n} · Promijenjeno: ${c}`,
+      countryHeader: (shown, total, numFound, perf, worth) => `${shown} prikazano / ${total} ukupno u kategoriji${numFound != null ? " · numFound=" + numFound : ""} · Performance: ${perf} · Vrijedi cijene: ${worth}`,
+    },
+  };
+
+  const LANG_KEY = "parkside_lang_v1";
+  function loadLang() {
+    try {
+      const saved = localStorage.getItem(LANG_KEY);
+      if (saved && I18N[saved]) return saved;
+    } catch (e) { /* ni na voljo */ }
+    const nav = (navigator.language || "sl").slice(0, 2).toLowerCase();
+    return I18N[nav] ? nav : "sl";
+  }
+  function saveLang(l) {
+    try { localStorage.setItem(LANG_KEY, l); } catch (e) { /* ni na voljo */ }
+  }
+  let currentLang = loadLang();
+
+  function t() { return I18N[currentLang]; }
+
   const THEME_KEY = "parkside_theme_v1";
   function applyTheme(theme) {
     if (theme === "light" || theme === "dark") {
@@ -488,16 +761,15 @@
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = theme === "dark" || (theme !== "light" && prefersDark);
     document.getElementById("themeIcon").textContent = isDark ? "☀️" : "🌙";
-    document.getElementById("themeLabel").textContent = isDark ? "Svetla tema" : "Temna tema";
+    document.getElementById("themeLabel").textContent = isDark ? t().lightTheme : t().darkTheme;
   }
   function loadTheme() {
     try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
   }
-  function saveTheme(t) {
-    try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* ni na voljo */ }
+  function saveTheme(v) {
+    try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ni na voljo */ }
   }
   let currentTheme = loadTheme();
-  applyTheme(currentTheme);
   document.getElementById("themeToggle").addEventListener("click", () => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDarkNow = currentTheme === "dark" || (currentTheme !== "light" && prefersDark);
@@ -514,23 +786,28 @@
   };
 
   const OWNED_KEY = "parkside_owned_tools_v1";
-
   function loadOwned() {
     try {
       const raw = localStorage.getItem(OWNED_KEY);
       return new Set(raw ? JSON.parse(raw) : []);
-    } catch (e) {
-      return new Set();
-    }
+    } catch (e) { return new Set(); }
   }
-
   function saveOwned(set) {
-    try {
-      localStorage.setItem(OWNED_KEY, JSON.stringify(Array.from(set)));
-    } catch (e) { /* ce localStorage ni na voljo, samo ne shranimo */ }
+    try { localStorage.setItem(OWNED_KEY, JSON.stringify(Array.from(set))); } catch (e) { /* ni na voljo */ }
   }
-
   const owned = loadOwned();
+
+  const COUNTRIES_KEY = "parkside_countries_v1";
+  function loadSelectedCountries() {
+    try {
+      const raw = localStorage.getItem(COUNTRIES_KEY);
+      return new Set(raw ? JSON.parse(raw) : []);
+    } catch (e) { return new Set(); }
+  }
+  function saveSelectedCountries(set) {
+    try { localStorage.setItem(COUNTRIES_KEY, JSON.stringify(Array.from(set))); } catch (e) { /* ni na voljo */ }
+  }
+  const selectedCountries = loadSelectedCountries();
 
   function productKey(p) {
     return p.key || p.ean || ("id:" + p.id);
@@ -542,12 +819,14 @@
   const checklistPanel = document.getElementById("checklistPanel");
   const checklistList = document.getElementById("checklistList");
   const ownedCountEl = document.getElementById("ownedCount");
+  const countryPanel = document.getElementById("countryPanel");
+  const countryGrid = document.getElementById("countryGrid");
 
   function fmtDate(iso) {
     if (!iso) return null;
     const d = new Date(iso);
     if (isNaN(d)) return iso;
-    return d.toLocaleDateString("sl-SI", { day: "2-digit", month: "2-digit", year: "numeric" });
+    return d.toLocaleDateString(LOCALES[currentLang] || "sl-SI", { day: "2-digit", month: "2-digit", year: "numeric" });
   }
 
   function availabilityText(p) {
@@ -555,15 +834,19 @@
     if (p.availableFrom || p.availableUntil) {
       const from = fmtDate(p.availableFrom);
       const until = fmtDate(p.availableUntil);
-      if (from && until) return `Na voljo: ${from} – ${until}`;
-      if (until) return `Na voljo do: ${until}`;
-      return `Na voljo od: ${from}`;
+      if (from && until) return t().availableRange(from, until);
+      if (until) return t().availableUntil(until);
+      return t().availableFrom(from);
     }
-    return "Brez določenega datuma (stalna ponudba)";
+    return t().noDateInfo;
   }
 
   function fmtPrice(l) {
     return l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : "?";
+  }
+
+  function countryName(code) {
+    return (COUNTRY_NAMES[currentLang] && COUNTRY_NAMES[currentLang][code]) || code.toUpperCase();
   }
 
   function crossCountryNote(p, countryCode, catalogByKey) {
@@ -579,19 +862,26 @@
     if (cheapest.country === countryCode) {
       const others = sorted.filter(l => l.country !== countryCode)
         .map(l => l.country.toUpperCase() + " " + fmtPrice(l)).join(", ");
-      return `Najcenejše tu (drugje: ${others})`;
+      return t().cheapestHere(others);
     }
-    return `Ceneje v ${cheapest.country.toUpperCase()}: ${fmtPrice(cheapest)}`;
+    return t().cheaperIn(cheapest.country.toUpperCase(), fmtPrice(cheapest));
   }
 
   function changeNote(p) {
     if (p.status !== "changed" || !p.previous) return "";
     const parts = [];
-    if ("price" in p.previous) parts.push(`cena: ${p.previous.price} → ${p.price}`);
-    if ("online" in p.previous) parts.push(`online: ${p.previous.online} → ${p.online}`);
-    if ("availableUntil" in p.previous) parts.push(`na voljo do: ${fmtDate(p.previous.availableUntil) || "–"} → ${fmtDate(p.availableUntil) || "–"}`);
-    if ("availableFrom" in p.previous) parts.push(`na voljo od: ${fmtDate(p.previous.availableFrom) || "–"} → ${fmtDate(p.availableFrom) || "–"}`);
+    if ("price" in p.previous) parts.push(t().diffPrice(p.previous.price, p.price));
+    if ("online" in p.previous) parts.push(t().diffOnline(p.previous.online, p.online));
+    if ("availableUntil" in p.previous) parts.push(t().diffUntil(fmtDate(p.previous.availableUntil) || "–", fmtDate(p.availableUntil) || "–"));
+    if ("availableFrom" in p.previous) parts.push(t().diffFrom(fmtDate(p.previous.availableFrom) || "–", fmtDate(p.availableFrom) || "–"));
     return parts.join(", ");
+  }
+
+  function reasonText(r) {
+    if (r.type === "warranty5") return t().reasonWarranty5;
+    if (r.type === "performance") return t().reasonPerformance;
+    if (r.type === "x20v") return t().reasonX20v;
+    return null;
   }
 
   function productMatches(p) {
@@ -610,9 +900,10 @@
     const data = window.__PARKSIDE_DATA__;
     const catalog = (data && data.performanceCatalog) || [];
     ownedCountEl.textContent = owned.size;
+    document.getElementById("toggleChecklist").innerHTML = t().myTools(owned.size).replace(String(owned.size), `<span id="ownedCount">${owned.size}</span>`);
 
     if (catalog.length === 0) {
-      checklistList.innerHTML = '<p class="empty-note">Kataloga Parkside Performance orodij še ni. Poženi scraper.py.</p>';
+      checklistList.innerHTML = `<p class="empty-note">${t().noOwnedCatalog}</p>`;
       return;
     }
 
@@ -632,21 +923,21 @@
         const distinctPrices = new Set(listings.map(l => l.price)).size;
         const showCheapest = listings.length > 1 && distinctPrices > 1;
         const parts = listings.map((l, i) => {
-          const priceText = l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : "cena ni znana";
+          const priceText = l.price != null ? l.price.toFixed(2) + " " + (l.currency === "EUR" ? "€" : (l.currency || "")) : t().priceUnknown;
           const isCheapest = showCheapest && i === 0;
-          const text = `${l.country.toUpperCase()} ${priceText}${isCheapest ? " (najceneje)" : ""}`;
+          const text = `${l.country.toUpperCase()} ${priceText}${isCheapest ? t().cheapestSuffix : ""}`;
           return isCheapest ? `<strong style="color:var(--new)">${text}</strong>` : text;
         });
-        status = `<span class="status live">Trenutno na voljo: ${parts.join(", ")}</span>`;
+        status = `<span class="status live">${t().currentlyListed(parts.join(", "))}</span>`;
       } else {
-        status = `<span class="status">Trenutno ni na voljo</span>`;
+        status = `<span class="status">${t().notCurrentlyListed}</span>`;
       }
 
       row.innerHTML = `
         <input type="checkbox" ${isOwned ? "checked" : ""} />
         ${entry.image ? `<img src="${entry.image}" alt="" loading="lazy" />` : ""}
         <div class="info">
-          <div class="title">${entry.title || "(brez imena)"}</div>
+          <div class="title">${entry.title || "(?)"}</div>
           ${status}
         </div>
       `;
@@ -663,14 +954,36 @@
     });
   }
 
+  function renderCountryPicker() {
+    const data = window.__PARKSIDE_DATA__;
+    const codes = data ? Object.keys(data.countries) : [];
+    document.getElementById("toggleCountries").textContent = t().countriesBtn(selectedCountries.size);
+
+    countryGrid.innerHTML = "";
+    codes.forEach(code => {
+      const row = document.createElement("label");
+      row.className = "country-row";
+      const checked = selectedCountries.has(code);
+      row.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""} data-code="${code}" /> <span>${countryName(code)}</span>`;
+      row.querySelector("input").addEventListener("change", (e) => {
+        if (e.target.checked) selectedCountries.add(code);
+        else selectedCountries.delete(code);
+        saveSelectedCountries(selectedCountries);
+        renderCountryPicker();
+        render();
+      });
+      countryGrid.appendChild(row);
+    });
+  }
+
   function render() {
     const data = window.__PARKSIDE_DATA__;
     if (!data) {
-      app.innerHTML = '<p class="empty-note">Podatkov ni. Poženi scraper.py, da ustvariš data.js.</p>';
+      app.innerHTML = `<p class="empty-note">${t().noData}</p>`;
       return;
     }
 
-    generatedAtEl.textContent = "Zadnja osvežitev: " + new Date(data.generatedAt).toLocaleString("sl-SI");
+    generatedAtEl.textContent = t().lastUpdated + ": " + new Date(data.generatedAt).toLocaleString(LOCALES[currentLang] || "sl-SI");
 
     const catalogByKey = {};
     (data.performanceCatalog || []).forEach(entry => { catalogByKey[entry.key] = entry; });
@@ -682,6 +995,8 @@
     app.innerHTML = "";
 
     Object.entries(data.countries).forEach(([code, country]) => {
+      if (selectedCountries.size > 0 && !selectedCountries.has(code)) return;
+
       const section = document.createElement("section");
       section.className = "country-section";
 
@@ -694,20 +1009,20 @@
       const h2 = document.createElement("h2");
       const perfTotal = allProducts.filter(p => p.isPerformance).length;
       const worthTotal = allProducts.filter(p => p.worthIt).length;
-      h2.innerHTML = `${country.label} <span class="count">(${shown.length} prikazanih / ${allProducts.length} skupaj v kategoriji${country.numFound != null ? " · numFound=" + country.numFound : ""} · Performance: ${perfTotal} · Vredno cene: ${worthTotal})</span>`;
+      h2.innerHTML = `${countryName(code)} <span class="count">(${t().countryHeader(shown.length, allProducts.length, country.numFound, perfTotal, worthTotal)})</span>`;
       section.appendChild(h2);
 
       if (country.error) {
         const err = document.createElement("div");
         err.className = "country-error";
-        err.textContent = `Zadnji scrape ni uspel (${country.error}). Prikazani so podatki prejšnjega uspešnega zagona.`;
+        err.textContent = t().scrapeError(country.error);
         section.appendChild(err);
       }
 
       if (shown.length === 0) {
         const empty = document.createElement("p");
         empty.className = "empty-note";
-        empty.textContent = "Ni izdelkov, ki bi ustrezali trenutnim filtrom.";
+        empty.textContent = t().noMatch;
         section.appendChild(empty);
       } else {
         const grid = document.createElement("div");
@@ -718,25 +1033,35 @@
           card.className = "card" + (p.isPerformance ? " performance" : "");
 
           const badges = [];
-          if (p.status === "new") badges.push('<span class="badge new">NOVO</span>');
-          if (p.status === "changed") badges.push('<span class="badge changed">SPREMEMBA</span>');
-          if (p.worthIt) badges.push('<span class="badge worth">VREDNO CENE</span>');
-          if (p.competitorReference) badges.push('<span class="badge competitor">CENEJE OD KONKURENCE</span>');
-          if (p.isPerformance) badges.push('<span class="badge perf">PERFORMANCE</span>');
-          if (owned.has(productKey(p))) badges.push('<span class="badge owned">IMAM</span>');
+          if (p.status === "new") badges.push(`<span class="badge new">${t().badgeNew}</span>`);
+          if (p.status === "changed") badges.push(`<span class="badge changed">${t().badgeChanged}</span>`);
+          if (p.worthIt) badges.push(`<span class="badge worth">${t().badgeWorth}</span>`);
+          if (p.competitorReference) badges.push(`<span class="badge competitor">${t().badgeCompetitor}</span>`);
+          if (p.isPerformance) badges.push(`<span class="badge perf">${t().badgePerf}</span>`);
+          if (owned.has(productKey(p))) badges.push(`<span class="badge owned">${t().badgeOwned}</span>`);
 
           const note = changeNote(p);
           const priceNote = crossCountryNote(p, code, catalogByKey);
-          const otherReasons = (p.worthItReasons || []).filter(r => !r.startsWith("Cenejše od konkurence"));
+          const reasonLines = (p.worthItReasons || [])
+            .filter(r => r.type !== "competitor")
+            .map(reasonText)
+            .filter(Boolean);
+
+          let competitorBoxHtml = "";
+          if (p.competitorReference) {
+            const cr = p.competitorReference;
+            const label = t().competitorCategories[cr.categoryKey] || cr.categoryKey;
+            competitorBoxHtml = `<div class="competitor-box">${t().competitorBox(label, cr.competitorLow, cr.competitorHigh, cr.savingsMin.toFixed(0), cr.savingsMax.toFixed(0))}</div>`;
+          }
 
           card.innerHTML = `
             <div class="badges">${badges.join("")}</div>
             ${p.image ? `<img src="${p.image}" alt="" loading="lazy" />` : ""}
-            <h3><a href="${p.url || "#"}" target="_blank" rel="noopener">${p.title || "(brez imena)"}</a></h3>
+            <h3><a href="${p.url || "#"}" target="_blank" rel="noopener">${p.title || "?"}</a></h3>
             <div class="category">${p.category || ""}</div>
-            <div class="price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : "cena ni znana"}</div>
-            ${p.competitorReference ? `<div class="competitor-box">Konkurenca (${p.competitorReference.note}): <strong>${p.competitorReference.competitorLow}–${p.competitorReference.competitorHigh} €</strong> · tukaj prihraniš ~${p.competitorReference.savingsMin.toFixed(0)}–${p.competitorReference.savingsMax.toFixed(0)} €</div>` : ""}
-            ${otherReasons.length ? `<div class="worth-reasons">${otherReasons.join(" · ")}</div>` : ""}
+            <div class="price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : t().priceUnknown}</div>
+            ${competitorBoxHtml}
+            ${reasonLines.length ? `<div class="worth-reasons">${reasonLines.join(" · ")}</div>` : ""}
             ${priceNote ? `<div class="pricenote">${priceNote}</div>` : ""}
             <div class="avail">
               <strong>${availabilityText(p)}</strong>
@@ -752,8 +1077,41 @@
       app.appendChild(section);
     });
 
-    totalsMeta.textContent = `Prikazanih: ${totalShown} · Novih: ${totalNew} · Spremenjenih: ${totalChanged}`;
+    totalsMeta.textContent = t().totalsMeta(totalShown, totalNew, totalChanged);
   }
+
+  function applyStaticText() {
+    document.getElementById("tagline").textContent = t().tagline(window.__PARKSIDE_DATA__ ? Object.keys(window.__PARKSIDE_DATA__.countries).length : 28);
+    document.getElementById("filterWorth").textContent = t().filterWorth;
+    document.getElementById("filterPerf").textContent = t().filterPerf;
+    document.getElementById("filterAll").textContent = t().filterAll;
+    document.querySelector('[data-t="onlyChanges"]').textContent = t().onlyChanges;
+    document.querySelector('[data-t="showOwned"]').textContent = t().showOwned;
+    document.getElementById("search").placeholder = t().searchPlaceholder;
+    document.getElementById("worthExplainer").textContent = t().worthExplainer;
+    document.getElementById("myToolsHeading").textContent = t().myToolsHeading;
+    document.getElementById("myToolsSub").textContent = t().myToolsSub;
+    document.getElementById("countriesHeading").textContent = t().countriesHeading;
+    document.getElementById("countriesSub").textContent = t().countriesSub;
+    document.getElementById("selectAllCountries").textContent = t().selectAll;
+    document.getElementById("selectNoneCountries").textContent = t().selectNone;
+    document.getElementById("themeLabel").textContent = t().darkTheme;
+    document.documentElement.lang = currentLang;
+    applyTheme(currentTheme);
+  }
+
+  function setLang(lang) {
+    if (!I18N[lang]) return;
+    currentLang = lang;
+    saveLang(lang);
+    document.getElementById("langSelect").value = lang;
+    applyStaticText();
+    renderChecklist();
+    renderCountryPicker();
+    render();
+  }
+
+  document.getElementById("langSelect").addEventListener("change", (e) => setLang(e.target.value));
 
   const filterButtons = {
     worth: document.getElementById("filterWorth"),
@@ -781,9 +1139,31 @@
   });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
+    if (!checklistPanel.hidden) countryPanel.hidden = true;
+  });
+  document.getElementById("toggleCountries").addEventListener("click", () => {
+    countryPanel.hidden = !countryPanel.hidden;
+    if (!countryPanel.hidden) checklistPanel.hidden = true;
+  });
+  document.getElementById("selectAllCountries").addEventListener("click", () => {
+    const data = window.__PARKSIDE_DATA__;
+    if (!data) return;
+    Object.keys(data.countries).forEach(c => selectedCountries.add(c));
+    saveSelectedCountries(selectedCountries);
+    renderCountryPicker();
+    render();
+  });
+  document.getElementById("selectNoneCountries").addEventListener("click", () => {
+    selectedCountries.clear();
+    saveSelectedCountries(selectedCountries);
+    renderCountryPicker();
+    render();
   });
 
+  document.getElementById("langSelect").value = currentLang;
+  applyStaticText();
   renderChecklist();
+  renderCountryPicker();
   render();
 })();
 </script>
