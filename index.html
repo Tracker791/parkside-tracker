@@ -423,6 +423,16 @@
     cursor: pointer;
   }
   .country-picker-actions button:hover { border-color: var(--ps-red); }
+  .country-search {
+    width: 100%;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
   .country-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -526,6 +536,7 @@
       <button id="selectAllCountries">Izberi vse</button>
       <button id="selectNoneCountries">Počisti izbiro</button>
     </div>
+    <input type="text" id="countrySearch" class="country-search" placeholder="Iskanje držav..." />
     <div class="country-grid" id="countryGrid"></div>
   </div>
 </div>
@@ -554,6 +565,7 @@
       myTools: (n) => `Moja orodja (${n} odkljukanih)`,
       countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (vse)",
       searchPlaceholder: "Iskanje po imenu...",
+      countrySearchPlaceholder: "Iskanje držav...",
       worthExplainer: "„Vredno cene“ = objektivno merilo: 5-letna garancija (Parkside najbolj zaupa temu izdelku), del baterijskega sistema X 20 V TEAM (poceni, če že imaš baterijo), in/ali ročno preverjena primerjava s ceno primerljivega akumulatorskega orodja znamk Bosch/Einhell/Black+Decker (ceneje.si, sept. 2026). Ni omejeno na Parkside Performance.",
       myToolsHeading: "Moja orodja — Parkside Performance",
       myToolsSub: "Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.",
@@ -601,6 +613,7 @@
       myTools: (n) => `My tools (${n} checked)`,
       countriesBtn: (n) => n > 0 ? `Countries (${n})` : "Countries (all)",
       searchPlaceholder: "Search by name...",
+      countrySearchPlaceholder: "Search countries...",
       worthExplainer: "“Worth it” = an objective rule: a 5-year warranty (Parkside's highest confidence tier), being part of the X 20 V TEAM battery system (cheap if you already own a battery), and/or a manually verified price comparison against comparable Bosch/Einhell/Black+Decker cordless tools (ceneje.si, Sept 2026). Not limited to Parkside Performance.",
       myToolsHeading: "My tools — Parkside Performance",
       myToolsSub: "Check off what you already own. Checked tools are hidden from the recommendations above by default, until you uncheck them.",
@@ -648,6 +661,7 @@
       myTools: (n) => `Meine Werkzeuge (${n} markiert)`,
       countriesBtn: (n) => n > 0 ? `Länder (${n})` : "Länder (alle)",
       searchPlaceholder: "Nach Name suchen...",
+      countrySearchPlaceholder: "Länder suchen...",
       worthExplainer: "„Lohnt sich“ = ein objektives Kriterium: 5 Jahre Garantie (höchste Vertrauensstufe bei Parkside), Teil des X 20 V TEAM Akkusystems (günstig, wenn du schon einen Akku hast), und/oder ein manuell geprüfter Preisvergleich mit vergleichbaren Akku-Werkzeugen von Bosch/Einhell/Black+Decker (ceneje.si, Sept. 2026). Nicht auf Parkside Performance beschränkt.",
       myToolsHeading: "Meine Werkzeuge — Parkside Performance",
       myToolsSub: "Hake ab, was du schon besitzt. Abgehakte Werkzeuge werden standardmäßig aus den Empfehlungen oben ausgeblendet, bis du sie wieder abwählst.",
@@ -695,6 +709,7 @@
       myTools: (n) => `Moji alati (${n} označeno)`,
       countriesBtn: (n) => n > 0 ? `Države (${n})` : "Države (sve)",
       searchPlaceholder: "Pretraži po nazivu...",
+      countrySearchPlaceholder: "Pretraži države...",
       worthExplainer: "„Vrijedi cijene“ = objektivan kriterij: 5-godišnje jamstvo (Parksideova najviša razina povjerenja), dio je sustava baterija X 20 V TEAM (jeftino ako već imaš bateriju), i/ili ručno provjerena usporedba cijena s usporedivim akumulatorskim alatima Bosch/Einhell/Black+Decker (ceneje.si, rujan 2026.). Nije ograničeno na Parkside Performance.",
       myToolsHeading: "Moji alati — Parkside Performance",
       myToolsSub: "Označi što već imaš. Označeni alati se prema zadanim postavkama skrivaju iz preporuka iznad, dok ih ponovno ne odznačiš.",
@@ -954,12 +969,22 @@
     });
   }
 
+  let countryQuery = "";
+
   function renderCountryPicker() {
     const data = window.__PARKSIDE_DATA__;
-    const codes = data ? Object.keys(data.countries) : [];
+    let codes = data ? Object.keys(data.countries) : [];
     document.getElementById("toggleCountries").textContent = t().countriesBtn(selectedCountries.size);
 
+    codes = codes
+      .filter(code => !countryQuery || countryName(code).toLowerCase().includes(countryQuery))
+      .sort((a, b) => countryName(a).localeCompare(countryName(b)));
+
     countryGrid.innerHTML = "";
+    if (codes.length === 0) {
+      countryGrid.innerHTML = `<p class="empty-note">${t().noMatch}</p>`;
+      return;
+    }
     codes.forEach(code => {
       const row = document.createElement("label");
       row.className = "country-row";
@@ -1088,6 +1113,7 @@
     document.querySelector('[data-t="onlyChanges"]').textContent = t().onlyChanges;
     document.querySelector('[data-t="showOwned"]').textContent = t().showOwned;
     document.getElementById("search").placeholder = t().searchPlaceholder;
+    document.getElementById("countrySearch").placeholder = t().countrySearchPlaceholder;
     document.getElementById("worthExplainer").textContent = t().worthExplainer;
     document.getElementById("myToolsHeading").textContent = t().myToolsHeading;
     document.getElementById("myToolsSub").textContent = t().myToolsSub;
@@ -1158,6 +1184,10 @@
     saveSelectedCountries(selectedCountries);
     renderCountryPicker();
     render();
+  });
+  document.getElementById("countrySearch").addEventListener("input", (e) => {
+    countryQuery = e.target.value.trim().toLowerCase();
+    renderCountryPicker();
   });
 
   document.getElementById("langSelect").value = currentLang;
