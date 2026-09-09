@@ -1155,7 +1155,7 @@
   function saveTheme(v) {
     try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ni na voljo */ }
   }
-  let currentTheme = loadTheme();
+  let currentTheme = loadTheme() || "dark";
   document.getElementById("themeToggle").addEventListener("click", () => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDarkNow = currentTheme === "dark" || (currentTheme !== "light" && prefersDark);
