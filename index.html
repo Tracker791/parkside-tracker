@@ -2892,7 +2892,6 @@
   }
 
   function crossCountryNote(p, countryCode, catalogByKey) {
-    if (!p.isPerformance) return "";
     const entry = catalogByKey[productKey(p)];
     const allListings = entry && entry.currentListings;
     if (!allListings) return "";
@@ -3219,8 +3218,24 @@
 
     generatedAtEl.textContent = t().lastUpdated + ": " + new Date(data.generatedAt).toLocaleString(LOCALES[currentLang] || "sl-SI");
 
+    // Primerjava cen med drzavami (crossCountryNote) mora zajeti VSE
+    // sledene izdelke, ne le Parkside Performance (data.performanceCatalog
+    // hrani samo Performance linijo - namenoma ozji nabor za panel "Moja
+    // orodja"). Zato tu iz podatkov vseh drzav zgradimo lasten indeks po
+    // EAN/kljucu izdelka, ki krije popolnoma vse artikle.
     const catalogByKey = {};
-    (data.performanceCatalog || []).forEach(entry => { catalogByKey[entry.key] = entry; });
+    Object.entries(data.countries).forEach(([code, country]) => {
+      (country.products || []).forEach(p => {
+        const key = productKey(p);
+        if (!catalogByKey[key]) catalogByKey[key] = { key, currentListings: [] };
+        catalogByKey[key].currentListings.push({
+          country: code,
+          price: p.price,
+          priceEur: p.priceEur,
+          currency: p.currency,
+        });
+      });
+    });
 
     let totalShown = 0;
     let totalNew = 0;
