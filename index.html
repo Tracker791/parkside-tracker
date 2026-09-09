@@ -1268,6 +1268,19 @@
     return `<div class="price-converted">≈ ${symbol}${amount.toFixed(2)}</div>`;
   }
 
+  // Kot fmtPrice(), a v oklepaju doda ceno pretvorjeno v valuto, ki ustreza
+  // izbranemu jeziku vmesnika (enaka logika kot convertedPriceHtml) - da je
+  // primerjavo med drzavami z razlicnimi valutami lazje razumeti na prvi pogled.
+  function fmtPriceWithConversion(l) {
+    const base = fmtPrice(l);
+    if (l.priceEur == null) return base;
+    const targetCur = DISPLAY_CURRENCY[currentLang] || "EUR";
+    if (l.currency === targetCur) return base;
+    const amount = l.priceEur * (EUR_TO[targetCur] != null ? EUR_TO[targetCur] : 1);
+    const symbol = CURRENCY_SYMBOL[targetCur] || targetCur;
+    return `${base} (≈${symbol}${amount.toFixed(2)})`;
+  }
+
   function countryName(code) {
     return (COUNTRY_NAMES[currentLang] && COUNTRY_NAMES[currentLang][code]) || code.toUpperCase();
   }
@@ -1282,8 +1295,13 @@
   function crossCountryNote(p, countryCode, catalogByKey) {
     if (!p.isPerformance) return "";
     const entry = catalogByKey[productKey(p)];
-    const listings = entry && entry.currentListings;
-    if (!listings || listings.length < 2) return "";
+    const allListings = entry && entry.currentListings;
+    if (!allListings) return "";
+    // Primerjaj cene samo med drzavami, ki jih uporabnik trenutno spremlja
+    // (izbirnik drzav) - drugace bi "ceneje v X" kazalo na drzavo, ki jo je
+    // uporabnik namenoma izklopil.
+    const listings = allListings.filter(l => selectedCountries.has(l.country));
+    if (listings.length < 2) return "";
     if (new Set(listings.map(comparablePrice)).size < 2) return "";
 
     const sorted = listings.slice().sort((a, b) => (comparablePrice(a) != null ? comparablePrice(a) : Infinity) - (comparablePrice(b) != null ? comparablePrice(b) : Infinity));
@@ -1291,10 +1309,10 @@
 
     if (cheapest.country === countryCode) {
       const others = sorted.filter(l => l.country !== countryCode)
-        .map(l => l.country.toUpperCase() + " " + fmtPrice(l)).join(", ");
+        .map(l => l.country.toUpperCase() + " " + fmtPriceWithConversion(l)).join(", ");
       return t().cheapestHere(others);
     }
-    return t().cheaperIn(cheapest.country.toUpperCase(), fmtPrice(cheapest));
+    return t().cheaperIn(cheapest.country.toUpperCase(), fmtPriceWithConversion(cheapest));
   }
 
   function changeNote(p) {
