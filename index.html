@@ -708,9 +708,9 @@
     <div class="sidebar-divider"></div>
     <div class="sidebar-section-title">Filter</div>
     <select class="filter-select" id="filterSelect">
-      <option id="filterWorth" value="worth" selected>Vredno cene</option>
+      <option id="filterWorth" value="worth">Vredno cene</option>
       <option id="filterPerf" value="performance">Samo Parkside Performance</option>
-      <option id="filterAll" value="all">Vsi Parkside izdelki</option>
+      <option id="filterAll" value="all" selected>Vsi Parkside izdelki</option>
     </select>
     <label class="sidebar-check"><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
     <label class="sidebar-check"><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
@@ -1165,7 +1165,7 @@
   });
 
   const state = {
-    filterMode: "worth", // "worth" | "performance" | "all"
+    filterMode: "all", // "worth" | "performance" | "all"
     onlyChanges: false,
     showOwned: false,
     query: "",
