@@ -105,7 +105,6 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    overflow: hidden;
   }
   header::before {
     content: "";
@@ -133,7 +132,7 @@
   header p#generatedAt { margin: 2px 0 0; opacity: .75; font-size: 12.5px; }
   header .spacer { flex: 1; }
   header .header-controls { display: flex; align-items: center; gap: 8px; z-index: 1; }
-  .theme-toggle, .lang-select {
+  .theme-toggle, .lang-picker-btn {
     z-index: 1;
     background: rgba(255,255,255,.08);
     border: 1px solid rgba(255,255,255,.18);
@@ -146,15 +145,41 @@
     align-items: center;
     gap: 6px;
     transition: background .15s ease;
-  }
-  .lang-select {
-    padding: 7px 10px;
-    appearance: none;
-    -webkit-appearance: none;
     font-family: inherit;
   }
-  .theme-toggle:hover, .lang-select:hover { background: rgba(255,255,255,.16); }
-  .lang-select option { background: var(--ps-black); color: #fff; }
+  .theme-toggle:hover, .lang-picker-btn:hover { background: rgba(255,255,255,.16); }
+
+  .lang-picker { position: relative; z-index: 2; }
+  .lang-picker-btn { padding: 7px 10px; }
+  .lang-caret { font-size: 9px; opacity: .7; margin-left: 1px; }
+  .flag-icon { flex: none; width: 18px; height: 13px; border-radius: 2px; overflow: hidden; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+  .flag-icon svg { display: block; width: 100%; height: 100%; }
+  .lang-picker-list {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--ps-black);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    min-width: 130px;
+  }
+  .lang-picker-list[hidden] { display: none; }
+  .lang-picker-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    color: #d7d8db;
+    cursor: pointer;
+  }
+  .lang-picker-list li:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .lang-picker-list li.active { background: var(--ps-red); color: #fff; }
 
   .body-row {
     display: flex;
@@ -261,6 +286,7 @@
     header .meta-col { order: 3; flex-basis: 100%; }
     header p#generatedAt { opacity: .6; }
     .logo-text .l1 { font-size: 22px; }
+    .lang-picker-list { left: 0; right: auto; }
 
     .body-row { flex-direction: column; }
     .sidebar {
@@ -685,12 +711,14 @@
   </div>
   <div class="spacer"></div>
   <div class="header-controls">
-    <select class="lang-select" id="langSelect">
-      <option value="sl">🇸🇮 SL</option>
-      <option value="en">🇬🇧 EN</option>
-      <option value="de">🇩🇪 DE</option>
-      <option value="hr">🇭🇷 HR</option>
-    </select>
+    <div class="lang-picker" id="langPicker">
+      <button class="lang-picker-btn" id="langPickerBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="flag-icon" id="langPickerFlag"></span>
+        <span id="langPickerCode">SL</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-picker-list" id="langPickerList" role="listbox" hidden></ul>
+    </div>
     <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
   </div>
 </header>
@@ -1136,6 +1164,23 @@
   let currentLang = loadLang();
 
   function t() { return I18N[currentLang]; }
+
+  // Prave zastavice kot vgrajen SVG namesto emoji znakov - emoji zastavice
+  // se na precej platform (npr. brez posodobljene "Segoe UI Emoji" na
+  // Windows, marsikje na Linuxu) izrisejo samo kot navadno besedilo brez
+  // slike, zato tu ne moremo zaupati fontu vsakega obiskovalca.
+  const FLAG_SVG = {
+    sl: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#005ce6"/><rect y="9.33" width="20" height="4.67" fill="#e30d1a"/></svg>`,
+    en: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#00247d"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="2.8"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#cf142b" stroke-width="1.2"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4.6"/><path d="M10,0 V14 M0,7 H20" stroke="#cf142b" stroke-width="2.6"/></svg>`,
+    de: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>`,
+    hr: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#ff0000"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#171796"/></svg>`,
+  };
+  const LANGS = [
+    { code: "sl", label: "SL" },
+    { code: "en", label: "EN" },
+    { code: "de", label: "DE" },
+    { code: "hr", label: "HR" },
+  ];
 
   const THEME_KEY = "parkside_theme_v1";
   function applyTheme(theme) {
@@ -1773,7 +1818,7 @@
     if (!I18N[lang]) return;
     currentLang = lang;
     saveLang(lang);
-    document.getElementById("langSelect").value = lang;
+    updateLangPicker(lang);
     applyStaticText();
     renderChecklist();
     renderCountryPicker();
@@ -1781,7 +1826,49 @@
     if (lastStoresShown) renderStoresList(lastStoresShown);
   }
 
-  document.getElementById("langSelect").addEventListener("change", (e) => setLang(e.target.value));
+  const langPicker = document.getElementById("langPicker");
+  const langPickerBtn = document.getElementById("langPickerBtn");
+  const langPickerList = document.getElementById("langPickerList");
+  const langPickerFlag = document.getElementById("langPickerFlag");
+  const langPickerCode = document.getElementById("langPickerCode");
+
+  langPickerList.innerHTML = LANGS.map(l => `
+    <li role="option" data-lang="${l.code}">
+      <span class="flag-icon">${FLAG_SVG[l.code]}</span>
+      <span>${l.label}</span>
+    </li>
+  `).join("");
+
+  function updateLangPicker(lang) {
+    const entry = LANGS.find(l => l.code === lang) || LANGS[0];
+    langPickerFlag.innerHTML = FLAG_SVG[entry.code];
+    langPickerCode.textContent = entry.label;
+    langPickerList.querySelectorAll("li").forEach(li => li.classList.toggle("active", li.dataset.lang === lang));
+  }
+
+  function closeLangPicker() {
+    langPickerList.hidden = true;
+    langPickerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  langPickerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const willOpen = langPickerList.hidden;
+    langPickerList.hidden = !willOpen;
+    langPickerBtn.setAttribute("aria-expanded", String(willOpen));
+  });
+  langPickerList.addEventListener("click", (e) => {
+    const li = e.target.closest("li[data-lang]");
+    if (!li) return;
+    setLang(li.dataset.lang);
+    closeLangPicker();
+  });
+  document.addEventListener("click", (e) => {
+    if (!langPicker.contains(e.target)) closeLangPicker();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLangPicker();
+  });
 
   document.getElementById("filterSelect").addEventListener("change", (e) => {
     state.filterMode = e.target.value;
@@ -1840,7 +1927,7 @@
     renderCountryPicker();
   });
 
-  document.getElementById("langSelect").value = currentLang;
+  updateLangPicker(currentLang);
   applyStaticText();
   renderChecklist();
   renderCountryPicker();
