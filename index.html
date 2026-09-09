@@ -521,6 +521,58 @@
   .country-row:hover { background: var(--surface-2); }
   .country-row input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--ps-red); }
 
+  .help-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .help-section-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--surface-2);
+  }
+  .help-section-item .help-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+  .help-section-item .help-body {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .help-changelog-heading {
+    font-size: 16px;
+    margin: 6px 0 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .changelog-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 12.5px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .changelog-item:last-child { border-bottom: none; }
+  .changelog-item .cl-version { font-weight: 700; color: var(--ps-red); flex: none; }
+  .changelog-item .cl-date { color: var(--muted); flex: none; font-size: 11.5px; }
+  .changelog-item .cl-note { color: var(--text); }
+
   .stores-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .stores-controls button {
     font-size: 13px;
@@ -652,6 +704,7 @@
     <button class="sidebar-item" id="toggleChecklist"><span class="sidebar-icon">🛠️</span><span id="toggleChecklistLabel">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</span></button>
     <button class="sidebar-item" id="toggleCountries"><span class="sidebar-icon">🌍</span><span id="toggleCountriesLabel">Države (0)</span></button>
     <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
+    <button class="sidebar-item" id="toggleHelp"><span class="sidebar-icon">📖</span><span id="toggleHelpLabel" data-t="helpNavLabel">Navodila</span></button>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section-title">Filter</div>
     <select class="filter-select" id="filterSelect">
@@ -704,6 +757,16 @@
       </div>
     </div>
 
+    <div class="side-panel" id="helpPanel" hidden>
+      <div class="side-panel-box">
+        <h2 id="helpHeading">Navodila za uporabo</h2>
+        <div class="sub" id="helpVersion">Različica 1.3.0</div>
+        <div class="help-sections" id="helpSections"></div>
+        <h3 class="help-changelog-heading" id="changelogHeading">Zgodovina različic</h3>
+        <div class="changelog-list" id="changelogList"></div>
+      </div>
+    </div>
+
     <main id="app"></main>
   </div>
 </div>
@@ -737,6 +800,24 @@
       footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
       toolbarStores: "Trgovine v bližini",
       navOverview: "Pregled",
+      helpNavLabel: "Navodila",
+      helpHeading: "Navodila za uporabo",
+      helpVersion: (v) => `Različica ${v}`,
+      changelogHeading: "Zgodovina različic",
+      helpSections: [
+        { icon: "🎯", title: "Filter", body: "Izberi med „Vredno cene“ (priporočena orodja po objektivnih merilih), „Samo Parkside Performance“ ali „Vsi Parkside izdelki“." },
+        { icon: "🛠️", title: "Moja orodja", body: "Odkljukaj orodja, ki jih že imaš – samodejno se skrijejo iz priporočil, dokler jih ne odkljukaš nazaj." },
+        { icon: "🌍", title: "Države", body: "Izberi, katere od 28 evropskih trgovin Lidl želiš spremljati. Na voljo je tudi iskalnik držav." },
+        { icon: "🏬", title: "Trgovine v bližini", body: "Uporabi svojo lokacijo ali vpiši kraj – prikažemo najbližje Lidl trgovine z delovnim časom in navigacijo." },
+        { icon: "🌐", title: "Jezik in tema", body: "Jezik vmesnika in temno/svetlo temo spremeniš zgoraj desno v glavi strani." },
+        { icon: "💶", title: "Cene in valute", body: "Cene v tujih valutah se samodejno prikažejo tudi pretvorjene v valuto, ki ustreza izbranemu jeziku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nov levi meni in zavihek z navodili za uporabo." },
+        { version: "1.2.0", date: "09.09.2026", note: "Trgovine v bližini (zemljevid, lokacija, navigacija) in pretvorba cen v izbrano valuto." },
+        { version: "1.1.0", date: "08.09.2026", note: "Izbira držav z iskalnikom in preklop jezika vmesnika." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prva različica – sledenje Parkside izdelkom v 28 Lidl trgovinah po Evropi." },
+      ],
       storesHeading: "Trgovine v bližini",
       storesSub: "Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.",
       useMyLocationBtn: "📍 Uporabi mojo lokacijo",
@@ -802,6 +883,24 @@
       footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
       toolbarStores: "Stores near you",
       navOverview: "Overview",
+      helpNavLabel: "Instructions",
+      helpHeading: "How to use this app",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Version history",
+      helpSections: [
+        { icon: "🎯", title: "Filter", body: "Choose between “Worth it” (tools recommended by objective criteria), “Parkside Performance only”, or “All Parkside items”." },
+        { icon: "🛠️", title: "My tools", body: "Check off tools you already own – they're automatically hidden from the recommendations above until you uncheck them." },
+        { icon: "🌍", title: "Countries", body: "Pick which of the 28 European Lidl markets to track. A country search box is also available." },
+        { icon: "🏬", title: "Stores near you", body: "Use your location or type a place – we show the nearest Lidl stores with opening hours and directions." },
+        { icon: "🌐", title: "Language & theme", body: "Switch the interface language and dark/light theme in the top-right corner of the header." },
+        { icon: "💶", title: "Prices & currencies", body: "Prices in foreign currencies are automatically shown converted to a currency matching your chosen language." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "New left-hand sidebar and a help tab with usage instructions." },
+        { version: "1.2.0", date: "09.09.2026", note: "Stores near you (map, location, directions) and price conversion to your chosen currency." },
+        { version: "1.1.0", date: "08.09.2026", note: "Country picker with search and interface language switcher." },
+        { version: "1.0.0", date: "08.09.2026", note: "First release – tracking Parkside items across 28 European Lidl markets." },
+      ],
       storesHeading: "Stores near you",
       storesSub: "Find Lidl stores near you - with opening hours and directions.",
       useMyLocationBtn: "📍 Use my location",
@@ -867,6 +966,24 @@
       footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
       toolbarStores: "Filialen in der Nähe",
       navOverview: "Übersicht",
+      helpNavLabel: "Anleitung",
+      helpHeading: "Bedienungsanleitung",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Versionsverlauf",
+      helpSections: [
+        { icon: "🎯", title: "Filter", body: "Wähle zwischen „Lohnt sich“ (nach objektiven Kriterien empfohlene Werkzeuge), „Nur Parkside Performance“ oder „Alle Parkside-Artikel“." },
+        { icon: "🛠️", title: "Meine Werkzeuge", body: "Hake ab, was du schon besitzt – es wird automatisch aus den Empfehlungen ausgeblendet, bis du es wieder abwählst." },
+        { icon: "🌍", title: "Länder", body: "Wähle, welche der 28 europäischen Lidl-Märkte du verfolgen möchtest. Eine Ländersuche steht ebenfalls zur Verfügung." },
+        { icon: "🏬", title: "Filialen in der Nähe", body: "Nutze deinen Standort oder gib einen Ort ein – wir zeigen die nächsten Lidl-Filialen mit Öffnungszeiten und Wegbeschreibung." },
+        { icon: "🌐", title: "Sprache & Design", body: "Wechsle Oberflächensprache und Hell-/Dunkelmodus oben rechts im Kopfbereich." },
+        { icon: "💶", title: "Preise & Währungen", body: "Preise in Fremdwährungen werden zusätzlich automatisch in eine zur gewählten Sprache passende Währung umgerechnet." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Neue linke Seitenleiste und ein Hilfe-Tab mit Bedienungsanleitung." },
+        { version: "1.2.0", date: "09.09.2026", note: "Filialen in der Nähe (Karte, Standort, Wegbeschreibung) und Preisumrechnung in die gewählte Währung." },
+        { version: "1.1.0", date: "08.09.2026", note: "Länderauswahl mit Suche und Sprachumschalter." },
+        { version: "1.0.0", date: "08.09.2026", note: "Erste Version – Verfolgung von Parkside-Artikeln in 28 europäischen Lidl-Märkten." },
+      ],
       storesHeading: "Filialen in der Nähe",
       storesSub: "Finde Lidl-Filialen in deiner Nähe - mit Öffnungszeiten und Wegbeschreibung.",
       useMyLocationBtn: "📍 Meinen Standort verwenden",
@@ -932,6 +1049,24 @@
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
       toolbarStores: "Trgovine u blizini",
       navOverview: "Pregled",
+      helpNavLabel: "Upute",
+      helpHeading: "Upute za korištenje",
+      helpVersion: (v) => `Verzija ${v}`,
+      changelogHeading: "Povijest verzija",
+      helpSections: [
+        { icon: "🎯", title: "Filter", body: "Odaberi između „Vrijedi cijene“ (preporučeni alati prema objektivnim kriterijima), „Samo Parkside Performance“ ili „Svi Parkside artikli“." },
+        { icon: "🛠️", title: "Moji alati", body: "Označi alate koje već imaš – automatski se skrivaju iz preporuka dok ih ponovno ne odznačiš." },
+        { icon: "🌍", title: "Države", body: "Odaberi koje od 28 europskih Lidl tržišta želiš pratiti. Dostupna je i pretraga država." },
+        { icon: "🏬", title: "Trgovine u blizini", body: "Koristi svoju lokaciju ili upiši mjesto – prikazujemo najbliže Lidl trgovine s radnim vremenom i navigacijom." },
+        { icon: "🌐", title: "Jezik i tema", body: "Jezik sučelja i tamnu/svijetlu temu mijenjaš gore desno u zaglavlju." },
+        { icon: "💶", title: "Cijene i valute", body: "Cijene u stranim valutama automatski se prikazuju i pretvorene u valutu koja odgovara odabranom jeziku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Novi lijevi izbornik i kartica s uputama za korištenje." },
+        { version: "1.2.0", date: "09.09.2026", note: "Trgovine u blizini (karta, lokacija, navigacija) i pretvorba cijena u odabranu valutu." },
+        { version: "1.1.0", date: "08.09.2026", note: "Odabir država s pretragom i preklopnik jezika sučelja." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prvo izdanje – praćenje Parkside artikala u 28 europskih Lidl tržišta." },
+      ],
       storesHeading: "Trgovine u blizini",
       storesSub: "Pronađi Lidl trgovine u svojoj blizini - s radnim vremenom i navigacijom.",
       useMyLocationBtn: "📍 Koristi moju lokaciju",
@@ -1079,12 +1214,16 @@
   const countryPanel = document.getElementById("countryPanel");
   const countryGrid = document.getElementById("countryGrid");
   const storesPanel = document.getElementById("storesPanel");
+  const helpPanel = document.getElementById("helpPanel");
+
+  const APP_VERSION = "1.3.0";
 
   const sidebarNavButtons = {
     overview: document.getElementById("navOverview"),
     checklist: document.getElementById("toggleChecklist"),
     countries: document.getElementById("toggleCountries"),
     stores: document.getElementById("toggleStores"),
+    help: document.getElementById("toggleHelp"),
   };
   function setActiveSidebarNav(key) {
     Object.entries(sidebarNavButtons).forEach(([k, el]) => el.classList.toggle("active", k === key));
@@ -1447,6 +1586,7 @@
     if (!storesPanel.hidden) {
       checklistPanel.hidden = true;
       countryPanel.hidden = true;
+      helpPanel.hidden = true;
       ensureStoresLoaded().then(() => setStoresStatus(null, false)).catch(() => setStoresStatus(t().storesError, true));
       if (storesMap) setTimeout(() => storesMap.invalidateSize(), 50);
     }
@@ -1558,6 +1698,25 @@
     totalsMeta.textContent = t().totalsMeta(totalShown, totalNew, totalChanged);
   }
 
+  function renderHelp() {
+    const sectionsEl = document.getElementById("helpSections");
+    sectionsEl.innerHTML = t().helpSections.map(s => `
+      <div class="help-section-item">
+        <div class="help-title"><span>${s.icon}</span><span>${s.title}</span></div>
+        <div class="help-body">${s.body}</div>
+      </div>
+    `).join("");
+
+    const changelogEl = document.getElementById("changelogList");
+    changelogEl.innerHTML = t().changelog.map(c => `
+      <div class="changelog-item">
+        <span class="cl-version">v${c.version}</span>
+        <span class="cl-date">${c.date}</span>
+        <span class="cl-note">${c.note}</span>
+      </div>
+    `).join("");
+  }
+
   function applyStaticText() {
     document.getElementById("tagline").textContent = t().tagline(window.__PARKSIDE_DATA__ ? Object.keys(window.__PARKSIDE_DATA__.countries).length : 28);
     document.getElementById("filterWorth").textContent = t().filterWorth;
@@ -1577,6 +1736,11 @@
     document.getElementById("selectNoneCountries").textContent = t().selectNone;
     document.getElementById("toggleStoresLabel").textContent = t().toolbarStores;
     document.querySelector('[data-t="navOverview"]').textContent = t().navOverview;
+    document.querySelector('[data-t="helpNavLabel"]').textContent = t().helpNavLabel;
+    document.getElementById("helpHeading").textContent = t().helpHeading;
+    document.getElementById("helpVersion").textContent = t().helpVersion(APP_VERSION);
+    document.getElementById("changelogHeading").textContent = t().changelogHeading;
+    renderHelp();
     document.getElementById("storesHeading").textContent = t().storesHeading;
     document.getElementById("storesSub").textContent = t().storesSub;
     document.getElementById("useMyLocation").textContent = t().useMyLocationBtn;
@@ -1621,17 +1785,23 @@
     checklistPanel.hidden = true;
     countryPanel.hidden = true;
     storesPanel.hidden = true;
+    helpPanel.hidden = true;
     setActiveSidebarNav("overview");
   });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
-    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; }
+    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
     setActiveSidebarNav(checklistPanel.hidden ? "overview" : "checklist");
   });
   document.getElementById("toggleCountries").addEventListener("click", () => {
     countryPanel.hidden = !countryPanel.hidden;
-    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; }
+    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
     setActiveSidebarNav(countryPanel.hidden ? "overview" : "countries");
+  });
+  document.getElementById("toggleHelp").addEventListener("click", () => {
+    helpPanel.hidden = !helpPanel.hidden;
+    if (!helpPanel.hidden) { checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; }
+    setActiveSidebarNav(helpPanel.hidden ? "overview" : "help");
   });
   document.getElementById("selectAllCountries").addEventListener("click", () => {
     const data = window.__PARKSIDE_DATA__;
