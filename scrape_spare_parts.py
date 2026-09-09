@@ -107,8 +107,13 @@ def crawl_models(start_url: str) -> dict:
 def parse_model_parts(url: str) -> list:
     soup = fetch_soup(url)
     parts = []
-    for box in soup.select("div.product-box"):
-        title_el = box.select_one(".productbox-title a")
+    # ".product-box" nosi ime/ceno/zalogo, slika izdelka pa je v NADREJENEM
+    # ".productbox.productbox-column" (locena stolpec-slika poleg forme za
+    # "dodaj v kosarico") - zato obhodimo ta zunanji ovojni element in
+    # znotraj njega poiscemo oboje.
+    for col in soup.select("div.productbox.productbox-column"):
+        box = col.select_one(".product-box")
+        title_el = box.select_one(".productbox-title a") if box else None
         if not title_el:
             continue
         name = title_el.get_text(strip=True)
@@ -126,10 +131,13 @@ def parse_model_parts(url: str) -> list:
         currency = currency_el.get("content") if currency_el else None
         status_el = box.select_one(".signal_image")
         stock = status_el.get_text(strip=True) if status_el else None
+        img_el = col.select_one("img")
+        image = urljoin(BASE_URL, img_el["src"]) if img_el and img_el.get("src") else None
 
         parts.append({
             "name": name,
             "url": part_url,
+            "image": image,
             "brand": brand,
             "price": price,
             "currency": currency,
