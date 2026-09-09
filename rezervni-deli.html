@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rezervni deli — Parkside Tracker</title>
+<meta name="description" content="Iskalnik rezervnih delov za vsa Parkside orodja - baterije, polnilci, verige, rezila in več, razvrščeno po kategorijah orodij. Vir: grizzlytools.shop." />
+<meta name="theme-color" content="#17181A" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script data-goatcounter="https://parksidetracker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --ps-red: #E8232D;
+    --ps-red-dark: #B91620;
+    --ps-black: #17181A;
+    --ps-slate: #384654;
+    --bg: #f2f1ef;
+    --surface: #ffffff;
+    --surface-2: #f7f6f4;
+    --text: #17181a;
+    --muted: #6b6f76;
+    --border: #e3e1dd;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 6px 16px rgba(20,20,20,.06);
+    --new: #1a8a4a;
+    --changed: #c47f00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0f10; --surface: #1a1b1d; --surface-2: #202224; --text: #f2f1ef;
+      --muted: #9a9da3; --border: #2c2e31; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+      --ps-red: #FF4650;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e0f10; --surface: #1a1b1d; --surface-2: #202224; --text: #f2f1ef;
+    --muted: #9a9da3; --border: #2c2e31; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+    --ps-red: #FF4650;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background .2s ease, color .2s ease;
+  }
+  h1, h2, .headline {
+    font-family: "Barlow Condensed", "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+  }
+  a { color: inherit; }
+
+  header {
+    background: var(--ps-black);
+    color: #fff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(232,35,45,.18), transparent 55%);
+    pointer-events: none;
+  }
+  .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; z-index: 1; }
+  .logo-mark { flex: none; filter: drop-shadow(0 2px 6px rgba(232,35,45,.5)); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .l1 { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: .03em; color: #fff; }
+  .logo-text .l1 span { color: var(--ps-red); }
+  .logo-text .l2 { font-size: 10.5px; color: #c9cace; letter-spacing: .16em; margin-top: 2px; }
+  header .spacer { flex: 1; }
+  header .header-controls { display: flex; align-items: center; gap: 8px; z-index: 1; margin-left: auto; }
+  .theme-toggle, .lang-picker-btn {
+    z-index: 1; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+    color: #fff; border-radius: 20px; padding: 7px 14px; font-size: 12.5px; cursor: pointer;
+    display: flex; align-items: center; gap: 6px; transition: background .15s ease; font-family: inherit;
+  }
+  .theme-toggle:hover, .lang-picker-btn:hover { background: rgba(255,255,255,.16); }
+  .lang-picker { position: relative; z-index: 2; }
+  .lang-picker-btn { padding: 7px 10px; }
+  .lang-caret { font-size: 9px; opacity: .7; margin-left: 1px; }
+  .flag-icon { flex: none; width: 18px; height: 13px; border-radius: 2px; overflow: hidden; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+  .flag-icon svg { display: block; width: 100%; height: 100%; }
+  .lang-picker-list {
+    list-style: none; margin: 6px 0 0; padding: 6px; position: absolute; right: 0; top: 100%;
+    background: var(--ps-black); border: 1px solid rgba(255,255,255,.18); border-radius: 12px;
+    box-shadow: var(--shadow); min-width: 130px;
+  }
+  .lang-picker-list[hidden] { display: none; }
+  .lang-picker-list li { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; font-size: 12.5px; color: #d7d8db; cursor: pointer; }
+  .lang-picker-list li:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .lang-picker-list li.active { background: var(--ps-red); color: #fff; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .back-link:hover { color: var(--ps-red); }
+
+  .parts-page {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .cat-sidebar {
+    width: 280px;
+    flex: none;
+    padding: 20px 14px;
+    position: sticky;
+    top: 76px;
+    align-self: flex-start;
+    height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+  }
+  .cat-sidebar-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--muted);
+    margin: 0 6px 8px;
+  }
+  .category-search {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .category-list {
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+  .category-item:hover { background: var(--surface-2); }
+  .category-item.active { background: var(--ps-red); color: #fff; font-weight: 600; }
+  .category-item .cat-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .category-item .cat-count { font-size: 10.5px; opacity: .75; flex: none; }
+
+  .parts-main {
+    flex: 1;
+    min-width: 0;
+    padding: 20px 24px 60px;
+  }
+  .parts-main h1 { font-size: 26px; margin: 0 0 6px; }
+  .parts-main .page-sub { color: var(--muted); font-size: 13px; margin: 0 0 16px; max-width: 760px; }
+  .parts-search-input {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 16px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .parts-status { font-size: 13px; color: var(--muted); padding: 16px 0; }
+  .parts-status.error { color: var(--changed); }
+  .parts-count { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+
+  .parts-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+  }
+  .part-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    font-size: 12.5px;
+  }
+  .part-card .part-brand { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 3px; }
+  .part-card .part-name { font-weight: 600; margin-bottom: 5px; line-height: 1.3; }
+  .part-card .part-name a { color: inherit; text-decoration: none; }
+  .part-card .part-name a:hover { color: var(--ps-red); }
+  .part-card .part-price { font-weight: 700; color: var(--ps-red); font-family: "Barlow Condensed", sans-serif; font-size: 17px; }
+  .part-card .part-stock { font-size: 11.5px; margin-top: 3px; }
+  .part-card .part-stock.in-stock { color: var(--new); }
+  .part-card .part-stock.low-stock { color: var(--changed); }
+  .part-card .part-stock.out-of-stock { color: var(--muted); }
+  .part-card .part-compat { font-size: 11px; color: var(--muted); margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); line-height: 1.4; }
+  .part-card .part-compat strong { color: var(--text); font-weight: 600; }
+
+  .site-footer { text-align: center; font-size: 12px; color: var(--muted); padding: 18px 16px 28px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 860px) {
+    header { padding: 14px 16px; }
+    .logo-text .l1 { font-size: 20px; }
+    .parts-page { flex-direction: column; }
+    .cat-sidebar { width: 100%; position: static; height: auto; padding: 14px 16px 0; }
+    .category-list { max-height: 220px; }
+    .parts-main { padding: 16px 16px 50px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo-link" href="index.html">
+    <svg class="logo-mark" width="42" height="42" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60,4.5 111,32.25 111,87.75 60,115.5 9,87.75 9,32.25" fill="#0c0d0e" stroke="#E8232D" stroke-width="2"/>
+      <polygon points="60,14 102.3,37 102.3,83 60,106 17.7,83 17.7,37" fill="#e8232d"/>
+      <rect x="47" y="32" width="11" height="46" rx="4" fill="#fff"/>
+      <path d="M58,32 C80,32 80,58 58,58" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-text">
+      <div class="l1">PARKSIDE <span>TRACKER</span></div>
+      <div class="l2" id="tagline">REZERVNI DELI</div>
+    </div>
+  </a>
+  <div class="spacer"></div>
+  <div class="header-controls">
+    <div class="lang-picker" id="langPicker">
+      <button class="lang-picker-btn" id="langPickerBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="flag-icon" id="langPickerFlag"></span>
+        <span id="langPickerCode">SL</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-picker-list" id="langPickerList" role="listbox" hidden></ul>
+    </div>
+    <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
+  </div>
+</header>
+
+<div class="parts-page">
+  <aside class="cat-sidebar">
+    <a class="back-link" href="index.html" id="backLink">← Nazaj na Parkside Tracker</a>
+    <div class="cat-sidebar-title" id="categoriesTitle">Kategorije orodij</div>
+    <input type="text" id="categorySearch" class="category-search" placeholder="Iskanje kategorij..." />
+    <div class="category-list" id="categoryList"></div>
+  </aside>
+
+  <main class="parts-main">
+    <h1 id="pageHeading">Rezervni deli za Parkside orodja</h1>
+    <p class="page-sub" id="pageSub">Izberi kategorijo orodja na levi ali išči po imenu dela (npr. „baterija“, „veriga“, „rezilo“). Vir: grizzlytools.shop, proizvajalec Parkside orodij.</p>
+    <input type="text" id="partsSearch" class="parts-search-input" placeholder="Iskanje po delu, npr. baterija, veriga, rezilo..." />
+    <div class="parts-count" id="partsCount" hidden></div>
+    <div class="parts-status" id="partsStatus">Nalagam katalog rezervnih delov...</div>
+    <div class="parts-results" id="partsResults"></div>
+  </main>
+</div>
+
+<footer class="site-footer">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
+
+<script>
+(function () {
+  const I18N = {
+    sl: {
+      darkTheme: "Temna tema", lightTheme: "Svetla tema",
+      tagline: "REZERVNI DELI",
+      backLink: "← Nazaj na Parkside Tracker",
+      categoriesTitle: "Kategorije orodij",
+      categorySearchPlaceholder: "Iskanje kategorij...",
+      allCategories: "Vse kategorije",
+      pageHeading: "Rezervni deli za Parkside orodja",
+      pageSub: "Izberi kategorijo orodja na levi ali išči po imenu dela (npr. „baterija“, „veriga“, „rezilo“). Vir: grizzlytools.shop, proizvajalec Parkside orodij.",
+      searchPlaceholder: "Iskanje po delu, npr. baterija, veriga, rezilo...",
+      loading: "Nalagam katalog rezervnih delov...",
+      error: "Kataloga rezervnih delov ni bilo mogoče naložiti. Poskusi znova kasneje.",
+      none: "Ni najdenih delov. Poskusi drugo ime ali izberi drugo kategorijo.",
+      prompt: "Izberi kategorijo na levi ali začni tipkati ime dela.",
+      countShown: (n, total) => total > n ? `Prikazanih ${n} od ${total} delov - zoži iskanje za natančnejše rezultate.` : `${total} ${total === 1 ? "del" : "delov"}`,
+      compatible: (n) => n === 1 ? "Ustreza za 1 model" : `Ustreza za ${n} modelov`,
+      compatibleMore: (n) => `in še ${n} drugih`,
+      stockLabels: { "Available immediately": "Takoj na voljo", "Low stock level": "Nizka zaloga", "Currently out of stock": "Trenutno ni na zalogi" },
+      models: (n) => n === 1 ? "1 model" : `${n} modelov`,
+    },
+    en: {
+      darkTheme: "Dark mode", lightTheme: "Light mode",
+      tagline: "SPARE PARTS",
+      backLink: "← Back to Parkside Tracker",
+      categoriesTitle: "Tool categories",
+      categorySearchPlaceholder: "Search categories...",
+      allCategories: "All categories",
+      pageHeading: "Spare parts for Parkside tools",
+      pageSub: "Pick a tool category on the left, or search by part name (e.g. “battery”, “chain”, “blade”). Source: grizzlytools.shop, the manufacturer of Parkside tools.",
+      searchPlaceholder: "Search by part, e.g. battery, chain, blade...",
+      loading: "Loading the spare-parts catalog...",
+      error: "Couldn't load the spare-parts catalog. Please try again later.",
+      none: "No parts found. Try a different name or pick another category.",
+      prompt: "Pick a category on the left, or start typing a part name.",
+      countShown: (n, total) => total > n ? `Showing ${n} of ${total} parts - narrow your search for more precise results.` : `${total} part${total === 1 ? "" : "s"}`,
+      compatible: (n) => n === 1 ? "Fits 1 model" : `Fits ${n} models`,
+      compatibleMore: (n) => `and ${n} more`,
+      stockLabels: { "Available immediately": "Available immediately", "Low stock level": "Low stock level", "Currently out of stock": "Currently out of stock" },
+      models: (n) => n === 1 ? "1 model" : `${n} models`,
+    },
+    de: {
+      darkTheme: "Dunkelmodus", lightTheme: "Hellmodus",
+      tagline: "ERSATZTEILE",
+      backLink: "← Zurück zum Parkside Tracker",
+      categoriesTitle: "Werkzeugkategorien",
+      categorySearchPlaceholder: "Kategorien suchen...",
+      allCategories: "Alle Kategorien",
+      pageHeading: "Ersatzteile für Parkside-Werkzeuge",
+      pageSub: "Wähle links eine Werkzeugkategorie oder suche nach Teilenamen (z. B. „Akku“, „Kette“, „Klinge“). Quelle: grizzlytools.shop, der Hersteller der Parkside-Werkzeuge.",
+      searchPlaceholder: "Suche nach Teil, z. B. Akku, Kette, Klinge...",
+      loading: "Ersatzteilkatalog wird geladen...",
+      error: "Der Ersatzteilkatalog konnte nicht geladen werden. Bitte versuche es später erneut.",
+      none: "Keine Teile gefunden. Versuche einen anderen Namen oder eine andere Kategorie.",
+      prompt: "Wähle links eine Kategorie oder gib einen Teilenamen ein.",
+      countShown: (n, total) => total > n ? `${n} von ${total} Teilen angezeigt - grenze die Suche für genauere Ergebnisse ein.` : `${total} Teile`,
+      compatible: (n) => n === 1 ? "Passt zu 1 Modell" : `Passt zu ${n} Modellen`,
+      compatibleMore: (n) => `und ${n} weitere`,
+      stockLabels: { "Available immediately": "Sofort verfügbar", "Low stock level": "Niedriger Lagerbestand", "Currently out of stock": "Derzeit nicht auf Lager" },
+      models: (n) => n === 1 ? "1 Modell" : `${n} Modelle`,
+    },
+    hr: {
+      darkTheme: "Tamna tema", lightTheme: "Svijetla tema",
+      tagline: "REZERVNI DIJELOVI",
+      backLink: "← Natrag na Parkside Tracker",
+      categoriesTitle: "Kategorije alata",
+      categorySearchPlaceholder: "Pretraži kategorije...",
+      allCategories: "Sve kategorije",
+      pageHeading: "Rezervni dijelovi za Parkside alate",
+      pageSub: "Odaberi kategoriju alata lijevo ili pretraži po nazivu dijela (npr. „baterija“, „lanac“, „oštrica“). Izvor: grizzlytools.shop, proizvođač Parkside alata.",
+      searchPlaceholder: "Pretraži po dijelu, npr. baterija, lanac, oštrica...",
+      loading: "Učitavam katalog rezervnih dijelova...",
+      error: "Katalog rezervnih dijelova nije bilo moguće učitati. Pokušaj ponovno kasnije.",
+      none: "Nema pronađenih dijelova. Pokušaj drugi naziv ili odaberi drugu kategoriju.",
+      prompt: "Odaberi kategoriju lijevo ili počni upisivati naziv dijela.",
+      countShown: (n, total) => total > n ? `Prikazano ${n} od ${total} dijelova - suzi pretragu za točnije rezultate.` : `${total} dijelova`,
+      compatible: (n) => n === 1 ? "Odgovara za 1 model" : `Odgovara za ${n} modela`,
+      compatibleMore: (n) => `i još ${n}`,
+      stockLabels: { "Available immediately": "Odmah dostupno", "Low stock level": "Niska zaliha", "Currently out of stock": "Trenutno nema na zalihi" },
+      models: (n) => n === 1 ? "1 model" : `${n} modela`,
+    },
+  };
+
+  const FLAG_SVG = {
+    sl: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#005ce6"/><rect y="9.33" width="20" height="4.67" fill="#e30d1a"/></svg>`,
+    en: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#00247d"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="2.8"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#cf142b" stroke-width="1.2"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4.6"/><path d="M10,0 V14 M0,7 H20" stroke="#cf142b" stroke-width="2.6"/></svg>`,
+    de: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>`,
+    hr: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#ff0000"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#171796"/></svg>`,
+  };
+  const LANGS = [
+    { code: "sl", label: "SL" }, { code: "en", label: "EN" },
+    { code: "de", label: "DE" }, { code: "hr", label: "HR" },
+  ];
+
+  const PART_SEARCH_SYNONYMS = {
+    sl: {
+      baterija: "battery", baterije: "battery", akumulator: "battery",
+      polnilec: "charger", polnilci: "charger", polnilnik: "charger",
+      veriga: "chain", verige: "chain",
+      rezilo: "blade", rezila: "blade", nož: "blade", nozi: "blade",
+      meč: "sword", filter: "filter", filtri: "filter",
+      ščetka: "brush", ščetke: "brush",
+      kabel: "cable", jermen: "belt",
+      kolo: "wheel", koleščki: "wheel", kolesce: "wheel",
+      vzmet: "spring", šoba: "nozzle", cev: "hose",
+      motor: "motor", stikalo: "switch", ročaj: "handle",
+      vrvica: "string", nitka: "string",
+      olje: "oil", svečka: "spark plug",
+      pokrov: "cover", pokrovček: "cover", zobnik: "sprocket",
+    },
+    de: {
+      akku: "battery", batterie: "battery", batterien: "battery",
+      ladegerät: "charger", ladegeraet: "charger",
+      kette: "chain", ketten: "chain",
+      klinge: "blade", messer: "blade", schwert: "sword",
+      filter: "filter", bürste: "brush", buerste: "brush",
+      kabel: "cable", riemen: "belt",
+      rad: "wheel", räder: "wheel", raeder: "wheel", rolle: "wheel",
+      feder: "spring", düse: "nozzle", duese: "nozzle", schlauch: "hose",
+      motor: "motor", schalter: "switch", griff: "handle",
+      schnur: "string", faden: "string",
+      öl: "oil", oel: "oil", zündkerze: "spark plug", zuendkerze: "spark plug",
+      abdeckung: "cover", deckel: "cover", zahnrad: "sprocket",
+    },
+    hr: {
+      baterija: "battery", baterije: "battery", akumulator: "battery",
+      punjač: "charger", punjac: "charger",
+      lanac: "chain", lanci: "chain",
+      oštrica: "blade", ostrica: "blade", nož: "blade", noz: "blade", mač: "sword", mac: "sword",
+      filter: "filter", četka: "brush", cetka: "brush",
+      kabel: "cable", remen: "belt",
+      kotač: "wheel", kotac: "wheel", kotačić: "wheel", kotacic: "wheel",
+      opruga: "spring", mlaznica: "nozzle", crijevo: "hose",
+      motor: "motor", prekidač: "switch", prekidac: "switch", ručka: "handle", rucka: "handle",
+      konopac: "string", nit: "string",
+      ulje: "oil", svjećica: "spark plug", svjecica: "spark plug",
+      poklopac: "cover", zupčanik: "sprocket", zupcanik: "sprocket",
+    },
+  };
+
+  const LANG_KEY = "parkside_lang_v1";
+  function loadLang() {
+    try {
+      const saved = localStorage.getItem(LANG_KEY);
+      if (saved && I18N[saved]) return saved;
+    } catch (e) { /* ni na voljo */ }
+    const nav = (navigator.language || "sl").slice(0, 2).toLowerCase();
+    return I18N[nav] ? nav : "sl";
+  }
+  function saveLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) { /* ni na voljo */ } }
+  let currentLang = loadLang();
+  function t() { return I18N[currentLang]; }
+
+  const THEME_KEY = "parkside_theme_v1";
+  function applyTheme(theme) {
+    if (theme === "light" || theme === "dark") document.documentElement.setAttribute("data-theme", theme);
+    else document.documentElement.removeAttribute("data-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = theme === "dark" || (theme !== "light" && prefersDark);
+    document.getElementById("themeIcon").textContent = isDark ? "☀️" : "🌙";
+    document.getElementById("themeLabel").textContent = isDark ? t().lightTheme : t().darkTheme;
+  }
+  function loadTheme() { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } }
+  function saveTheme(v) { try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ni na voljo */ } }
+  let currentTheme = loadTheme() || "dark";
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDarkNow = currentTheme === "dark" || (currentTheme !== "light" && prefersDark);
+    currentTheme = isDarkNow ? "light" : "dark";
+    saveTheme(currentTheme);
+    applyTheme(currentTheme);
+  });
+
+  const langPicker = document.getElementById("langPicker");
+  const langPickerBtn = document.getElementById("langPickerBtn");
+  const langPickerList = document.getElementById("langPickerList");
+  const langPickerFlag = document.getElementById("langPickerFlag");
+  const langPickerCode = document.getElementById("langPickerCode");
+  langPickerList.innerHTML = LANGS.map(l => `
+    <li role="option" data-lang="${l.code}"><span class="flag-icon">${FLAG_SVG[l.code]}</span><span>${l.label}</span></li>
+  `).join("");
+  function updateLangPicker(lang) {
+    const entry = LANGS.find(l => l.code === lang) || LANGS[0];
+    langPickerFlag.innerHTML = FLAG_SVG[entry.code];
+    langPickerCode.textContent = entry.label;
+    langPickerList.querySelectorAll("li").forEach(li => li.classList.toggle("active", li.dataset.lang === lang));
+  }
+  function closeLangPicker() { langPickerList.hidden = true; langPickerBtn.setAttribute("aria-expanded", "false"); }
+  langPickerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const willOpen = langPickerList.hidden;
+    langPickerList.hidden = !willOpen;
+    langPickerBtn.setAttribute("aria-expanded", String(willOpen));
+  });
+  langPickerList.addEventListener("click", (e) => {
+    const li = e.target.closest("li[data-lang]");
+    if (!li) return;
+    setLang(li.dataset.lang);
+    closeLangPicker();
+  });
+  document.addEventListener("click", (e) => { if (!langPicker.contains(e.target)) closeLangPicker(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLangPicker(); });
+
+  function applyStaticText() {
+    document.getElementById("tagline").textContent = t().tagline;
+    document.getElementById("backLink").textContent = t().backLink;
+    document.getElementById("categoriesTitle").textContent = t().categoriesTitle;
+    document.getElementById("categorySearch").placeholder = t().categorySearchPlaceholder;
+    document.getElementById("pageHeading").textContent = t().pageHeading;
+    document.getElementById("pageSub").textContent = t().pageSub;
+    document.getElementById("partsSearch").placeholder = t().searchPlaceholder;
+    document.title = t().pageHeading + " — Parkside Tracker";
+    document.documentElement.lang = currentLang;
+    applyTheme(currentTheme);
+  }
+
+  function setLang(lang) {
+    if (!I18N[lang]) return;
+    currentLang = lang;
+    saveLang(lang);
+    updateLangPicker(lang);
+    applyStaticText();
+    renderCategoryList(document.getElementById("categorySearch").value);
+    renderResults();
+  }
+
+  // ---- Podatki o rezervnih delih ----
+  let modelsData = null;
+  let partsIndex = null; // sploscen seznam delov, dedupliciran po URL-ju
+  let categories = []; // [{name, count}]
+  let selectedCategory = null; // null = vse kategorije
+
+  function stockClass(stock) {
+    if (stock === "Available immediately") return "in-stock";
+    if (stock === "Low stock level") return "low-stock";
+    if (stock === "Currently out of stock") return "out-of-stock";
+    return "";
+  }
+
+  function buildData(models) {
+    const byUrl = new Map();
+    const catCounts = new Map();
+    models.forEach(m => {
+      if (m.category) catCounts.set(m.category, (catCounts.get(m.category) || 0) + 1);
+      m.parts.forEach(p => {
+        let entry = byUrl.get(p.url);
+        if (!entry) {
+          entry = { ...p, models: [], categories: new Set() };
+          byUrl.set(p.url, entry);
+        }
+        entry.models.push(m.name);
+        if (m.category) entry.categories.add(m.category);
+      });
+    });
+    partsIndex = Array.from(byUrl.values());
+    categories = Array.from(catCounts.entries())
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  function renderCategoryList(filterText) {
+    const listEl = document.getElementById("categoryList");
+    const q = (filterText || "").trim().toLowerCase();
+    const filtered = categories.filter(c => c.name.toLowerCase().includes(q));
+    const allActive = selectedCategory === null;
+    let html = `<button class="category-item${allActive ? " active" : ""}" data-cat=""><span class="cat-name">${t().allCategories}</span></button>`;
+    html += filtered.map(c => `
+      <button class="category-item${selectedCategory === c.name ? " active" : ""}" data-cat="${c.name.replace(/"/g, "&quot;")}">
+        <span class="cat-name">${c.name}</span><span class="cat-count">${c.count}</span>
+      </button>
+    `).join("");
+    listEl.innerHTML = html;
+  }
+
+  document.getElementById("categoryList").addEventListener("click", (e) => {
+    const btn = e.target.closest(".category-item");
+    if (!btn) return;
+    selectedCategory = btn.dataset.cat || null;
+    renderCategoryList(document.getElementById("categorySearch").value);
+    renderResults();
+  });
+  document.getElementById("categorySearch").addEventListener("input", (e) => {
+    renderCategoryList(e.target.value);
+  });
+
+  function setPartsStatus(text, isError) {
+    const el = document.getElementById("partsStatus");
+    el.hidden = !text;
+    el.className = "parts-status" + (isError ? " error" : "");
+    el.textContent = text || "";
+  }
+
+  const RESULT_CAP = 150;
+
+  function renderResults() {
+    const resultsEl = document.getElementById("partsResults");
+    const countEl = document.getElementById("partsCount");
+    const q = document.getElementById("partsSearch").value.trim().toLowerCase();
+
+    if (!partsIndex) return;
+    if (!q && selectedCategory === null) {
+      resultsEl.innerHTML = "";
+      countEl.hidden = true;
+      setPartsStatus(t().prompt, false);
+      return;
+    }
+
+    const dict = PART_SEARCH_SYNONYMS[currentLang];
+    const terms = q ? [q] : [];
+    if (dict && q) {
+      Object.keys(dict).forEach(word => { if (q.includes(word)) terms.push(dict[word]); });
+    }
+
+    const all = partsIndex.filter(p => {
+      if (selectedCategory !== null && !p.categories.has(selectedCategory)) return false;
+      if (terms.length === 0) return true;
+      const name = p.name.toLowerCase();
+      return terms.some(term => name.includes(term));
+    });
+
+    if (all.length === 0) {
+      resultsEl.innerHTML = "";
+      countEl.hidden = true;
+      setPartsStatus(t().none, false);
+      return;
+    }
+
+    setPartsStatus(null, false);
+    countEl.hidden = false;
+    countEl.textContent = t().countShown(Math.min(all.length, RESULT_CAP), all.length);
+
+    const shown = all.slice(0, RESULT_CAP);
+    resultsEl.innerHTML = shown.map(p => {
+      const sampleModels = p.models.slice(0, 3).join(", ");
+      const extra = p.models.length - 3;
+      return `
+        <div class="part-card">
+          ${p.brand ? `<div class="part-brand">${p.brand}</div>` : ""}
+          <div class="part-name"><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></div>
+          <div class="part-price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : ""}</div>
+          ${p.stock ? `<div class="part-stock ${stockClass(p.stock)}">${t().stockLabels[p.stock] || p.stock}</div>` : ""}
+          <div class="part-compat"><strong>${t().compatible(p.models.length)}</strong>: ${sampleModels}${extra > 0 ? " " + t().compatibleMore(extra) : ""}</div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  document.getElementById("partsSearch").addEventListener("input", renderResults);
+
+  function init() {
+    updateLangPicker(currentLang);
+    applyStaticText();
+    setPartsStatus(t().loading, false);
+    fetch("data/spare_parts.json")
+      .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(data => {
+        modelsData = data;
+        buildData(data);
+        renderCategoryList("");
+        renderResults();
+      })
+      .catch(() => setPartsStatus(t().error, true));
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

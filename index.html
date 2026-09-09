@@ -214,6 +214,8 @@
     font-family: inherit;
     cursor: pointer;
     text-align: left;
+    text-decoration: none;
+    box-sizing: border-box;
     transition: background .15s ease, color .15s ease;
   }
   .sidebar-icon { flex: none; width: 18px; text-align: center; }
@@ -633,38 +635,6 @@
   .changelog-item .cl-date { color: var(--muted); flex: none; font-size: 11.5px; }
   .changelog-item .cl-note { color: var(--text); }
 
-  .parts-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 10px;
-    max-height: 620px;
-    overflow-y: auto;
-    padding-right: 4px;
-    margin-top: 12px;
-  }
-  .part-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 12px;
-    background: var(--surface-2);
-    font-size: 12px;
-  }
-  .part-card .part-name {
-    font-weight: 600;
-    margin-bottom: 4px;
-    line-height: 1.3;
-  }
-  .part-card .part-name a { color: inherit; text-decoration: none; }
-  .part-card .part-name a:hover { color: var(--ps-red); }
-  .part-card .part-price { font-weight: 700; color: var(--ps-red); font-family: "Barlow Condensed", sans-serif; font-size: 15px; }
-  .part-card .part-stock { font-size: 11px; margin-top: 3px; }
-  .part-card .part-stock.in-stock { color: var(--new); }
-  .part-card .part-stock.low-stock { color: var(--changed); }
-  .part-card .part-stock.out-of-stock { color: var(--muted); }
-  .part-card .part-brand { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 2px; }
-  .part-card .part-compat { font-size: 10.5px; color: var(--muted); margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); line-height: 1.4; }
-  .part-card .part-compat strong { color: var(--text); font-weight: 600; }
-
   .stores-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .stores-controls button {
     font-size: 13px;
@@ -803,7 +773,7 @@
       <button class="sidebar-item" id="toggleChecklist"><span class="sidebar-icon">🛠️</span><span id="toggleChecklistLabel">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</span></button>
       <button class="sidebar-item" id="toggleCountries"><span class="sidebar-icon">🌍</span><span id="toggleCountriesLabel">Države (0)</span></button>
       <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
-      <button class="sidebar-item" id="toggleParts"><span class="sidebar-icon">🔧</span><span id="togglePartsLabel" data-t="partsNavLabel">Rezervni deli</span></button>
+      <a class="sidebar-item" id="toggleParts" href="rezervni-deli.html"><span class="sidebar-icon">🔧</span><span id="togglePartsLabel" data-t="partsNavLabel">Rezervni deli</span></a>
       <button class="sidebar-item" id="toggleHelp"><span class="sidebar-icon">📖</span><span id="toggleHelpLabel" data-t="helpNavLabel">Navodila</span></button>
       <div class="sidebar-divider"></div>
       <div class="sidebar-section-title">Filter</div>
@@ -858,15 +828,6 @@
       </div>
     </div>
 
-    <div class="side-panel" id="partsPanel" hidden>
-      <div class="side-panel-box">
-        <h2 id="partsHeading">Rezervni deli</h2>
-        <div class="sub" id="partsSub">Poišči rezervne dele po imenu (npr. „baterija“, „veriga“, „rezilo“) — najdeš vse ustrezne dele za katerikoli Parkside model, tudi za tiste, ki jih Lidl ne prodaja več. Vir: grizzlytools.shop, proizvajalec Parkside orodij.</div>
-        <input type="text" id="partsSearch" class="country-search" placeholder="Iskanje po delu, npr. baterija, veriga, rezilo..." />
-        <div id="partsStatus" class="stores-status" hidden></div>
-        <div class="parts-results" id="partsResults"></div>
-      </div>
-    </div>
 
     <div class="side-panel" id="helpPanel" hidden>
       <div class="side-panel-box">
@@ -913,17 +874,6 @@
       navOverview: "Pregled",
       menuLabel: "Meni",
       partsNavLabel: "Rezervni deli",
-      partsHeading: "Rezervni deli",
-      partsSub: "Poišči rezervne dele po imenu (npr. „baterija“, „veriga“, „rezilo“) — najdeš vse ustrezne dele za katerikoli Parkside model, tudi za tiste, ki jih Lidl ne prodaja več. Vir: grizzlytools.shop, proizvajalec Parkside orodij.",
-      partsSearchPlaceholder: "Iskanje po delu, npr. baterija, veriga, rezilo...",
-      partsCompatible: (n) => n === 1 ? "Ustreza za 1 model" : `Ustreza za ${n} modelov`,
-      partsCompatibleMore: (n) => `in še ${n} drugih`,
-      partsLoading: "Nalagam katalog rezervnih delov...",
-      partsNone: "Ni najdenih modelov. Poskusi z drugim imenom ali IAN številko.",
-      partsError: "Kataloga rezervnih delov ni bilo mogoče naložiti. Poskusi znova kasneje.",
-      partsPrompt: "Vpiši ime modela (npr. PKSA 20-Li) ali IAN številko za iskanje.",
-      partsNoParts: "Za ta model trenutno ni rezervnih delov na voljo.",
-      stockLabels: { "Available immediately": "Takoj na voljo", "Low stock level": "Nizka zaloga", "Currently out of stock": "Trenutno ni na zalogi" },
       helpNavLabel: "Navodila",
       helpHeading: "Navodila za uporabo",
       helpVersion: (v) => `Različica ${v}`,
@@ -1009,17 +959,6 @@
       navOverview: "Overview",
       menuLabel: "Menu",
       partsNavLabel: "Spare parts",
-      partsHeading: "Spare parts",
-      partsSub: "Search for spare parts by name (e.g. “battery”, “chain”, “blade”) — find every matching part for any Parkside model, even ones Lidl no longer sells. Source: grizzlytools.shop, the manufacturer of Parkside tools.",
-      partsSearchPlaceholder: "Search by part, e.g. battery, chain, blade...",
-      partsCompatible: (n) => n === 1 ? "Fits 1 model" : `Fits ${n} models`,
-      partsCompatibleMore: (n) => `and ${n} more`,
-      partsLoading: "Loading the spare-parts catalog...",
-      partsNone: "No models found. Try a different name or IAN number.",
-      partsError: "Couldn't load the spare-parts catalog. Please try again later.",
-      partsPrompt: "Type a model name (e.g. PKSA 20-Li) or IAN number to search.",
-      partsNoParts: "No spare parts currently available for this model.",
-      stockLabels: { "Available immediately": "Available immediately", "Low stock level": "Low stock level", "Currently out of stock": "Currently out of stock" },
       helpNavLabel: "Instructions",
       helpHeading: "How to use this app",
       helpVersion: (v) => `Version ${v}`,
@@ -1105,17 +1044,6 @@
       navOverview: "Übersicht",
       menuLabel: "Menü",
       partsNavLabel: "Ersatzteile",
-      partsHeading: "Ersatzteile",
-      partsSub: "Suche Ersatzteile nach Namen (z. B. „Akku“, „Kette“, „Klinge“) — finde alle passenden Teile für jedes Parkside-Modell, auch für solche, die Lidl nicht mehr verkauft. Quelle: grizzlytools.shop, der Hersteller der Parkside-Werkzeuge.",
-      partsSearchPlaceholder: "Suche nach Teil, z. B. Akku, Kette, Klinge...",
-      partsCompatible: (n) => n === 1 ? "Passt zu 1 Modell" : `Passt zu ${n} Modellen`,
-      partsCompatibleMore: (n) => `und ${n} weitere`,
-      partsLoading: "Ersatzteilkatalog wird geladen...",
-      partsNone: "Keine Modelle gefunden. Versuche einen anderen Namen oder eine andere IAN-Nummer.",
-      partsError: "Der Ersatzteilkatalog konnte nicht geladen werden. Bitte versuche es später erneut.",
-      partsPrompt: "Gib einen Modellnamen (z. B. PKSA 20-Li) oder eine IAN-Nummer ein, um zu suchen.",
-      partsNoParts: "Für dieses Modell sind derzeit keine Ersatzteile verfügbar.",
-      stockLabels: { "Available immediately": "Sofort verfügbar", "Low stock level": "Niedriger Lagerbestand", "Currently out of stock": "Derzeit nicht auf Lager" },
       helpNavLabel: "Anleitung",
       helpHeading: "Bedienungsanleitung",
       helpVersion: (v) => `Version ${v}`,
@@ -1201,17 +1129,6 @@
       navOverview: "Pregled",
       menuLabel: "Izbornik",
       partsNavLabel: "Rezervni dijelovi",
-      partsHeading: "Rezervni dijelovi",
-      partsSub: "Pretraži rezervne dijelove po nazivu (npr. „baterija“, „lanac“, „oštrica“) — pronađi sve odgovarajuće dijelove za bilo koji Parkside model, čak i za one koje Lidl više ne prodaje. Izvor: grizzlytools.shop, proizvođač Parkside alata.",
-      partsSearchPlaceholder: "Pretraži po dijelu, npr. baterija, lanac, oštrica...",
-      partsCompatible: (n) => n === 1 ? "Odgovara za 1 model" : `Odgovara za ${n} modela`,
-      partsCompatibleMore: (n) => `i još ${n}`,
-      partsLoading: "Učitavam katalog rezervnih dijelova...",
-      partsNone: "Nema pronađenih modela. Pokušaj s drugim nazivom ili IAN brojem.",
-      partsError: "Katalog rezervnih dijelova nije bilo moguće učitati. Pokušaj ponovno kasnije.",
-      partsPrompt: "Upiši naziv modela (npr. PKSA 20-Li) ili IAN broj za pretragu.",
-      partsNoParts: "Za ovaj model trenutno nema dostupnih rezervnih dijelova.",
-      stockLabels: { "Available immediately": "Odmah dostupno", "Low stock level": "Niska zaliha", "Currently out of stock": "Trenutno nema na zalihi" },
       helpNavLabel: "Upute",
       helpHeading: "Upute za korištenje",
       helpVersion: (v) => `Verzija ${v}`,
@@ -1317,56 +1234,6 @@
     { code: "hr", label: "HR" },
   ];
 
-  // Podatki o rezervnih delih so pobrani v anglescini (grizzlytools.shop),
-  // iskalnik pa mora razumeti tudi domace izraze - zato preprost slovarcek
-  // najpogostejsih besed za rezervne dele, ki iskalni niz razsiri z
-  // ustreznim anglenim izrazom (ne popolni prevod, le dovolj za iskanje).
-  const PART_SEARCH_SYNONYMS = {
-    sl: {
-      baterija: "battery", baterije: "battery", akumulator: "battery",
-      polnilec: "charger", polnilci: "charger", polnilnik: "charger",
-      veriga: "chain", verige: "chain",
-      rezilo: "blade", rezila: "blade", nož: "blade", nozi: "blade",
-      meč: "sword", filter: "filter", filtri: "filter",
-      ščetka: "brush", ščetke: "brush",
-      kabel: "cable", jermen: "belt",
-      kolo: "wheel", koleščki: "wheel", kolesce: "wheel",
-      vzmet: "spring", šoba: "nozzle", cev: "hose",
-      motor: "motor", stikalo: "switch", ročaj: "handle",
-      vrvica: "string", nitka: "string",
-      olje: "oil", svečka: "spark plug",
-      pokrov: "cover", pokrovček: "cover", zobnik: "sprocket",
-    },
-    de: {
-      akku: "battery", batterie: "battery", batterien: "battery",
-      ladegerät: "charger", ladegeraet: "charger",
-      kette: "chain", ketten: "chain",
-      klinge: "blade", messer: "blade", schwert: "sword",
-      filter: "filter", bürste: "brush", buerste: "brush",
-      kabel: "cable", riemen: "belt",
-      rad: "wheel", räder: "wheel", raeder: "wheel", rolle: "wheel",
-      feder: "spring", düse: "nozzle", duese: "nozzle", schlauch: "hose",
-      motor: "motor", schalter: "switch", griff: "handle",
-      schnur: "string", faden: "string",
-      öl: "oil", oel: "oil", zündkerze: "spark plug", zuendkerze: "spark plug",
-      abdeckung: "cover", deckel: "cover", zahnrad: "sprocket",
-    },
-    hr: {
-      baterija: "battery", baterije: "battery", akumulator: "battery",
-      punjač: "charger", punjac: "charger",
-      lanac: "chain", lanci: "chain",
-      oštrica: "blade", ostrica: "blade", nož: "blade", noz: "blade", mač: "sword", mac: "sword",
-      filter: "filter", četka: "brush", cetka: "brush",
-      kabel: "cable", remen: "belt",
-      kotač: "wheel", kotac: "wheel", kotačić: "wheel", kotacic: "wheel",
-      opruga: "spring", mlaznica: "nozzle", crijevo: "hose",
-      motor: "motor", prekidač: "switch", prekidac: "switch", ručka: "handle", rucka: "handle",
-      konopac: "string", nit: "string",
-      ulje: "oil", svjećica: "spark plug", svjecica: "spark plug",
-      poklopac: "cover", zupčanik: "sprocket", zupcanik: "sprocket",
-    },
-  };
-
   const THEME_KEY = "parkside_theme_v1";
   function applyTheme(theme) {
     if (theme === "light" || theme === "dark") {
@@ -1444,7 +1311,6 @@
   const countryPanel = document.getElementById("countryPanel");
   const countryGrid = document.getElementById("countryGrid");
   const storesPanel = document.getElementById("storesPanel");
-  const partsPanel = document.getElementById("partsPanel");
   const helpPanel = document.getElementById("helpPanel");
 
   const APP_VERSION = "1.3.0";
@@ -1454,7 +1320,6 @@
     checklist: document.getElementById("toggleChecklist"),
     countries: document.getElementById("toggleCountries"),
     stores: document.getElementById("toggleStores"),
-    parts: document.getElementById("toggleParts"),
     help: document.getElementById("toggleHelp"),
   };
   function setActiveSidebarNav(key) {
@@ -1836,124 +1701,11 @@
     if (!storesPanel.hidden) {
       checklistPanel.hidden = true;
       countryPanel.hidden = true;
-      partsPanel.hidden = true;
       helpPanel.hidden = true;
       ensureStoresLoaded().then(() => setStoresStatus(null, false)).catch(() => setStoresStatus(t().storesError, true));
       if (storesMap) setTimeout(() => storesMap.invalidateSize(), 50);
     }
     setActiveSidebarNav(storesPanel.hidden ? "overview" : "stores");
-  });
-
-  // REZERVNI DELI (grizzlytools.shop) - lena nalozitev enako kot pri
-  // trgovinah: podatke poberemo sele, ko uporabnik prvic odpre panel, saj
-  // gre za precej velik katalog (1000+ modelov), ki ga ne rabimo v glavnem
-  // data.js za vsak obisk strani.
-  let partsData = null;
-  let partsIndex = null; // sploscen, dedupliciran seznam delov (glej buildPartsIndex)
-  let partsLoadPromise = null;
-  let lastPartsQuery = "";
-
-  async function ensurePartsLoaded() {
-    if (partsData) return partsData;
-    if (!partsLoadPromise) {
-      partsLoadPromise = fetch("data/spare_parts.json")
-        .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-        .then(data => { partsData = data; partsIndex = buildPartsIndex(data); return data; });
-    }
-    return partsLoadPromise;
-  }
-
-  // Isti fizicni rezervni del (npr. "Baterija PAP 20 A1") se v surovih podatkih
-  // pojavi enkrat pod VSAKIM Parkside modelom, ki mu ustreza (lahko tudi
-  // vec sto krat) - ker iscemo po IMENU DELA in ne po modelu, jih tu
-  // sploscimo v EN zapis na fizicni del (deduplicirano po URL-ju, ki je
-  // edinstven za vsak konkreten izdelek na grizzlytools.shop), z zbirko
-  // vseh modelov, ki jim ta del ustreza.
-  function buildPartsIndex(models) {
-    const byUrl = new Map();
-    models.forEach(m => {
-      m.parts.forEach(p => {
-        let entry = byUrl.get(p.url);
-        if (!entry) {
-          entry = { ...p, models: [] };
-          byUrl.set(p.url, entry);
-        }
-        entry.models.push(m.name);
-      });
-    });
-    return Array.from(byUrl.values());
-  }
-
-  function setPartsStatus(text, isError) {
-    const el = document.getElementById("partsStatus");
-    el.hidden = !text;
-    el.className = "stores-status" + (isError ? " error" : "");
-    el.textContent = text || "";
-  }
-
-  function stockClass(stock) {
-    if (stock === "Available immediately") return "in-stock";
-    if (stock === "Low stock level") return "low-stock";
-    if (stock === "Currently out of stock") return "out-of-stock";
-    return "";
-  }
-
-  function renderPartsResults(query) {
-    const resultsEl = document.getElementById("partsResults");
-    const q = query.trim().toLowerCase();
-    lastPartsQuery = query;
-    if (!q) {
-      resultsEl.innerHTML = "";
-      setPartsStatus(t().partsPrompt, false);
-      return;
-    }
-    const dict = PART_SEARCH_SYNONYMS[currentLang];
-    const terms = [q];
-    if (dict) {
-      Object.keys(dict).forEach(word => { if (q.includes(word)) terms.push(dict[word]); });
-    }
-    const matches = (partsIndex || []).filter(p => {
-      const name = p.name.toLowerCase();
-      return terms.some(term => name.includes(term));
-    }).slice(0, 60);
-    if (matches.length === 0) {
-      resultsEl.innerHTML = "";
-      setPartsStatus(t().partsNone, false);
-      return;
-    }
-    setPartsStatus(null, false);
-    resultsEl.innerHTML = matches.map(p => {
-      const shown = p.models.slice(0, 3).join(", ");
-      const extra = p.models.length - 3;
-      return `
-        <div class="part-card">
-          ${p.brand ? `<div class="part-brand">${p.brand}</div>` : ""}
-          <div class="part-name"><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></div>
-          <div class="part-price">${p.price != null ? p.price.toFixed(2) + " " + (p.currency === "EUR" ? "€" : (p.currency || "")) : ""}</div>
-          ${p.stock ? `<div class="part-stock ${stockClass(p.stock)}">${t().stockLabels[p.stock] || p.stock}</div>` : ""}
-          <div class="part-compat"><strong>${t().partsCompatible(p.models.length)}</strong>: ${shown}${extra > 0 ? " " + t().partsCompatibleMore(extra) : ""}</div>
-        </div>
-      `;
-    }).join("");
-  }
-
-  document.getElementById("partsSearch").addEventListener("input", (e) => {
-    renderPartsResults(e.target.value);
-  });
-
-  document.getElementById("toggleParts").addEventListener("click", () => {
-    partsPanel.hidden = !partsPanel.hidden;
-    if (!partsPanel.hidden) {
-      checklistPanel.hidden = true;
-      countryPanel.hidden = true;
-      storesPanel.hidden = true;
-      helpPanel.hidden = true;
-      setPartsStatus(t().partsLoading, false);
-      ensurePartsLoaded()
-        .then(() => renderPartsResults(document.getElementById("partsSearch").value))
-        .catch(() => setPartsStatus(t().partsError, true));
-    }
-    setActiveSidebarNav(partsPanel.hidden ? "overview" : "parts");
   });
 
   function render() {
@@ -2111,9 +1863,6 @@
     document.getElementById("storeLocationInput").placeholder = t().locationInputPlaceholder;
     document.getElementById("searchStoreLocation").textContent = t().searchBtn;
     document.querySelector('[data-t="partsNavLabel"]').textContent = t().partsNavLabel;
-    document.getElementById("partsHeading").textContent = t().partsHeading;
-    document.getElementById("partsSub").textContent = t().partsSub;
-    document.getElementById("partsSearch").placeholder = t().partsSearchPlaceholder;
     document.getElementById("themeLabel").textContent = t().darkTheme;
     document.documentElement.lang = currentLang;
     applyTheme(currentTheme);
@@ -2129,7 +1878,6 @@
     renderCountryPicker();
     render();
     if (lastStoresShown) renderStoresList(lastStoresShown);
-    if (partsData) renderPartsResults(lastPartsQuery);
   }
 
   const langPicker = document.getElementById("langPicker");
@@ -2221,18 +1969,17 @@
     checklistPanel.hidden = true;
     countryPanel.hidden = true;
     storesPanel.hidden = true;
-    partsPanel.hidden = true;
     helpPanel.hidden = true;
     setActiveSidebarNav("overview");
   });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
-    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; partsPanel.hidden = true; helpPanel.hidden = true; }
+    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
     setActiveSidebarNav(checklistPanel.hidden ? "overview" : "checklist");
   });
   document.getElementById("toggleCountries").addEventListener("click", () => {
     countryPanel.hidden = !countryPanel.hidden;
-    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; partsPanel.hidden = true; helpPanel.hidden = true; }
+    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
     setActiveSidebarNav(countryPanel.hidden ? "overview" : "countries");
   });
   // Plavajoc panel (izberi drzave) - klik na temno ozadje zunaj okvirja ali
@@ -2251,7 +1998,7 @@
   });
   document.getElementById("toggleHelp").addEventListener("click", () => {
     helpPanel.hidden = !helpPanel.hidden;
-    if (!helpPanel.hidden) { checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; partsPanel.hidden = true; }
+    if (!helpPanel.hidden) { checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; }
     setActiveSidebarNav(helpPanel.hidden ? "overview" : "help");
   });
   document.getElementById("selectAllCountries").addEventListener("click", () => {

@@ -80,7 +80,7 @@ def crawl_models(start_url: str) -> dict:
     seen_categories = set()
     models = {}
 
-    def visit(url):
+    def visit(url, category_label):
         if url in seen_categories:
             return
         seen_categories.add(url)
@@ -94,11 +94,13 @@ def crawl_models(start_url: str) -> dict:
             if match:
                 key = match.group(1)
                 if key not in models:
-                    models[key] = {"name": label, "url": href}
+                    # kategorija modela je stran, na kateri smo ga nasli
+                    # (category_label), NE ime plosice (to je ime modela)
+                    models[key] = {"name": label, "url": href, "category": category_label}
             else:
-                visit(href)
+                visit(href, label)
 
-    visit(start_url)
+    visit(start_url, "Parkside")
     return models
 
 
@@ -156,6 +158,7 @@ def main():
                 "id": key,
                 "name": model["name"],
                 "url": model["url"],
+                "category": model.get("category"),
                 "parts": parts,
             })
         if i % 50 == 0 or i == total:
