@@ -880,7 +880,13 @@
     const dict = PART_SEARCH_SYNONYMS[currentLang];
     const terms = q ? [q] : [];
     if (dict && q) {
-      Object.keys(dict).forEach(word => { if (q.includes(word)) terms.push(dict[word]); });
+      // q.includes(word): uporabnik je natipkal celo besedo (morda z dodatno
+      // pripono). word.startsWith(q): uporabnik se še ni dotipkal do konca
+      // (npr. "bater" naj že ujame "baterija") - brez tega delni vnos ni dal
+      // nobenega ujemanja.
+      Object.keys(dict).forEach(word => {
+        if (q.includes(word) || word.startsWith(q)) terms.push(dict[word]);
+      });
     }
 
     const all = partsIndex.filter(p => {
