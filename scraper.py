@@ -203,7 +203,8 @@ COMPETITOR_REFERENCE = [
     {
         "key": "leaf_blower",
         "keywords": [
-            "pihalnik za listje", "puhalnik za listje", "puhač lišć", "puhac lisc",
+            "pihalnik za listje", "puhalnik za listje",
+            "puhač lišć", "puhac lisc", "puhalo za lišć", "puhalo za lisc",
             "laubbläser", "laubblaeser", "turbinenlaubbläser",
         ],
         "low": 64, "high": 137,
