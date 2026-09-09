@@ -92,6 +92,38 @@ def fetch_category(domain: str, assortment: str, locale: str) -> dict:
     return resp.json()
 
 
+# Iskalni API (/q/api/search) za nekatere izdelke ne vrne cene (price.price
+# manjka, čeprav je izdelek "havingPrice": true in trenutno na voljo) - to je
+# vrzel na Lidlovi strani, ne napaka pri nas. Cena PA je vedno prisotna na
+# posamezni strani izdelka, vgrajena v Nuxt "__NUXT_DATA__" JSON (isti Vue/
+# Nuxt frontend na vseh trgih). Zato za take izdelke kot rezervo poberemo se
+# stran izdelka in ceno poiscemo tam - le za peščico izdelkov na zagon, saj
+# je vecina cen ze na voljo iz iskalnega API-ja.
+NUXT_DATA_RE = re.compile(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', re.S)
+
+
+def fetch_detail_price(url: str):
+    if not url:
+        return None
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        match = NUXT_DATA_RE.search(resp.text)
+        if not match:
+            return None
+        arr = json.loads(match.group(1))
+        for entry in arr:
+            if isinstance(entry, dict) and "basePrice" in entry and "price" in entry and "oldPrice" in entry:
+                price_idx = entry.get("price")
+                if isinstance(price_idx, int) and 0 <= price_idx < len(arr):
+                    value = arr[price_idx]
+                    if isinstance(value, (int, float)):
+                        return float(value)
+        return None
+    except Exception:  # noqa: BLE001 - to je zgolj rezervni poskus, ne sme podreti scrapea
+        return None
+
+
 def is_performance(brand: str, title: str) -> bool:
     text = f"{brand or ''} {title or ''}".lower()
     return "performance" in text
@@ -296,6 +328,8 @@ def extract_fields(gb_data: dict, domain: str) -> dict:
     x20v = is_x20v_team(seals, description)
     price = (price_info or {}).get("price")
     currency = (price_info or {}).get("currencyCode")
+    if price is None and currency and url:
+        price = fetch_detail_price(url)
     price_eur = to_eur(price, currency)
     competitor = match_competitor_reference(title, price_eur)
 
