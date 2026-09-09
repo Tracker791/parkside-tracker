@@ -217,6 +217,8 @@
   }
   .sidebar-icon { flex: none; width: 18px; text-align: center; }
   .sidebar-item:hover { background: rgba(255,255,255,.08); color: #fff; }
+  .sidebar-content { display: contents; }
+  .sidebar-mobile-toggle { display: none; }
   .sidebar-item.active { background: var(--ps-red); color: #fff; font-weight: 600; }
   .sidebar-divider { height: 1px; background: rgba(255,255,255,.1); margin: 10px 6px; flex: none; }
   .sidebar-section-title {
@@ -292,23 +294,33 @@
       width: 100%;
       height: auto;
       position: static;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
+      display: block;
+      padding: 8px 12px;
+    }
+    .sidebar-mobile-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
       padding: 10px 12px;
-      gap: 6px;
-      scrollbar-width: none;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
     }
-    .sidebar::-webkit-scrollbar { display: none; }
-    .sidebar-item, .sidebar-check, .sidebar-search-input, .sidebar .filter-select {
-      flex: none;
-      white-space: nowrap;
-      width: auto;
+    .sidebar-mobile-toggle .sidebar-caret { margin-left: auto; font-size: 11px; opacity: .75; transition: transform .15s ease; }
+    .sidebar-mobile-toggle[aria-expanded="true"] .sidebar-caret { transform: rotate(180deg); }
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 6px;
     }
-    .sidebar-search-input { min-width: 160px; }
-    .sidebar-divider, .sidebar-section-title { display: none; }
-    .sidebar-meta { display: none; }
+    .sidebar-content.collapsed { display: none; }
 
     main, .worth-explainer, .checklist-panel { padding-left: 16px; padding-right: 16px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
@@ -724,25 +736,31 @@
 
 <div class="body-row">
   <aside class="sidebar" id="sidebar">
-    <button class="sidebar-item active" id="navOverview">
-      <span class="sidebar-icon">🧰</span> <span data-t="navOverview">Pregled</span>
+    <button class="sidebar-mobile-toggle" id="sidebarMobileToggle" type="button" aria-expanded="false" aria-controls="sidebarContent">
+      <span class="sidebar-icon">☰</span> <span data-t="menuLabel">Meni</span>
+      <span class="sidebar-caret">▾</span>
     </button>
-    <div class="sidebar-divider"></div>
-    <button class="sidebar-item" id="toggleChecklist"><span class="sidebar-icon">🛠️</span><span id="toggleChecklistLabel">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</span></button>
-    <button class="sidebar-item" id="toggleCountries"><span class="sidebar-icon">🌍</span><span id="toggleCountriesLabel">Države (0)</span></button>
-    <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
-    <button class="sidebar-item" id="toggleHelp"><span class="sidebar-icon">📖</span><span id="toggleHelpLabel" data-t="helpNavLabel">Navodila</span></button>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section-title">Filter</div>
-    <select class="filter-select" id="filterSelect">
-      <option id="filterWorth" value="worth">Vredno cene</option>
-      <option id="filterPerf" value="performance">Samo Parkside Performance</option>
-      <option id="filterAll" value="all" selected>Vsi Parkside izdelki</option>
-    </select>
-    <label class="sidebar-check"><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
-    <label class="sidebar-check"><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
-    <input type="text" id="search" class="sidebar-search-input" placeholder="Iskanje po imenu..." />
-    <div class="sidebar-meta" id="totalsMeta"></div>
+    <div class="sidebar-content collapsed" id="sidebarContent">
+      <button class="sidebar-item active" id="navOverview">
+        <span class="sidebar-icon">🧰</span> <span data-t="navOverview">Pregled</span>
+      </button>
+      <div class="sidebar-divider"></div>
+      <button class="sidebar-item" id="toggleChecklist"><span class="sidebar-icon">🛠️</span><span id="toggleChecklistLabel">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</span></button>
+      <button class="sidebar-item" id="toggleCountries"><span class="sidebar-icon">🌍</span><span id="toggleCountriesLabel">Države (0)</span></button>
+      <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
+      <button class="sidebar-item" id="toggleHelp"><span class="sidebar-icon">📖</span><span id="toggleHelpLabel" data-t="helpNavLabel">Navodila</span></button>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-title">Filter</div>
+      <select class="filter-select" id="filterSelect">
+        <option id="filterWorth" value="worth">Vredno cene</option>
+        <option id="filterPerf" value="performance">Samo Parkside Performance</option>
+        <option id="filterAll" value="all" selected>Vsi Parkside izdelki</option>
+      </select>
+      <label class="sidebar-check"><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
+      <label class="sidebar-check"><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
+      <input type="text" id="search" class="sidebar-search-input" placeholder="Iskanje po imenu..." />
+      <div class="sidebar-meta" id="totalsMeta"></div>
+    </div>
   </aside>
 
   <div class="content-col">
@@ -827,6 +845,7 @@
       footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
       toolbarStores: "Trgovine v bližini",
       navOverview: "Pregled",
+      menuLabel: "Meni",
       helpNavLabel: "Navodila",
       helpHeading: "Navodila za uporabo",
       helpVersion: (v) => `Različica ${v}`,
@@ -910,6 +929,7 @@
       footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
       toolbarStores: "Stores near you",
       navOverview: "Overview",
+      menuLabel: "Menu",
       helpNavLabel: "Instructions",
       helpHeading: "How to use this app",
       helpVersion: (v) => `Version ${v}`,
@@ -993,6 +1013,7 @@
       footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
       toolbarStores: "Filialen in der Nähe",
       navOverview: "Übersicht",
+      menuLabel: "Menü",
       helpNavLabel: "Anleitung",
       helpHeading: "Bedienungsanleitung",
       helpVersion: (v) => `Version ${v}`,
@@ -1076,6 +1097,7 @@
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
       toolbarStores: "Trgovine u blizini",
       navOverview: "Pregled",
+      menuLabel: "Izbornik",
       helpNavLabel: "Upute",
       helpHeading: "Upute za korištenje",
       helpVersion: (v) => `Verzija ${v}`,
@@ -1798,6 +1820,7 @@
     document.getElementById("selectNoneCountries").textContent = t().selectNone;
     document.getElementById("toggleStoresLabel").textContent = t().toolbarStores;
     document.querySelector('[data-t="navOverview"]').textContent = t().navOverview;
+    document.querySelector('[data-t="menuLabel"]').textContent = t().menuLabel;
     document.querySelector('[data-t="helpNavLabel"]').textContent = t().helpNavLabel;
     document.getElementById("helpHeading").textContent = t().helpHeading;
     document.getElementById("helpVersion").textContent = t().helpVersion(APP_VERSION);
@@ -1867,6 +1890,31 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLangPicker();
+  });
+
+  // Na ozkih zaslonih je celoten levi meni (Pregled/Moja orodja/Drzave/...)
+  // enak kot na racunalniku, le zvit v spustni meni - namesto vodoravnega
+  // drsenja, ki je bilo tezje pregledno.
+  const sidebarMobileToggle = document.getElementById("sidebarMobileToggle");
+  const sidebarContent = document.getElementById("sidebarContent");
+  function collapseSidebarMenu() {
+    sidebarContent.classList.add("collapsed");
+    sidebarMobileToggle.setAttribute("aria-expanded", "false");
+  }
+  sidebarMobileToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const willOpen = sidebarContent.classList.contains("collapsed");
+    sidebarContent.classList.toggle("collapsed", !willOpen);
+    sidebarMobileToggle.setAttribute("aria-expanded", String(willOpen));
+  });
+  document.addEventListener("click", (e) => {
+    if (!document.getElementById("sidebar").contains(e.target)) collapseSidebarMenu();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") collapseSidebarMenu();
+  });
+  sidebarContent.addEventListener("click", (e) => {
+    if (e.target.closest(".sidebar-item")) collapseSidebarMenu();
   });
 
   document.getElementById("filterSelect").addEventListener("change", (e) => {
