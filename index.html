@@ -102,7 +102,9 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     overflow: hidden;
   }
   header::before {
@@ -154,37 +156,51 @@
   .theme-toggle:hover, .lang-select:hover { background: rgba(255,255,255,.16); }
   .lang-select option { background: var(--ps-black); color: #fff; }
 
-  .toolbar {
+  .body-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-    padding: 14px 24px;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .sidebar {
+    width: 230px;
+    flex: none;
+    background: var(--ps-black);
+    padding: 16px 10px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     position: sticky;
-    top: 0;
-    z-index: 5;
+    top: 88px;
+    align-self: flex-start;
+    height: calc(100vh - 88px);
+    overflow-y: auto;
   }
-  .toolbar button, .toolbar label {
-    font-size: 13px;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--surface);
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #c9cace;
+    font-size: 13.5px;
+    font-family: inherit;
     cursor: pointer;
-    color: var(--text);
-    user-select: none;
-    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+    text-align: left;
+    transition: background .15s ease, color .15s ease;
   }
-  .toolbar button:hover { border-color: var(--ps-red); transform: translateY(-1px); }
-  .toolbar button.active {
-    background: var(--ps-red);
-    color: #fff;
-    border-color: var(--ps-red);
+  .sidebar-icon { flex: none; width: 18px; text-align: center; }
+  .sidebar-item:hover { background: rgba(255,255,255,.08); color: #fff; }
+  .sidebar-item.active { background: var(--ps-red); color: #fff; font-weight: 600; }
+  .sidebar-divider { height: 1px; background: rgba(255,255,255,.1); margin: 10px 6px; flex: none; }
+  .sidebar-section-title {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #7c7f86;
+    margin: 8px 12px 4px;
   }
-  .toolbar .spacer { flex: 1; }
-  .toolbar .meta { font-size: 12px; color: var(--muted); }
   .filter-select {
     font-size: 13px;
     font-weight: 600;
@@ -202,15 +218,31 @@
     padding-right: 30px;
   }
   .filter-select option { background: var(--surface); color: var(--text); font-weight: 500; }
-  .toolbar input[type=text] {
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    font-size: 13px;
-    min-width: 200px;
+  .sidebar .filter-select { width: 100%; margin: 0 0 4px; }
+  .sidebar-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    color: #c9cace;
+    cursor: pointer;
   }
+  .sidebar-check input { accent-color: var(--ps-red); cursor: pointer; flex: none; }
+  .sidebar-search-input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.07);
+    color: #fff;
+    font-size: 13px;
+  }
+  .sidebar-search-input::placeholder { color: #9a9da3; }
+  .sidebar-meta { font-size: 11.5px; color: #9a9da3; padding: 12px 12px 0; }
+
+  .content-col { flex: 1; min-width: 0; }
 
   .worth-explainer {
     max-width: 1400px;
@@ -224,24 +256,34 @@
 
   main { padding: 20px 24px 60px; max-width: 1400px; margin: 0 auto; }
 
-  @media (max-width: 720px) {
+  @media (max-width: 860px) {
     header { flex-wrap: wrap; row-gap: 8px; padding: 14px 16px; }
     header .meta-col { order: 3; flex-basis: 100%; }
     header p#generatedAt { opacity: .6; }
     .logo-text .l1 { font-size: 22px; }
 
-    .toolbar {
-      padding: 10px 16px;
+    .body-row { flex-direction: column; }
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+      flex-direction: row;
       flex-wrap: nowrap;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      overflow-y: hidden;
+      padding: 10px 12px;
+      gap: 6px;
       scrollbar-width: none;
     }
-    .toolbar::-webkit-scrollbar { display: none; }
-    .toolbar button, .toolbar label, .filter-select { flex: none; white-space: nowrap; }
-    .toolbar input[type=text] { flex: none; min-width: 150px; }
-    .toolbar .spacer { display: none; }
-    .toolbar .meta { flex: none; white-space: nowrap; }
+    .sidebar::-webkit-scrollbar { display: none; }
+    .sidebar-item, .sidebar-check, .sidebar-search-input, .sidebar .filter-select {
+      flex: none;
+      white-space: nowrap;
+      width: auto;
+    }
+    .sidebar-search-input { min-width: 160px; }
+    .sidebar-divider, .sidebar-section-title { display: none; }
+    .sidebar-meta { display: none; }
 
     main, .worth-explainer, .checklist-panel { padding-left: 16px; padding-right: 16px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
@@ -601,60 +643,70 @@
   </div>
 </header>
 
-<div class="toolbar">
-  <select class="filter-select" id="filterSelect">
-    <option id="filterWorth" value="worth" selected>Vredno cene</option>
-    <option id="filterPerf" value="performance">Samo Parkside Performance</option>
-    <option id="filterAll" value="all">Vsi Parkside izdelki</option>
-  </select>
-  <label><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
-  <label><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
-  <button id="toggleChecklist">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</button>
-  <button id="toggleCountries">Države (0)</button>
-  <button id="toggleStores">🏬 Trgovine v bližini</button>
-  <input type="text" id="search" placeholder="Iskanje po imenu..." />
-  <div class="spacer"></div>
-  <div class="meta" id="totalsMeta"></div>
-</div>
-<div class="worth-explainer" id="worthExplainer"></div>
+<div class="body-row">
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-item active" id="navOverview">
+      <span class="sidebar-icon">🧰</span> <span data-t="navOverview">Pregled</span>
+    </button>
+    <div class="sidebar-divider"></div>
+    <button class="sidebar-item" id="toggleChecklist"><span class="sidebar-icon">🛠️</span><span id="toggleChecklistLabel">Moja orodja (<span id="ownedCount">0</span> odkljukanih)</span></button>
+    <button class="sidebar-item" id="toggleCountries"><span class="sidebar-icon">🌍</span><span id="toggleCountriesLabel">Države (0)</span></button>
+    <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Filter</div>
+    <select class="filter-select" id="filterSelect">
+      <option id="filterWorth" value="worth" selected>Vredno cene</option>
+      <option id="filterPerf" value="performance">Samo Parkside Performance</option>
+      <option id="filterAll" value="all">Vsi Parkside izdelki</option>
+    </select>
+    <label class="sidebar-check"><input type="checkbox" id="onlyChanges" /> <span data-t="onlyChanges">Samo novo / spremenjeno</span></label>
+    <label class="sidebar-check"><input type="checkbox" id="showOwned" /> <span data-t="showOwned">Pokaži tudi kar že imam</span></label>
+    <input type="text" id="search" class="sidebar-search-input" placeholder="Iskanje po imenu..." />
+    <div class="sidebar-meta" id="totalsMeta"></div>
+  </aside>
 
-<div class="side-panel" id="checklistPanel" hidden>
-  <div class="side-panel-box">
-    <h2 id="myToolsHeading">Moja orodja — Parkside Performance</h2>
-    <div class="sub" id="myToolsSub">Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.</div>
-    <div class="checklist-list" id="checklistList"></div>
-  </div>
-</div>
+  <div class="content-col">
+    <div class="worth-explainer" id="worthExplainer"></div>
 
-<div class="side-panel" id="countryPanel" hidden>
-  <div class="side-panel-box">
-    <h2 id="countriesHeading">Izberi države</h2>
-    <div class="sub" id="countriesSub">Prikaži samo izbrane države. Če ni nič izbrano, so prikazane vse.</div>
-    <div class="country-picker-actions">
-      <button id="selectAllCountries">Izberi vse</button>
-      <button id="selectNoneCountries">Počisti izbiro</button>
+    <div class="side-panel" id="checklistPanel" hidden>
+      <div class="side-panel-box">
+        <h2 id="myToolsHeading">Moja orodja — Parkside Performance</h2>
+        <div class="sub" id="myToolsSub">Odkljukaj, kar že imaš. Odkljukano orodje se privzeto skrije iz priporočil zgoraj, dokler ga ne odkljukaš stran.</div>
+        <div class="checklist-list" id="checklistList"></div>
+      </div>
     </div>
-    <input type="text" id="countrySearch" class="country-search" placeholder="Iskanje držav..." />
-    <div class="country-grid" id="countryGrid"></div>
-  </div>
-</div>
 
-<div class="side-panel" id="storesPanel" hidden>
-  <div class="side-panel-box">
-    <h2 id="storesHeading">Trgovine v bližini</h2>
-    <div class="sub" id="storesSub">Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.</div>
-    <div class="stores-controls">
-      <button id="useMyLocation">📍 Uporabi mojo lokacijo</button>
-      <input type="text" id="storeLocationInput" placeholder="Ali vpiši kraj/naslov..." />
-      <button id="searchStoreLocation">Poišči</button>
+    <div class="side-panel" id="countryPanel" hidden>
+      <div class="side-panel-box">
+        <h2 id="countriesHeading">Izberi države</h2>
+        <div class="sub" id="countriesSub">Prikaži samo izbrane države. Če ni nič izbrano, so prikazane vse.</div>
+        <div class="country-picker-actions">
+          <button id="selectAllCountries">Izberi vse</button>
+          <button id="selectNoneCountries">Počisti izbiro</button>
+        </div>
+        <input type="text" id="countrySearch" class="country-search" placeholder="Iskanje držav..." />
+        <div class="country-grid" id="countryGrid"></div>
+      </div>
     </div>
-    <div id="storesStatus" class="stores-status" hidden></div>
-    <div id="storesMap" class="stores-map" hidden></div>
-    <div class="stores-list" id="storesList"></div>
+
+    <div class="side-panel" id="storesPanel" hidden>
+      <div class="side-panel-box">
+        <h2 id="storesHeading">Trgovine v bližini</h2>
+        <div class="sub" id="storesSub">Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.</div>
+        <div class="stores-controls">
+          <button id="useMyLocation">📍 Uporabi mojo lokacijo</button>
+          <input type="text" id="storeLocationInput" placeholder="Ali vpiši kraj/naslov..." />
+          <button id="searchStoreLocation">Poišči</button>
+        </div>
+        <div id="storesStatus" class="stores-status" hidden></div>
+        <div id="storesMap" class="stores-map" hidden></div>
+        <div class="stores-list" id="storesList"></div>
+      </div>
+    </div>
+
+    <main id="app"></main>
   </div>
 </div>
-
-<main id="app"></main>
 
 <footer class="site-footer" id="siteFooter">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
 
@@ -683,7 +735,8 @@
       searchPlaceholder: "Iskanje po imenu...",
       countrySearchPlaceholder: "Iskanje držav...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
-      toolbarStores: "🏬 Trgovine v bližini",
+      toolbarStores: "Trgovine v bližini",
+      navOverview: "Pregled",
       storesHeading: "Trgovine v bližini",
       storesSub: "Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.",
       useMyLocationBtn: "📍 Uporabi mojo lokacijo",
@@ -747,7 +800,8 @@
       searchPlaceholder: "Search by name...",
       countrySearchPlaceholder: "Search countries...",
       footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
-      toolbarStores: "🏬 Stores near you",
+      toolbarStores: "Stores near you",
+      navOverview: "Overview",
       storesHeading: "Stores near you",
       storesSub: "Find Lidl stores near you - with opening hours and directions.",
       useMyLocationBtn: "📍 Use my location",
@@ -811,7 +865,8 @@
       searchPlaceholder: "Nach Name suchen...",
       countrySearchPlaceholder: "Länder suchen...",
       footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
-      toolbarStores: "🏬 Filialen in der Nähe",
+      toolbarStores: "Filialen in der Nähe",
+      navOverview: "Übersicht",
       storesHeading: "Filialen in der Nähe",
       storesSub: "Finde Lidl-Filialen in deiner Nähe - mit Öffnungszeiten und Wegbeschreibung.",
       useMyLocationBtn: "📍 Meinen Standort verwenden",
@@ -875,7 +930,8 @@
       searchPlaceholder: "Pretraži po nazivu...",
       countrySearchPlaceholder: "Pretraži države...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
-      toolbarStores: "🏬 Trgovine u blizini",
+      toolbarStores: "Trgovine u blizini",
+      navOverview: "Pregled",
       storesHeading: "Trgovine u blizini",
       storesSub: "Pronađi Lidl trgovine u svojoj blizini - s radnim vremenom i navigacijom.",
       useMyLocationBtn: "📍 Koristi moju lokaciju",
@@ -1024,6 +1080,16 @@
   const countryGrid = document.getElementById("countryGrid");
   const storesPanel = document.getElementById("storesPanel");
 
+  const sidebarNavButtons = {
+    overview: document.getElementById("navOverview"),
+    checklist: document.getElementById("toggleChecklist"),
+    countries: document.getElementById("toggleCountries"),
+    stores: document.getElementById("toggleStores"),
+  };
+  function setActiveSidebarNav(key) {
+    Object.entries(sidebarNavButtons).forEach(([k, el]) => el.classList.toggle("active", k === key));
+  }
+
   function fmtDate(iso) {
     if (!iso) return null;
     const d = new Date(iso);
@@ -1125,7 +1191,7 @@
     const data = window.__PARKSIDE_DATA__;
     const catalog = (data && data.performanceCatalog) || [];
     ownedCountEl.textContent = owned.size;
-    document.getElementById("toggleChecklist").innerHTML = t().myTools(owned.size).replace(String(owned.size), `<span id="ownedCount">${owned.size}</span>`);
+    document.getElementById("toggleChecklistLabel").innerHTML = t().myTools(owned.size).replace(String(owned.size), `<span id="ownedCount">${owned.size}</span>`);
 
     if (catalog.length === 0) {
       checklistList.innerHTML = `<p class="empty-note">${t().noOwnedCatalog}</p>`;
@@ -1184,7 +1250,7 @@
   function renderCountryPicker() {
     const data = window.__PARKSIDE_DATA__;
     let codes = data ? Object.keys(data.countries) : [];
-    document.getElementById("toggleCountries").textContent = t().countriesBtn(selectedCountries.size, ALL_COUNTRY_CODES.length);
+    document.getElementById("toggleCountriesLabel").textContent = t().countriesBtn(selectedCountries.size, ALL_COUNTRY_CODES.length);
 
     codes = codes
       .filter(code => !countryQuery || countryName(code).toLowerCase().includes(countryQuery))
@@ -1384,6 +1450,7 @@
       ensureStoresLoaded().then(() => setStoresStatus(null, false)).catch(() => setStoresStatus(t().storesError, true));
       if (storesMap) setTimeout(() => storesMap.invalidateSize(), 50);
     }
+    setActiveSidebarNav(storesPanel.hidden ? "overview" : "stores");
   });
 
   function render() {
@@ -1508,7 +1575,8 @@
     document.getElementById("countriesSub").textContent = t().countriesSub;
     document.getElementById("selectAllCountries").textContent = t().selectAll;
     document.getElementById("selectNoneCountries").textContent = t().selectNone;
-    document.getElementById("toggleStores").textContent = t().toolbarStores;
+    document.getElementById("toggleStoresLabel").textContent = t().toolbarStores;
+    document.querySelector('[data-t="navOverview"]').textContent = t().navOverview;
     document.getElementById("storesHeading").textContent = t().storesHeading;
     document.getElementById("storesSub").textContent = t().storesSub;
     document.getElementById("useMyLocation").textContent = t().useMyLocationBtn;
@@ -1549,13 +1617,21 @@
     state.showOwned = e.target.checked;
     render();
   });
+  document.getElementById("navOverview").addEventListener("click", () => {
+    checklistPanel.hidden = true;
+    countryPanel.hidden = true;
+    storesPanel.hidden = true;
+    setActiveSidebarNav("overview");
+  });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
     if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; }
+    setActiveSidebarNav(checklistPanel.hidden ? "overview" : "checklist");
   });
   document.getElementById("toggleCountries").addEventListener("click", () => {
     countryPanel.hidden = !countryPanel.hidden;
     if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; }
+    setActiveSidebarNav(countryPanel.hidden ? "overview" : "countries");
   });
   document.getElementById("selectAllCountries").addEventListener("click", () => {
     const data = window.__PARKSIDE_DATA__;
