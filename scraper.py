@@ -113,7 +113,11 @@ def fetch_detail_price(url: str):
             return None
         arr = json.loads(match.group(1))
         for entry in arr:
-            if isinstance(entry, dict) and "basePrice" in entry and "price" in entry and "oldPrice" in entry:
+            # "oldPrice" je bil prej pogoj, a se pojavi le pri izdelkih z
+            # aktivnim popustom (precrtana stara cena) - za izdelke brez
+            # popusta (npr. se ne na voljo, prihodnji artikli) ta kljuc
+            # manjka, cetudi basePrice/price obstajata in sta veljavna.
+            if isinstance(entry, dict) and "basePrice" in entry and "price" in entry:
                 price_idx = entry.get("price")
                 if isinstance(price_idx, int) and 0 <= price_idx < len(arr):
                     value = arr[price_idx]
@@ -473,7 +477,11 @@ def update_catalog(catalog: dict, country_products: dict, generated_at: str) -> 
     return catalog
 
 
-TRACKED_FIELDS = ("price", "online", "inStoreNow", "availableFrom", "availableUntil", "worthIt")
+# "inStoreNow" namenoma NI v tem seznamu - v vmesniku se nikjer ne prikaze,
+# zato bi njegov preklop (razmeroma pogost/nihajoc signal iz Lidlovega API-ja)
+# sprozil znacko "SPREMEMBA" brez ustrezne razlage v changeNote() - uporabnik
+# bi videl oznako spremembe, kjer se na kartici dejansko ni nic vidno spremenilo.
+TRACKED_FIELDS = ("price", "online", "availableFrom", "availableUntil", "worthIt")
 
 
 def diff_against_previous(country_code: str, products: list, previous: dict):
