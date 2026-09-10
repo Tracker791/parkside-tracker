@@ -160,6 +160,7 @@
     flex: none;
     border-radius: 6px;
     background: #fff;
+    cursor: pointer;
   }
   .manuals-item-title {
     flex: 1;
@@ -662,7 +663,7 @@
       const url = manualSearchUrl(it.country, it.title);
       return `
         <div class="manuals-item">
-          ${it.image ? `<img src="${it.image}" alt="" loading="lazy" />` : ""}
+          ${it.image ? `<a href="${url}" target="_blank" rel="noopener"><img src="${it.image}" alt="" loading="lazy" /></a>` : ""}
           <div class="manuals-item-title">${it.title}</div>
           <a class="manuals-item-btn" href="${url}" target="_blank" rel="noopener">${t().btn}</a>
         </div>
