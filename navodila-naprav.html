@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Navodila za naprave — Parkside Tracker</title>
+<meta name="description" content="Poišči uradna navodila za uporabo (priročnik) za svojo Parkside napravo - iskanje po imenu naprave, ki odpre rezultate na uradnem Lidl servisnem portalu za pripadajočo državo." />
+<meta name="theme-color" content="#17181A" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script data-goatcounter="https://parksidetracker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --ps-red: #E8232D;
+    --ps-red-dark: #B91620;
+    --ps-black: #17181A;
+    --ps-slate: #384654;
+    --bg: #f2f1ef;
+    --surface: #ffffff;
+    --surface-2: #f7f6f4;
+    --text: #17181a;
+    --muted: #6b6f76;
+    --border: #e3e1dd;
+    --shadow: 0 1px 2px rgba(20,20,20,.05), 0 6px 16px rgba(20,20,20,.06);
+    --new: #1a8a4a;
+    --changed: #c47f00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0f10; --surface: #1a1b1d; --surface-2: #202224; --text: #f2f1ef;
+      --muted: #9a9da3; --border: #2c2e31; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+      --ps-red: #FF4650;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e0f10; --surface: #1a1b1d; --surface-2: #202224; --text: #f2f1ef;
+    --muted: #9a9da3; --border: #2c2e31; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.45);
+    --ps-red: #FF4650;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background .2s ease, color .2s ease;
+  }
+  h1, h2, .headline {
+    font-family: "Barlow Condensed", "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+  }
+  a { color: inherit; }
+
+  header {
+    background: var(--ps-black);
+    color: #fff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(232,35,45,.18), transparent 55%);
+    pointer-events: none;
+  }
+  .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; z-index: 1; }
+  .logo-mark { flex: none; filter: drop-shadow(0 2px 6px rgba(232,35,45,.5)); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .l1 { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: .03em; color: #fff; }
+  .logo-text .l1 span { color: var(--ps-red); }
+  .logo-text .l2 { font-size: 10.5px; color: #c9cace; letter-spacing: .16em; margin-top: 2px; text-transform: uppercase; }
+  header .spacer { flex: 1; }
+  header .header-controls { display: flex; align-items: center; gap: 8px; z-index: 1; margin-left: auto; }
+  .theme-toggle, .lang-picker-btn {
+    z-index: 1; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+    color: #fff; border-radius: 20px; padding: 7px 14px; font-size: 12.5px; cursor: pointer;
+    display: flex; align-items: center; gap: 6px; transition: background .15s ease; font-family: inherit;
+  }
+  .theme-toggle:hover, .lang-picker-btn:hover { background: rgba(255,255,255,.16); }
+  .lang-picker { position: relative; z-index: 2; }
+  .lang-picker-btn { padding: 7px 10px; }
+  .lang-caret { font-size: 9px; opacity: .7; margin-left: 1px; }
+  .flag-icon { flex: none; width: 18px; height: 13px; border-radius: 2px; overflow: hidden; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+  .flag-icon svg { display: block; width: 100%; height: 100%; }
+  .lang-picker-list {
+    list-style: none; margin: 6px 0 0; padding: 6px; position: absolute; right: 0; top: 100%;
+    background: var(--ps-black); border: 1px solid rgba(255,255,255,.18); border-radius: 12px;
+    box-shadow: var(--shadow); min-width: 130px;
+  }
+  .lang-picker-list[hidden] { display: none; }
+  .lang-picker-list li { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; font-size: 12.5px; color: #d7d8db; cursor: pointer; }
+  .lang-picker-list li:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .lang-picker-list li.active { background: var(--ps-red); color: #fff; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .back-link:hover { color: var(--ps-red); }
+
+  .manuals-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+  }
+  .manuals-page h1 { font-size: 26px; margin: 0 0 6px; }
+  .manuals-page .page-sub { color: var(--muted); font-size: 13px; margin: 0 0 16px; max-width: 760px; }
+  .manuals-search-input {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 16px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .manuals-count { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+  .empty-note { color: var(--muted); font-size: 13px; padding: 16px 0; }
+
+  .manuals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .manuals-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  .manuals-item img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex: none;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .manuals-item-title {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .manuals-item-btn {
+    flex: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--ps-red);
+    border-radius: 8px;
+    padding: 7px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .manuals-item-btn:hover { opacity: 0.88; }
+
+  .site-footer { text-align: center; font-size: 12px; color: var(--muted); padding: 18px 16px 28px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 860px) {
+    header { padding: 14px 16px; }
+    .logo-text .l1 { font-size: 20px; }
+    .manuals-page { padding: 16px 16px 50px; }
+    .manuals-item { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo-link" href="index.html">
+    <svg class="logo-mark" width="42" height="42" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60,4.5 111,32.25 111,87.75 60,115.5 9,87.75 9,32.25" fill="#0c0d0e" stroke="#E8232D" stroke-width="2"/>
+      <polygon points="60,14 102.3,37 102.3,83 60,106 17.7,83 17.7,37" fill="#e8232d"/>
+      <rect x="47" y="32" width="11" height="46" rx="4" fill="#fff"/>
+      <path d="M58,32 C80,32 80,58 58,58" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-text">
+      <div class="l1">PARKSIDE <span>TRACKER</span></div>
+      <div class="l2" id="tagline">NAVODILA ZA NAPRAVE</div>
+    </div>
+  </a>
+  <div class="spacer"></div>
+  <div class="header-controls">
+    <div class="lang-picker" id="langPicker">
+      <button class="lang-picker-btn" id="langPickerBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="flag-icon" id="langPickerFlag"></span>
+        <span id="langPickerCode">SL</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-picker-list" id="langPickerList" role="listbox" hidden></ul>
+    </div>
+    <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span> <span id="themeLabel">Temna tema</span></button>
+  </div>
+</header>
+
+<div class="manuals-page">
+  <a class="back-link" href="index.html" id="backLink">← Nazaj na Parkside Tracker</a>
+  <h1 id="pageHeading">Navodila za uporabo naprav</h1>
+  <p class="page-sub" id="pageSub">Poišči uradna navodila za uporabo za svojo Parkside napravo – odpre iskanje na uradnem Lidl servisnem portalu.</p>
+  <input type="text" id="manualsSearch" class="manuals-search-input" placeholder="Iskanje po imenu naprave..." />
+  <div class="manuals-count" id="manualsCount"></div>
+  <div class="manuals-list" id="manualsList"></div>
+</div>
+
+<footer class="site-footer">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const I18N = {
+    sl: {
+      darkTheme: "Temna tema", lightTheme: "Svetla tema",
+      backLink: "← Nazaj na Parkside Tracker",
+      tagline: "Navodila za naprave",
+      pageHeading: "Navodila za uporabo naprav",
+      pageSub: "Poišči uradna navodila za uporabo za svojo Parkside napravo – odpre iskanje na uradnem Lidl servisnem portalu.",
+      searchPlaceholder: "Iskanje po imenu naprave...",
+      btn: "Poišči navodila",
+      none: "Ni najdenih naprav.",
+      countLabel: "Prikazanih naprav",
+    },
+    en: {
+      darkTheme: "Dark mode", lightTheme: "Light mode",
+      backLink: "← Back to Parkside Tracker",
+      tagline: "Device manuals",
+      pageHeading: "Device instruction manuals",
+      pageSub: "Find the official instruction manual for your Parkside device – opens a search on the official Lidl service portal.",
+      searchPlaceholder: "Search by device name...",
+      btn: "Find manual",
+      none: "No devices found.",
+      countLabel: "Devices shown",
+    },
+    de: {
+      darkTheme: "Dunkelmodus", lightTheme: "Hellmodus",
+      backLink: "← Zurück zum Parkside Tracker",
+      tagline: "Bedienungsanleitungen",
+      pageHeading: "Bedienungsanleitungen für Geräte",
+      pageSub: "Finde die offizielle Bedienungsanleitung für dein Parkside-Gerät – öffnet die Suche im offiziellen Lidl-Serviceportal.",
+      searchPlaceholder: "Nach Gerätename suchen...",
+      btn: "Anleitung suchen",
+      none: "Keine Geräte gefunden.",
+      countLabel: "Angezeigte Geräte",
+    },
+    hr: {
+      darkTheme: "Tamna tema", lightTheme: "Svijetla tema",
+      backLink: "← Natrag na Parkside Tracker",
+      tagline: "Upute za uređaje",
+      pageHeading: "Upute za uporabu uređaja",
+      pageSub: "Pronađi službene upute za uporabu svog Parkside uređaja – otvara pretragu na službenom Lidl servisnom portalu.",
+      searchPlaceholder: "Pretraži po nazivu uređaja...",
+      btn: "Pronađi upute",
+      none: "Nema pronađenih uređaja.",
+      countLabel: "Prikazano uređaja",
+    },
+    fr: {
+      darkTheme: "Mode sombre", lightTheme: "Mode clair",
+      backLink: "← Retour à Parkside Tracker",
+      tagline: "Modes d'emploi",
+      pageHeading: "Modes d'emploi des appareils",
+      pageSub: "Trouvez le mode d'emploi officiel de votre appareil Parkside – ouvre une recherche sur le portail de service officiel Lidl.",
+      searchPlaceholder: "Rechercher par nom d'appareil...",
+      btn: "Trouver le mode d'emploi",
+      none: "Aucun appareil trouvé.",
+      countLabel: "Appareils affichés",
+    },
+    it: {
+      darkTheme: "Modalità scura", lightTheme: "Modalità chiara",
+      backLink: "← Torna a Parkside Tracker",
+      tagline: "Manuali d'uso",
+      pageHeading: "Manuali d'uso degli apparecchi",
+      pageSub: "Trova il manuale d'uso ufficiale per il tuo dispositivo Parkside – apre una ricerca sul portale di assistenza ufficiale Lidl.",
+      searchPlaceholder: "Cerca per nome dispositivo...",
+      btn: "Trova manuale",
+      none: "Nessun dispositivo trovato.",
+      countLabel: "Dispositivi mostrati",
+    },
+    pl: {
+      darkTheme: "Tryb ciemny", lightTheme: "Tryb jasny",
+      backLink: "← Wróć do Parkside Tracker",
+      tagline: "Instrukcje urządzeń",
+      pageHeading: "Instrukcje obsługi urządzeń",
+      pageSub: "Znajdź oficjalną instrukcję obsługi swojego urządzenia Parkside – otwiera wyszukiwanie w oficjalnym portalu serwisowym Lidl.",
+      searchPlaceholder: "Szukaj po nazwie urządzenia...",
+      btn: "Znajdź instrukcję",
+      none: "Nie znaleziono urządzeń.",
+      countLabel: "Wyświetlone urządzenia",
+    },
+    es: {
+      darkTheme: "Modo oscuro", lightTheme: "Modo claro",
+      backLink: "← Volver a Parkside Tracker",
+      tagline: "Manuales de uso",
+      pageHeading: "Manuales de uso de los aparatos",
+      pageSub: "Encuentra el manual de instrucciones oficial de tu aparato Parkside – abre una búsqueda en el portal de servicio oficial de Lidl.",
+      searchPlaceholder: "Buscar por nombre del aparato...",
+      btn: "Buscar manual",
+      none: "No se encontraron aparatos.",
+      countLabel: "Aparatos mostrados",
+    },
+    cs: {
+      darkTheme: "Tmavý režim", lightTheme: "Světlý režim",
+      backLink: "← Zpět na Parkside Tracker",
+      tagline: "Návody k zařízením",
+      pageHeading: "Návody k použití zařízení",
+      pageSub: "Najdi oficiální návod k použití pro své zařízení Parkside – otevře vyhledávání na oficiálním servisním portálu Lidl.",
+      searchPlaceholder: "Hledat podle názvu zařízení...",
+      btn: "Najít návod",
+      none: "Nebyla nalezena žádná zařízení.",
+      countLabel: "Zobrazená zařízení",
+    },
+    sk: {
+      darkTheme: "Tmavý režim", lightTheme: "Svetlý režim",
+      backLink: "← Späť na Parkside Tracker",
+      tagline: "Návody na zariadenia",
+      pageHeading: "Návody na použitie zariadení",
+      pageSub: "Nájdi oficiálny návod na použitie pre svoje zariadenie Parkside – otvorí vyhľadávanie na oficiálnom servisnom portáli Lidl.",
+      searchPlaceholder: "Hľadať podľa názvu zariadenia...",
+      btn: "Nájsť návod",
+      none: "Neboli nájdené žiadne zariadenia.",
+      countLabel: "Zobrazené zariadenia",
+    },
+    pt: {
+      darkTheme: "Modo escuro", lightTheme: "Modo claro",
+      backLink: "← Voltar ao Parkside Tracker",
+      tagline: "Manuais de instruções",
+      pageHeading: "Manuais de instruções dos aparelhos",
+      pageSub: "Encontra o manual de instruções oficial do teu aparelho Parkside – abre uma pesquisa no portal de assistência oficial da Lidl.",
+      searchPlaceholder: "Pesquisar por nome do aparelho...",
+      btn: "Encontrar manual",
+      none: "Nenhum aparelho encontrado.",
+      countLabel: "Aparelhos mostrados",
+    },
+    hu: {
+      darkTheme: "Sötét mód", lightTheme: "Világos mód",
+      backLink: "← Vissza a Parkside Trackerhez",
+      tagline: "Használati útmutatók",
+      pageHeading: "Eszközök használati útmutatói",
+      pageSub: "Keresd meg a Parkside eszközöd hivatalos használati útmutatóját – megnyitja a keresést a hivatalos Lidl szervizportálon.",
+      searchPlaceholder: "Keresés eszköznév alapján...",
+      btn: "Útmutató keresése",
+      none: "Nem található eszköz.",
+      countLabel: "Megjelenített eszközök",
+    },
+    el: {
+      darkTheme: "Σκοτεινή λειτουργία", lightTheme: "Φωτεινή λειτουργία",
+      backLink: "← Πίσω στο Parkside Tracker",
+      tagline: "Εγχειρίδια συσκευών",
+      pageHeading: "Εγχειρίδια χρήσης συσκευών",
+      pageSub: "Βρες το επίσημο εγχειρίδιο χρήσης για τη συσκευή σου Parkside – ανοίγει αναζήτηση στην επίσημη πύλη εξυπηρέτησης της Lidl.",
+      searchPlaceholder: "Αναζήτηση με όνομα συσκευής...",
+      btn: "Αναζήτηση εγχειριδίου",
+      none: "Δεν βρέθηκαν συσκευές.",
+      countLabel: "Εμφανιζόμενες συσκευές",
+    },
+    bg: {
+      darkTheme: "Тъмен режим", lightTheme: "Светъл режим",
+      backLink: "← Обратно към Parkside Tracker",
+      tagline: "Инструкции за уредите",
+      pageHeading: "Инструкции за употреба на уредите",
+      pageSub: "Намери официалната инструкция за употреба на своя уред Parkside – отваря търсене в официалния сервизен портал на Lidl.",
+      searchPlaceholder: "Търсене по име на уреда...",
+      btn: "Намери инструкция",
+      none: "Не са намерени уреди.",
+      countLabel: "Показани уреди",
+    },
+    ro: {
+      darkTheme: "Mod întunecat", lightTheme: "Mod luminos",
+      backLink: "← Înapoi la Parkside Tracker",
+      tagline: "Manuale de utilizare",
+      pageHeading: "Manuale de utilizare a aparatelor",
+      pageSub: "Găsește manualul oficial de utilizare pentru aparatul tău Parkside – deschide o căutare pe portalul oficial de service Lidl.",
+      searchPlaceholder: "Caută după numele aparatului...",
+      btn: "Găsește manualul",
+      none: "Nu a fost găsit niciun aparat.",
+      countLabel: "Aparate afișate",
+    },
+    sr: {
+      darkTheme: "Tamna tema", lightTheme: "Svetla tema",
+      backLink: "← Nazad na Parkside Tracker",
+      tagline: "Uputstva za uređaje",
+      pageHeading: "Uputstva za upotrebu uređaja",
+      pageSub: "Pronađi zvanično uputstvo za upotrebu svog Parkside uređaja – otvara pretragu na zvaničnom Lidl servisnom portalu.",
+      searchPlaceholder: "Pretraga po nazivu uređaja...",
+      btn: "Pronađi uputstvo",
+      none: "Nisu pronađeni uređaji.",
+      countLabel: "Prikazano uređaja",
+    },
+    sv: {
+      darkTheme: "Mörkt läge", lightTheme: "Ljust läge",
+      backLink: "← Tillbaka till Parkside Tracker",
+      tagline: "Bruksanvisningar",
+      pageHeading: "Bruksanvisningar för enheter",
+      pageSub: "Hitta den officiella bruksanvisningen för din Parkside-enhet – öppnar en sökning på Lidls officiella serviceportal.",
+      searchPlaceholder: "Sök på enhetens namn...",
+      btn: "Hitta bruksanvisning",
+      none: "Inga enheter hittades.",
+      countLabel: "Visade enheter",
+    },
+    lt: {
+      darkTheme: "Tamsus režimas", lightTheme: "Šviesus režimas",
+      backLink: "← Atgal į Parkside Tracker",
+      tagline: "Įrenginių instrukcijos",
+      pageHeading: "Įrenginių naudojimo instrukcijos",
+      pageSub: "Raskite oficialią savo Parkside įrenginio naudojimo instrukciją – atveria paiešką oficialiame Lidl aptarnavimo portale.",
+      searchPlaceholder: "Ieškoti pagal įrenginio pavadinimą...",
+      btn: "Rasti instrukciją",
+      none: "Įrenginių nerasta.",
+      countLabel: "Rodomi įrenginiai",
+    },
+    lv: {
+      darkTheme: "Tumšais režīms", lightTheme: "Gaišais režīms",
+      backLink: "← Atpakaļ uz Parkside Tracker",
+      tagline: "Ierīču instrukcijas",
+      pageHeading: "Ierīču lietošanas instrukcijas",
+      pageSub: "Atrodiet oficiālo lietošanas instrukciju savai Parkside ierīcei – atver meklēšanu oficiālajā Lidl servisa portālā.",
+      searchPlaceholder: "Meklēt pēc ierīces nosaukuma...",
+      btn: "Atrast instrukciju",
+      none: "Ierīces nav atrastas.",
+      countLabel: "Rādītās ierīces",
+    },
+    et: {
+      darkTheme: "Pime režiim", lightTheme: "Hele režiim",
+      backLink: "← Tagasi Parkside Trackerisse",
+      tagline: "Seadmete juhendid",
+      pageHeading: "Seadmete kasutusjuhendid",
+      pageSub: "Leia oma Parkside seadme ametlik kasutusjuhend – avab otsingu Lidl ametlikus teenindusportaalis.",
+      searchPlaceholder: "Otsi seadme nime järgi...",
+      btn: "Leia juhend",
+      none: "Seadmeid ei leitud.",
+      countLabel: "Kuvatud seadmed",
+    },
+    nl: {
+      darkTheme: "Donkere modus", lightTheme: "Lichte modus",
+      backLink: "← Terug naar Parkside Tracker",
+      tagline: "Gebruiksaanwijzingen",
+      pageHeading: "Gebruiksaanwijzingen voor apparaten",
+      pageSub: "Vind de officiële gebruiksaanwijzing voor je Parkside-apparaat – opent een zoekopdracht op het officiële Lidl-serviceportaal.",
+      searchPlaceholder: "Zoeken op apparaatnaam...",
+      btn: "Handleiding zoeken",
+      none: "Geen apparaten gevonden.",
+      countLabel: "Weergegeven apparaten",
+    },
+  };
+
+  const FLAG_SVG = {
+    sl: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#005ce6"/><rect y="9.33" width="20" height="4.67" fill="#e30d1a"/></svg>`,
+    en: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#00247d"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="2.8"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#cf142b" stroke-width="1.2"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4.6"/><path d="M10,0 V14 M0,7 H20" stroke="#cf142b" stroke-width="2.6"/></svg>`,
+    de: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>`,
+    hr: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#ff0000"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#171796"/></svg>`,
+    fr: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="6.67" height="14" fill="#002395"/><rect x="6.67" width="6.67" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ed2939"/></svg>`,
+    it: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="6.67" height="14" fill="#009246"/><rect x="6.67" width="6.67" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ce2b37"/></svg>`,
+    pl: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="7" fill="#fff"/><rect y="7" width="20" height="7" fill="#dc143c"/></svg>`,
+    es: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg>`,
+    cs: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#fff"/><rect y="7" width="20" height="7" fill="#d7141a"/><polygon points="0,0 0,14 10,7" fill="#11457e"/></svg>`,
+    sk: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0b4ea2"/><rect y="9.33" width="20" height="4.67" fill="#ee1c25"/></svg>`,
+    pt: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="8" height="14" fill="#006600"/><rect x="8" width="12" height="14" fill="#ff0000"/></svg>`,
+    hu: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#cd2a3e"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#436f4d"/></svg>`,
+    el: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#0d5eaf"/><rect y="1.56" width="20" height="1.56" fill="#fff"/><rect y="4.67" width="20" height="1.56" fill="#fff"/><rect y="7.78" width="20" height="1.56" fill="#fff"/><rect y="10.89" width="20" height="1.56" fill="#fff"/><rect width="7.8" height="7.8" fill="#0d5eaf"/><rect x="3.15" width="1.56" height="7.8" fill="#fff"/><rect y="3.15" width="7.8" height="1.56" fill="#fff"/></svg>`,
+    bg: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#00966e"/><rect y="9.33" width="20" height="4.67" fill="#d62612"/></svg>`,
+    ro: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="6.67" height="14" fill="#002b7f"/><rect x="6.67" width="6.67" height="14" fill="#fcd116"/><rect x="13.33" width="6.67" height="14" fill="#ce1126"/></svg>`,
+    sr: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#c6363c"/><rect y="4.67" width="20" height="4.66" fill="#0c4076"/><rect y="9.33" width="20" height="4.67" fill="#fff"/></svg>`,
+    sv: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#006aa7"/><rect y="5.25" width="20" height="3.5" fill="#fecc00"/><rect x="6" width="3.5" height="14" fill="#fecc00"/></svg>`,
+    lt: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#fdb913"/><rect y="4.67" width="20" height="4.66" fill="#006a44"/><rect y="9.33" width="20" height="4.67" fill="#c1272d"/></svg>`,
+    lv: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#9e3039"/><rect y="6.3" width="20" height="1.4" fill="#fff"/></svg>`,
+    et: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#0072ce"/><rect y="4.67" width="20" height="4.66" fill="#000"/><rect y="9.33" width="20" height="4.67" fill="#fff"/></svg>`,
+    nl: `<svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="4.67" fill="#ae1c28"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#21468b"/></svg>`,
+  };
+  const LANGS = [
+    { code: "sl", label: "SL" }, { code: "en", label: "EN" },
+    { code: "de", label: "DE" }, { code: "hr", label: "HR" },
+    { code: "fr", label: "FR" }, { code: "it", label: "IT" },
+    { code: "pl", label: "PL" }, { code: "es", label: "ES" },
+    { code: "cs", label: "CS" }, { code: "sk", label: "SK" },
+    { code: "pt", label: "PT" }, { code: "hu", label: "HU" },
+    { code: "el", label: "EL" }, { code: "bg", label: "BG" },
+    { code: "ro", label: "RO" }, { code: "sr", label: "SR" },
+    { code: "sv", label: "SV" }, { code: "lt", label: "LT" },
+    { code: "lv", label: "LV" }, { code: "et", label: "ET" },
+    { code: "nl", label: "NL" },
+  ];
+
+  const LANG_KEY = "parkside_lang_v1";
+  function loadLang() {
+    try {
+      const saved = localStorage.getItem(LANG_KEY);
+      if (saved && I18N[saved]) return saved;
+    } catch (e) { /* ni na voljo */ }
+    const nav = (navigator.language || "sl").slice(0, 2).toLowerCase();
+    return I18N[nav] ? nav : "sl";
+  }
+  function saveLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) { /* ni na voljo */ } }
+  let currentLang = loadLang();
+  function t() { return I18N[currentLang]; }
+
+  const THEME_KEY = "parkside_theme_v1";
+  function applyTheme(theme) {
+    if (theme === "light" || theme === "dark") document.documentElement.setAttribute("data-theme", theme);
+    else document.documentElement.removeAttribute("data-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = theme === "dark" || (theme !== "light" && prefersDark);
+    document.getElementById("themeIcon").textContent = isDark ? "☀️" : "🌙";
+    document.getElementById("themeLabel").textContent = isDark ? t().lightTheme : t().darkTheme;
+  }
+  function loadTheme() { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } }
+  function saveTheme(v) { try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ni na voljo */ } }
+  let currentTheme = loadTheme() || "dark";
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDarkNow = currentTheme === "dark" || (currentTheme !== "light" && prefersDark);
+    currentTheme = isDarkNow ? "light" : "dark";
+    saveTheme(currentTheme);
+    applyTheme(currentTheme);
+  });
+
+  const langPicker = document.getElementById("langPicker");
+  const langPickerBtn = document.getElementById("langPickerBtn");
+  const langPickerList = document.getElementById("langPickerList");
+  const langPickerFlag = document.getElementById("langPickerFlag");
+  const langPickerCode = document.getElementById("langPickerCode");
+  langPickerList.innerHTML = LANGS.map(l => `
+    <li role="option" data-lang="${l.code}"><span class="flag-icon">${FLAG_SVG[l.code]}</span><span>${l.label}</span></li>
+  `).join("");
+  function updateLangPicker(lang) {
+    const entry = LANGS.find(l => l.code === lang) || LANGS[0];
+    langPickerFlag.innerHTML = FLAG_SVG[entry.code];
+    langPickerCode.textContent = entry.label;
+    langPickerList.querySelectorAll("li").forEach(li => li.classList.toggle("active", li.dataset.lang === lang));
+  }
+  function closeLangPicker() { langPickerList.hidden = true; langPickerBtn.setAttribute("aria-expanded", "false"); }
+  langPickerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const willOpen = langPickerList.hidden;
+    langPickerList.hidden = !willOpen;
+    langPickerBtn.setAttribute("aria-expanded", String(willOpen));
+  });
+  langPickerList.addEventListener("click", (e) => {
+    const li = e.target.closest("li[data-lang]");
+    if (!li) return;
+    setLang(li.dataset.lang);
+    closeLangPicker();
+  });
+  document.addEventListener("click", (e) => { if (!langPicker.contains(e.target)) closeLangPicker(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLangPicker(); });
+
+  function applyStaticText() {
+    document.getElementById("tagline").textContent = t().tagline;
+    document.getElementById("backLink").textContent = t().backLink;
+    document.getElementById("pageHeading").textContent = t().pageHeading;
+    document.getElementById("pageSub").textContent = t().pageSub;
+    document.getElementById("manualsSearch").placeholder = t().searchPlaceholder;
+    document.title = t().pageHeading + " — Parkside Tracker";
+    document.documentElement.lang = currentLang;
+    applyTheme(currentTheme);
+  }
+
+  function setLang(lang) {
+    if (!I18N[lang]) return;
+    currentLang = lang;
+    saveLang(lang);
+    updateLangPicker(lang);
+    applyStaticText();
+    renderManuals();
+  }
+
+  // Uradni Lidl servisni portali (Salesforce "Self Service") po drzavah -
+  // uporabljeno za iskanje navodil za uporabo naprav (gumb "Poisci navodila").
+  // Iskanje po nazivu izdelka deluje preko URL fragmenta: {baseUrl}/s/global-search/%40uri#q=<poizvedba>
+  const SELF_SERVICE_DOMAINS = {
+    si: "https://informacije.lidl.si/SelfServiceSI",
+    hr: "https://sluzba-za-kupce.lidl.hr/SelfServiceHR",
+    at: "https://kundenservice.lidl.at/SelfServiceAT",
+    de: "https://kundenservice.lidl.de/SelfServiceDE",
+    fr: "https://service-client.lidl.fr/SelfServiceFR",
+    it: "https://assistenza-clienti.lidl.it/SelfServiceIT",
+    pl: "https://obsluga-klienta.lidl.pl/SelfServicePL",
+    es: "https://atencion-al-cliente.lidl.es/SelfServiceES",
+    gb: "https://customer-service.lidl.co.uk/SelfServiceUK",
+    cz: "https://informace-pro-zakazniky.lidl.cz/SelfServiceCZ",
+    sk: "https://informacie-pre-zakaznikov.lidl.sk/SelfServiceSK",
+    pt: "https://apoio-ao-cliente.lidl.pt/SelfServicePT",
+    hu: "https://ugyfelszolgalat.lidl.hu/SelfServiceHU",
+    ie: "https://customer-service.lidl.ie/SelfServiceIE",
+    gr: "https://exypiretisi-pelaton.lidl-hellas.gr/SelfServiceGR",
+    bg: "https://obsluzhvane-i-kontakti.lidl.bg/SelfServiceBG",
+    ro: "https://serviciul-clienti.lidl.ro/SelfServiceRO",
+    rs: "https://sluzba-za-potrosace.lidl.rs/SelfServiceRS",
+    se: "https://kundportal.lidl.se/SelfServiceSE",
+    lt: "https://informacija-klientui.lidl.lt/SelfServiceLT",
+    lv: "https://klientu-serviss.lidl.lv/SelfServiceLV",
+    ee: "https://klienditugi.lidl.ee/SelfServiceEE",
+    be: "https://service.lidl.be/SelfServiceBE",
+    ch: "https://service.lidl.ch/SelfServiceCH",
+    cy: "https://exypiretisi-pelaton.lidl.com.cy/SelfServiceCY",
+    mt: "https://customer-service.lidl.com.mt/SelfServiceMT",
+    lu: "https://service.lidl.lu/SelfServiceLU",
+    nl: "https://customercare.lidl.nl/SelfServiceNL",
+  };
+
+  function manualSearchUrl(countryCode, query) {
+    const base = SELF_SERVICE_DOMAINS[countryCode];
+    if (!base) return null;
+    return `${base}/s/global-search/%40uri#q=${encodeURIComponent(query)}`;
+  }
+
+  function productKey(p) {
+    return p.key || p.ean || ("id:" + p.id);
+  }
+
+  const manualsList = document.getElementById("manualsList");
+  const manualsCount = document.getElementById("manualsCount");
+  const manualsSearchInput = document.getElementById("manualsSearch");
+
+  function renderManuals() {
+    const data = window.__PARKSIDE_DATA__;
+    if (!data) { manualsList.innerHTML = `<p class="empty-note">${t().none}</p>`; return; }
+    const q = (manualsSearchInput.value || "").trim().toLowerCase();
+    const seen = new Map();
+    Object.entries(data.countries).forEach(([code, country]) => {
+      (country.products || []).forEach(p => {
+        const key = productKey(p);
+        if (!seen.has(key) && SELF_SERVICE_DOMAINS[code]) {
+          seen.set(key, { title: p.title || "?", image: p.image, country: code });
+        }
+      });
+    });
+    let items = Array.from(seen.values());
+    if (q) items = items.filter(it => it.title.toLowerCase().includes(q));
+    items.sort((a, b) => a.title.localeCompare(b.title, currentLang));
+
+    if (items.length === 0) {
+      manualsCount.textContent = "";
+      manualsList.innerHTML = `<p class="empty-note">${t().none}</p>`;
+      return;
+    }
+
+    manualsCount.textContent = `${t().countLabel}: ${items.length}`;
+    manualsList.innerHTML = items.map(it => {
+      const url = manualSearchUrl(it.country, it.title);
+      return `
+        <div class="manuals-item">
+          ${it.image ? `<img src="${it.image}" alt="" loading="lazy" />` : ""}
+          <div class="manuals-item-title">${it.title}</div>
+          <a class="manuals-item-btn" href="${url}" target="_blank" rel="noopener">${t().btn}</a>
+        </div>
+      `;
+    }).join("");
+  }
+
+  manualsSearchInput.addEventListener("input", renderManuals);
+
+  function init() {
+    updateLangPicker(currentLang);
+    applyStaticText();
+    renderManuals();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
