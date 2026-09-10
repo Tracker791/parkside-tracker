@@ -609,6 +609,32 @@
     color: var(--muted);
     line-height: 1.45;
   }
+  .help-changelog-heading {
+    font-size: 16px;
+    margin: 6px 0 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .changelog-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 12.5px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .changelog-item:last-child { border-bottom: none; }
+  .changelog-item .cl-version { font-weight: 700; color: var(--ps-red); flex: none; }
+  .changelog-item .cl-date { color: var(--muted); flex: none; font-size: 11.5px; }
+  .changelog-item .cl-note { color: var(--text); }
 
   .stores-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .stores-controls button {
@@ -808,7 +834,10 @@
     <div class="side-panel" id="helpPanel" hidden>
       <div class="side-panel-box">
         <h2 id="helpHeading">Navodila za uporabo</h2>
+        <div class="sub" id="helpVersion">Različica 1.3.0</div>
         <div class="help-sections" id="helpSections"></div>
+        <h3 class="help-changelog-heading" id="changelogHeading">Zgodovina različic</h3>
+        <div class="changelog-list" id="changelogList"></div>
       </div>
     </div>
 
@@ -873,6 +902,8 @@
       helpNavLabel: "Navodila portala",
       manualsNavLabel: "Navodila za naprave",
       helpHeading: "Navodila za uporabo",
+      helpVersion: (v) => `Različica ${v}`,
+      changelogHeading: "Zgodovina različic",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Izberi med „Vredno cene“ (priporočena orodja po objektivnih merilih), „Samo Parkside Performance“ ali „Vsi Parkside izdelki“." },
         { icon: "🛠️", title: "Moja orodja", body: "Odkljukaj orodja, ki jih že imaš – samodejno se skrijejo iz priporočil, dokler jih ne odkljukaš nazaj." },
@@ -880,6 +911,12 @@
         { icon: "🏬", title: "Trgovine v bližini", body: "Uporabi svojo lokacijo ali vpiši kraj – prikažemo najbližje Lidl trgovine z delovnim časom in navigacijo." },
         { icon: "🌐", title: "Jezik in tema", body: "Jezik vmesnika in temno/svetlo temo spremeniš zgoraj desno v glavi strani." },
         { icon: "💶", title: "Cene in valute", body: "Cene v tujih valutah se samodejno prikažejo tudi pretvorjene v valuto, ki ustreza izbranemu jeziku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nov levi meni in zavihek z navodili za uporabo." },
+        { version: "1.2.0", date: "09.09.2026", note: "Trgovine v bližini (zemljevid, lokacija, navigacija) in pretvorba cen v izbrano valuto." },
+        { version: "1.1.0", date: "08.09.2026", note: "Izbira držav z iskalnikom in preklop jezika vmesnika." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prva različica – sledenje Parkside izdelkom v 28 Lidl trgovinah po Evropi." },
       ],
       storesHeading: "Trgovine v bližini",
       storesSub: "Poišči Lidl trgovine v svoji bližini - z delovnim časom in navigacijo.",
@@ -951,6 +988,8 @@
       helpNavLabel: "Portal guide",
       manualsNavLabel: "Device manuals",
       helpHeading: "How to use this app",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Version history",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Choose between “Worth it” (tools recommended by objective criteria), “Parkside Performance only”, or “All Parkside items”." },
         { icon: "🛠️", title: "My tools", body: "Check off tools you already own – they're automatically hidden from the recommendations above until you uncheck them." },
@@ -958,6 +997,12 @@
         { icon: "🏬", title: "Stores near you", body: "Use your location or type a place – we show the nearest Lidl stores with opening hours and directions." },
         { icon: "🌐", title: "Language & theme", body: "Switch the interface language and dark/light theme in the top-right corner of the header." },
         { icon: "💶", title: "Prices & currencies", body: "Prices in foreign currencies are automatically shown converted to a currency matching your chosen language." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "New left-hand sidebar and a help tab with usage instructions." },
+        { version: "1.2.0", date: "09.09.2026", note: "Stores near you (map, location, directions) and price conversion to your chosen currency." },
+        { version: "1.1.0", date: "08.09.2026", note: "Country picker with search and interface language switcher." },
+        { version: "1.0.0", date: "08.09.2026", note: "First release – tracking Parkside items across 28 European Lidl markets." },
       ],
       storesHeading: "Stores near you",
       storesSub: "Find Lidl stores near you - with opening hours and directions.",
@@ -1029,6 +1074,8 @@
       helpNavLabel: "Portal-Anleitung",
       manualsNavLabel: "Bedienungsanleitungen",
       helpHeading: "Bedienungsanleitung",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Versionsverlauf",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Wähle zwischen „Lohnt sich“ (nach objektiven Kriterien empfohlene Werkzeuge), „Nur Parkside Performance“ oder „Alle Parkside-Artikel“." },
         { icon: "🛠️", title: "Meine Werkzeuge", body: "Hake ab, was du schon besitzt – es wird automatisch aus den Empfehlungen ausgeblendet, bis du es wieder abwählst." },
@@ -1036,6 +1083,12 @@
         { icon: "🏬", title: "Filialen in der Nähe", body: "Nutze deinen Standort oder gib einen Ort ein – wir zeigen die nächsten Lidl-Filialen mit Öffnungszeiten und Wegbeschreibung." },
         { icon: "🌐", title: "Sprache & Design", body: "Wechsle Oberflächensprache und Hell-/Dunkelmodus oben rechts im Kopfbereich." },
         { icon: "💶", title: "Preise & Währungen", body: "Preise in Fremdwährungen werden zusätzlich automatisch in eine zur gewählten Sprache passende Währung umgerechnet." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Neue linke Seitenleiste und ein Hilfe-Tab mit Bedienungsanleitung." },
+        { version: "1.2.0", date: "09.09.2026", note: "Filialen in der Nähe (Karte, Standort, Wegbeschreibung) und Preisumrechnung in die gewählte Währung." },
+        { version: "1.1.0", date: "08.09.2026", note: "Länderauswahl mit Suche und Sprachumschalter." },
+        { version: "1.0.0", date: "08.09.2026", note: "Erste Version – Verfolgung von Parkside-Artikeln in 28 europäischen Lidl-Märkten." },
       ],
       storesHeading: "Filialen in der Nähe",
       storesSub: "Finde Lidl-Filialen in deiner Nähe - mit Öffnungszeiten und Wegbeschreibung.",
@@ -1107,6 +1160,8 @@
       helpNavLabel: "Upute portala",
       manualsNavLabel: "Upute za uređaje",
       helpHeading: "Upute za korištenje",
+      helpVersion: (v) => `Verzija ${v}`,
+      changelogHeading: "Povijest verzija",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Odaberi između „Vrijedi cijene“ (preporučeni alati prema objektivnim kriterijima), „Samo Parkside Performance“ ili „Svi Parkside artikli“." },
         { icon: "🛠️", title: "Moji alati", body: "Označi alate koje već imaš – automatski se skrivaju iz preporuka dok ih ponovno ne odznačiš." },
@@ -1114,6 +1169,12 @@
         { icon: "🏬", title: "Trgovine u blizini", body: "Koristi svoju lokaciju ili upiši mjesto – prikazujemo najbliže Lidl trgovine s radnim vremenom i navigacijom." },
         { icon: "🌐", title: "Jezik i tema", body: "Jezik sučelja i tamnu/svijetlu temu mijenjaš gore desno u zaglavlju." },
         { icon: "💶", title: "Cijene i valute", body: "Cijene u stranim valutama automatski se prikazuju i pretvorene u valutu koja odgovara odabranom jeziku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Novi lijevi izbornik i kartica s uputama za korištenje." },
+        { version: "1.2.0", date: "09.09.2026", note: "Trgovine u blizini (karta, lokacija, navigacija) i pretvorba cijena u odabranu valutu." },
+        { version: "1.1.0", date: "08.09.2026", note: "Odabir država s pretragom i preklopnik jezika sučelja." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prvo izdanje – praćenje Parkside artikala u 28 europskih Lidl tržišta." },
       ],
       storesHeading: "Trgovine u blizini",
       storesSub: "Pronađi Lidl trgovine u svojoj blizini - s radnim vremenom i navigacijom.",
@@ -1185,6 +1246,8 @@
       helpNavLabel: "Guide du portail",
       manualsNavLabel: "Modes d'emploi",
       helpHeading: "Comment utiliser cette application",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Historique des versions",
       helpSections: [
         { icon: "🎯", title: "Filtre", body: "Choisissez entre « Ça vaut le prix » (outils recommandés selon des critères objectifs), « Parkside Performance uniquement » ou « Tous les articles Parkside »." },
         { icon: "🛠️", title: "Mes outils", body: "Cochez ce que vous possédez déjà – ces outils sont automatiquement masqués des recommandations ci-dessus jusqu'à ce que vous les décochiez." },
@@ -1192,6 +1255,12 @@
         { icon: "🏬", title: "Magasins à proximité", body: "Utilisez votre position ou tapez un lieu – nous affichons les magasins Lidl les plus proches avec horaires et itinéraire." },
         { icon: "🌐", title: "Langue et thème", body: "Changez la langue de l'interface et le thème clair/sombre en haut à droite de l'en-tête." },
         { icon: "💶", title: "Prix et devises", body: "Les prix en devises étrangères sont automatiquement convertis dans une devise correspondant à la langue choisie." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nouvelle barre latérale gauche et un onglet d'aide avec des instructions d'utilisation." },
+        { version: "1.2.0", date: "09.09.2026", note: "Magasins à proximité (carte, position, itinéraire) et conversion de prix vers la devise choisie." },
+        { version: "1.1.0", date: "08.09.2026", note: "Sélecteur de pays avec recherche et changement de langue de l'interface." },
+        { version: "1.0.0", date: "08.09.2026", note: "Première version – suivi des articles Parkside dans 28 marchés Lidl européens." },
       ],
       storesHeading: "Magasins à proximité",
       storesSub: "Trouvez les magasins Lidl près de vous - avec horaires et itinéraire.",
@@ -1263,6 +1332,8 @@
       helpNavLabel: "Guida del portale",
       manualsNavLabel: "Manuali d'uso",
       helpHeading: "Come usare questa app",
+      helpVersion: (v) => `Versione ${v}`,
+      changelogHeading: "Cronologia versioni",
       helpSections: [
         { icon: "🎯", title: "Filtro", body: "Scegli tra “Vale il prezzo” (attrezzi consigliati secondo criteri oggettivi), “Solo Parkside Performance” o “Tutti gli articoli Parkside”." },
         { icon: "🛠️", title: "I miei attrezzi", body: "Seleziona ciò che possiedi già – questi attrezzi vengono nascosti automaticamente dai consigli sopra finché non li deselezioni." },
@@ -1270,6 +1341,12 @@
         { icon: "🏬", title: "Negozi nelle vicinanze", body: "Usa la tua posizione o digita un luogo – mostriamo i negozi Lidl più vicini con orari e indicazioni." },
         { icon: "🌐", title: "Lingua e tema", body: "Cambia la lingua dell'interfaccia e il tema chiaro/scuro in alto a destra nell'intestazione." },
         { icon: "💶", title: "Prezzi e valute", body: "I prezzi in valute estere vengono automaticamente convertiti in una valuta corrispondente alla lingua scelta." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nuova barra laterale sinistra e una scheda di aiuto con le istruzioni d'uso." },
+        { version: "1.2.0", date: "09.09.2026", note: "Negozi nelle vicinanze (mappa, posizione, indicazioni) e conversione dei prezzi nella valuta scelta." },
+        { version: "1.1.0", date: "08.09.2026", note: "Selettore di paesi con ricerca e cambio della lingua dell'interfaccia." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prima versione – monitoraggio degli articoli Parkside in 28 mercati Lidl europei." },
       ],
       storesHeading: "Negozi nelle vicinanze",
       storesSub: "Trova i negozi Lidl vicino a te - con orari e indicazioni.",
@@ -1341,6 +1418,8 @@
       helpNavLabel: "Instrukcja portalu",
       manualsNavLabel: "Instrukcje urządzeń",
       helpHeading: "Jak korzystać z tej aplikacji",
+      helpVersion: (v) => `Wersja ${v}`,
+      changelogHeading: "Historia wersji",
       helpSections: [
         { icon: "🎯", title: "Filtr", body: "Wybierz między „Warto” (narzędzia polecane według obiektywnych kryteriów), „Tylko Parkside Performance” lub „Wszystkie produkty Parkside”." },
         { icon: "🛠️", title: "Moje narzędzia", body: "Zaznacz, co już masz – te narzędzia są automatycznie ukrywane z rekomendacji powyżej, aż odznaczysz je ponownie." },
@@ -1348,6 +1427,12 @@
         { icon: "🏬", title: "Sklepy w pobliżu", body: "Użyj swojej lokalizacji lub wpisz miejsce – pokażemy najbliższe sklepy Lidl z godzinami otwarcia i wskazówkami dojazdu." },
         { icon: "🌐", title: "Język i motyw", body: "Zmień język interfejsu oraz motyw ciemny/jasny w prawym górnym rogu nagłówka." },
         { icon: "💶", title: "Ceny i waluty", body: "Ceny w walutach zagranicznych są automatycznie przeliczane na walutę odpowiadającą wybranemu językowi." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nowy lewy panel boczny i zakładka pomocy z instrukcją użycia." },
+        { version: "1.2.0", date: "09.09.2026", note: "Sklepy w pobliżu (mapa, lokalizacja, wskazówki) oraz przeliczanie cen na wybraną walutę." },
+        { version: "1.1.0", date: "08.09.2026", note: "Wybór krajów z wyszukiwaniem i przełącznik języka interfejsu." },
+        { version: "1.0.0", date: "08.09.2026", note: "Pierwsza wersja – śledzenie produktów Parkside w 28 europejskich rynkach Lidl." },
       ],
       storesHeading: "Sklepy w pobliżu",
       storesSub: "Znajdź sklepy Lidl w swojej okolicy - z godzinami otwarcia i wskazówkami dojazdu.",
@@ -1419,6 +1504,8 @@
       helpNavLabel: "Guía del portal",
       manualsNavLabel: "Manuales de uso",
       helpHeading: "Cómo usar esta aplicación",
+      helpVersion: (v) => `Versión ${v}`,
+      changelogHeading: "Historial de versiones",
       helpSections: [
         { icon: "🎯", title: "Filtro", body: "Elige entre “Merece la pena” (herramientas recomendadas según criterios objetivos), “Solo Parkside Performance” o “Todos los artículos Parkside”." },
         { icon: "🛠️", title: "Mis herramientas", body: "Marca lo que ya tienes – esas herramientas se ocultan automáticamente de las recomendaciones anteriores hasta que las desmarques." },
@@ -1426,6 +1513,12 @@
         { icon: "🏬", title: "Tiendas cercanas", body: "Usa tu ubicación o escribe un lugar – mostramos las tiendas Lidl más cercanas con horarios e indicaciones." },
         { icon: "🌐", title: "Idioma y tema", body: "Cambia el idioma de la interfaz y el tema claro/oscuro en la esquina superior derecha del encabezado." },
         { icon: "💶", title: "Precios y monedas", body: "Los precios en monedas extranjeras se muestran automáticamente convertidos a una moneda acorde al idioma elegido." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nueva barra lateral izquierda y una pestaña de ayuda con instrucciones de uso." },
+        { version: "1.2.0", date: "09.09.2026", note: "Tiendas cercanas (mapa, ubicación, indicaciones) y conversión de precios a la moneda elegida." },
+        { version: "1.1.0", date: "08.09.2026", note: "Selector de países con búsqueda y cambio de idioma de la interfaz." },
+        { version: "1.0.0", date: "08.09.2026", note: "Primera versión – seguimiento de artículos Parkside en 28 mercados Lidl europeos." },
       ],
       storesHeading: "Tiendas cercanas",
       storesSub: "Encuentra tiendas Lidl cerca de ti - con horarios e indicaciones.",
@@ -1497,6 +1590,8 @@
       helpNavLabel: "Návod k portálu",
       manualsNavLabel: "Návody k zařízením",
       helpHeading: "Jak používat tuto aplikaci",
+      helpVersion: (v) => `Verze ${v}`,
+      changelogHeading: "Historie verzí",
       helpSections: [
         { icon: "🎯", title: "Filtr", body: "Vyber mezi „Stojí za to“ (nářadí doporučené podle objektivních kritérií), „Jen Parkside Performance“ nebo „Všechny produkty Parkside“." },
         { icon: "🛠️", title: "Moje nářadí", body: "Zaškrtni, co už máš – toto nářadí se automaticky skryje z doporučení výše, dokud ho neodznačíš." },
@@ -1504,6 +1599,12 @@
         { icon: "🏬", title: "Prodejny v okolí", body: "Použij svou polohu nebo napiš místo – zobrazíme nejbližší prodejny Lidl s otevírací dobou a navigací." },
         { icon: "🌐", title: "Jazyk a téma", body: "Změň jazyk rozhraní a tmavý/světlý režim v pravém horním rohu záhlaví." },
         { icon: "💶", title: "Ceny a měny", body: "Ceny v cizích měnách se automaticky zobrazují převedené do měny odpovídající zvolenému jazyku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nový levý postranní panel a záložka nápovědy s návodem k použití." },
+        { version: "1.2.0", date: "09.09.2026", note: "Prodejny v okolí (mapa, poloha, navigace) a přepočet cen na zvolenou měnu." },
+        { version: "1.1.0", date: "08.09.2026", note: "Výběr zemí s vyhledáváním a přepínač jazyka rozhraní." },
+        { version: "1.0.0", date: "08.09.2026", note: "První verze – sledování produktů Parkside ve 28 evropských trzích Lidl." },
       ],
       storesHeading: "Prodejny v okolí",
       storesSub: "Najdi prodejny Lidl v okolí - s otevírací dobou a navigací.",
@@ -1575,6 +1676,8 @@
       helpNavLabel: "Návod na portál",
       manualsNavLabel: "Návody na zariadenia",
       helpHeading: "Ako používať túto aplikáciu",
+      helpVersion: (v) => `Verzia ${v}`,
+      changelogHeading: "História verzií",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Vyber medzi „Stojí za to“ (náradie odporúčané podľa objektívnych kritérií), „Len Parkside Performance“ alebo „Všetky produkty Parkside“." },
         { icon: "🛠️", title: "Moje náradie", body: "Zaškrtni, čo už máš – toto náradie sa automaticky skryje z odporúčaní vyššie, kým ho neodznačíš." },
@@ -1582,6 +1685,12 @@
         { icon: "🏬", title: "Predajne v okolí", body: "Použi svoju polohu alebo napíš miesto – zobrazíme najbližšie predajne Lidl s otváracími hodinami a navigáciou." },
         { icon: "🌐", title: "Jazyk a téma", body: "Zmeň jazyk rozhrania a tmavý/svetlý režim v pravom hornom rohu záhlavia." },
         { icon: "💶", title: "Ceny a meny", body: "Ceny v cudzích menách sa automaticky zobrazujú prepočítané na menu zodpovedajúcu zvolenému jazyku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nový ľavý postranný panel a záložka nápovede s návodom na použitie." },
+        { version: "1.2.0", date: "09.09.2026", note: "Predajne v okolí (mapa, poloha, navigácia) a prepočet cien na zvolenú menu." },
+        { version: "1.1.0", date: "08.09.2026", note: "Výber krajín s vyhľadávaním a prepínač jazyka rozhrania." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prvá verzia – sledovanie produktov Parkside na 28 európskych trhoch Lidl." },
       ],
       storesHeading: "Predajne v okolí",
       storesSub: "Nájdi predajne Lidl v okolí - s otváracími hodinami a navigáciou.",
@@ -1653,6 +1762,8 @@
       helpNavLabel: "Guia do portal",
       manualsNavLabel: "Manuais de instruções",
       helpHeading: "Como usar esta aplicação",
+      helpVersion: (v) => `Versão ${v}`,
+      changelogHeading: "Histórico de versões",
       helpSections: [
         { icon: "🎯", title: "Filtro", body: "Escolha entre “Vale o preço” (ferramentas recomendadas segundo critérios objetivos), “Apenas Parkside Performance” ou “Todos os artigos Parkside”." },
         { icon: "🛠️", title: "As minhas ferramentas", body: "Marque o que já tem – essas ferramentas são automaticamente ocultadas das recomendações acima até as desmarcar." },
@@ -1660,6 +1771,12 @@
         { icon: "🏬", title: "Lojas perto de si", body: "Use a sua localização ou digite um local – mostramos as lojas Lidl mais próximas com horários e indicações." },
         { icon: "🌐", title: "Idioma e tema", body: "Altere o idioma da interface e o tema claro/escuro no canto superior direito do cabeçalho." },
         { icon: "💶", title: "Preços e moedas", body: "Os preços em moedas estrangeiras são automaticamente convertidos para uma moeda correspondente ao idioma escolhido." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nova barra lateral esquerda e um separador de ajuda com instruções de utilização." },
+        { version: "1.2.0", date: "09.09.2026", note: "Lojas perto de si (mapa, localização, indicações) e conversão de preços para a moeda escolhida." },
+        { version: "1.1.0", date: "08.09.2026", note: "Seletor de países com pesquisa e mudança de idioma da interface." },
+        { version: "1.0.0", date: "08.09.2026", note: "Primeira versão – acompanhamento de artigos Parkside em 28 mercados Lidl europeus." },
       ],
       storesHeading: "Lojas perto de si",
       storesSub: "Encontre lojas Lidl perto de si - com horários e indicações.",
@@ -1731,6 +1848,8 @@
       helpNavLabel: "Portál útmutató",
       manualsNavLabel: "Használati útmutatók",
       helpHeading: "Az alkalmazás használata",
+      helpVersion: (v) => `Verzió ${v}`,
+      changelogHeading: "Verziótörténet",
       helpSections: [
         { icon: "🎯", title: "Szűrő", body: "Válassz a „Megéri” (objektív kritériumok szerint ajánlott eszközök), a „Csak Parkside Performance” vagy a „Minden Parkside termék” között." },
         { icon: "🛠️", title: "Eszközeim", body: "Jelöld be, amit már megvettél – ezek automatikusan elrejtve lesznek a fenti ajánlásokból, amíg vissza nem jelölöd." },
@@ -1738,6 +1857,12 @@
         { icon: "🏬", title: "Üzletek a közelben", body: "Használd a helymeghatározást, vagy írj be egy helyet – megmutatjuk a legközelebbi Lidl üzleteket nyitvatartással és útvonaltervezéssel." },
         { icon: "🌐", title: "Nyelv és téma", body: "Váltsd a felület nyelvét és a sötét/világos témát a fejléc jobb felső sarkában." },
         { icon: "💶", title: "Árak és pénznemek", body: "A külföldi pénznemben feltüntetett árak automatikusan átváltva jelennek meg a választott nyelvhez illő pénznemre." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Új bal oldali oldalsáv és egy súgó fül a használati útmutatóval." },
+        { version: "1.2.0", date: "09.09.2026", note: "Üzletek a közelben (térkép, helymeghatározás, útvonal) és árak átváltása a választott pénznemre." },
+        { version: "1.1.0", date: "08.09.2026", note: "Országválasztó kereséssel és a felület nyelvének váltása." },
+        { version: "1.0.0", date: "08.09.2026", note: "Első verzió – Parkside termékek követése 28 európai Lidl piacon." },
       ],
       storesHeading: "Üzletek a közelben",
       storesSub: "Találj Lidl üzleteket a közeledben - nyitvatartással és útvonaltervezéssel.",
@@ -1809,6 +1934,8 @@
       helpNavLabel: "Οδηγός πύλης",
       manualsNavLabel: "Εγχειρίδια συσκευών",
       helpHeading: "Πώς να χρησιμοποιήσεις αυτή την εφαρμογή",
+      helpVersion: (v) => `Έκδοση ${v}`,
+      changelogHeading: "Ιστορικό εκδόσεων",
       helpSections: [
         { icon: "🎯", title: "Φίλτρο", body: "Επίλεξε ανάμεσα σε «Αξίζει» (εργαλεία που προτείνονται με βάση αντικειμενικά κριτήρια), «Μόνο Parkside Performance» ή «Όλα τα προϊόντα Parkside»." },
         { icon: "🛠️", title: "Τα εργαλεία μου", body: "Επίλεξε όσα έχεις ήδη – αυτά κρύβονται αυτόματα από τις παραπάνω προτάσεις μέχρι να τα αποεπιλέξεις." },
@@ -1816,6 +1943,12 @@
         { icon: "🏬", title: "Καταστήματα κοντά σου", body: "Χρησιμοποίησε την τοποθεσία σου ή πληκτρολόγησε ένα μέρος – εμφανίζουμε τα πλησιέστερα καταστήματα Lidl με ώρες λειτουργίας και οδηγίες." },
         { icon: "🌐", title: "Γλώσσα και θέμα", body: "Άλλαξε τη γλώσσα διεπαφής και το σκοτεινό/φωτεινό θέμα στην επάνω δεξιά γωνία της κεφαλίδας." },
         { icon: "💶", title: "Τιμές και νομίσματα", body: "Οι τιμές σε ξένα νομίσματα εμφανίζονται αυτόματα μετατρεπόμενες σε νόμισμα που αντιστοιχεί στη γλώσσα που επέλεξες." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Νέα αριστερή πλαϊνή μπάρα και καρτέλα βοήθειας με οδηγίες χρήσης." },
+        { version: "1.2.0", date: "09.09.2026", note: "Καταστήματα κοντά σου (χάρτης, τοποθεσία, οδηγίες) και μετατροπή τιμών στο επιλεγμένο νόμισμα." },
+        { version: "1.1.0", date: "08.09.2026", note: "Επιλογέας χωρών με αναζήτηση και εναλλαγή γλώσσας διεπαφής." },
+        { version: "1.0.0", date: "08.09.2026", note: "Πρώτη έκδοση – παρακολούθηση προϊόντων Parkside σε 28 ευρωπαϊκές αγορές Lidl." },
       ],
       storesHeading: "Καταστήματα κοντά σου",
       storesSub: "Βρες καταστήματα Lidl κοντά σου - με ώρες λειτουργίας και οδηγίες.",
@@ -1887,6 +2020,8 @@
       helpNavLabel: "Ръководство за портала",
       manualsNavLabel: "Инструкции за уредите",
       helpHeading: "Как да използвате това приложение",
+      helpVersion: (v) => `Версия ${v}`,
+      changelogHeading: "История на версиите",
       helpSections: [
         { icon: "🎯", title: "Филтър", body: "Изберете между „Си заслужава“ (инструменти, препоръчани по обективни критерии), „Само Parkside Performance“ или „Всички продукти Parkside“." },
         { icon: "🛠️", title: "Моите инструменти", body: "Отметнете това, което вече имате – тези инструменти автоматично се скриват от препоръките по-горе, докато не ги размаркирате." },
@@ -1894,6 +2029,12 @@
         { icon: "🏬", title: "Магазини наблизо", body: "Използвайте местоположението си или въведете място – показваме най-близките магазини на Lidl с работно време и упътвания." },
         { icon: "🌐", title: "Език и тема", body: "Сменете езика на интерфейса и тъмната/светлата тема в горния десен ъгъл на заглавната част." },
         { icon: "💶", title: "Цени и валути", body: "Цените в чужди валути се показват автоматично конвертирани във валута, съответстваща на избрания език." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Нова лява странична лента и раздел за помощ с инструкции за употреба." },
+        { version: "1.2.0", date: "09.09.2026", note: "Магазини наблизо (карта, местоположение, упътвания) и конвертиране на цени в избраната валута." },
+        { version: "1.1.0", date: "08.09.2026", note: "Избор на държави с търсене и превключване на езика на интерфейса." },
+        { version: "1.0.0", date: "08.09.2026", note: "Първа версия – следене на продукти Parkside в 28 европейски пазара на Lidl." },
       ],
       storesHeading: "Магазини наблизо",
       storesSub: "Намерете магазини на Lidl наблизо - с работно време и упътвания.",
@@ -1965,6 +2106,8 @@
       helpNavLabel: "Ghid al portalului",
       manualsNavLabel: "Manuale de utilizare",
       helpHeading: "Cum să folosești această aplicație",
+      helpVersion: (v) => `Versiunea ${v}`,
+      changelogHeading: "Istoricul versiunilor",
       helpSections: [
         { icon: "🎯", title: "Filtru", body: "Alege între „Merită prețul” (unelte recomandate conform unor criterii obiective), „Doar Parkside Performance” sau „Toate produsele Parkside”." },
         { icon: "🛠️", title: "Uneltele mele", body: "Bifează ce ai deja – acestea sunt ascunse automat din recomandările de mai sus până le debifezi." },
@@ -1972,6 +2115,12 @@
         { icon: "🏬", title: "Magazine din apropiere", body: "Folosește locația ta sau introdu un loc – îți arătăm cele mai apropiate magazine Lidl cu orar și indicații de drum." },
         { icon: "🌐", title: "Limbă și temă", body: "Schimbă limba interfeței și tema întunecată/luminoasă în colțul din dreapta sus al antetului." },
         { icon: "💶", title: "Prețuri și valute", body: "Prețurile în valute străine sunt convertite automat într-o valută corespunzătoare limbii alese." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nouă bară laterală stângă și o filă de ajutor cu instrucțiuni de utilizare." },
+        { version: "1.2.0", date: "09.09.2026", note: "Magazine din apropiere (hartă, locație, indicații) și conversia prețurilor în valuta aleasă." },
+        { version: "1.1.0", date: "08.09.2026", note: "Selector de țări cu căutare și comutator pentru limba interfeței." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prima versiune – urmărirea produselor Parkside în 28 de piețe Lidl europene." },
       ],
       storesHeading: "Magazine din apropiere",
       storesSub: "Găsește magazine Lidl în apropierea ta - cu orar și indicații de drum.",
@@ -2043,6 +2192,8 @@
       helpNavLabel: "Uputstvo portala",
       manualsNavLabel: "Uputstva za uređaje",
       helpHeading: "Kako koristiti ovu aplikaciju",
+      helpVersion: (v) => `Verzija ${v}`,
+      changelogHeading: "Istorija verzija",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Izaberi između „Vredi cene“ (alati preporučeni po objektivnim kriterijumima), „Samo Parkside Performance“ ili „Svi Parkside proizvodi“." },
         { icon: "🛠️", title: "Moji alati", body: "Označi ono što već imaš – ti alati se automatski sakrivaju iz preporuka iznad dok ih ponovo ne poništiš." },
@@ -2050,6 +2201,12 @@
         { icon: "🏬", title: "Prodavnice u blizini", body: "Koristi svoju lokaciju ili unesi mesto – prikazujemo najbliže Lidl prodavnice sa radnim vremenom i uputstvima za dolazak." },
         { icon: "🌐", title: "Jezik i tema", body: "Promeni jezik interfejsa i tamnu/svetlu temu u gornjem desnom uglu zaglavlja." },
         { icon: "💶", title: "Cene i valute", body: "Cene u stranim valutama se automatski prikazuju konvertovane u valutu koja odgovara izabranom jeziku." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Novi levi bočni meni i kartica pomoći sa uputstvom za korišćenje." },
+        { version: "1.2.0", date: "09.09.2026", note: "Prodavnice u blizini (mapa, lokacija, uputstva) i konverzija cena u izabranu valutu." },
+        { version: "1.1.0", date: "08.09.2026", note: "Izbor zemalja sa pretragom i prekidač jezika interfejsa." },
+        { version: "1.0.0", date: "08.09.2026", note: "Prva verzija – praćenje Parkside proizvoda u 28 evropskih Lidl tržišta." },
       ],
       storesHeading: "Prodavnice u blizini",
       storesSub: "Pronađi Lidl prodavnice u blizini - sa radnim vremenom i uputstvima za dolazak.",
@@ -2121,6 +2278,8 @@
       helpNavLabel: "Portalguide",
       manualsNavLabel: "Bruksanvisningar",
       helpHeading: "Så använder du appen",
+      helpVersion: (v) => `Version ${v}`,
+      changelogHeading: "Versionshistorik",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Välj mellan ”Värt priset” (verktyg rekommenderade enligt objektiva kriterier), ”Endast Parkside Performance” eller ”Alla Parkside-produkter”." },
         { icon: "🛠️", title: "Mina verktyg", body: "Markera det du redan har – dessa verktyg döljs automatiskt från rekommendationerna ovan tills du avmarkerar dem." },
@@ -2128,6 +2287,12 @@
         { icon: "🏬", title: "Butiker nära dig", body: "Använd din plats eller skriv in en ort – vi visar de närmaste Lidl-butikerna med öppettider och vägbeskrivning." },
         { icon: "🌐", title: "Språk och tema", body: "Byt gränssnittsspråk och mörkt/ljust tema högst upp till höger i sidhuvudet." },
         { icon: "💶", title: "Priser och valutor", body: "Priser i utländska valutor visas automatiskt omvandlade till en valuta som matchar det valda språket." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nytt vänster sidopanel och en hjälpflik med bruksanvisning." },
+        { version: "1.2.0", date: "09.09.2026", note: "Butiker nära dig (karta, plats, vägbeskrivning) och prisomvandling till vald valuta." },
+        { version: "1.1.0", date: "08.09.2026", note: "Landsväljare med sökning och val av gränssnittsspråk." },
+        { version: "1.0.0", date: "08.09.2026", note: "Första versionen – bevakning av Parkside-produkter på 28 europeiska Lidl-marknader." },
       ],
       storesHeading: "Butiker nära dig",
       storesSub: "Hitta Lidl-butiker nära dig - med öppettider och vägbeskrivning.",
@@ -2199,6 +2364,8 @@
       helpNavLabel: "Portalo vadovas",
       manualsNavLabel: "Įrenginių instrukcijos",
       helpHeading: "Kaip naudotis šia programa",
+      helpVersion: (v) => `Versija ${v}`,
+      changelogHeading: "Versijų istorija",
       helpSections: [
         { icon: "🎯", title: "Filtras", body: "Rinkis tarp „Verta kainos“ (įrankiai, rekomenduojami pagal objektyvius kriterijus), „Tik Parkside Performance“ arba „Visi Parkside gaminiai“." },
         { icon: "🛠️", title: "Mano įrankiai", body: "Pažymėk, ką jau turi – šie įrankiai automatiškai paslepiami iš aukščiau esančių rekomendacijų, kol jų nepažymėsi iš naujo." },
@@ -2206,6 +2373,12 @@
         { icon: "🏬", title: "Parduotuvės netoliese", body: "Naudok savo vietą arba įvesk vietovę – parodysime artimiausias Lidl parduotuves su darbo laiku ir nuorodomis." },
         { icon: "🌐", title: "Kalba ir tema", body: "Pakeisk sąsajos kalbą ir tamsų/šviesų temą viršutiniame dešiniajame antraštės kampe." },
         { icon: "💶", title: "Kainos ir valiutos", body: "Kainos užsienio valiutomis automatiškai rodomos konvertuotos į valiutą, atitinkančią pasirinktą kalbą." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nauja kairė šoninė juosta ir pagalbos skiltis su naudojimo instrukcijomis." },
+        { version: "1.2.0", date: "09.09.2026", note: "Parduotuvės netoliese (žemėlapis, vieta, nuorodos) ir kainų konvertavimas į pasirinktą valiutą." },
+        { version: "1.1.0", date: "08.09.2026", note: "Šalių pasirinkimas su paieška ir sąsajos kalbos jungiklis." },
+        { version: "1.0.0", date: "08.09.2026", note: "Pirmoji versija – Parkside gaminių sekimas 28 Europos Lidl rinkose." },
       ],
       storesHeading: "Parduotuvės netoliese",
       storesSub: "Rask Lidl parduotuves netoliese - su darbo laiku ir nuorodomis.",
@@ -2277,6 +2450,8 @@
       helpNavLabel: "Portāla ceļvedis",
       manualsNavLabel: "Ierīču instrukcijas",
       helpHeading: "Kā izmantot šo lietotni",
+      helpVersion: (v) => `Versija ${v}`,
+      changelogHeading: "Versiju historija",
       helpSections: [
         { icon: "🎯", title: "Filtrs", body: "Izvēlies starp „Ir vērts“ (darbarīki, kas ieteikti pēc objektīviem kritērijiem), „Tikai Parkside Performance“ vai „Visi Parkside izstrādājumi“." },
         { icon: "🛠️", title: "Mani darbarīki", body: "Atzīmē, kas tev jau ir – šie darbarīki tiek automātiski paslēpti no iepriekš minētajiem ieteikumiem, kamēr tos neatzīmē no jauna." },
@@ -2284,6 +2459,12 @@
         { icon: "🏬", title: "Veikali tuvumā", body: "Izmanto savu atrašanās vietu vai ieraksti vietu – parādīsim tuvākos Lidl veikalus ar darba laikiem un norādēm." },
         { icon: "🌐", title: "Valoda un tēma", body: "Nomaini saskarnes valodu un tumšo/gaišo tēmu galvenes augšējā labajā stūrī." },
         { icon: "💶", title: "Cenas un valūtas", body: "Cenas ārvalstu valūtās automātiski tiek pārrēķinātas valūtā, kas atbilst izvēlētajai valodai." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Jauna kreisā sānjosla un palīdzības cilne ar lietošanas instrukcijām." },
+        { version: "1.2.0", date: "09.09.2026", note: "Veikali tuvumā (karte, atrašanās vieta, norādes) un cenu pārrēķins izvēlētajā valūtā." },
+        { version: "1.1.0", date: "08.09.2026", note: "Valstu atlasītājs ar meklēšanu un saskarnes valodas pārslēgs." },
+        { version: "1.0.0", date: "08.09.2026", note: "Pirmā versija – Parkside izstrādājumu sekošana 28 Eiropas Lidl tirgos." },
       ],
       storesHeading: "Veikali tuvumā",
       storesSub: "Atrodi Lidl veikalus tuvumā - ar darba laikiem un norādēm.",
@@ -2355,6 +2536,8 @@
       helpNavLabel: "Portaali juhend",
       manualsNavLabel: "Seadmete juhendid",
       helpHeading: "Kuidas seda rakendust kasutada",
+      helpVersion: (v) => `Versioon ${v}`,
+      changelogHeading: "Versioonide ajalugu",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Vali „Tasub raha“ (objektiivsete kriteeriumide alusel soovitatud tööriistad), „Ainult Parkside Performance“ või „Kõik Parkside tooted“ vahel." },
         { icon: "🛠️", title: "Minu tööriistad", body: "Märgi, mis sul juba on – need tööriistad peidetakse automaatselt ülalpool olevatest soovitustest, kuni sa need uuesti märkimata jätad." },
@@ -2362,6 +2545,12 @@
         { icon: "🏬", title: "Poed lähedal", body: "Kasuta oma asukohta või sisesta koht – näitame lähimaid Lidli poode koos lahtiolekuaegade ja juhistega." },
         { icon: "🌐", title: "Keel ja teema", body: "Vaheta liidese keelt ja tumedat/heledat teemat päise paremas ülanurgas." },
         { icon: "💶", title: "Hinnad ja valuutad", body: "Välisvaluutades hinnad kuvatakse automaatselt teisendatuna valitud keelele vastavasse valuutasse." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Uus vasakpoolne kõrvalpaneel ja abisakk kasutusjuhistega." },
+        { version: "1.2.0", date: "09.09.2026", note: "Poed lähedal (kaart, asukoht, juhised) ja hindade teisendamine valitud valuutasse." },
+        { version: "1.1.0", date: "08.09.2026", note: "Riikide valija otsingu ja liidese keele lülitiga." },
+        { version: "1.0.0", date: "08.09.2026", note: "Esimene versioon – Parkside toodete jälgimine 28 Euroopa Lidli turul." },
       ],
       storesHeading: "Poed lähedal",
       storesSub: "Leia Lidli poed enda lähedal - koos lahtiolekuaegade ja juhistega.",
@@ -2433,6 +2622,8 @@
       helpNavLabel: "Portaalgids",
       manualsNavLabel: "Gebruiksaanwijzingen",
       helpHeading: "Hoe deze app te gebruiken",
+      helpVersion: (v) => `Versie ${v}`,
+      changelogHeading: "Versiegeschiedenis",
       helpSections: [
         { icon: "🎯", title: "Filter", body: "Kies tussen “De prijs waard” (gereedschap aanbevolen op basis van objectieve criteria), “Alleen Parkside Performance” of “Alle Parkside-artikelen”." },
         { icon: "🛠️", title: "Mijn gereedschap", body: "Vink aan wat je al hebt – dit gereedschap wordt automatisch verborgen uit de aanbevelingen hierboven totdat je het weer uitvinkt." },
@@ -2440,6 +2631,12 @@
         { icon: "🏬", title: "Winkels bij jou in de buurt", body: "Gebruik je locatie of typ een plaats – we tonen de dichtstbijzijnde Lidl-winkels met openingstijden en routebeschrijving." },
         { icon: "🌐", title: "Taal en thema", body: "Wissel de interfacetaal en het donkere/lichte thema rechtsboven in de header." },
         { icon: "💶", title: "Prijzen en valuta's", body: "Prijzen in vreemde valuta worden automatisch omgerekend naar een valuta die past bij de gekozen taal." },
+      ],
+      changelog: [
+        { version: "1.3.0", date: "09.09.2026", note: "Nieuwe linker zijbalk en een hulptabblad met gebruiksinstructies." },
+        { version: "1.2.0", date: "09.09.2026", note: "Winkels bij jou in de buurt (kaart, locatie, routebeschrijving) en prijsconversie naar de gekozen valuta." },
+        { version: "1.1.0", date: "08.09.2026", note: "Landkiezer met zoekfunctie en interfacetaalschakelaar." },
+        { version: "1.0.0", date: "08.09.2026", note: "Eerste versie – bijhouden van Parkside-artikelen in 28 Europese Lidl-markten." },
       ],
       storesHeading: "Winkels bij jou in de buurt",
       storesSub: "Vind Lidl-winkels bij jou in de buurt - met openingstijden en routebeschrijving.",
@@ -2640,6 +2837,8 @@
   const countryGrid = document.getElementById("countryGrid");
   const storesPanel = document.getElementById("storesPanel");
   const helpPanel = document.getElementById("helpPanel");
+
+  const APP_VERSION = "1.3.0";
 
   const sidebarNavButtons = {
     overview: document.getElementById("navOverview"),
@@ -3162,6 +3361,15 @@
         <div class="help-body">${s.body}</div>
       </div>
     `).join("");
+
+    const changelogEl = document.getElementById("changelogList");
+    changelogEl.innerHTML = t().changelog.map(c => `
+      <div class="changelog-item">
+        <span class="cl-version">v${c.version}</span>
+        <span class="cl-date">${c.date}</span>
+        <span class="cl-note">${c.note}</span>
+      </div>
+    `).join("");
   }
 
   function applyStaticText() {
@@ -3186,6 +3394,8 @@
     document.querySelector('[data-t="menuLabel"]').textContent = t().menuLabel;
     document.querySelector('[data-t="helpNavLabel"]').textContent = t().helpNavLabel;
     document.getElementById("helpHeading").textContent = t().helpHeading;
+    document.getElementById("helpVersion").textContent = t().helpVersion(APP_VERSION);
+    document.getElementById("changelogHeading").textContent = t().changelogHeading;
     renderHelp();
     document.querySelector('[data-t="manualsNavLabel"]').textContent = t().manualsNavLabel;
     document.getElementById("storesHeading").textContent = t().storesHeading;
