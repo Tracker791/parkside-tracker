@@ -162,11 +162,24 @@
     background: #fff;
     cursor: pointer;
   }
-  .manuals-item-title {
+  .manuals-item-text {
     flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .manuals-item-title {
     font-size: 13px;
     line-height: 1.35;
   }
+  .manuals-item-ian {
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    width: fit-content;
+  }
+  .manuals-item-ian:hover { color: var(--ps-red); text-decoration: underline; }
   .manuals-item-btn {
     flex: none;
     font-size: 12px;
@@ -644,7 +657,11 @@
       (country.products || []).forEach(p => {
         const key = productKey(p);
         if (!seen.has(key) && SELF_SERVICE_DOMAINS[code]) {
-          seen.set(key, { title: p.title || "?", image: p.image, country: code });
+          // p.ean je dejansko Lidlova IAN stevilka (glej scraper.py - polje se
+          // v njihovem API kliče "ians"), ne prava EAN crtna koda. Iskanje po
+          // IAN na servisnem portalu vrne natancno TA izdelek (1 zadetek),
+          // medtem ko iskanje po imenu vrne stotine ohlapnih zadetkov.
+          seen.set(key, { title: p.title || "?", image: p.image, country: code, ian: p.ean });
         }
       });
     });
@@ -660,11 +677,20 @@
 
     manualsCount.textContent = `${t().countLabel}: ${items.length}`;
     manualsList.innerHTML = items.map(it => {
+      // Iskanje po imenu skoraj vedno nekaj najde (a lahko je ohlapno / vec
+      // zadetkov). Iskanje po IAN stevilki najde TOCNO ta izdelek, a portal
+      // za dokaj velik del (predvsem novejsih/tedenskih) izdelkov se nima
+      // indeksiranega prirocnika, zato ta zadetek lahko manjka - zato je na
+      // voljo kot dodatna, locena povezava, ne kot edina moznost.
       const url = manualSearchUrl(it.country, it.title);
+      const ianUrl = it.ian ? manualSearchUrl(it.country, it.ian) : null;
       return `
         <div class="manuals-item">
           ${it.image ? `<a href="${url}" target="_blank" rel="noopener"><img src="${it.image}" alt="" loading="lazy" /></a>` : ""}
-          <div class="manuals-item-title">${it.title}</div>
+          <div class="manuals-item-text">
+            <div class="manuals-item-title">${it.title}</div>
+            ${it.ian ? `<a class="manuals-item-ian" href="${ianUrl}" target="_blank" rel="noopener">IAN: ${it.ian}</a>` : ""}
+          </div>
           <a class="manuals-item-btn" href="${url}" target="_blank" rel="noopener">${t().btn}</a>
         </div>
       `;
