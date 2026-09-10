@@ -13,8 +13,12 @@ Za vsak izdelek izlusci ceno, kategorijo in datume veljavnosti ponudbe
 (startDate/endDate po regijah, ce so na voljo), ter zapise rezultat v
 data/products.json in data.js (za prikaz v index.html).
 
-Vsak nov zagon primerja rezultate s prejsnjim zagonom in oznaci nove
-izdelke ter izdelke, ki so spremenili ceno/razpolozljivost/status.
+Vsak nov zagon (urno) primerja rezultate z DNEVNIM izhodiscem (stanje ob
+prvem zagonu tega koledarskega dne, po ljubljanskem casu) - ne z zadnjim
+urnim zagonom. Tako znacka "SPREMEMBA" ostane vidna ves preostanek dneva,
+ne le eno uro, izhodisce pa se osvezi ob prehodu na nov dan (prvi zagon po
+polnoci). Oznaci nove izdelke ter izdelke, ki so od jutranjega izhodisca
+spremenili ceno/razpolozljivost/status.
 """
 
 import json
@@ -22,6 +26,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -29,7 +34,9 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 PRODUCTS_FILE = DATA_DIR / "products.json"
 CATALOG_FILE = DATA_DIR / "performance_catalog.json"
+DAILY_BASELINE_FILE = DATA_DIR / "daily_baseline.json"
 DATA_JS_FILE = BASE_DIR / "data.js"
+LOCAL_TZ = ZoneInfo("Europe/Ljubljana")
 
 HEADERS = {
     "User-Agent": (
@@ -419,6 +426,19 @@ def load_previous():
     return None
 
 
+def today_str() -> str:
+    return datetime.now(timezone.utc).astimezone(LOCAL_TZ).strftime("%Y-%m-%d")
+
+
+def load_daily_baseline():
+    if DAILY_BASELINE_FILE.exists():
+        try:
+            return json.loads(DAILY_BASELINE_FILE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            return None
+    return None
+
+
 def load_catalog():
     if CATALOG_FILE.exists():
         try:
@@ -484,10 +504,13 @@ def update_catalog(catalog: dict, country_products: dict, generated_at: str) -> 
 TRACKED_FIELDS = ("price", "online", "availableFrom", "availableUntil", "worthIt")
 
 
-def diff_against_previous(country_code: str, products: list, previous: dict):
+def diff_against_baseline(country_code: str, products: list, baseline_countries: dict):
+    """Primerja s podanim DNEVNIM izhodiscem (glej komentar ob TRACKED_FIELDS
+    in main()) - baseline_countries je slovar {drzava: {"products": [...]}} in
+    NI nujno zadnji urni zagon, temvec stanje ob prvem zagonu danasnjega dne."""
     old_products = {}
-    if previous:
-        for p in previous.get("countries", {}).get(country_code, {}).get("products", []):
+    if baseline_countries:
+        for p in baseline_countries.get(country_code, {}).get("products", []):
             old_products[p["id"]] = p
 
     for p in products:
@@ -505,6 +528,21 @@ def diff_against_previous(country_code: str, products: list, previous: dict):
 
 def main():
     previous = load_previous()
+    today = today_str()
+    daily_baseline = load_daily_baseline()
+    if daily_baseline and daily_baseline.get("date") == today:
+        # Se isti (ljubljanski) dan kot shranjeno izhodisce - primerjaj z
+        # JUTRANJIM stanjem, ne z zadnjim urnim zagonom, da znacka
+        # "SPREMEMBA" ostane vidna ves preostanek dneva.
+        baseline_countries = daily_baseline.get("countries", {})
+        is_new_day = False
+    else:
+        # Prvi zagon danasnjega dne (ali izhodisce se ne obstaja) - primerjaj
+        # se vedno z zadnjim znanim stanjem, nato TO isto stanje ob koncu
+        # zapisemo kot danasnje izhodisce za preostanek dneva.
+        baseline_countries = (previous or {}).get("countries", {})
+        is_new_day = True
+
     result = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "countries": {},
@@ -529,7 +567,7 @@ def main():
             }
             continue
 
-        products = diff_against_previous(code, products, previous)
+        products = diff_against_baseline(code, products, baseline_countries)
         new_count = sum(1 for p in products if p["status"] == "new")
         changed_count = sum(1 for p in products if p["status"] == "changed")
         perf_count = sum(1 for p in products if p["isPerformance"])
@@ -567,6 +605,12 @@ def main():
         "window.__PARKSIDE_DATA__ = " + json.dumps(result, ensure_ascii=False) + ";",
         encoding="utf-8",
     )
+    if is_new_day:
+        DAILY_BASELINE_FILE.write_text(
+            json.dumps({"date": today, "countries": baseline_countries}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        print(f"Novo dnevno izhodisce za spremembe: {today}")
     print(f"\nShranjeno v {PRODUCTS_FILE}, {CATALOG_FILE} in {DATA_JS_FILE}")
     print(f"Katalog Parkside Performance orodij skupaj: {len(catalog)}")
     if had_error:
