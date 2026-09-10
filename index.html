@@ -635,6 +635,50 @@
   .changelog-item .cl-date { color: var(--muted); flex: none; font-size: 11.5px; }
   .changelog-item .cl-note { color: var(--text); }
 
+  .manuals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .manuals-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: var(--surface-2);
+  }
+  .manuals-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex: none;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .manuals-item-title {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .manuals-item-btn {
+    flex: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--ps-red);
+    border-radius: 8px;
+    padding: 7px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .manuals-item-btn:hover { opacity: 0.88; }
+
   .stores-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .stores-controls button {
     font-size: 13px;
@@ -775,6 +819,7 @@
       <button class="sidebar-item" id="toggleStores"><span class="sidebar-icon">🏬</span><span id="toggleStoresLabel">Trgovine v bližini</span></button>
       <a class="sidebar-item" id="toggleParts" href="rezervni-deli.html"><span class="sidebar-icon">🔧</span><span id="togglePartsLabel" data-t="partsNavLabel">Rezervni deli</span></a>
       <button class="sidebar-item" id="toggleHelp"><span class="sidebar-icon">📖</span><span id="toggleHelpLabel" data-t="helpNavLabel">Navodila</span></button>
+      <button class="sidebar-item" id="toggleManuals"><span class="sidebar-icon">📄</span><span id="toggleManualsLabel" data-t="manualsNavLabel">Navodila za naprave</span></button>
       <div class="sidebar-divider"></div>
       <div class="sidebar-section-title">Filter</div>
       <select class="filter-select" id="filterSelect">
@@ -839,6 +884,15 @@
       </div>
     </div>
 
+    <div class="side-panel" id="manualsPanel" hidden>
+      <div class="side-panel-box">
+        <h2 id="manualsHeading">Navodila za uporabo naprav</h2>
+        <div class="sub" id="manualsSub">Poišči uradna navodila za uporabo za svojo Parkside napravo.</div>
+        <input type="text" id="manualsSearch" class="sidebar-search-input" placeholder="Iskanje po imenu naprave..." />
+        <div class="manuals-list" id="manualsList"></div>
+      </div>
+    </div>
+
     <main id="app"></main>
   </div>
 </div>
@@ -873,6 +927,46 @@
     nl: {si:"Slovenië",hr:"Kroatië",at:"Oostenrijk",de:"Duitsland",fr:"Frankrijk",it:"Italië",pl:"Polen",es:"Spanje",gb:"Groot-Brittannië",cz:"Tsjechië",sk:"Slowakije",pt:"Portugal",hu:"Hongarije",ie:"Ierland",gr:"Griekenland",bg:"Bulgarije",ro:"Roemenië",rs:"Serbië",se:"Zweden",lt:"Litouwen",lv:"Letland",ee:"Estland",be:"België",ch:"Zwitserland",cy:"Cyprus",mt:"Malta",lu:"Luxemburg",nl:"Nederland"},
   };
 
+  // Uradni Lidl servisni portali (Salesforce "Self Service") po drzavah -
+  // uporabljeno za iskanje navodil za uporabo naprav (gumb "Poisci navodila").
+  // Iskanje po nazivu izdelka deluje preko URL fragmenta: {baseUrl}/s/global-search/%40uri#q=<poizvedba>
+  const SELF_SERVICE_DOMAINS = {
+    si: "https://informacije.lidl.si/SelfServiceSI",
+    hr: "https://sluzba-za-kupce.lidl.hr/SelfServiceHR",
+    at: "https://kundenservice.lidl.at/SelfServiceAT",
+    de: "https://kundenservice.lidl.de/SelfServiceDE",
+    fr: "https://service-client.lidl.fr/SelfServiceFR",
+    it: "https://assistenza-clienti.lidl.it/SelfServiceIT",
+    pl: "https://obsluga-klienta.lidl.pl/SelfServicePL",
+    es: "https://atencion-al-cliente.lidl.es/SelfServiceES",
+    gb: "https://customer-service.lidl.co.uk/SelfServiceUK",
+    cz: "https://informace-pro-zakazniky.lidl.cz/SelfServiceCZ",
+    sk: "https://informacie-pre-zakaznikov.lidl.sk/SelfServiceSK",
+    pt: "https://apoio-ao-cliente.lidl.pt/SelfServicePT",
+    hu: "https://ugyfelszolgalat.lidl.hu/SelfServiceHU",
+    ie: "https://customer-service.lidl.ie/SelfServiceIE",
+    gr: "https://exypiretisi-pelaton.lidl-hellas.gr/SelfServiceGR",
+    bg: "https://obsluzhvane-i-kontakti.lidl.bg/SelfServiceBG",
+    ro: "https://serviciul-clienti.lidl.ro/SelfServiceRO",
+    rs: "https://sluzba-za-potrosace.lidl.rs/SelfServiceRS",
+    se: "https://kundportal.lidl.se/SelfServiceSE",
+    lt: "https://informacija-klientui.lidl.lt/SelfServiceLT",
+    lv: "https://klientu-serviss.lidl.lv/SelfServiceLV",
+    ee: "https://klienditugi.lidl.ee/SelfServiceEE",
+    be: "https://service.lidl.be/SelfServiceBE",
+    ch: "https://service.lidl.ch/SelfServiceCH",
+    cy: "https://exypiretisi-pelaton.lidl.com.cy/SelfServiceCY",
+    mt: "https://customer-service.lidl.com.mt/SelfServiceMT",
+    lu: "https://service.lidl.lu/SelfServiceLU",
+    nl: "https://customercare.lidl.nl/SelfServiceNL",
+  };
+
+  function manualSearchUrl(countryCode, query) {
+    const base = SELF_SERVICE_DOMAINS[countryCode];
+    if (!base) return null;
+    return `${base}/s/global-search/%40uri#q=${encodeURIComponent(query)}`;
+  }
+
   const LOCALES = {
     sl: "sl-SI", en: "en-GB", de: "de-DE", hr: "hr-HR",
     fr: "fr-FR", it: "it-IT", pl: "pl-PL", es: "es-ES",
@@ -898,6 +992,12 @@
       menuLabel: "Meni",
       partsNavLabel: "Rezervni deli",
       helpNavLabel: "Navodila",
+      manualsNavLabel: "Navodila za naprave",
+      manualsHeading: "Navodila za uporabo naprav",
+      manualsSub: "Poišči uradna navodila za uporabo za svojo Parkside napravo – odpre iskanje na uradnem Lidl servisnem portalu.",
+      manualsSearchPlaceholder: "Iskanje po imenu naprave...",
+      manualsBtn: "Poišči navodila",
+      manualsNone: "Ni najdenih naprav.",
       helpHeading: "Navodila za uporabo",
       helpVersion: (v) => `Različica ${v}`,
       changelogHeading: "Zgodovina različic",
@@ -983,6 +1083,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Spare parts",
       helpNavLabel: "Instructions",
+      manualsNavLabel: "Device manuals",
+      manualsHeading: "Device instruction manuals",
+      manualsSub: "Find the official instruction manual for your Parkside device – opens a search on the official Lidl service portal.",
+      manualsSearchPlaceholder: "Search by device name...",
+      manualsBtn: "Find manual",
+      manualsNone: "No devices found.",
       helpHeading: "How to use this app",
       helpVersion: (v) => `Version ${v}`,
       changelogHeading: "Version history",
@@ -1068,6 +1174,12 @@
       menuLabel: "Menü",
       partsNavLabel: "Ersatzteile",
       helpNavLabel: "Anleitung",
+      manualsNavLabel: "Bedienungsanleitungen",
+      manualsHeading: "Bedienungsanleitungen für Geräte",
+      manualsSub: "Finde die offizielle Bedienungsanleitung für dein Parkside-Gerät – öffnet die Suche im offiziellen Lidl-Serviceportal.",
+      manualsSearchPlaceholder: "Nach Gerätename suchen...",
+      manualsBtn: "Anleitung suchen",
+      manualsNone: "Keine Geräte gefunden.",
       helpHeading: "Bedienungsanleitung",
       helpVersion: (v) => `Version ${v}`,
       changelogHeading: "Versionsverlauf",
@@ -1153,6 +1265,12 @@
       menuLabel: "Izbornik",
       partsNavLabel: "Rezervni dijelovi",
       helpNavLabel: "Upute",
+      manualsNavLabel: "Upute za uređaje",
+      manualsHeading: "Upute za uporabu uređaja",
+      manualsSub: "Pronađi službene upute za uporabu svog Parkside uređaja – otvara pretragu na službenom Lidl servisnom portalu.",
+      manualsSearchPlaceholder: "Pretraži po nazivu uređaja...",
+      manualsBtn: "Pronađi upute",
+      manualsNone: "Nema pronađenih uređaja.",
       helpHeading: "Upute za korištenje",
       helpVersion: (v) => `Verzija ${v}`,
       changelogHeading: "Povijest verzija",
@@ -1238,6 +1356,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Pièces détachées",
       helpNavLabel: "Instructions",
+      manualsNavLabel: "Modes d'emploi",
+      manualsHeading: "Modes d'emploi des appareils",
+      manualsSub: "Trouvez le mode d'emploi officiel de votre appareil Parkside – ouvre une recherche sur le portail de service officiel Lidl.",
+      manualsSearchPlaceholder: "Rechercher par nom d'appareil...",
+      manualsBtn: "Trouver le mode d'emploi",
+      manualsNone: "Aucun appareil trouvé.",
       helpHeading: "Comment utiliser cette application",
       helpVersion: (v) => `Version ${v}`,
       changelogHeading: "Historique des versions",
@@ -1323,6 +1447,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Pezzi di ricambio",
       helpNavLabel: "Istruzioni",
+      manualsNavLabel: "Manuali d'uso",
+      manualsHeading: "Manuali d'uso degli apparecchi",
+      manualsSub: "Trova il manuale d'uso ufficiale per il tuo dispositivo Parkside – apre una ricerca sul portale di assistenza ufficiale Lidl.",
+      manualsSearchPlaceholder: "Cerca per nome dispositivo...",
+      manualsBtn: "Trova manuale",
+      manualsNone: "Nessun dispositivo trovato.",
       helpHeading: "Come usare questa app",
       helpVersion: (v) => `Versione ${v}`,
       changelogHeading: "Cronologia versioni",
@@ -1408,6 +1538,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Części zamienne",
       helpNavLabel: "Instrukcje",
+      manualsNavLabel: "Instrukcje urządzeń",
+      manualsHeading: "Instrukcje obsługi urządzeń",
+      manualsSub: "Znajdź oficjalną instrukcję obsługi swojego urządzenia Parkside – otwiera wyszukiwanie w oficjalnym portalu serwisowym Lidl.",
+      manualsSearchPlaceholder: "Szukaj po nazwie urządzenia...",
+      manualsBtn: "Znajdź instrukcję",
+      manualsNone: "Nie znaleziono urządzeń.",
       helpHeading: "Jak korzystać z tej aplikacji",
       helpVersion: (v) => `Wersja ${v}`,
       changelogHeading: "Historia wersji",
@@ -1493,6 +1629,12 @@
       menuLabel: "Menú",
       partsNavLabel: "Piezas de repuesto",
       helpNavLabel: "Instrucciones",
+      manualsNavLabel: "Manuales de uso",
+      manualsHeading: "Manuales de uso de los aparatos",
+      manualsSub: "Encuentra el manual de instrucciones oficial de tu aparato Parkside – abre una búsqueda en el portal de servicio oficial de Lidl.",
+      manualsSearchPlaceholder: "Buscar por nombre del aparato...",
+      manualsBtn: "Buscar manual",
+      manualsNone: "No se encontraron aparatos.",
       helpHeading: "Cómo usar esta aplicación",
       helpVersion: (v) => `Versión ${v}`,
       changelogHeading: "Historial de versiones",
@@ -1578,6 +1720,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Náhradní díly",
       helpNavLabel: "Návod",
+      manualsNavLabel: "Návody k zařízením",
+      manualsHeading: "Návody k použití zařízení",
+      manualsSub: "Najdi oficiální návod k použití pro své zařízení Parkside – otevře vyhledávání na oficiálním servisním portálu Lidl.",
+      manualsSearchPlaceholder: "Hledat podle názvu zařízení...",
+      manualsBtn: "Najít návod",
+      manualsNone: "Nebyla nalezena žádná zařízení.",
       helpHeading: "Jak používat tuto aplikaci",
       helpVersion: (v) => `Verze ${v}`,
       changelogHeading: "Historie verzí",
@@ -1663,6 +1811,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Náhradné diely",
       helpNavLabel: "Návod",
+      manualsNavLabel: "Návody na zariadenia",
+      manualsHeading: "Návody na použitie zariadení",
+      manualsSub: "Nájdi oficiálny návod na použitie pre svoje zariadenie Parkside – otvorí vyhľadávanie na oficiálnom servisnom portáli Lidl.",
+      manualsSearchPlaceholder: "Hľadať podľa názvu zariadenia...",
+      manualsBtn: "Nájsť návod",
+      manualsNone: "Neboli nájdené žiadne zariadenia.",
       helpHeading: "Ako používať túto aplikáciu",
       helpVersion: (v) => `Verzia ${v}`,
       changelogHeading: "História verzií",
@@ -1748,6 +1902,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Peças sobresselentes",
       helpNavLabel: "Instruções",
+      manualsNavLabel: "Manuais de instruções",
+      manualsHeading: "Manuais de instruções dos aparelhos",
+      manualsSub: "Encontra o manual de instruções oficial do teu aparelho Parkside – abre uma pesquisa no portal de assistência oficial da Lidl.",
+      manualsSearchPlaceholder: "Pesquisar por nome do aparelho...",
+      manualsBtn: "Encontrar manual",
+      manualsNone: "Nenhum aparelho encontrado.",
       helpHeading: "Como usar esta aplicação",
       helpVersion: (v) => `Versão ${v}`,
       changelogHeading: "Histórico de versões",
@@ -1833,6 +1993,12 @@
       menuLabel: "Menü",
       partsNavLabel: "Pótalkatrészek",
       helpNavLabel: "Útmutató",
+      manualsNavLabel: "Használati útmutatók",
+      manualsHeading: "Eszközök használati útmutatói",
+      manualsSub: "Keresd meg a Parkside eszközöd hivatalos használati útmutatóját – megnyitja a keresést a hivatalos Lidl szervizportálon.",
+      manualsSearchPlaceholder: "Keresés eszköznév alapján...",
+      manualsBtn: "Útmutató keresése",
+      manualsNone: "Nem található eszköz.",
       helpHeading: "Az alkalmazás használata",
       helpVersion: (v) => `Verzió ${v}`,
       changelogHeading: "Verziótörténet",
@@ -1918,6 +2084,12 @@
       menuLabel: "Μενού",
       partsNavLabel: "Ανταλλακτικά",
       helpNavLabel: "Οδηγίες",
+      manualsNavLabel: "Εγχειρίδια συσκευών",
+      manualsHeading: "Εγχειρίδια χρήσης συσκευών",
+      manualsSub: "Βρες το επίσημο εγχειρίδιο χρήσης για τη συσκευή σου Parkside – ανοίγει αναζήτηση στην επίσημη πύλη εξυπηρέτησης της Lidl.",
+      manualsSearchPlaceholder: "Αναζήτηση με όνομα συσκευής...",
+      manualsBtn: "Αναζήτηση εγχειριδίου",
+      manualsNone: "Δεν βρέθηκαν συσκευές.",
       helpHeading: "Πώς να χρησιμοποιήσεις αυτή την εφαρμογή",
       helpVersion: (v) => `Έκδοση ${v}`,
       changelogHeading: "Ιστορικό εκδόσεων",
@@ -2003,6 +2175,12 @@
       menuLabel: "Меню",
       partsNavLabel: "Резервни части",
       helpNavLabel: "Инструкции",
+      manualsNavLabel: "Инструкции за уредите",
+      manualsHeading: "Инструкции за употреба на уредите",
+      manualsSub: "Намери официалната инструкция за употреба на своя уред Parkside – отваря търсене в официалния сервизен портал на Lidl.",
+      manualsSearchPlaceholder: "Търсене по име на уреда...",
+      manualsBtn: "Намери инструкция",
+      manualsNone: "Не са намерени уреди.",
       helpHeading: "Как да използвате това приложение",
       helpVersion: (v) => `Версия ${v}`,
       changelogHeading: "История на версиите",
@@ -2088,6 +2266,12 @@
       menuLabel: "Meniu",
       partsNavLabel: "Piese de schimb",
       helpNavLabel: "Instrucțiuni",
+      manualsNavLabel: "Manuale de utilizare",
+      manualsHeading: "Manuale de utilizare a aparatelor",
+      manualsSub: "Găsește manualul oficial de utilizare pentru aparatul tău Parkside – deschide o căutare pe portalul oficial de service Lidl.",
+      manualsSearchPlaceholder: "Caută după numele aparatului...",
+      manualsBtn: "Găsește manualul",
+      manualsNone: "Nu a fost găsit niciun aparat.",
       helpHeading: "Cum să folosești această aplicație",
       helpVersion: (v) => `Versiunea ${v}`,
       changelogHeading: "Istoricul versiunilor",
@@ -2173,6 +2357,12 @@
       menuLabel: "Meni",
       partsNavLabel: "Rezervni delovi",
       helpNavLabel: "Uputstvo",
+      manualsNavLabel: "Uputstva za uređaje",
+      manualsHeading: "Uputstva za upotrebu uređaja",
+      manualsSub: "Pronađi zvanično uputstvo za upotrebu svog Parkside uređaja – otvara pretragu na zvaničnom Lidl servisnom portalu.",
+      manualsSearchPlaceholder: "Pretraga po nazivu uređaja...",
+      manualsBtn: "Pronađi uputstvo",
+      manualsNone: "Nisu pronađeni uređaji.",
       helpHeading: "Kako koristiti ovu aplikaciju",
       helpVersion: (v) => `Verzija ${v}`,
       changelogHeading: "Istorija verzija",
@@ -2258,6 +2448,12 @@
       menuLabel: "Meny",
       partsNavLabel: "Reservdelar",
       helpNavLabel: "Instruktioner",
+      manualsNavLabel: "Bruksanvisningar",
+      manualsHeading: "Bruksanvisningar för enheter",
+      manualsSub: "Hitta den officiella bruksanvisningen för din Parkside-enhet – öppnar en sökning på Lidls officiella serviceportal.",
+      manualsSearchPlaceholder: "Sök på enhetens namn...",
+      manualsBtn: "Hitta bruksanvisning",
+      manualsNone: "Inga enheter hittades.",
       helpHeading: "Så använder du appen",
       helpVersion: (v) => `Version ${v}`,
       changelogHeading: "Versionshistorik",
@@ -2343,6 +2539,12 @@
       menuLabel: "Meniu",
       partsNavLabel: "Atsarginės dalys",
       helpNavLabel: "Instrukcijos",
+      manualsNavLabel: "Įrenginių instrukcijos",
+      manualsHeading: "Įrenginių naudojimo instrukcijos",
+      manualsSub: "Raskite oficialią savo Parkside įrenginio naudojimo instrukciją – atveria paiešką oficialiame Lidl aptarnavimo portale.",
+      manualsSearchPlaceholder: "Ieškoti pagal įrenginio pavadinimą...",
+      manualsBtn: "Rasti instrukciją",
+      manualsNone: "Įrenginių nerasta.",
       helpHeading: "Kaip naudotis šia programa",
       helpVersion: (v) => `Versija ${v}`,
       changelogHeading: "Versijų istorija",
@@ -2428,6 +2630,12 @@
       menuLabel: "Izvēlne",
       partsNavLabel: "Rezerves daļas",
       helpNavLabel: "Instrukcijas",
+      manualsNavLabel: "Ierīču instrukcijas",
+      manualsHeading: "Ierīču lietošanas instrukcijas",
+      manualsSub: "Atrodiet oficiālo lietošanas instrukciju savai Parkside ierīcei – atver meklēšanu oficiālajā Lidl servisa portālā.",
+      manualsSearchPlaceholder: "Meklēt pēc ierīces nosaukuma...",
+      manualsBtn: "Atrast instrukciju",
+      manualsNone: "Ierīces nav atrastas.",
       helpHeading: "Kā izmantot šo lietotni",
       helpVersion: (v) => `Versija ${v}`,
       changelogHeading: "Versiju historija",
@@ -2513,6 +2721,12 @@
       menuLabel: "Menüü",
       partsNavLabel: "Varuosad",
       helpNavLabel: "Juhised",
+      manualsNavLabel: "Seadmete juhendid",
+      manualsHeading: "Seadmete kasutusjuhendid",
+      manualsSub: "Leia oma Parkside seadme ametlik kasutusjuhend – avab otsingu Lidl ametlikus teenindusportaalis.",
+      manualsSearchPlaceholder: "Otsi seadme nime järgi...",
+      manualsBtn: "Leia juhend",
+      manualsNone: "Seadmeid ei leitud.",
       helpHeading: "Kuidas seda rakendust kasutada",
       helpVersion: (v) => `Versioon ${v}`,
       changelogHeading: "Versioonide ajalugu",
@@ -2598,6 +2812,12 @@
       menuLabel: "Menu",
       partsNavLabel: "Reserveonderdelen",
       helpNavLabel: "Instructies",
+      manualsNavLabel: "Gebruiksaanwijzingen",
+      manualsHeading: "Gebruiksaanwijzingen voor apparaten",
+      manualsSub: "Vind de officiële gebruiksaanwijzing voor je Parkside-apparaat – opent een zoekopdracht op het officiële Lidl-serviceportaal.",
+      manualsSearchPlaceholder: "Zoeken op apparaatnaam...",
+      manualsBtn: "Handleiding zoeken",
+      manualsNone: "Geen apparaten gevonden.",
       helpHeading: "Hoe deze app te gebruiken",
       helpVersion: (v) => `Versie ${v}`,
       changelogHeading: "Versiegeschiedenis",
@@ -2814,6 +3034,9 @@
   const countryGrid = document.getElementById("countryGrid");
   const storesPanel = document.getElementById("storesPanel");
   const helpPanel = document.getElementById("helpPanel");
+  const manualsPanel = document.getElementById("manualsPanel");
+  const manualsList = document.getElementById("manualsList");
+  const manualsSearchInput = document.getElementById("manualsSearch");
 
   const APP_VERSION = "1.3.0";
 
@@ -2823,6 +3046,7 @@
     countries: document.getElementById("toggleCountries"),
     stores: document.getElementById("toggleStores"),
     help: document.getElementById("toggleHelp"),
+    manuals: document.getElementById("toggleManuals"),
   };
   function setActiveSidebarNav(key) {
     Object.entries(sidebarNavButtons).forEach(([k, el]) => el.classList.toggle("active", k === key));
@@ -3203,6 +3427,7 @@
       checklistPanel.hidden = true;
       countryPanel.hidden = true;
       helpPanel.hidden = true;
+      manualsPanel.hidden = true;
       ensureStoresLoaded().then(() => setStoresStatus(null, false)).catch(() => setStoresStatus(t().storesError, true));
       if (storesMap) setTimeout(() => storesMap.invalidateSize(), 50);
     }
@@ -3349,6 +3574,46 @@
     `).join("");
   }
 
+  // Navodila za uporabo NAPRAV (fizicnih Parkside orodij) - locena funkcija od
+  // renderHelp(), ki opisuje uporabo aplikacije. Uradnih PDF prirocnikov ne
+  // gostimo sami (prenos je vezan na sejo na Lidlovem portalu), zato gumb
+  // odpre neposredno iskanje po imenu izdelka na uradnem servisnem portalu
+  // Lidl za drzavo, v kateri je izdelek voden (informacije.lidl.si ipd.).
+  function renderManuals() {
+    const data = window.__PARKSIDE_DATA__;
+    if (!data) { manualsList.innerHTML = `<p class="empty-note">${t().noData}</p>`; return; }
+    const q = (manualsSearchInput.value || "").trim().toLowerCase();
+    const seen = new Map();
+    Object.entries(data.countries).forEach(([code, country]) => {
+      (country.products || []).forEach(p => {
+        const key = productKey(p);
+        if (!seen.has(key) && SELF_SERVICE_DOMAINS[code]) {
+          seen.set(key, { title: p.title || "?", image: p.image, country: code });
+        }
+      });
+    });
+    let items = Array.from(seen.values());
+    if (q) items = items.filter(it => it.title.toLowerCase().includes(q));
+    items.sort((a, b) => a.title.localeCompare(b.title));
+    const limited = items.slice(0, 60);
+
+    if (limited.length === 0) {
+      manualsList.innerHTML = `<p class="empty-note">${t().manualsNone}</p>`;
+      return;
+    }
+
+    manualsList.innerHTML = limited.map(it => {
+      const url = manualSearchUrl(it.country, it.title);
+      return `
+        <div class="manuals-item">
+          ${it.image ? `<img src="${it.image}" alt="" loading="lazy" />` : ""}
+          <div class="manuals-item-title">${it.title}</div>
+          <a class="manuals-item-btn" href="${url}" target="_blank" rel="noopener">${t().manualsBtn}</a>
+        </div>
+      `;
+    }).join("");
+  }
+
   function applyStaticText() {
     document.getElementById("tagline").textContent = t().tagline(window.__PARKSIDE_DATA__ ? Object.keys(window.__PARKSIDE_DATA__.countries).length : 28);
     document.getElementById("filterWorth").textContent = t().filterWorth;
@@ -3374,6 +3639,11 @@
     document.getElementById("helpVersion").textContent = t().helpVersion(APP_VERSION);
     document.getElementById("changelogHeading").textContent = t().changelogHeading;
     renderHelp();
+    document.querySelector('[data-t="manualsNavLabel"]').textContent = t().manualsNavLabel;
+    document.getElementById("manualsHeading").textContent = t().manualsHeading;
+    document.getElementById("manualsSub").textContent = t().manualsSub;
+    manualsSearchInput.placeholder = t().manualsSearchPlaceholder;
+    if (!manualsPanel.hidden) renderManuals();
     document.getElementById("storesHeading").textContent = t().storesHeading;
     document.getElementById("storesSub").textContent = t().storesSub;
     document.getElementById("useMyLocation").textContent = t().useMyLocationBtn;
@@ -3487,16 +3757,17 @@
     countryPanel.hidden = true;
     storesPanel.hidden = true;
     helpPanel.hidden = true;
+    manualsPanel.hidden = true;
     setActiveSidebarNav("overview");
   });
   document.getElementById("toggleChecklist").addEventListener("click", () => {
     checklistPanel.hidden = !checklistPanel.hidden;
-    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
+    if (!checklistPanel.hidden) { countryPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; manualsPanel.hidden = true; }
     setActiveSidebarNav(checklistPanel.hidden ? "overview" : "checklist");
   });
   document.getElementById("toggleCountries").addEventListener("click", () => {
     countryPanel.hidden = !countryPanel.hidden;
-    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; }
+    if (!countryPanel.hidden) { checklistPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true; manualsPanel.hidden = true; }
     setActiveSidebarNav(countryPanel.hidden ? "overview" : "countries");
   });
   // Plavajoc panel (izberi drzave) - klik na temno ozadje zunaj okvirja ali
@@ -3515,9 +3786,18 @@
   });
   document.getElementById("toggleHelp").addEventListener("click", () => {
     helpPanel.hidden = !helpPanel.hidden;
-    if (!helpPanel.hidden) { checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; }
+    if (!helpPanel.hidden) { checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; manualsPanel.hidden = true; }
     setActiveSidebarNav(helpPanel.hidden ? "overview" : "help");
   });
+  document.getElementById("toggleManuals").addEventListener("click", () => {
+    manualsPanel.hidden = !manualsPanel.hidden;
+    if (!manualsPanel.hidden) {
+      checklistPanel.hidden = true; countryPanel.hidden = true; storesPanel.hidden = true; helpPanel.hidden = true;
+      renderManuals();
+    }
+    setActiveSidebarNav(manualsPanel.hidden ? "overview" : "manuals");
+  });
+  manualsSearchInput.addEventListener("input", renderManuals);
   document.getElementById("selectAllCountries").addEventListener("click", () => {
     const data = window.__PARKSIDE_DATA__;
     if (!data) return;
