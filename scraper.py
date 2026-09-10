@@ -129,6 +129,19 @@ def is_performance(brand: str, title: str) -> bool:
     return "performance" in text
 
 
+def is_parkside_brand(brand: str) -> bool:
+    """Iskanje "q=parkside" na Lidlovem API ni omejeno na blagovno znamko -
+    vrne tudi nepovezane izdelke (pijace, igrace, meso ...), kadar beseda
+    "parkside" nastopi kjerkoli v rezultatu (npr. otroska igraca teme
+    "Parkside" pod znamko LUPILU/PLAYTIVE, ali celo zlepljeno ime znamke kot
+    "PARKSIDE KONG STRONG" pri energijski pijaci). Zato preverimo z belim
+    seznamom, ne s podnizom - blagovna znamka mora biti (skoraj) natanko
+    "Parkside" ali "Parkside Performance" (dovoljen je simbol (R) oz.
+    popacen zapis znaka zaradi kodiranja na koncu niza)."""
+    normalized = re.sub(r"[^a-z ]", "", (brand or "").lower()).strip()
+    return normalized in ("parkside", "parkside performance")
+
+
 WARRANTY_KEYWORDS = ("garanc", "jamstv", "garantie", "warranty")
 
 
@@ -381,7 +394,7 @@ def scrape_country(cfg: dict):
         if not gb_data:
             continue
         p = extract_fields(gb_data, cfg["domain"])
-        if p["id"] is not None:
+        if p["id"] is not None and is_parkside_brand(p["brand"]):
             products.append(p)
 
     brand_counts = {}

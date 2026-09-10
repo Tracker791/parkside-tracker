@@ -3595,7 +3595,7 @@
     let items = Array.from(seen.values());
     if (q) items = items.filter(it => it.title.toLowerCase().includes(q));
     items.sort((a, b) => a.title.localeCompare(b.title));
-    const limited = items.slice(0, 60);
+    const limited = items;
 
     if (limited.length === 0) {
       manualsList.innerHTML = `<p class="empty-note">${t().manualsNone}</p>`;
