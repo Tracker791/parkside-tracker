@@ -475,6 +475,7 @@ def update_catalog(catalog: dict, country_products: dict, generated_at: str) -> 
                 "countriesSeen": [],
                 "currentListings": [],
                 "currentlyListed": False,
+                "priceHistory": [],
             })
             entry["title"] = p["title"] or entry.get("title")
             entry["image"] = p["image"] or entry.get("image")
@@ -493,6 +494,22 @@ def update_catalog(catalog: dict, country_products: dict, generated_at: str) -> 
                 "availableUntil": p["availableUntil"],
                 "availabilityBadge": p["availabilityBadge"],
             })
+
+    # Zgodovina cen: za vsak izdelek zabelezi najnizjo trenutno ceno (EUR) med
+    # vsemi drzavami, kjer je ravno zdaj na voljo. Nova tocka se doda le, ce se
+    # vrednost razlikuje od zadnje zabeleze (ne ob vsakem urnem zagonu) - tako
+    # graf ostane kompakten in prikaze dejanske spremembe cene skozi cas.
+    for entry in catalog.values():
+        history = entry.setdefault("priceHistory", [])
+        current_prices = [
+            listing["priceEur"] for listing in entry.get("currentListings", [])
+            if listing.get("priceEur") is not None
+        ]
+        if not current_prices:
+            continue
+        min_price = round(min(current_prices), 2)
+        if not history or history[-1]["priceEur"] != min_price:
+            history.append({"date": generated_at, "priceEur": min_price})
 
     return catalog
 

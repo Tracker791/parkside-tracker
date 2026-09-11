@@ -470,6 +470,16 @@
     border-top: 1px solid var(--border);
   }
 
+  .site-footer .disclaimer {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    opacity: 0.7;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .side-panel {
     max-width: 1400px;
     margin: 16px auto 0;
@@ -556,6 +566,32 @@
   }
   .checklist-row .status.live { color: var(--new); }
   .checklist-row input[type=checkbox] { width: 17px; height: 17px; flex: none; cursor: pointer; accent-color: var(--ps-red); }
+  .checklist-row .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+    flex-wrap: wrap;
+  }
+  .checklist-row .seen-countries {
+    font-size: 10.5px;
+    color: var(--muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 5px;
+    cursor: help;
+  }
+  .checklist-row .price-history {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .checklist-row .price-history .sparkline { display: block; }
+  .checklist-row .price-history .ph-range {
+    font-size: 10.5px;
+    color: var(--muted);
+  }
 
   .country-picker-actions { display: flex; gap: 8px; margin-bottom: 10px; }
   .country-picker-actions button {
@@ -858,7 +894,7 @@
   </div>
 </div>
 
-<footer class="site-footer" id="siteFooter">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</footer>
+<footer class="site-footer"><span id="siteFooter">🚀 Parkside Tracker se aktivno razvija in izboljšuje.</span><span class="disclaimer" id="siteFooterDisclaimer"></span></footer>
 
 <script src="data.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -908,6 +944,7 @@
       searchPlaceholder: "Iskanje po imenu...",
       countrySearchPlaceholder: "Iskanje držav...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija in izboljšuje.",
+      disclaimer: "Parkside Tracker je neodvisen projekt in ni povezan, sponzoriran ali v poslovnem razmerju s podjetjema Lidl ali Parkside.",
       toolbarStores: "Trgovine v bližini",
       navOverview: "Pregled",
       menuLabel: "Meni",
@@ -966,6 +1003,7 @@
       availableFrom: (f) => `Na voljo od: ${f}`,
       notCurrentlyListed: "Trenutno ni na voljo",
       currentlyListed: (parts) => `Trenutno na voljo: ${parts}`,
+      seenInCountries: (seen, total) => `Zaznano v ${seen}/${total} državah`,
       cheapestSuffix: " (najceneje)",
       cheapestHere: (others) => `Najcenejše tu (drugje: ${others})`,
       cheaperIn: (c, price) => `Ceneje v ${c}: ${price}`,
@@ -998,6 +1036,7 @@
       searchPlaceholder: "Search by name...",
       countrySearchPlaceholder: "Search countries...",
       footerNote: "🚀 Parkside Tracker is actively being developed and improved.",
+      disclaimer: "Parkside Tracker is an independent project and is not affiliated with, sponsored by, or in any business relationship with Lidl or Parkside.",
       toolbarStores: "Stores near you",
       navOverview: "Overview",
       menuLabel: "Menu",
@@ -1056,6 +1095,7 @@
       availableFrom: (f) => `Available from: ${f}`,
       notCurrentlyListed: "Not currently available",
       currentlyListed: (parts) => `Currently available: ${parts}`,
+      seenInCountries: (seen, total) => `Seen in ${seen}/${total} countries`,
       cheapestSuffix: " (cheapest)",
       cheapestHere: (others) => `Cheapest here (elsewhere: ${others})`,
       cheaperIn: (c, price) => `Cheaper in ${c}: ${price}`,
@@ -1088,6 +1128,7 @@
       searchPlaceholder: "Nach Name suchen...",
       countrySearchPlaceholder: "Länder suchen...",
       footerNote: "🚀 Parkside Tracker wird aktiv weiterentwickelt und verbessert.",
+      disclaimer: "Parkside Tracker ist ein unabhängiges Projekt und steht in keiner Verbindung, Sponsoring- oder Geschäftsbeziehung zu Lidl oder Parkside.",
       toolbarStores: "Filialen in der Nähe",
       navOverview: "Übersicht",
       menuLabel: "Menü",
@@ -1146,6 +1187,7 @@
       availableFrom: (f) => `Verfügbar ab: ${f}`,
       notCurrentlyListed: "Derzeit nicht verfügbar",
       currentlyListed: (parts) => `Derzeit verfügbar: ${parts}`,
+      seenInCountries: (seen, total) => `Erfasst in ${seen}/${total} Ländern`,
       cheapestSuffix: " (am günstigsten)",
       cheapestHere: (others) => `Hier am günstigsten (anderswo: ${others})`,
       cheaperIn: (c, price) => `Günstiger in ${c}: ${price}`,
@@ -1178,6 +1220,7 @@
       searchPlaceholder: "Pretraži po nazivu...",
       countrySearchPlaceholder: "Pretraži države...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
+      disclaimer: "Parkside Tracker je neovisan projekt i nije povezan, sponzoriran niti u poslovnom odnosu s tvrtkama Lidl ili Parkside.",
       toolbarStores: "Trgovine u blizini",
       navOverview: "Pregled",
       menuLabel: "Izbornik",
@@ -1236,6 +1279,7 @@
       availableFrom: (f) => `Dostupno od: ${f}`,
       notCurrentlyListed: "Trenutno nije dostupno",
       currentlyListed: (parts) => `Trenutno dostupno: ${parts}`,
+      seenInCountries: (seen, total) => `Zabilježeno u ${seen}/${total} zemalja`,
       cheapestSuffix: " (najjeftinije)",
       cheapestHere: (others) => `Najjeftinije ovdje (drugdje: ${others})`,
       cheaperIn: (c, price) => `Jeftinije u ${c}: ${price}`,
@@ -1268,6 +1312,7 @@
       searchPlaceholder: "Rechercher par nom...",
       countrySearchPlaceholder: "Rechercher des pays...",
       footerNote: "🚀 Parkside Tracker est en développement et amélioration active.",
+      disclaimer: "Parkside Tracker est un projet indépendant et n'est affilié, sponsorisé ou en relation commerciale ni avec Lidl ni avec Parkside.",
       toolbarStores: "Magasins à proximité",
       navOverview: "Aperçu",
       menuLabel: "Menu",
@@ -1326,6 +1371,7 @@
       availableFrom: (f) => `Disponible à partir du : ${f}`,
       notCurrentlyListed: "Actuellement indisponible",
       currentlyListed: (parts) => `Actuellement disponible : ${parts}`,
+      seenInCountries: (seen, total) => `Repéré dans ${seen}/${total} pays`,
       cheapestSuffix: " (le moins cher)",
       cheapestHere: (others) => `Le moins cher ici (ailleurs : ${others})`,
       cheaperIn: (c, price) => `Moins cher en ${c} : ${price}`,
@@ -1358,6 +1404,7 @@
       searchPlaceholder: "Cerca per nome...",
       countrySearchPlaceholder: "Cerca paesi...",
       footerNote: "🚀 Parkside Tracker è in fase di sviluppo e miglioramento attivo.",
+      disclaimer: "Parkside Tracker è un progetto indipendente e non è affiliato, sponsorizzato né in alcun rapporto commerciale con Lidl o Parkside.",
       toolbarStores: "Negozi nelle vicinanze",
       navOverview: "Panoramica",
       menuLabel: "Menu",
@@ -1416,6 +1463,7 @@
       availableFrom: (f) => `Disponibile dal: ${f}`,
       notCurrentlyListed: "Attualmente non disponibile",
       currentlyListed: (parts) => `Attualmente disponibile: ${parts}`,
+      seenInCountries: (seen, total) => `Rilevato in ${seen}/${total} paesi`,
       cheapestSuffix: " (il più economico)",
       cheapestHere: (others) => `Il più economico qui (altrove: ${others})`,
       cheaperIn: (c, price) => `Più economico in ${c}: ${price}`,
@@ -1448,6 +1496,7 @@
       searchPlaceholder: "Szukaj według nazwy...",
       countrySearchPlaceholder: "Szukaj krajów...",
       footerNote: "🚀 Parkside Tracker jest aktywnie rozwijany i ulepszany.",
+      disclaimer: "Parkside Tracker jest niezależnym projektem i nie jest powiązany, sponsorowany ani w jakikolwiek sposób biznesowo związany z Lidl lub Parkside.",
       toolbarStores: "Sklepy w pobliżu",
       navOverview: "Przegląd",
       menuLabel: "Menu",
@@ -1506,6 +1555,7 @@
       availableFrom: (f) => `Dostępne od: ${f}`,
       notCurrentlyListed: "Obecnie niedostępne",
       currentlyListed: (parts) => `Obecnie dostępne: ${parts}`,
+      seenInCountries: (seen, total) => `Wykryto w ${seen}/${total} krajach`,
       cheapestSuffix: " (najtaniej)",
       cheapestHere: (others) => `Najtaniej tutaj (gdzie indziej: ${others})`,
       cheaperIn: (c, price) => `Taniej w ${c}: ${price}`,
@@ -1538,6 +1588,7 @@
       searchPlaceholder: "Buscar por nombre...",
       countrySearchPlaceholder: "Buscar países...",
       footerNote: "🚀 Parkside Tracker está en desarrollo y mejora activa.",
+      disclaimer: "Parkside Tracker es un proyecto independiente y no está afiliado, patrocinado ni mantiene ninguna relación comercial con Lidl o Parkside.",
       toolbarStores: "Tiendas cercanas",
       navOverview: "Resumen",
       menuLabel: "Menú",
@@ -1596,6 +1647,7 @@
       availableFrom: (f) => `Disponible desde: ${f}`,
       notCurrentlyListed: "No disponible actualmente",
       currentlyListed: (parts) => `Actualmente disponible: ${parts}`,
+      seenInCountries: (seen, total) => `Detectado en ${seen}/${total} países`,
       cheapestSuffix: " (más barato)",
       cheapestHere: (others) => `Más barato aquí (en otros sitios: ${others})`,
       cheaperIn: (c, price) => `Más barato en ${c}: ${price}`,
@@ -1628,6 +1680,7 @@
       searchPlaceholder: "Hledat podle názvu...",
       countrySearchPlaceholder: "Hledat země...",
       footerNote: "🚀 Parkside Tracker se aktivně vyvíjí a zlepšuje.",
+      disclaimer: "Parkside Tracker je nezávislý projekt a není spojen, sponzorován ani v obchodním vztahu se společnostmi Lidl nebo Parkside.",
       toolbarStores: "Prodejny v okolí",
       navOverview: "Přehled",
       menuLabel: "Menu",
@@ -1686,6 +1739,7 @@
       availableFrom: (f) => `Dostupné od: ${f}`,
       notCurrentlyListed: "Momentálně nedostupné",
       currentlyListed: (parts) => `Momentálně dostupné: ${parts}`,
+      seenInCountries: (seen, total) => `Zaznamenáno v ${seen}/${total} zemích`,
       cheapestSuffix: " (nejlevnější)",
       cheapestHere: (others) => `Nejlevnější tady (jinde: ${others})`,
       cheaperIn: (c, price) => `Levnější v ${c}: ${price}`,
@@ -1718,6 +1772,7 @@
       searchPlaceholder: "Hľadať podľa názvu...",
       countrySearchPlaceholder: "Hľadať krajiny...",
       footerNote: "🚀 Parkside Tracker sa aktívne vyvíja a zlepšuje.",
+      disclaimer: "Parkside Tracker je nezávislý projekt a nie je spojený, sponzorovaný ani v obchodnom vztahu so spoločnosťami Lidl alebo Parkside.",
       toolbarStores: "Predajne v okolí",
       navOverview: "Prehľad",
       menuLabel: "Menu",
@@ -1776,6 +1831,7 @@
       availableFrom: (f) => `Dostupné od: ${f}`,
       notCurrentlyListed: "Momentálne nedostupné",
       currentlyListed: (parts) => `Momentálne dostupné: ${parts}`,
+      seenInCountries: (seen, total) => `Zaznamenané v ${seen}/${total} krajinách`,
       cheapestSuffix: " (najlacnejšie)",
       cheapestHere: (others) => `Najlacnejšie tu (inde: ${others})`,
       cheaperIn: (c, price) => `Lacnejšie v ${c}: ${price}`,
@@ -1808,6 +1864,7 @@
       searchPlaceholder: "Pesquisar por nome...",
       countrySearchPlaceholder: "Pesquisar países...",
       footerNote: "🚀 O Parkside Tracker está em desenvolvimento e melhoria ativos.",
+      disclaimer: "O Parkside Tracker é um projeto independente e não está afiliado, patrocinado nem em qualquer relação comercial com a Lidl ou a Parkside.",
       toolbarStores: "Lojas perto de si",
       navOverview: "Visão geral",
       menuLabel: "Menu",
@@ -1866,6 +1923,7 @@
       availableFrom: (f) => `Disponível a partir de: ${f}`,
       notCurrentlyListed: "Atualmente indisponível",
       currentlyListed: (parts) => `Atualmente disponível: ${parts}`,
+      seenInCountries: (seen, total) => `Detetado em ${seen}/${total} países`,
       cheapestSuffix: " (mais barato)",
       cheapestHere: (others) => `Mais barato aqui (noutros locais: ${others})`,
       cheaperIn: (c, price) => `Mais barato em ${c}: ${price}`,
@@ -1898,6 +1956,7 @@
       searchPlaceholder: "Keresés név szerint...",
       countrySearchPlaceholder: "Országok keresése...",
       footerNote: "🚀 A Parkside Tracker aktív fejlesztés és fejlesztés alatt áll.",
+      disclaimer: "A Parkside Tracker egy független projekt, és nem áll kapcsolatban, szponzori vagy üzleti kapcsolatban a Lidllel vagy a Parkside-dal.",
       toolbarStores: "Üzletek a közelben",
       navOverview: "Áttekintés",
       menuLabel: "Menü",
@@ -1956,6 +2015,7 @@
       availableFrom: (f) => `Elérhető ettől: ${f}`,
       notCurrentlyListed: "Jelenleg nem elérhető",
       currentlyListed: (parts) => `Jelenleg elérhető: ${parts}`,
+      seenInCountries: (seen, total) => `${seen}/${total} országban észlelve`,
       cheapestSuffix: " (legolcsóbb)",
       cheapestHere: (others) => `Itt a legolcsóbb (máshol: ${others})`,
       cheaperIn: (c, price) => `Olcsóbb itt: ${c}: ${price}`,
@@ -1988,6 +2048,7 @@
       searchPlaceholder: "Αναζήτηση με βάση το όνομα...",
       countrySearchPlaceholder: "Αναζήτηση χωρών...",
       footerNote: "🚀 Το Parkside Tracker αναπτύσσεται και βελτιώνεται ενεργά.",
+      disclaimer: "Το Parkside Tracker είναι ανεξάρτητο έργο και δεν συνδέεται, δεν χορηγείται και δεν έχει καμία επιχειρηματική σχέση με τη Lidl ή την Parkside.",
       toolbarStores: "Καταστήματα κοντά σου",
       navOverview: "Επισκόπηση",
       menuLabel: "Μενού",
@@ -2046,6 +2107,7 @@
       availableFrom: (f) => `Διαθέσιμο από: ${f}`,
       notCurrentlyListed: "Μη διαθέσιμο αυτή τη στιγμή",
       currentlyListed: (parts) => `Διαθέσιμο αυτή τη στιγμή: ${parts}`,
+      seenInCountries: (seen, total) => `Εντοπίστηκε σε ${seen}/${total} χώρες`,
       cheapestSuffix: " (φθηνότερο)",
       cheapestHere: (others) => `Φθηνότερο εδώ (αλλού: ${others})`,
       cheaperIn: (c, price) => `Φθηνότερο σε ${c}: ${price}`,
@@ -2078,6 +2140,7 @@
       searchPlaceholder: "Търсене по име...",
       countrySearchPlaceholder: "Търсене на държави...",
       footerNote: "🚀 Parkside Tracker се разработва и подобрява активно.",
+      disclaimer: "Parkside Tracker е независим проект и не е свързан, спонсориран или в бизнес отношения с Lidl или Parkside.",
       toolbarStores: "Магазини наблизо",
       navOverview: "Общ преглед",
       menuLabel: "Меню",
@@ -2136,6 +2199,7 @@
       availableFrom: (f) => `Наличен от: ${f}`,
       notCurrentlyListed: "Понастоящем не е наличен",
       currentlyListed: (parts) => `Понастоящем наличен: ${parts}`,
+      seenInCountries: (seen, total) => `Забелязано в ${seen}/${total} държави`,
       cheapestSuffix: " (най-евтино)",
       cheapestHere: (others) => `Най-евтино тук (другаде: ${others})`,
       cheaperIn: (c, price) => `По-евтино в ${c}: ${price}`,
@@ -2168,6 +2232,7 @@
       searchPlaceholder: "Caută după nume...",
       countrySearchPlaceholder: "Caută țări...",
       footerNote: "🚀 Parkside Tracker este dezvoltat și îmbunătățit activ.",
+      disclaimer: "Parkside Tracker este un proiect independent și nu este afiliat, sponsorizat sau într-o relație de afaceri cu Lidl sau Parkside.",
       toolbarStores: "Magazine din apropiere",
       navOverview: "Prezentare generală",
       menuLabel: "Meniu",
@@ -2226,6 +2291,7 @@
       availableFrom: (f) => `Disponibil de la: ${f}`,
       notCurrentlyListed: "Indisponibil momentan",
       currentlyListed: (parts) => `Disponibil momentan: ${parts}`,
+      seenInCountries: (seen, total) => `Detectat în ${seen}/${total} țări`,
       cheapestSuffix: " (cel mai ieftin)",
       cheapestHere: (others) => `Cel mai ieftin aici (în altă parte: ${others})`,
       cheaperIn: (c, price) => `Mai ieftin în ${c}: ${price}`,
@@ -2258,6 +2324,7 @@
       searchPlaceholder: "Pretraga po nazivu...",
       countrySearchPlaceholder: "Pretraga zemalja...",
       footerNote: "🚀 Parkside Tracker se aktivno razvija i poboljšava.",
+      disclaimer: "Parkside Tracker je nezavisan projekat i nije povezan, sponzorisan niti u poslovnom odnosu sa kompanijama Lidl ili Parkside.",
       toolbarStores: "Prodavnice u blizini",
       navOverview: "Pregled",
       menuLabel: "Meni",
@@ -2316,6 +2383,7 @@
       availableFrom: (f) => `Dostupno od: ${f}`,
       notCurrentlyListed: "Trenutno nije dostupno",
       currentlyListed: (parts) => `Trenutno dostupno: ${parts}`,
+      seenInCountries: (seen, total) => `Zabeleženo u ${seen}/${total} zemalja`,
       cheapestSuffix: " (najjeftinije)",
       cheapestHere: (others) => `Najjeftinije ovde (drugde: ${others})`,
       cheaperIn: (c, price) => `Jeftinije u ${c}: ${price}`,
@@ -2348,6 +2416,7 @@
       searchPlaceholder: "Sök efter namn...",
       countrySearchPlaceholder: "Sök länder...",
       footerNote: "🚀 Parkside Tracker utvecklas och förbättras aktivt.",
+      disclaimer: "Parkside Tracker är ett oberoende projekt och är inte anslutet till, sponsrat av eller i något affärsförhållande med Lidl eller Parkside.",
       toolbarStores: "Butiker nära dig",
       navOverview: "Översikt",
       menuLabel: "Meny",
@@ -2406,6 +2475,7 @@
       availableFrom: (f) => `Tillgänglig från: ${f}`,
       notCurrentlyListed: "Inte tillgänglig just nu",
       currentlyListed: (parts) => `Tillgänglig just nu: ${parts}`,
+      seenInCountries: (seen, total) => `Upptäckt i ${seen}/${total} länder`,
       cheapestSuffix: " (billigast)",
       cheapestHere: (others) => `Billigast här (på andra håll: ${others})`,
       cheaperIn: (c, price) => `Billigare i ${c}: ${price}`,
@@ -2438,6 +2508,7 @@
       searchPlaceholder: "Paieška pagal pavadinimą...",
       countrySearchPlaceholder: "Šalių paieška...",
       footerNote: "🚀 Parkside Tracker yra aktyviai kuriamas ir tobulinamas.",
+      disclaimer: "Parkside Tracker yra nepriklausomas projektas ir nėra susijęs, remiamas ar verslo santykiuose su Lidl ar Parkside.",
       toolbarStores: "Parduotuvės netoliese",
       navOverview: "Apžvalga",
       menuLabel: "Meniu",
@@ -2496,6 +2567,7 @@
       availableFrom: (f) => `Prieinama nuo: ${f}`,
       notCurrentlyListed: "Šiuo metu nepasiekiama",
       currentlyListed: (parts) => `Šiuo metu pasiekiama: ${parts}`,
+      seenInCountries: (seen, total) => `Pastebėta ${seen}/${total} šalyse`,
       cheapestSuffix: " (pigiausia)",
       cheapestHere: (others) => `Pigiausia čia (kitur: ${others})`,
       cheaperIn: (c, price) => `Pigiau ${c}: ${price}`,
@@ -2528,6 +2600,7 @@
       searchPlaceholder: "Meklēt pēc nosaukuma...",
       countrySearchPlaceholder: "Meklēt valstis...",
       footerNote: "🚀 Parkside Tracker tiek aktīvi izstrādāts un pilnveidots.",
+      disclaimer: "Parkside Tracker ir neatkarīgs projekts un nav saistīts, sponsorēts vai jebkādās darījuma attiecībās ar Lidl vai Parkside.",
       toolbarStores: "Veikali tuvumā",
       navOverview: "Pārskats",
       menuLabel: "Izvēlne",
@@ -2586,6 +2659,7 @@
       availableFrom: (f) => `Pieejams no: ${f}`,
       notCurrentlyListed: "Šobrīd nav pieejams",
       currentlyListed: (parts) => `Šobrīd pieejams: ${parts}`,
+      seenInCountries: (seen, total) => `Pamanīts ${seen}/${total} valstīs`,
       cheapestSuffix: " (lētākais)",
       cheapestHere: (others) => `Lētākais šeit (citur: ${others})`,
       cheaperIn: (c, price) => `Lētāk ${c}: ${price}`,
@@ -2618,6 +2692,7 @@
       searchPlaceholder: "Otsi nime järgi...",
       countrySearchPlaceholder: "Otsi riike...",
       footerNote: "🚀 Parkside Trackerit arendatakse ja täiendatakse aktiivselt.",
+      disclaimer: "Parkside Tracker on sõltumatu projekt ja ei ole seotud, sponsoreeritud ega äritegevuses ettevõtetega Lidl või Parkside.",
       toolbarStores: "Poed lähedal",
       navOverview: "Ülevaade",
       menuLabel: "Menüü",
@@ -2676,6 +2751,7 @@
       availableFrom: (f) => `Saadaval alates: ${f}`,
       notCurrentlyListed: "Praegu ei ole saadaval",
       currentlyListed: (parts) => `Praegu saadaval: ${parts}`,
+      seenInCountries: (seen, total) => `Tuvastatud ${seen}/${total} riigis`,
       cheapestSuffix: " (odavaim)",
       cheapestHere: (others) => `Siin odavaim (mujal: ${others})`,
       cheaperIn: (c, price) => `Odavam ${c}: ${price}`,
@@ -2708,6 +2784,7 @@
       searchPlaceholder: "Zoeken op naam...",
       countrySearchPlaceholder: "Landen zoeken...",
       footerNote: "🚀 Parkside Tracker wordt actief ontwikkeld en verbeterd.",
+      disclaimer: "Parkside Tracker is een onafhankelijk project en is niet aangesloten bij, gesponsord door of in enige zakelijke relatie met Lidl of Parkside.",
       toolbarStores: "Winkels bij jou in de buurt",
       navOverview: "Overzicht",
       menuLabel: "Menu",
@@ -2766,6 +2843,7 @@
       availableFrom: (f) => `Beschikbaar vanaf: ${f}`,
       notCurrentlyListed: "Momenteel niet beschikbaar",
       currentlyListed: (parts) => `Momenteel beschikbaar: ${parts}`,
+      seenInCountries: (seen, total) => `Gezien in ${seen}/${total} landen`,
       cheapestSuffix: " (goedkoopst)",
       cheapestHere: (others) => `Hier goedkoopst (elders: ${others})`,
       cheaperIn: (c, price) => `Goedkoper in ${c}: ${price}`,
@@ -2922,6 +3000,43 @@
 
   function productKey(p) {
     return p.key || p.ean || ("id:" + p.id);
+  }
+
+  // Majhen SVG "sparkline" za zgodovino cene (min/povprecje/maks/zadnja) -
+  // brez zunanje knjiznice za graf, ker gre le za peščico tock na izdelek.
+  // Ce je na voljo samo ena tocka (npr. tik po uvedbi funkcije), prikazemo
+  // samo trenutno ceno brez crte/grafa.
+  function priceHistorySummary(history) {
+    if (!history || !history.length) return null;
+    const prices = history.map(h => h.priceEur).filter(v => v != null);
+    if (!prices.length) return null;
+    return {
+      min: Math.min(...prices),
+      max: Math.max(...prices),
+      avg: prices.reduce((a, b) => a + b, 0) / prices.length,
+      last: prices[prices.length - 1],
+      points: history,
+    };
+  }
+
+  function renderSparkline(history) {
+    const summary = priceHistorySummary(history);
+    if (!summary || summary.points.length < 2) return "";
+    const w = 96, h = 28, pad = 3;
+    const prices = summary.points.map(p => p.priceEur);
+    const min = Math.min(...prices), max = Math.max(...prices);
+    const range = max - min || 1;
+    const stepX = (w - pad * 2) / (prices.length - 1);
+    const coords = prices.map((v, i) => {
+      const x = pad + i * stepX;
+      const y = h - pad - ((v - min) / range) * (h - pad * 2);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    });
+    const trendUp = prices[prices.length - 1] > prices[0];
+    const color = trendUp ? "var(--bad, #E8232D)" : "var(--new, #2ecc71)";
+    return `<svg class="sparkline" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+      <polyline points="${coords.join(" ")}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />
+    </svg>`;
   }
 
   const app = document.getElementById("app");
@@ -3099,12 +3214,26 @@
         status = `<span class="status">${t().notCurrentlyListed}</span>`;
       }
 
+      const totalCountries = ((window.__PARKSIDE_DATA__ || {}).countries || {});
+      const totalCountriesCount = Object.keys(totalCountries).length || 28;
+      const seenCount = (entry.countriesSeen || []).length;
+      const countriesBadge = seenCount
+        ? `<span class="seen-countries" title="${(entry.countriesSeen || []).map(c => c.toUpperCase()).join(", ")}">${t().seenInCountries(seenCount, totalCountriesCount)}</span>`
+        : "";
+
+      const spark = renderSparkline(entry.priceHistory);
+      const summary = priceHistorySummary(entry.priceHistory);
+      const historyBlock = spark
+        ? `<div class="price-history">${spark}<span class="ph-range">${summary.min.toFixed(2)}–${summary.max.toFixed(2)} €</span></div>`
+        : "";
+
       row.innerHTML = `
         <input type="checkbox" ${isOwned ? "checked" : ""} />
         ${entry.image ? `<img src="${entry.image}" alt="" loading="lazy" />` : ""}
         <div class="info">
           <div class="title">${entry.title || "(?)"}</div>
           ${status}
+          <div class="meta-row">${countriesBadge}${historyBlock}</div>
         </div>
       `;
 
@@ -3479,6 +3608,7 @@
     document.getElementById("search").placeholder = t().searchPlaceholder;
     document.getElementById("countrySearch").placeholder = t().countrySearchPlaceholder;
     document.getElementById("siteFooter").textContent = t().footerNote;
+    document.getElementById("siteFooterDisclaimer").textContent = t().disclaimer || "";
     document.getElementById("worthExplainer").textContent = t().worthExplainer;
     document.getElementById("myToolsHeading").textContent = t().myToolsHeading;
     document.getElementById("myToolsSub").textContent = t().myToolsSub;
