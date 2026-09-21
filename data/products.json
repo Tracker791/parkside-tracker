@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T11:04:02.761401+00:00",
+  "generatedAt": "2026-09-21T12:04:29.472905+00:00",
   "countries": {
     "si": {
       "label": "Lidl Slovenija",
@@ -2583,8 +2583,8 @@
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "demnächst bestellbar",
+          "onlineAvailable": true,
+          "availabilityBadge": "lieferbar",
           "category": "Bedürfniswelten/Baumarkt & Garten/Handwerkzeuge",
           "url": "https://www.lidl.de/p/parkside-ratschen-set-limited-edition-46-teilig/p100408255",
           "warrantyYears": null,
@@ -4298,34 +4298,6 @@
           "previous": {}
         },
         {
-          "id": 100408586,
-          "key": "514326",
-          "ean": "514326",
-          "title": "PARKSIDE® Lunchtasche »Fan Edition«, mit Isolierfach",
-          "shortTitle": "Lunchtasche »Fan Edition«, mit Isolierfach",
-          "image": "https://www.lidl.de/assets/gcp51abcacbb97441aebd2736ca07618017.jpg",
-          "brand": "PARKSIDE®",
-          "price": 14.99,
-          "priceEur": 14.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "lieferbar",
-          "category": "Bedürfniswelten/Baumarkt & Garten/Werkstatt & Eisenwaren",
-          "url": "https://www.lidl.de/p/parkside-lunchtasche-fan-edition-mit-isolierfach/p100408586",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
           "id": 100408488,
           "key": "513975",
           "ean": "513975",
@@ -4353,6 +4325,34 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100408586,
+          "key": "514326",
+          "ean": "514326",
+          "title": "PARKSIDE® Lunchtasche »Fan Edition«, mit Isolierfach",
+          "shortTitle": "Lunchtasche »Fan Edition«, mit Isolierfach",
+          "image": "https://www.lidl.de/assets/gcp51abcacbb97441aebd2736ca07618017.jpg",
+          "brand": "PARKSIDE®",
+          "price": 14.99,
+          "priceEur": 14.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "lieferbar",
+          "category": "Bedürfniswelten/Baumarkt & Garten/Werkstatt & Eisenwaren",
+          "url": "https://www.lidl.de/p/parkside-lunchtasche-fan-edition-mit-isolierfach/p100408586",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100409025,
@@ -6044,9 +6044,9 @@
           "previous": {}
         }
       ],
-      "numFound": 996,
+      "numFound": 997,
       "brandCounts": {
-        "PARKSIDE": 837,
+        "PARKSIDE": 838,
         "PARKSIDE PERFORMANCE": 149,
         "LUPILU": 4,
         "SILVERCREST KITCHEN TOOLS": 3,
@@ -7828,19 +7828,19 @@
           "id": 100391794,
           "key": "458747",
           "ean": "458747",
-          "title": "PARKSIDE PERFORMANCE® Lame de scie pour bois / Lame de scie pour aluminium / Lame de scie pour stratifié",
-          "shortTitle": "Lame de scie pour bois / Lame de scie pour aluminium / Lame de scie pour stratifié",
-          "image": "https://www.lidl.fr/assets/gcp8392ce48e3e245428729a3b6727fe987.jpg",
+          "title": "PARKSIDE PERFORMANCE® Lame de scie pour bois / Lame de scie pour aluminium / Lame de scie pour stratifié (aluminium/44 dents)",
+          "shortTitle": "PARKSIDE PERFORMANCE® Lame de scie pour bois / Lame de scie pour aluminium / Lame de scie pour stratifié (aluminium/44 dents)",
+          "image": "https://www.lidl.fr/assets/gcpf6afb6ef821744f29663aec9500baacd.jpg",
           "brand": "PARKSIDE PERFORMANCE®",
           "price": 5.99,
           "priceEur": 5.99,
           "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
+          "online": null,
+          "inStoreNow": null,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible à la livraison",
           "category": "Mondes de besoins/Bricolage & Jardinage/Atelier & quincaillerie",
-          "url": "https://www.lidl.fr/p/parkside-performance-lame-de-scie-pour-bois-lame-de-scie-pour-aluminium-lame-de-scie-pour-stratifie/p100391794",
+          "url": "https://www.lidl.fr/p/parkside-performance-lame-de-scie-pour-bois-lame-de-scie-pour-aluminium-lame-de-scie-pour-stratifie/p100391794003",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -7853,9 +7853,13 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
+          "status": "changed",
+          "changedFields": [
+            "online"
+          ],
+          "previous": {
+            "online": true
+          }
         },
         {
           "id": 100398257,
@@ -9517,9 +9521,9 @@
           }
         }
       ],
-      "numFound": 1080,
+      "numFound": 1076,
       "brandCounts": {
-        "PARKSIDE": 898,
+        "PARKSIDE": 894,
         "PARKSIDE PERFORMANCE": 179,
         "SILVERCREST KITCHEN TOOLS": 3
       }
@@ -14106,9 +14110,9 @@
           "previous": {}
         }
       ],
-      "numFound": 918,
+      "numFound": 916,
       "brandCounts": {
-        "PARKSIDE": 771,
+        "PARKSIDE": 769,
         "PARKSIDE PERFORMANCE": 147
       }
     },
@@ -14235,39 +14239,6 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
-        },
-        {
-          "id": 100400317,
-          "key": "494224",
-          "ean": "494224",
-          "title": "PARKSIDE® Podadora de altura recargable 20 V",
-          "shortTitle": "Podadora de altura recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcp23858038adc047a196cc0bc2d2359ecb.jpg",
-          "brand": "PARKSIDE®",
-          "price": 49.99,
-          "priceEur": 49.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "Pronto online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-podadora-de-altura-recargable-20-v/p100400317",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "availableFrom"
-          ],
-          "previous": {
-            "availableFrom": "2026-09-17T22:00:00+00:00"
-          }
         },
         {
           "id": 100393006,
@@ -14595,43 +14566,6 @@
           }
         },
         {
-          "id": 100396831,
-          "key": "485599",
-          "ean": "485599",
-          "title": "PARKSIDE PERFORMANCE® Martillo perforador recargable 20 V",
-          "shortTitle": "Martillo perforador recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcp5c088c55cdde4fdf8fc41ab8e6de0c89.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 59.99,
-          "priceEur": 59.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-performance-martillo-perforador-recargable-20-v/p100396831",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 41.99
-          }
-        },
-        {
           "id": 100389444,
           "key": "489733",
           "ean": "489733",
@@ -14692,6 +14626,109 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100400317,
+          "key": "494224",
+          "ean": "494224",
+          "title": "PARKSIDE® Podadora de altura recargable 20 V",
+          "shortTitle": "Podadora de altura recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcp23858038adc047a196cc0bc2d2359ecb.jpg",
+          "brand": "PARKSIDE®",
+          "price": 49.99,
+          "priceEur": 49.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-podadora-de-altura-recargable-20-v/p100400317",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "changed",
+          "changedFields": [
+            "availableFrom"
+          ],
+          "previous": {
+            "availableFrom": "2026-09-17T22:00:00+00:00"
+          }
+        },
+        {
+          "id": 100408555,
+          "key": "537003",
+          "ean": "537003",
+          "title": "PARKSIDE PERFORMANCE® Alicates universales / Alicates de corte lateral / Alicates de corte lateral de fuerza / Alicates de boca semiredonda",
+          "shortTitle": "Alicates universales / Alicates de corte lateral / Alicates de corte lateral de fuerza / Alicates de boca semiredonda",
+          "image": "https://www.lidl.es/assets/gcpd6cd3148687e478caed751b5deb90c10.png",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 19.99,
+          "priceEur": 19.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas manuales",
+          "url": "https://www.lidl.es/p/parkside-performance-alicates-universales-alicates-de-corte-lateral-alicates-de-corte-lateral-de-fuerza-alicates-de-boca-semiredonda/p100408555",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": true,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100396831,
+          "key": "485599",
+          "ean": "485599",
+          "title": "PARKSIDE PERFORMANCE® Martillo perforador recargable 20 V",
+          "shortTitle": "Martillo perforador recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcp5c088c55cdde4fdf8fc41ab8e6de0c89.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 59.99,
+          "priceEur": 59.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-performance-martillo-perforador-recargable-20-v/p100396831",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": true,
+          "status": "changed",
+          "changedFields": [
+            "price"
+          ],
+          "previous": {
+            "price": 41.99
+          }
         },
         {
           "id": 100395429,
@@ -14756,39 +14793,6 @@
           }
         },
         {
-          "id": 100408555,
-          "key": "537003",
-          "ean": "537003",
-          "title": "PARKSIDE PERFORMANCE® Alicates universales / Alicates de corte lateral / Alicates de corte lateral de fuerza / Alicates de boca semiredonda",
-          "shortTitle": "Alicates universales / Alicates de corte lateral / Alicates de corte lateral de fuerza / Alicates de boca semiredonda",
-          "image": "https://www.lidl.es/assets/gcpd6cd3148687e478caed751b5deb90c10.png",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 19.99,
-          "priceEur": 19.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas manuales",
-          "url": "https://www.lidl.es/p/parkside-performance-alicates-universales-alicates-de-corte-lateral-alicates-de-corte-lateral-de-fuerza-alicates-de-boca-semiredonda/p100408555",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100400292,
           "key": "496207",
           "ean": "496207",
@@ -14822,22 +14826,22 @@
           }
         },
         {
-          "id": 100398769,
-          "key": "517915",
-          "ean": "517915",
-          "title": "PARKSIDE PERFORMANCE® Cortarramas recargable 20 V",
-          "shortTitle": "Cortarramas recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcp12a8bb2cf59640b5a2cd6a3ab1f211c8.jpg",
+          "id": 100395394,
+          "key": "505108",
+          "ean": "505108",
+          "title": "PARKSIDE PERFORMANCE® Batería inteligente 20 V / 4 Ah",
+          "shortTitle": "Batería inteligente 20 V / 4 Ah",
+          "image": "https://www.lidl.es/assets/gcpfb5179b3218c4351b70756d35c2d7077.jpg",
           "brand": "PARKSIDE PERFORMANCE®",
-          "price": 54.99,
-          "priceEur": 54.99,
+          "price": 29.99,
+          "priceEur": 29.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-performance-cortarramas-recargable-20-v/p100398769",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-performance-bateria-inteligente-20-v-4-ah/p100395394",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -14855,22 +14859,22 @@
           "previous": {}
         },
         {
-          "id": 100395394,
-          "key": "505108",
-          "ean": "505108",
-          "title": "PARKSIDE PERFORMANCE® Batería inteligente 20 V / 4 Ah",
-          "shortTitle": "Batería inteligente 20 V / 4 Ah",
-          "image": "https://www.lidl.es/assets/gcpfb5179b3218c4351b70756d35c2d7077.jpg",
+          "id": 100405586,
+          "key": "506421",
+          "ean": "506421",
+          "title": "PARKSIDE PERFORMANCE® Set de taladro atornillador percutor recargable 20 V",
+          "shortTitle": "Set de taladro atornillador percutor recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcp218f3aa7e95c451cb2b575ded8e1ead0.jpg",
           "brand": "PARKSIDE PERFORMANCE®",
-          "price": 29.99,
-          "priceEur": 29.99,
+          "price": 103.99,
+          "priceEur": 103.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
           "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-performance-bateria-inteligente-20-v-4-ah/p100395394",
+          "url": "https://www.lidl.es/p/parkside-performance-set-de-taladro-atornillador-percutor-recargable-20-v/p100405586",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -14917,22 +14921,22 @@
           "previous": {}
         },
         {
-          "id": 100405586,
-          "key": "506421",
-          "ean": "506421",
-          "title": "PARKSIDE PERFORMANCE® Set de taladro atornillador percutor recargable 20 V",
-          "shortTitle": "Set de taladro atornillador percutor recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcp218f3aa7e95c451cb2b575ded8e1ead0.jpg",
+          "id": 100398769,
+          "key": "517915",
+          "ean": "517915",
+          "title": "PARKSIDE PERFORMANCE® Cortarramas recargable 20 V",
+          "shortTitle": "Cortarramas recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcp12a8bb2cf59640b5a2cd6a3ab1f211c8.jpg",
           "brand": "PARKSIDE PERFORMANCE®",
-          "price": 103.99,
-          "priceEur": 103.99,
+          "price": 54.99,
+          "priceEur": 54.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-performance-set-de-taladro-atornillador-percutor-recargable-20-v/p100405586",
+          "onlineAvailable": false,
+          "availabilityBadge": "Pronto online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-performance-cortarramas-recargable-20-v/p100398769",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -15043,6 +15047,34 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100405610,
+          "key": "537782",
+          "ean": "537782",
+          "title": "PARKSIDE® Atornilladora inalámbrica de 20 V",
+          "shortTitle": "Atornilladora inalámbrica de 20 V",
+          "image": "https://www.lidl.es/assets/gcp914d94482ca446a49a0dbe08e3f20a29.jpg",
+          "brand": "PARKSIDE®",
+          "price": 37.99,
+          "priceEur": 37.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-atornilladora-inalambrica-de-20-v/p100405610",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100398767,
@@ -15520,6 +15552,35 @@
           "previous": {}
         },
         {
+          "id": 100404689,
+          "key": "508282",
+          "ean": "508282",
+          "title": "PARKSIDE® Mini sierra recargable 12V",
+          "shortTitle": "Mini sierra recargable 12V",
+          "image": "https://www.lidl.es/assets/gcpc41eb79f16dd4cd0a2467dc6958e700b.jpg",
+          "brand": "PARKSIDE®",
+          "price": 26.99,
+          "priceEur": 26.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-mini-sierra-recargable-12v/p100404689",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100398798,
           "key": "495694",
           "ean": "495694",
@@ -15582,51 +15643,22 @@
           "previous": {}
         },
         {
-          "id": 100404689,
-          "key": "508282",
-          "ean": "508282",
-          "title": "PARKSIDE® Mini sierra recargable 12V",
-          "shortTitle": "Mini sierra recargable 12V",
-          "image": "https://www.lidl.es/assets/gcpc41eb79f16dd4cd0a2467dc6958e700b.jpg",
-          "brand": "PARKSIDE®",
-          "price": 26.99,
-          "priceEur": 26.99,
+          "id": 100400903,
+          "key": "506400",
+          "ean": "506400",
+          "title": "PARKSIDE PERFORMANCE® Motosierra recargable 40 V",
+          "shortTitle": "Motosierra recargable 40 V",
+          "image": "https://www.lidl.es/assets/gcp5edbb4ecc67a43c39f14cc429e3b86f8.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 89.99,
+          "priceEur": 89.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
           "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-mini-sierra-recargable-12v/p100404689",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100398965,
-          "key": "494816",
-          "ean": "494816",
-          "title": "PARKSIDE PERFORMANCE® Fresadora multifunción 710 W",
-          "shortTitle": "Fresadora multifunción 710 W",
-          "image": "https://www.lidl.es/assets/gcpfcd856dd6f154382b48145c44b19a0a1.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 57.99,
-          "priceEur": 57.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-          "url": "https://www.lidl.es/p/parkside-performance-fresadora-multifuncion-710-w/p100398965",
+          "url": "https://www.lidl.es/p/parkside-performance-motosierra-recargable-40-v/p100400903",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -15673,39 +15705,6 @@
           "previous": {}
         },
         {
-          "id": 100400903,
-          "key": "506400",
-          "ean": "506400",
-          "title": "PARKSIDE PERFORMANCE® Motosierra recargable 40 V",
-          "shortTitle": "Motosierra recargable 40 V",
-          "image": "https://www.lidl.es/assets/gcp5edbb4ecc67a43c39f14cc429e3b86f8.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 89.99,
-          "priceEur": 89.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-performance-motosierra-recargable-40-v/p100400903",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100399758,
           "key": "494215",
           "ean": "494215",
@@ -15735,22 +15734,22 @@
           "previous": {}
         },
         {
-          "id": 100396194,
-          "key": "485614",
-          "ean": "485614",
-          "title": "PARKSIDE PERFORMANCE® Foco LED recargable de 20 V »PPBSTA 20-Li A1«, sin batería ni cargador.",
-          "shortTitle": "Foco LED recargable de 20 V »PPBSTA 20-Li A1«, sin batería ni cargador.",
-          "image": "https://www.lidl.es/assets/gcp67342c6ce7964e58ab6990e02a88098a.jpg",
+          "id": 100398965,
+          "key": "494816",
+          "ean": "494816",
+          "title": "PARKSIDE PERFORMANCE® Fresadora multifunción 710 W",
+          "shortTitle": "Fresadora multifunción 710 W",
+          "image": "https://www.lidl.es/assets/gcpfcd856dd6f154382b48145c44b19a0a1.jpg",
           "brand": "PARKSIDE PERFORMANCE®",
-          "price": 65.99,
-          "priceEur": 65.99,
+          "price": 57.99,
+          "priceEur": 57.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "Pronto online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Taller y ferretería",
-          "url": "https://www.lidl.es/p/parkside-performance-foco-led-recargable-de-20-v-ppbsta-20-li-a1-sin-bateria-ni-cargador/p100396194",
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
+          "url": "https://www.lidl.es/p/parkside-performance-fresadora-multifuncion-710-w/p100398965",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -15763,8 +15762,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399191,
@@ -15916,6 +15916,39 @@
           "previous": {}
         },
         {
+          "id": 100405317,
+          "key": "510771",
+          "ean": "510771",
+          "title": "PARKSIDE PERFORMANCE® Herramienta multifunción 550 W",
+          "shortTitle": "Herramienta multifunción 550 W",
+          "image": "https://www.lidl.es/assets/gcp72891cd4617544bf84d4965f02235d55.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 36.99,
+          "priceEur": 36.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
+          "url": "https://www.lidl.es/p/parkside-performance-herramienta-multifuncion-550-w/p100405317",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": true,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100395159,
           "key": "489487",
           "ean": "489487",
@@ -15943,6 +15976,38 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100396194,
+          "key": "485614",
+          "ean": "485614",
+          "title": "PARKSIDE PERFORMANCE® Foco LED recargable de 20 V »PPBSTA 20-Li A1«, sin batería ni cargador.",
+          "shortTitle": "Foco LED recargable de 20 V »PPBSTA 20-Li A1«, sin batería ni cargador.",
+          "image": "https://www.lidl.es/assets/gcp67342c6ce7964e58ab6990e02a88098a.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 65.99,
+          "priceEur": 65.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Taller y ferretería",
+          "url": "https://www.lidl.es/p/parkside-performance-foco-led-recargable-de-20-v-ppbsta-20-li-a1-sin-bateria-ni-cargador/p100396194",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": true,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100405564,
@@ -16036,35 +16101,6 @@
           }
         },
         {
-          "id": 100400267,
-          "key": "494219",
-          "ean": "494219",
-          "title": "PARKSIDE® Sierra cortarramas recargable 20V",
-          "shortTitle": "Sierra cortarramas recargable 20V",
-          "image": "https://www.lidl.es/assets/gcpc27e3e538eb0470ea2a0ced6cbf29153.jpg",
-          "brand": "PARKSIDE®",
-          "price": 26.99,
-          "priceEur": 26.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-sierra-cortarramas-recargable-20v/p100400267",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100409175,
           "key": "515653",
           "ean": "515653",
@@ -16098,34 +16134,30 @@
           }
         },
         {
-          "id": 100405317,
-          "key": "510771",
-          "ean": "510771",
-          "title": "PARKSIDE PERFORMANCE® Herramienta multifunción 550 W",
-          "shortTitle": "Herramienta multifunción 550 W",
-          "image": "https://www.lidl.es/assets/gcp72891cd4617544bf84d4965f02235d55.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 36.99,
-          "priceEur": 36.99,
+          "id": 100400267,
+          "key": "494219",
+          "ean": "494219",
+          "title": "PARKSIDE® Sierra cortarramas recargable 20V",
+          "shortTitle": "Sierra cortarramas recargable 20V",
+          "image": "https://www.lidl.es/assets/gcpc27e3e538eb0470ea2a0ced6cbf29153.jpg",
+          "brand": "PARKSIDE®",
+          "price": 26.99,
+          "priceEur": 26.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-          "url": "https://www.lidl.es/p/parkside-performance-herramienta-multifuncion-550-w/p100405317",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-sierra-cortarramas-recargable-20v/p100400267",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
+          "worthIt": false,
+          "worthItReasons": [],
           "availableFrom": null,
           "availableUntil": null,
-          "isPerformance": true,
+          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -16197,6 +16229,35 @@
           "previous": {}
         },
         {
+          "id": 100399707,
+          "key": "494211",
+          "ean": "494211",
+          "title": "PARKSIDE® Cortacésped recargable 20 V",
+          "shortTitle": "Cortacésped recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcpd2d1e23203eb4354b36a790c3cadbb2b.jpg",
+          "brand": "PARKSIDE®",
+          "price": 89.99,
+          "priceEur": 89.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-cortacesped-recargable-20-v/p100399707",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100406324,
           "key": "506405",
           "ean": "506405",
@@ -16263,22 +16324,22 @@
           "previous": {}
         },
         {
-          "id": 100399707,
-          "key": "494211",
-          "ean": "494211",
-          "title": "PARKSIDE® Cortacésped recargable 20 V",
-          "shortTitle": "Cortacésped recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcpd2d1e23203eb4354b36a790c3cadbb2b.jpg",
+          "id": 100400993,
+          "key": "508107",
+          "ean": "508107",
+          "title": "PARKSIDE® Robot cortacésped 20V",
+          "shortTitle": "Robot cortacésped 20V",
+          "image": "https://www.lidl.es/assets/gcp1e24bb07214b40e1bdd16947cf1ea0a3.jpg",
           "brand": "PARKSIDE®",
-          "price": 89.99,
-          "priceEur": 89.99,
+          "price": 259.99,
+          "priceEur": 259.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
           "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-cortacesped-recargable-20-v/p100399707",
+          "url": "https://www.lidl.es/p/parkside-robot-cortacesped-20v/p100400993",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -16327,35 +16388,6 @@
           "previous": {
             "price": 55.99
           }
-        },
-        {
-          "id": 100400993,
-          "key": "508107",
-          "ean": "508107",
-          "title": "PARKSIDE® Robot cortacésped 20V",
-          "shortTitle": "Robot cortacésped 20V",
-          "image": "https://www.lidl.es/assets/gcp1e24bb07214b40e1bdd16947cf1ea0a3.jpg",
-          "brand": "PARKSIDE®",
-          "price": 259.99,
-          "priceEur": 259.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-robot-cortacesped-20v/p100400993",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
         },
         {
           "id": 100400777,
@@ -16519,39 +16551,6 @@
           "previous": {}
         },
         {
-          "id": 100405611,
-          "key": "541091",
-          "ean": "541091",
-          "title": "PARKSIDE PERFORMANCE® Set de taladro atornillador recargable 12 V",
-          "shortTitle": "Set de taladro atornillador recargable 12 V",
-          "image": "https://www.lidl.es/assets/gcpd6fc108b2383482789f19562f27c48e9.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 114.99,
-          "priceEur": 114.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-performance-set-de-taladro-atornillador-recargable-12-v/p100405611",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100389132,
           "key": "470782",
           "ean": "470782",
@@ -16589,6 +16588,35 @@
           }
         },
         {
+          "id": 100398572,
+          "key": "495945",
+          "ean": "495945",
+          "title": "PARKSIDE® Motosierra de poda de gasolina »PBBPS 25 B2«",
+          "shortTitle": "PARKSIDE® Motosierra de poda de gasolina »PBBPS 25 B2«",
+          "image": "https://www.lidl.es/assets/gcp48e19674d3e544998966a819401f7637.jpg",
+          "brand": "PARKSIDE®",
+          "price": 79.99,
+          "priceEur": 79.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-motosierra-de-poda-de-gasolina-pbbps-25-b2/p100398572",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100398809,
           "key": "495710",
           "ean": "495710",
@@ -16622,59 +16650,34 @@
           "previous": {}
         },
         {
-          "id": 100398572,
-          "key": "495945",
-          "ean": "495945",
-          "title": "PARKSIDE® Motosierra de poda de gasolina »PBBPS 25 B2«",
-          "shortTitle": "PARKSIDE® Motosierra de poda de gasolina »PBBPS 25 B2«",
-          "image": "https://www.lidl.es/assets/gcp48e19674d3e544998966a819401f7637.jpg",
-          "brand": "PARKSIDE®",
-          "price": 79.99,
-          "priceEur": 79.99,
+          "id": 100400293,
+          "key": "494815",
+          "ean": "494815",
+          "title": "PARKSIDE PERFORMANCE® Sierra circular 1800 W",
+          "shortTitle": "Sierra circular 1800 W",
+          "image": "https://www.lidl.es/assets/gcpa592ea468dd1460ea4d6cb800d14a4ab.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 74.99,
+          "priceEur": 74.99,
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-motosierra-de-poda-de-gasolina-pbbps-25-b2/p100398572",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
+          "url": "https://www.lidl.es/p/parkside-performance-sierra-circular-1800-w/p100400293",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
           "availableFrom": null,
           "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100405179,
-          "key": "525922",
-          "ean": "525922",
-          "title": "PARKSIDE® Cepillo para ranuras recargable 20V",
-          "shortTitle": "Cepillo para ranuras recargable 20V",
-          "image": "https://www.lidl.es/assets/gcpc658e1f80f054433ab56db1414e286d8.jpg",
-          "brand": "PARKSIDE®",
-          "price": 34.99,
-          "priceEur": 34.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-          "url": "https://www.lidl.es/p/parkside-cepillo-para-ranuras-recargable-20v/p100405179",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
+          "isPerformance": true,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -16742,6 +16745,35 @@
           "previous": {}
         },
         {
+          "id": 100405179,
+          "key": "525922",
+          "ean": "525922",
+          "title": "PARKSIDE® Cepillo para ranuras recargable 20V",
+          "shortTitle": "Cepillo para ranuras recargable 20V",
+          "image": "https://www.lidl.es/assets/gcpc658e1f80f054433ab56db1414e286d8.jpg",
+          "brand": "PARKSIDE®",
+          "price": 34.99,
+          "priceEur": 34.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
+          "url": "https://www.lidl.es/p/parkside-cepillo-para-ranuras-recargable-20v/p100405179",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100400362,
           "key": "494220",
           "ean": "494220",
@@ -16799,39 +16831,6 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100400293,
-          "key": "494815",
-          "ean": "494815",
-          "title": "PARKSIDE PERFORMANCE® Sierra circular 1800 W",
-          "shortTitle": "Sierra circular 1800 W",
-          "image": "https://www.lidl.es/assets/gcpa592ea468dd1460ea4d6cb800d14a4ab.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 74.99,
-          "priceEur": 74.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-          "url": "https://www.lidl.es/p/parkside-performance-sierra-circular-1800-w/p100400293",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -16928,35 +16927,6 @@
           "previous": {}
         },
         {
-          "id": 100405566,
-          "key": "525579",
-          "ean": "525579",
-          "title": "PARKSIDE® Atornilladora taladradora recargable 20 V",
-          "shortTitle": "Atornilladora taladradora recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcpf0c5ed8853a04b7896a7833b83f4e262.jpg",
-          "brand": "PARKSIDE®",
-          "price": 37.99,
-          "priceEur": 37.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-atornilladora-taladradora-recargable-20-v/p100405566",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100388462,
           "key": "473964",
           "ean": "473964",
@@ -17019,6 +16989,35 @@
           "previous": {}
         },
         {
+          "id": 100405566,
+          "key": "525579",
+          "ean": "525579",
+          "title": "PARKSIDE® Atornilladora taladradora recargable 20 V",
+          "shortTitle": "Atornilladora taladradora recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcpf0c5ed8853a04b7896a7833b83f4e262.jpg",
+          "brand": "PARKSIDE®",
+          "price": 37.99,
+          "priceEur": 37.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-atornilladora-taladradora-recargable-20-v/p100405566",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100396001,
           "key": "485606",
           "ean": "485606",
@@ -17047,35 +17046,6 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100404519,
-          "key": "529045",
-          "ean": "529045",
-          "title": "PARKSIDE® Cortadora de azulejos recargable 20 V",
-          "shortTitle": "Cortadora de azulejos recargable 20 V",
-          "image": "https://www.lidl.es/assets/gcp737193b6d61d49648163f8d2ef6c6d0a.jpg",
-          "brand": "PARKSIDE®",
-          "price": 71.99,
-          "priceEur": 71.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible online",
-          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-          "url": "https://www.lidl.es/p/parkside-cortadora-de-azulejos-recargable-20-v/p100404519",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -17130,6 +17100,35 @@
           "availabilityBadge": "Disponible online",
           "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
           "url": "https://www.lidl.es/p/parkside-robot-cortacesped-city-smart-20-v/p100394477",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100404519,
+          "key": "529045",
+          "ean": "529045",
+          "title": "PARKSIDE® Cortadora de azulejos recargable 20 V",
+          "shortTitle": "Cortadora de azulejos recargable 20 V",
+          "image": "https://www.lidl.es/assets/gcp737193b6d61d49648163f8d2ef6c6d0a.jpg",
+          "brand": "PARKSIDE®",
+          "price": 71.99,
+          "priceEur": 71.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible online",
+          "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
+          "url": "https://www.lidl.es/p/parkside-cortadora-de-azulejos-recargable-20-v/p100404519",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -17531,9 +17530,9 @@
           }
         }
       ],
-      "numFound": 925,
+      "numFound": 926,
       "brandCounts": {
-        "PARKSIDE": 788,
+        "PARKSIDE": 789,
         "PARKSIDE PERFORMANCE": 133,
         "Parkside": 3,
         "CRIVIT": 1
@@ -19944,35 +19943,6 @@
           }
         },
         {
-          "id": 100399778,
-          "key": "494222",
-          "ean": "494222",
-          "title": "PARKSIDE® Aku univerzální rozmetadlo PUSA B1 – bez akumulátoru a nabíječky",
-          "shortTitle": "Aku univerzální rozmetadlo PUSA B1 – bez akumulátoru a nabíječky",
-          "image": "https://www.lidl.cz/assets/gcp9db034e9dca04cb3a68fc18d9c424783.jpg",
-          "brand": "PARKSIDE®",
-          "price": 629.9,
-          "priceEur": 25.2,
-          "currency": "CZK",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Skladem online",
-          "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-          "url": "https://www.lidl.cz/p/parkside-aku-univerzalni-rozmetadlo-pusa-b1-bez-akumulatoru-a-nabijecky/p100399778",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100398643,
           "key": "494218",
           "ean": "494218",
@@ -19996,6 +19966,35 @@
           "worthItReasons": [],
           "availableFrom": null,
           "availableUntil": "2026-07-05T21:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100399778,
+          "key": "494222",
+          "ean": "494222",
+          "title": "PARKSIDE® Aku univerzální rozmetadlo PUSA B1 – bez akumulátoru a nabíječky",
+          "shortTitle": "Aku univerzální rozmetadlo PUSA B1 – bez akumulátoru a nabíječky",
+          "image": "https://www.lidl.cz/assets/gcp9db034e9dca04cb3a68fc18d9c424783.jpg",
+          "brand": "PARKSIDE®",
+          "price": 629.9,
+          "priceEur": 25.2,
+          "currency": "CZK",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Skladem online",
+          "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
+          "url": "https://www.lidl.cz/p/parkside-aku-univerzalni-rozmetadlo-pusa-b1-bez-akumulatoru-a-nabijecky/p100399778",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
           "isPerformance": false,
           "status": "same",
           "changedFields": [],
@@ -22878,10 +22877,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1433,
+      "numFound": 1444,
       "brandCounts": {
-        "PARKSIDE": 1131,
-        "PARKSIDE PERFORMANCE": 297,
+        "PARKSIDE": 1139,
+        "PARKSIDE PERFORMANCE": 300,
         "SILVERCREST KITCHEN TOOLS": 3,
         "LUPILU": 1,
         "PLAYTIVE": 1
@@ -26140,10 +26139,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1390,
+      "numFound": 1386,
       "brandCounts": {
-        "PARKSIDE": 1164,
-        "PARKSIDE PERFORMANCE": 222,
+        "PARKSIDE": 1162,
+        "PARKSIDE PERFORMANCE": 220,
         "LUPILU": 4
       }
     },
@@ -29334,11 +29333,10 @@
           "previous": {}
         }
       ],
-      "numFound": 28,
+      "numFound": 27,
       "brandCounts": {
         "Parkside": 24,
-        "Parkside Performance": 3,
-        "GRANDIOL": 1
+        "Parkside Performance": 3
       }
     },
     "bg": {
@@ -31644,8 +31642,8 @@
           "id": 11110882,
           "key": "518307",
           "ean": "518307",
-          "title": "Parkside Positioneringsapparat",
-          "shortTitle": "Positioneringsapparat",
+          "title": "Parkside Multidetektor",
+          "shortTitle": "Multidetektor",
           "image": "https://www.lidl.se/assets/gcpd6e9cb08fe034cc68bd44444d01d9c4b.png",
           "brand": "Parkside",
           "price": 179.0,
@@ -31656,7 +31654,7 @@
           "onlineAvailable": false,
           "availabilityBadge": "I butik 28/09 - 04/10",
           "category": "Världar i nöd/Byggvaruhus & trädgård/Elverktyg",
-          "url": "https://www.lidl.se/p/parkside-positioneringsapparat/p11110882",
+          "url": "https://www.lidl.se/p/parkside-multidetektor/p11110882",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -34298,6 +34296,35 @@
           "previous": {}
         },
         {
+          "id": 100404456,
+          "key": "509609",
+          "ean": "509609",
+          "title": "Afkort- en verstekzaag PARKSIDE® PZKS2000",
+          "shortTitle": "Afkort- en verstekzaag PARKSIDE® PZKS2000",
+          "image": "https://www.lidl.be/assets/gcp86cb8b49700246a8ad335acc2349b7a2.jpg",
+          "brand": "PARKSIDE®",
+          "price": 109.99,
+          "priceEur": 109.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/afkort-en-verstekzaag-parkside-pzks2000/p100404456",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 100407166,
           "key": "516304",
           "ean": "516304",
@@ -34372,8 +34399,8 @@
           "currency": "EUR",
           "online": true,
           "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "binnenkort beschikbaar",
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
           "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
           "url": "https://www.lidl.be/p/nl-BE/alleszuiger-parkside-pwd25-met-wasmondstuk/p800012137",
           "warrantyYears": null,
@@ -34645,35 +34672,6 @@
           "previous": {}
         },
         {
-          "id": 100359168,
-          "key": "499902",
-          "ean": "499902",
-          "title": "Schuurpapier PARKSIDE® (korrel 240)",
-          "shortTitle": "Schuurpapier PARKSIDE® (korrel 240)",
-          "image": "https://www.lidl.be/assets/gcpf2dbc1cedc214473860b29516f9f93b0.jpeg",
-          "brand": "PARKSIDE®",
-          "price": 5.99,
-          "priceEur": 5.99,
-          "currency": "EUR",
-          "online": null,
-          "inStoreNow": null,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-          "url": "https://www.lidl.be/p/nl-BE/schuurpapier-parkside/p100359168006",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100405727,
           "key": "507528",
           "ean": "507528",
@@ -34794,34 +34792,6 @@
           "previous": {}
         },
         {
-          "id": 100380929,
-          "key": "457945",
-          "ean": "457945",
-          "title": "Ratel-schroevendraaier bitset PARKSIDE®",
-          "shortTitle": "Ratel-schroevendraaier bitset PARKSIDE®",
-          "image": "https://www.lidl.be/assets/gcpcbab27bc41a2432cb70fdce987ef0dc0.jpg",
-          "brand": "PARKSIDE®",
-          "price": 9.99,
-          "priceEur": 9.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Handgereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/ratel-schroevendraaier-bitset-parkside/p100380929",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
           "id": 800014205,
           "key": "800014205",
           "ean": "800014205",
@@ -34849,6 +34819,34 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100378605,
+          "key": "452159",
+          "ean": "452159",
+          "title": "Universele waterpas PARKSIDE®",
+          "shortTitle": "Universele waterpas PARKSIDE®",
+          "image": "https://www.lidl.be/assets/gcpe1e68361c2434c219efc8ab97aa6fad7.jpeg",
+          "brand": "PARKSIDE®",
+          "price": 7.99,
+          "priceEur": 7.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
+          "url": "https://www.lidl.be/p/nl-BE/universele-waterpas-parkside/p100378605",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100382452,
@@ -35008,6 +35006,39 @@
           "previous": {}
         },
         {
+          "id": 800014333,
+          "key": "800014333",
+          "ean": "800014333",
+          "title": "Accugrasmaaier 20 V PARKSIDE® PARM20 met accu en oplader",
+          "shortTitle": "Accugrasmaaier 20 V PARKSIDE® PARM20 met accu en oplader",
+          "image": "https://www.lidl.be/assets/gcpa65b2d536e174c8f8b5816a2b1b7b4bd.png",
+          "brand": "PARKSIDE®",
+          "price": 119.99,
+          "priceEur": 119.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/accugrasmaaier-20-v-parkside-parm20-met-accu-en-oplader/p800014333",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "changed",
+          "changedFields": [
+            "price"
+          ],
+          "previous": {
+            "price": 90.99
+          }
+        },
+        {
           "id": 100373837,
           "key": "462234",
           "ean": "462234",
@@ -35035,46 +35066,6 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
-        },
-        {
-          "id": 100400362,
-          "key": "494220",
-          "ean": "494220",
-          "title": "Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
-          "shortTitle": "Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
-          "image": "https://www.lidl.be/assets/gcpd5bcf1994bba4b17ac183c8521ee7acb.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 299.99,
-          "priceEur": 299.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/accugrasmaaier-40-v-parkside-performance-pprma40/p100400362",
-          "warrantyYears": 5,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "warranty5"
-            },
-            {
-              "type": "performance"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 199.99
-          }
         },
         {
           "id": 100381667,
@@ -35135,6 +35126,35 @@
           "previous": {}
         },
         {
+          "id": 100359168,
+          "key": "499902",
+          "ean": "499902",
+          "title": "Schuurpapier PARKSIDE® (korrel 240)",
+          "shortTitle": "Schuurpapier PARKSIDE® (korrel 240)",
+          "image": "https://www.lidl.be/assets/gcpf2dbc1cedc214473860b29516f9f93b0.jpeg",
+          "brand": "PARKSIDE®",
+          "price": 5.99,
+          "priceEur": 5.99,
+          "currency": "EUR",
+          "online": null,
+          "inStoreNow": null,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
+          "url": "https://www.lidl.be/p/nl-BE/schuurpapier-parkside/p100359168006",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
           "id": 800014225,
           "key": "800014225",
           "ean": "800014225",
@@ -35170,34 +35190,6 @@
           "previous": {
             "price": 249.99
           }
-        },
-        {
-          "id": 100378605,
-          "key": "452159",
-          "ean": "452159",
-          "title": "Universele waterpas PARKSIDE®",
-          "shortTitle": "Universele waterpas PARKSIDE®",
-          "image": "https://www.lidl.be/assets/gcpe1e68361c2434c219efc8ab97aa6fad7.jpeg",
-          "brand": "PARKSIDE®",
-          "price": 7.99,
-          "priceEur": 7.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-          "url": "https://www.lidl.be/p/nl-BE/universele-waterpas-parkside/p100378605",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
         },
         {
           "id": 100394718,
@@ -35322,39 +35314,6 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
-        },
-        {
-          "id": 800014333,
-          "key": "800014333",
-          "ean": "800014333",
-          "title": "Accugrasmaaier 20 V PARKSIDE® PARM20 met accu en oplader",
-          "shortTitle": "Accugrasmaaier 20 V PARKSIDE® PARM20 met accu en oplader",
-          "image": "https://www.lidl.be/assets/gcpa65b2d536e174c8f8b5816a2b1b7b4bd.png",
-          "brand": "PARKSIDE®",
-          "price": 119.99,
-          "priceEur": 119.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/accugrasmaaier-20-v-parkside-parm20-met-accu-en-oplader/p800014333",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 90.99
-          }
         },
         {
           "id": 100405586,
@@ -35819,6 +35778,46 @@
           "previous": {}
         },
         {
+          "id": 100400362,
+          "key": "494220",
+          "ean": "494220",
+          "title": "Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
+          "shortTitle": "Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
+          "image": "https://www.lidl.be/assets/gcpd5bcf1994bba4b17ac183c8521ee7acb.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 299.99,
+          "priceEur": 299.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/accugrasmaaier-40-v-parkside-performance-pprma40/p100400362",
+          "warrantyYears": 5,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "warranty5"
+            },
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": true,
+          "status": "changed",
+          "changedFields": [
+            "price"
+          ],
+          "previous": {
+            "price": 199.99
+          }
+        },
+        {
           "id": 100371952,
           "key": "444455",
           "ean": "444455",
@@ -36029,6 +36028,35 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100377459,
+          "key": "442254",
+          "ean": "442254",
+          "title": "Handzaagset PARKSIDE®",
+          "shortTitle": "Handzaagset PARKSIDE®",
+          "image": "https://www.lidl.be/assets/gcpab7d4eae62694e01885ef2a8c67805f2.jpeg",
+          "brand": "PARKSIDE®",
+          "price": 9.99,
+          "priceEur": 9.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Handgereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/handzaagset-parkside/p100377459",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -36741,35 +36769,6 @@
           "availabilityBadge": "Leverbaar",
           "category": "Werelden van nood/Bouwmarkt & tuin/Handgereedschap",
           "url": "https://www.lidl.be/p/nl-BE/inbussleutelset-parkside/p100377796",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100377459,
-          "key": "442254",
-          "ean": "442254",
-          "title": "Handzaagset PARKSIDE®",
-          "shortTitle": "Handzaagset PARKSIDE®",
-          "image": "https://www.lidl.be/assets/gcpab7d4eae62694e01885ef2a8c67805f2.jpeg",
-          "brand": "PARKSIDE®",
-          "price": 9.99,
-          "priceEur": 9.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Handgereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/handzaagset-parkside/p100377459",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -37536,9 +37535,9 @@
           "previous": {}
         }
       ],
-      "numFound": 1191,
+      "numFound": 1187,
       "brandCounts": {
-        "PARKSIDE": 1001,
+        "PARKSIDE": 997,
         "PARKSIDE PERFORMANCE": 186,
         "LUPILU": 2,
         "SILVERCREST KITCHEN TOOLS": 2
@@ -37959,62 +37958,6 @@
       "error": null,
       "products": [
         {
-          "id": 11119142,
-          "key": "509738",
-          "ean": "509738",
-          "title": "Parkside Σπαθόσεγα",
-          "shortTitle": "Σπαθόσεγα",
-          "image": "https://www.lidl.com.cy/assets/gcp2a26d2d83c044f31aa09a7349d840669.png",
-          "brand": "Parkside",
-          "price": 34.99,
-          "priceEur": 34.99,
-          "currency": "EUR",
-          "online": false,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "μόνο στο κατάστημα 24.09.",
-          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ηλεκτρικά εργαλεία",
-          "url": "https://www.lidl.com.cy/p/parkside-spatosega/p11119142",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": "2026-09-23T21:00:00+00:00",
-          "availableUntil": "2026-09-30T20:59:59+00:00",
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
-          "id": 11107686,
-          "key": "509740",
-          "ean": "509740",
-          "title": "Parkside Εργαλειοθήκη με επαναφορτιζόμενο κατσαβίδι",
-          "shortTitle": "Εργαλειοθήκη με επαναφορτιζόμενο κατσαβίδι",
-          "image": "https://www.lidl.com.cy/assets/gcp93bf0905900549d8a0b9879ff18a0483.png",
-          "brand": "Parkside",
-          "price": 75.0,
-          "priceEur": 75.0,
-          "currency": "EUR",
-          "online": false,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "μόνο στο κατάστημα 24.09.",
-          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
-          "url": "https://www.lidl.com.cy/p/parkside-ergaleiotiki-me-epanafortizomeno-katsavidi/p11107686",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": "2026-09-23T21:00:00+00:00",
-          "availableUntil": "2026-09-30T20:59:59+00:00",
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
           "id": 11110626,
           "key": "514980",
           "ean": "514980",
@@ -38060,6 +38003,64 @@
           "availabilityBadge": "μόνο στο κατάστημα 17.09.",
           "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ηλεκτρικά εργαλεία",
           "url": "https://www.lidl.com.cy/p/parkside-metritis-apostaseon-leizer/p11116669",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": "2026-09-16T21:00:00+00:00",
+          "availableUntil": "2026-09-23T20:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 11119827,
+          "key": "514880",
+          "ean": "514880",
+          "title": "Parkside Εργαλειοθήκη",
+          "shortTitle": "Εργαλειοθήκη",
+          "image": "https://www.lidl.com.cy/assets/gcpf6938e4b1a674bc9b3a74bb2b2276a98.png",
+          "brand": "Parkside",
+          "price": 34.99,
+          "priceEur": 34.99,
+          "currency": "EUR",
+          "online": false,
+          "inStoreNow": true,
+          "onlineAvailable": false,
+          "availabilityBadge": "μόνο στο κατάστημα 17.09.",
+          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
+          "url": "https://www.lidl.com.cy/p/parkside-ergaleiotiki/p11119827",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": "2026-09-16T21:00:00+00:00",
+          "availableUntil": "2026-09-23T20:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 11119840,
+          "key": "514970",
+          "ean": "514970",
+          "title": "Parkside Σετ τσιμπίδες υδραυλικών/ Σωληνοκάβουρας",
+          "shortTitle": "Σετ τσιμπίδες υδραυλικών/ Σωληνοκάβουρας",
+          "image": "https://www.lidl.com.cy/assets/gcp7ed2bf1ede8a4931994dabac76464850.png",
+          "brand": "Parkside",
+          "price": 9.99,
+          "priceEur": 9.99,
+          "currency": "EUR",
+          "online": false,
+          "inStoreNow": true,
+          "onlineAvailable": false,
+          "availabilityBadge": "μόνο στο κατάστημα 17.09.",
+          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
+          "url": "https://www.lidl.com.cy/p/parkside-set-tsimpides-ydraylikon-solinokavoyras/p11119840",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -38213,6 +38214,34 @@
               "type": "x20v"
             }
           ],
+          "availableFrom": "2026-09-23T21:00:00+00:00",
+          "availableUntil": "2026-09-30T20:59:59+00:00",
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
+        },
+        {
+          "id": 11119142,
+          "key": "509738",
+          "ean": "509738",
+          "title": "Parkside Σπαθόσεγα",
+          "shortTitle": "Σπαθόσεγα",
+          "image": "https://www.lidl.com.cy/assets/gcp2a26d2d83c044f31aa09a7349d840669.png",
+          "brand": "Parkside",
+          "price": 34.99,
+          "priceEur": 34.99,
+          "currency": "EUR",
+          "online": false,
+          "inStoreNow": false,
+          "onlineAvailable": false,
+          "availabilityBadge": "μόνο στο κατάστημα 24.09.",
+          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ηλεκτρικά εργαλεία",
+          "url": "https://www.lidl.com.cy/p/parkside-spatosega/p11119142",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
           "availableFrom": "2026-09-23T21:00:00+00:00",
           "availableUntil": "2026-09-30T20:59:59+00:00",
           "isPerformance": false,
@@ -38433,6 +38462,34 @@
           "availableFrom": "2026-09-23T21:00:00+00:00",
           "availableUntil": "2026-09-30T20:59:59+00:00",
           "isPerformance": true,
+          "status": "new",
+          "changedFields": []
+        },
+        {
+          "id": 11107686,
+          "key": "509740",
+          "ean": "509740",
+          "title": "Parkside Εργαλειοθήκη με επαναφορτιζόμενο κατσαβίδι",
+          "shortTitle": "Εργαλειοθήκη με επαναφορτιζόμενο κατσαβίδι",
+          "image": "https://www.lidl.com.cy/assets/gcp93bf0905900549d8a0b9879ff18a0483.png",
+          "brand": "Parkside",
+          "price": 75.0,
+          "priceEur": 75.0,
+          "currency": "EUR",
+          "online": false,
+          "inStoreNow": false,
+          "onlineAvailable": false,
+          "availabilityBadge": "μόνο στο κατάστημα 24.09.",
+          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
+          "url": "https://www.lidl.com.cy/p/parkside-ergaleiotiki-me-epanafortizomeno-katsavidi/p11107686",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": "2026-09-23T21:00:00+00:00",
+          "availableUntil": "2026-09-30T20:59:59+00:00",
+          "isPerformance": false,
           "status": "new",
           "changedFields": []
         },
@@ -39278,64 +39335,6 @@
           "availabilityBadge": "μόνο στο κατάστημα 17.09.",
           "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εξοπλισμός κήπου & εργαλεία κήπου",
           "url": "https://www.lidl.com.cy/p/parkside-polyergaleio-kipoy/p11119749",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": "2026-09-16T21:00:00+00:00",
-          "availableUntil": "2026-09-23T20:59:59+00:00",
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 11119827,
-          "key": "514880",
-          "ean": "514880",
-          "title": "Parkside Εργαλειοθήκη",
-          "shortTitle": "Εργαλειοθήκη",
-          "image": "https://www.lidl.com.cy/assets/gcpf6938e4b1a674bc9b3a74bb2b2276a98.png",
-          "brand": "Parkside",
-          "price": 34.99,
-          "priceEur": 34.99,
-          "currency": "EUR",
-          "online": false,
-          "inStoreNow": true,
-          "onlineAvailable": false,
-          "availabilityBadge": "μόνο στο κατάστημα 17.09.",
-          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
-          "url": "https://www.lidl.com.cy/p/parkside-ergaleiotiki/p11119827",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": "2026-09-16T21:00:00+00:00",
-          "availableUntil": "2026-09-23T20:59:59+00:00",
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 11119840,
-          "key": "514970",
-          "ean": "514970",
-          "title": "Parkside Σετ τσιμπίδες υδραυλικών/ Σωληνοκάβουρας",
-          "shortTitle": "Σετ τσιμπίδες υδραυλικών/ Σωληνοκάβουρας",
-          "image": "https://www.lidl.com.cy/assets/gcp7ed2bf1ede8a4931994dabac76464850.png",
-          "brand": "Parkside",
-          "price": 9.99,
-          "priceEur": 9.99,
-          "currency": "EUR",
-          "online": false,
-          "inStoreNow": true,
-          "onlineAvailable": false,
-          "availabilityBadge": "μόνο στο κατάστημα 17.09.",
-          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία χειρός",
-          "url": "https://www.lidl.com.cy/p/parkside-set-tsimpides-ydraylikon-solinokavoyras/p11119840",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -44705,10 +44704,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1038,
+      "numFound": 1045,
       "brandCounts": {
-        "PARKSIDE": 878,
-        "PARKSIDE PERFORMANCE": 155,
+        "PARKSIDE": 884,
+        "PARKSIDE PERFORMANCE": 156,
         "LUPILU": 4,
         "CRIVIT": 1
       }
@@ -44740,7 +44739,7 @@
       "title": "Accucombihamer 20 V PARKSIDE PERFORMANCE® PPAKH20",
       "image": "https://www.lidl.be/assets/gcp40a4029193004b28bb64541c63f09d75.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -44803,7 +44802,7 @@
       "title": "Accucombihamer 20 V PARKSIDE PERFORMANCE® PPAKH20 met smart accu en oplader",
       "image": "https://www.lidl.be/assets/gcp8fb66af55c844c3db06589eb9aad7b76.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-15T13:04:36.645162+00:00",
@@ -44838,7 +44837,7 @@
       "title": "Accucombihamer 20 V PKHAP20 PARKSIDE PERFORMANCE®",
       "image": "https://www.lidl.be/assets/gcp433b794f9a6f4cd2a88c9afb79bbdcd0.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -44892,7 +44891,7 @@
       "title": "Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
       "image": "https://www.lidl.be/assets/gcpd5bcf1994bba4b17ac183c8521ee7acb.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -44931,7 +44930,7 @@
       "title": "Accuheteluchtpistool 20 V PARKSIDE PERFORMANCE® PPHLGA20 met accu en lader",
       "image": "https://www.lidl.be/assets/gcpe56aeb5ab6384f328258e09e0eba0ca3.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -44978,7 +44977,7 @@
       "title": "Accuklopboormachine 20 V PARKSIDE PERFORMANCE® PPSBSA20",
       "image": "https://www.lidl.be/assets/gcpc7c6117b82774b518a1d53f6fc7192af.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45035,7 +45034,7 @@
       "title": "Accuklopboormachine 20 V PARKSIDE PERFORMANCE® PSBSAP20",
       "image": "https://www.lidl.be/assets/gcp218f3aa7e95c451cb2b575ded8e1ead0.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45088,7 +45087,7 @@
       "title": "Accumultifrees 20 V PARKSIDE PERFORMANCE® PMFAP20",
       "image": "https://www.lidl.be/assets/gcp5568f09b2ec64fbd861aedf31567f91d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45151,7 +45150,7 @@
       "title": "Accumultifrees 20 V PARKSIDE PERFORMANCE® PMFAP20 met accu en oplader",
       "image": "https://www.lidl.be/assets/gcp9ded9e3b1eb14cc097fd271773b97cb9.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45194,7 +45193,7 @@
       "title": "Accuslagmoersleutel 20 V PASSP20 PARKSIDE PERFORMANCE® met accu en oplader",
       "image": "https://www.lidl.be/assets/gcpcd551f2ca2064ddf9a964468f45b33e4.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45263,7 +45262,7 @@
       "title": "Diamantboorkronen PARKSIDE PERFORMANCE® (ø 45, 53 mm)",
       "image": "https://www.lidl.be/assets/gcp7a513762ab97443a94a9d19710b38a05.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45294,7 +45293,7 @@
       "title": "Draadloze robotmaaier 20 V PARKSIDE PERFORMANCE® PPAMR1250 met garage",
       "image": "https://www.lidl.be/assets/gcpc206ce4de8d84160b7bb0bbdbaa04b66.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45370,7 +45369,7 @@
       "title": "Excentrische schuurmachine 20 V PAESP20/ vlakschuurmachine 20 V PAMSP20 PARKSIDE PERFORMANCE®",
       "image": "https://www.lidl.be/assets/gcp169e94b1b59e42d081708cf2fbb30915.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -45411,7 +45410,7 @@
       "title": "Parkside Performance 12 V Aku bušilica-odvijač PBSPA 12 E4",
       "image": "https://www.lidl.rs/assets/gcp51af131a1557410fa8d9669599c1f815.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514439",
@@ -45480,7 +45479,7 @@
       "title": "Parkside Performance 12 V Baterija 2,5 Ah PAPK 12 2.5 B1 + 6 A Punjač PLGK 12 6.0 B1",
       "image": "https://www.lidl.rs/assets/gcp8c8a705dec9b4bcdbe0fcdbd96441a63.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "485628",
@@ -45611,7 +45610,7 @@
       "title": "PARKSIDE PERFORMANCE 4 V Akku-Präzisionsschraubendreher",
       "image": "https://imgproxy-retcat.assets.schwarz/k9vuf77Nn3G1Lhagb-15rM5ul8z_iljDZX2efh5aI-k/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvY2gvMS80Q0FFMzU1NTdDNUNFQTcyNDhDMzQ2RTM/0OTNENzJBNjVGNEEwMjQ5QjQ1MkI2RTlCREMyOEZBRUNBMTMyMTU2LnBuZw.png",
       "category": "Bedürfniswelten/Baumarkt & Garten/Elektrowerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "481670",
@@ -45653,7 +45652,7 @@
       "title": "Parkside Performance 8Ah Smart Battery",
       "image": "https://www.lidl.com.mt/assets/gcp2030ea34ede0421a802fbe48200342e0.png",
       "category": "Worlds of need/DIY store & garden/Battery tools",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514436",
@@ -45734,7 +45733,7 @@
       "title": "PARKSIDE PERFORMANCE Aku 12 V 5 Ah PAPK 12 5.0 B2",
       "image": "https://imgproxy-retcat.assets.schwarz/GwXYwKCHKxpEkFigBWhYbnkgH7jAE8YZHcdeSvZ6UGk/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaW50L0ZBNjRDRDZEQkUwRDBDNzExRTM5Q0JBNz/RENTUxNTQ1NUIzQjFBRTdENDgwODg1QTk0RUVCMzEyRTlDMkI1RkMucG5n.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T13:03:33.001691+00:00",
@@ -45786,7 +45785,7 @@
       "title": "Parkside Performance Aku ručna kružna testera PHKSAP 12 B2",
       "image": "https://www.lidl.rs/assets/gcpaa84a492b6314fc19bc1a9bbebcbcd0a.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514440",
@@ -45833,7 +45832,7 @@
       "title": "Parkside Performance Aku udarna bušilica PBHA 12 B1",
       "image": "https://www.lidl.rs/assets/gcp6a73ddfa104648b390a9b99c845d4ab9.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514438",
@@ -45884,7 +45883,7 @@
       "title": "Parkside Performance Aku udarni odvijač PDSSAP 12 A2",
       "image": "https://www.lidl.rs/assets/gcp60917fd4e1654fbd9bf1699391adaee7.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514437",
@@ -45920,7 +45919,7 @@
       "title": "Parkside Performance Aku udarni odvijač PPDSSA 12 A1",
       "image": "https://www.lidl.rs/assets/gcp6541de37f6ac40a780563e71ccce3337.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514441",
@@ -46044,7 +46043,7 @@
       "title": "PARKSIDE PERFORMANCE Akuekstsentriklihvija või -vibrolihvija",
       "image": "https://imgproxy-retcat.assets.schwarz/F4wWMpPHgOi5F-_TpznJSeprwt_8pKHUEB5Xzkag1io/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaW50LzAzNjA2NDk1OEEzN0QzQzhCMzAxNTIyNz/UyQTk3NDFCNDZCRDhCQjdGMzYxRThDRDRFMzNGOTk4RDc4ODhCOEQucG5n.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -46152,7 +46151,7 @@
       "title": "PARKSIDE PERFORMANCE Akuuniversaaltööriist 12 V PPMFWA 12 B2",
       "image": "https://imgproxy-retcat.assets.schwarz/nXGkiSxridfQpbqHFMmONn7fNEYG-ARJH499UeiHzR0/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaW50LzFGMkI0RjExRTRERjE4OTdGQTBCOTJGNE/M5QjUxM0VGNjk4Rjk5NENENDAyQTIwNDcwMUM0OUVBNzhCMDI0NTcucG5n.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "506429",
@@ -46189,7 +46188,7 @@
       "title": "Parkside Performance Aparelho de Localização 120 mm",
       "image": "https://www.lidl.pt/assets/gcpc884a68da1164f53be929e8325d61d06.png",
       "category": "Mundos de necessidade/Loja de bricolage e jardim/Ferramentas eléctricas",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -46264,7 +46263,7 @@
       "title": "PARKSIDE PERFORMANCE Arbeitsbundhose",
       "image": "https://imgproxy-retcat.assets.schwarz/eDJKthd7BBDbYPIysBO2RhyNjE-RY2w8GwiFNRCZxIs/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvY2gvMS9FOEI4MTkxRUMyNjg0OTk0NEQ4QTAwRDA/2NEIwMDgwRjg0Q0YxQ0UzRTZDNTU3QTUzQTdENjRBMjc4RjIzRTlELnBuZw.png",
       "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "514447",
@@ -46300,7 +46299,7 @@
       "title": "Parkside Performance Batteridriven borrskruvdragare",
       "image": "https://www.lidl.se/assets/gcp2d8d05d5d74b48f38d8a03f517af29d9.png",
       "category": "Världar i nöd/Byggvaruhus & trädgård/Batteriverktyg",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -46394,7 +46393,7 @@
       "title": "PARKSIDE PERFORMANCE Bimetāla kroņurbju komplekts",
       "image": "https://imgproxy-retcat.assets.schwarz/rHXOkMnZZQZ_82OSZ3W7uQCGKpGZUeju4DvwnruMYiE/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaW50L0YxNUUwRDdDQTdFRUNERjIwMzhCNzNGOU/EyRDQ2OURDRjNDRUY5OTNFOEJEODJEOTlGRDFDNTc3RTY2NDU1OEEucG5n.png",
       "category": "Светови потреба/Уради сам и башта/Радионица и гвожђе",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "489422",
@@ -46425,7 +46424,7 @@
       "title": "Parkside Performance Cavalletto per carichi pesanti",
       "image": "https://www.lidl.it/assets/gcp480a0604aee44338b60c8c4d9733dab6.png",
       "category": "I mondi del bisogno/Negozio di bricolage e giardino/Officina e ferramenta",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "516377",
@@ -46600,7 +46599,7 @@
       "title": "Parkside Performance Cordless Ratchet",
       "image": "https://www.lidl.com.mt/assets/gcp72c79428378649e89b37687fd69a3828.png",
       "category": "Worlds of need/DIY store & garden/Battery tools",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "481000",
@@ -46642,7 +46641,7 @@
       "title": "Parkside Performance Cordless Turbine Leaf Blower",
       "image": "https://www.lidl.com.mt/assets/gcp32d731c521234dfd9fecf80ff921071b.png",
       "category": "Worlds of need/DIY store & garden/Garden equipment & garden tools",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "441377",
@@ -46673,7 +46672,7 @@
       "title": "Parkside Performance Ekscentrična brusilica PPEXS 750 A1",
       "image": "https://www.lidl.rs/assets/gcp2026c58beb884687a0acc6078b608f69.png",
       "category": "Светови потреба/Уради сам и башта/електрични алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "515881",
@@ -46710,7 +46709,7 @@
       "title": "PARKSIDE PERFORMANCE Japāņu tipa zāģis",
       "image": "https://imgproxy-retcat.assets.schwarz/GCNKb2P025H4bK0aL5KshbHVJAmgxbXqIVL7Uxt4wpA/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaW50L0E0RDM2MjU5NEEwODVEOTc3ODRFRDY3Nz/NEM0IxMjREQTk5NzQ2MzkwMTNEMDY1QkVDQjMyNEZFRjkxQzMzMTMucG5n.png",
       "category": "Mundos de necessidade/Loja de bricolage e jardim/Ferramentas manuais",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "506409",
@@ -46802,7 +46801,7 @@
       "title": "Parkside Performance Men's Work Trousers",
       "image": "https://www.lidl.com.mt/assets/gcp11229624c99a4df7837ee7fdc4e55d36.png",
       "category": "Worlds of need/DIY store & garden/Workwear",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "538836",
@@ -46888,7 +46887,7 @@
       "title": "Parkside Performance Multi-Functional Workbench Set",
       "image": "https://www.lidl.com.mt/assets/gcpfc57ad5705844f17a5747eec08f2cf80.png",
       "category": "Worlds of need/DIY store & garden/Workshop & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -46960,7 +46959,7 @@
       "title": "PARKSIDE PERFORMANCE Profi láthatósági / fényvisszaverő pulóver",
       "image": "https://imgproxy-retcat.assets.schwarz/J7pWEjJ_AnPQPhnBFoE8CyQehWtoDRd4OI28qeM2uvE/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaHUvMS9GOTVBQjk4MDEzNTY2NDFFQUVDMzg2OTB/EQTRDMkE4NjE4MTg4NDY3MDM2QzcwQ0RERkRDRTUwOTI0Rjc5ODlBLnBuZw.png",
       "category": "A szükség világai/Barkácsáruház és kert/Munkaruha",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "545004",
@@ -46991,7 +46990,7 @@
       "title": "PARKSIDE PERFORMANCE Profi láthatósági / fényvisszaverő softshell mellény",
       "image": "https://imgproxy-retcat.assets.schwarz/0YvRDmv72BR4oAtheuqRY2xLcUyF-PEzsoqVx_dMAgU/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvaHUvMS80Qzk1MEQ2Q0JEMDhDNzM4QTg4NzE3OTU/yNjgyOEI1MDM0REM0MEIxOTNBRUQ0ODA1MkMwMEM1OUU0NTM5QzVGLnBuZw.png",
       "category": "A szükség világai/Barkácsáruház és kert/Munkaruha",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "54071507",
@@ -47104,7 +47103,7 @@
       "title": "Parkside Performance Punjiva baterija PAPK 12 2.5 B1",
       "image": "https://www.lidl.rs/assets/gcp82121933d9e44b76a380a06726a07123.png",
       "category": "Светови потреба/Уради сам и башта/акумулаторски алати",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "517237",
@@ -47146,7 +47145,7 @@
       "title": "PARKSIDE PERFORMANCE Reflektierende Softshell-Arbeitsbundhose",
       "image": "https://imgproxy-retcat.assets.schwarz/rKnPaidPRBPqvoRe1Kw5MnlfFLpuHlH8ZmYbeTNU9qU/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvY2gvMS8yQTU4QzY4NUQ3MTQ1RjU4NDgwMDM3QkY/xRUQ0NEVDNEE5NTUyNzUyODU1MkFEMDNBOEU3MDRDMDZEQkVFRDYzLnBuZw.png",
       "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "517235",
@@ -47207,7 +47206,7 @@
       "title": "PARKSIDE PERFORMANCE Reflektierende Softshelljacke",
       "image": "https://imgproxy-retcat.assets.schwarz/n42dpvWH26t3Q7zvJ6KM4YWViYaXAXUqPiv9__wGQco/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvY2gvMS82RTY4MDUyMDM5QjM0QjQwMzc5RkFCRUY/0NjIzNTdERDJGMzMwNTFDREYxOThCMDgwNjY4MzFFM0Q4Q0VFQzc5LnBuZw.png",
       "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "518732",
@@ -47261,7 +47260,7 @@
       "title": "Parkside Performance Set Impact burgija i bitova PBBS 35 A1",
       "image": "https://www.lidl.rs/assets/gcp419f484ff14b42faa6845eb731891682.png",
       "category": "Светови потреба/Уради сам и башта/Радионица и гвожђе",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "460914",
@@ -47333,7 +47332,7 @@
       "title": "Parkside Performance Snickarbyxor",
       "image": "https://www.lidl.se/assets/gcp8e74b14b49bb436e88df0fcbd98c85ca.png",
       "category": "Världar i nöd/Byggvaruhus & trädgård/Arbetskläder",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "506423",
@@ -47364,7 +47363,7 @@
       "title": "Parkside Performance Svrdla ili dlijeta",
       "image": "https://www.lidl.hr/assets/gcp759627f940a24f62b7716b7f3d07612d.png",
       "category": "Svjetovi potreba/Uradi sam i vrt/Radionica i željezna roba",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "445894",
@@ -47412,7 +47411,7 @@
       "title": "Parkside Performance Γιλέκο εργασίας",
       "image": "https://www.lidl.com.cy/assets/gcp9246e418683b48f6af01c27a1b657397.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ενδύματα εργασίας",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -47446,7 +47445,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενη μπαταρία",
       "image": "https://www.lidl.com.cy/assets/gcp0a32dbea51cd405fa5994eec9fdd21d1.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία μπαταρίας",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -47483,7 +47482,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενο αλφάδι laser σταυρού",
       "image": "https://www.lidl.com.cy/assets/gcp1a41611cd14140f9a17ac340e1136000.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία μπαταρίας",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "502560",
@@ -47545,7 +47544,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενο μπορντουροψάλιδο",
       "image": "https://www.lidl.com.cy/assets/gcp43f3d68e28464a6e97c0f2939dad9795.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εξοπλισμός κήπου & εργαλεία κήπου",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -47601,7 +47600,7 @@
       "title": "Parkside Performance Κλαδευτήρι κήπου Amboss",
       "image": "https://www.lidl.com.cy/assets/gcp048e3b31734640778de3cb9ad62e43ab.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εξοπλισμός κήπου & εργαλεία κήπου",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "509727",
@@ -47632,7 +47631,7 @@
       "title": "Parkside Performance Παντελόνι εργασίας",
       "image": "https://www.lidl.com.cy/assets/gcpe5cb61817e9c4d36a5e85641805ea284.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ενδύματα εργασίας",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "440614",
@@ -47704,7 +47703,7 @@
       "title": "PARKSIDE PERFORMANCE Зарядно за акумулаторна батерия",
       "image": "https://imgproxy-retcat.assets.schwarz/VRAYWMmAWhiOYC9qfZWHc1FZN0e024BZHwNQAdmHRsc/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYmcvMS82ODVGNUU5MjBEODRFNEUzQjEyNTVCRDU/3NDc2OEQ4REY2N0VERDQ5Q0VFNkNFNjUzNTA1RUQxMUQ3MzNBRTBELnBuZw.png",
       "category": "Светове на нуждата/Направи си сам & Градина/Акумулаторни уреди",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "458082",
@@ -47770,7 +47769,7 @@
       "title": "PARKSIDE PERFORMANCE Прахосмукачка за сухо и мокро почистване",
       "image": "https://imgproxy-retcat.assets.schwarz/OnUEH8KtVwEaFVOxOnv1xRZxIuyh9LOZHnaa1ErRw7U/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYmcvMS8yNEU1OTY0RTZENzU1NTdGMTBGRjJEMzI/2RTM1RUQ4NEQ2RDg1NkIyMjEzNURBRUZDMTVENDk4NjFBOUJCNUNDLnBuZw.png",
       "category": "Светове на нуждата/Направи си сам & Градина/Електрически уреди",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -47837,7 +47836,7 @@
       "title": "PARKSIDE PERFORMANCE Принадлежности за мултифункционален инструмент",
       "image": "https://imgproxy-retcat.assets.schwarz/fbNlHfcliTpv6ZmHssp0BN-ZajvbTuNNpa1_MEuj5fE/sm:0/exar:1:ce/w:427/h:320/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvYmcvMS9GQjZEQkU1RkIxMkY5MDMxNjU5MzEzOTA/3NzBGODIxQUI2QUY0MDE4MUI2QkI2NzJGNUMwQTY0RTIzMjY0NUE4LnBuZw.png",
       "category": "Светове на нуждата/Направи си сам & Градина/Консумативи",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "449981",
@@ -47862,7 +47861,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V / 2,5 Ah Akku »PAPK 12 2.5 A1« und Ladegerät »PLGK 12 6.0 A1«",
       "image": "https://www.lidl.de/assets/gcp3cf4d4a8e833493b9fa0ef3110667bf7.jpeg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -47981,7 +47980,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V accu-boorschroefmachine-startersset »PBSPA 12 E4«, met accu's en oplader.",
       "image": "https://www.lidl.nl/assets/gcp29c6176d359e43a0b37753421c678b30.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48020,7 +48019,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V / 4 Ah Smart-Akku »PAPP 204 A1«, ohne Ladegerät",
       "image": "https://www.lidl.de/assets/gcp76dcce32f44949e99d7858f76a947e70.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48060,7 +48059,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V / 4 Ah Smart-Akku »PAPS 204 B1«, mit Cell Balancing",
       "image": "https://www.lidl.de/assets/gcpec46d3f663c44b81939c8c563886888d.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48097,7 +48096,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V / 8 Ah Smart-Akku »PAPP 208 A1«, ohne Ladegerät",
       "image": "https://www.lidl.de/assets/gcp57fa217f60b244f6beb6d21b70d5216f.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48169,7 +48168,7 @@
       "title": "PARKSIDE PERFORMANCE® 20V Weltrekord Akku-Bohrschrauber »PPABSS 20 Li A1 - Arnold Schwarzenegger«, mit Akku und Ladegerät",
       "image": "https://www.lidl.de/assets/gcpda40da6d65e545f7818968f751432076.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48234,7 +48233,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-boorhamer 12 V 1,1 J, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp3aaec4b4a42b444bb31f410c92e7f374.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48309,7 +48308,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-boorhamer 20 V 3 J, zonder accu en oplader",
       "image": "https://www.lidl.nl/assets/gcp5c088c55cdde4fdf8fc41ab8e6de0c89.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48382,7 +48381,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-cirkelzaag 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpc9d2c7aeb4a745f7b5b117165bcd5da7.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48467,7 +48466,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-decoupeerzaag 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp69cb4378a8004648b7d68cd83940623c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48539,7 +48538,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-decoupeerzaag 20 V, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpf12838703ddd4134995a8d0a5fe1b0cb.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48660,7 +48659,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-drukspuit rugzak 20 V, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp36b0b936a71f4a8899744bcaa34c05f8.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48726,7 +48725,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-excentrische schuurmachine of -vlakschuurmachine 12 V zonder accu en lader (Vlakschuurmachine)",
       "image": "https://www.lidl.nl/assets/gcp322972e21aa14c94bb7f3782f51f8f13.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48802,7 +48801,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-haakse slijper 12 V, 76 mm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpd250ad3c139f4180a2c4aa45f3b2d0e0.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-13T23:03:19.508877+00:00",
@@ -48875,7 +48874,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-heteluchtpistool 20 V, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpc0b9bebd9474425ca8bfcd556e17162d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -48951,7 +48950,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-kantenfrees 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp5cb6ba8be6e74ce08eab688dfaad7b2d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49024,7 +49023,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-kettingzaag 40 V zonder accu's en lader",
       "image": "https://www.lidl.nl/assets/gcp5edbb4ecc67a43c39f14cc429e3b86f8.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49118,7 +49117,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-klopboormachine 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpd71bf3e0be2344d08b9943358489197d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49168,7 +49167,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-klopboormachine 20 V 64 Nm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp060b6fe5a03b4aee901cb66a456d98b2.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49221,7 +49220,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-klopboormachine set 20 V 64 Nm, met 2 accu's 2 ah en oplader 2,4 A, incl. 98-delige accessoireset",
       "image": "https://www.lidl.nl/assets/gcpf716e6c164774ab2b9787a8f64bd5cc0.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49296,7 +49295,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-LED-bouwlamp 20 V, zonder accu en oplader",
       "image": "https://www.lidl.nl/assets/gcpc2834cd880294d62aaef834b3e7d6b07.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49368,7 +49367,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-schroefboormachine 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp8560044ab22647f189e16a3530a44d90.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49407,7 +49406,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-schroefboormachine 20 V 60 Nm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp3b57539a3fe64d16b6cd9efa3279b21a.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49436,16 +49435,6 @@
           "availabilityBadge": "Kup online"
         },
         {
-          "country": "es",
-          "price": 114.99,
-          "priceEur": 114.99,
-          "currency": "EUR",
-          "url": "https://www.lidl.es/p/parkside-performance-set-de-taladro-atornillador-recargable-12-v/p100405611",
-          "availableFrom": null,
-          "availableUntil": null,
-          "availabilityBadge": "Disponible online"
-        },
-        {
           "country": "nl",
           "price": 139.0,
           "priceEur": 139.0,
@@ -49460,7 +49449,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-schroefboormachine set 12 V met accu en lader",
       "image": "https://www.lidl.nl/assets/gcpd6fc108b2383482789f19562f27c48e9.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49547,7 +49536,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-slagmoersleutel 1/2\" 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp182f0e556fcc4773ac39699b594e8814.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49611,7 +49600,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-slagmoersleutel 1/2\" 20 V 1356 Nm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpfa7d0a33fa8340ab8223804668dbfe8c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49684,7 +49673,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-slagmoersleutel 1/4\" 12 V zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp1d4669feeab246819bf8b77791b269ca.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49748,7 +49737,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-slagmoersleutel 20 V 600 Nm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpb15c3f1787b041619f3ebd2a69d813b7.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49832,7 +49821,7 @@
       "title": "PARKSIDE PERFORMANCE® Accu-slagschroevendraaier 1/4\" 20 V 226 Nm, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcpc74bdaaf4f87411b993aebfb40cf59e4.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49885,7 +49874,7 @@
       "title": "PARKSIDE PERFORMANCE® Acculader Smart 20 V - 12 A",
       "image": "https://www.lidl.nl/assets/gcp0b3908d2d26247eda4715de6b2b4d378.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -49943,7 +49932,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku kombinované kladivo 20 V Limited Edition PKHAP 2034-Li B1 - bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcpb4104c9b6f2a4363b429086f88df1239.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50009,7 +49998,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku krížový líniový laser 20 V PKLLP 3360 A1 Limited Edition - s akumulátorom",
       "image": "https://www.lidl.sk/assets/gcpbaad0335df874ef8bef5a899cba46a5b.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50058,7 +50047,7 @@
           "url": "https://www.lidl.es/p/parkside-performance-foco-led-recargable-de-20-v-ppbsta-20-li-a1-sin-bateria-ni-cargador/p100396194",
           "availableFrom": null,
           "availableUntil": null,
-          "availabilityBadge": "Pronto online"
+          "availabilityBadge": "Disponible online"
         },
         {
           "country": "cz",
@@ -50075,7 +50064,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku LED reflektor PPBSTA 20-Li A1 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp67342c6ce7964e58ab6990e02a88098a.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50112,7 +50101,7 @@
           "url": "https://www.lidl.es/p/parkside-performance-cortarramas-recargable-20-v/p100398769",
           "availableFrom": null,
           "availableUntil": null,
-          "availabilityBadge": "Disponible online"
+          "availabilityBadge": "Pronto online"
         },
         {
           "country": "cz",
@@ -50129,7 +50118,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku nůžky na větve PPAAS 20-Li A1– bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp0e0663350d9546358174b9988e0c721e.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50177,7 +50166,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku pila ocaska PSSAP 20-Li E5",
       "image": "https://www.lidl.cz/assets/gcp510a072e9fe3439a9800d632d51873e2.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50246,7 +50235,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku ponorná pila PPTSA 20-Li C3 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp5194b93c4a904432ba7dd0be40a7dfe1.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50310,7 +50299,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku pracovní LED reflektor PALA 4000 B1",
       "image": "https://www.lidl.cz/assets/gcp69ec46f7bfa848c3995e38f2782ec8ef.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50354,7 +50343,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku prořezávací pila PPAKS 40-Li B2 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcpcd1410c45f7a4e52b4d6a35dfa0084dc.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50400,7 +50389,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku příklepová vrtačka PSBSAP 20-Li C3 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp3785cbe4479847198d1e2fefdde46a12.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50439,7 +50428,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku rázový utahovák PDSSAP 12 A1, 2,5 Ah",
       "image": "https://www.lidl.cz/assets/gcpd433fb98c46c4051b484d9dd74f9c35b.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50504,7 +50493,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku vŕtací skrutkovač 20 V PABSP 20 Li C4 – bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcpf845937f9a1f4a09a3b18242bab3e44e.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50562,7 +50551,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku úhlová bruska PPWSA 12 A1 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp8fdf531451844ff2acb38b0176f54f31.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50666,7 +50655,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulatorowa wiertarkowkrętarka udarowa PSBSAP 20-Li D4 (bez akumulatora i ładowarki)",
       "image": "https://www.lidl.pl/assets/gcp5cc36e9d7427483ead45ab3e47a8ab37.jpeg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Narzędzia akumulatorowe",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50746,7 +50735,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulátor 2,5 Ah PAPK 12 2.5 B1",
       "image": "https://www.lidl.cz/assets/gcpdacc6a26d03d4c5abe4d1c17a93daf06.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50803,7 +50792,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulátor 2,5 Ah PAPK 12 2.5 B1 + rychlonabíječka PLGK 12 6.0 B1",
       "image": "https://www.lidl.cz/assets/gcpb20e6b46f2874b8d92841808a89988ca.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50843,7 +50832,7 @@
       "title": "PARKSIDE PERFORMANCE® Batterie PAPK 12 5.0 B2, 5 Ah, 12 V",
       "image": "https://www.lidl.fr/assets/gcp19512248e5c845418e379c08b9a734f7.png",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50882,7 +50871,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzin-Kettensäge »PPBKS-L 56 A1« mit Elektrostart",
       "image": "https://www.lidl.de/assets/gcp93ed208810bc410cb7510dbb3921116d.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Gartengeräte & Gartenwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50929,7 +50918,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzine grasmaaier 4,2 kW 2000 m²",
       "image": "https://www.lidl.nl/assets/gcp860e70ea5ffb4870ad1960b10b6b3700.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -50983,7 +50972,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzínová kosa 3 v 1 s elektrickým startováním PPBS 3 B2",
       "image": "https://www.lidl.cz/assets/gcpe5a36ab3e01a4b3899204aac97f062bb.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51025,7 +51014,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzínová řetězová pila s elektrickým startováním PPBKS 56 B2",
       "image": "https://www.lidl.cz/assets/gcp8eccaf23245b460d86e004f87f5a1894.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51067,7 +51056,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzínová řetězová pila s elektrickým startováním PPBKS 56 C3",
       "image": "https://www.lidl.cz/assets/gcp59f20aa632e041fb8abb242698ed7f0f.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51109,7 +51098,7 @@
       "title": "PARKSIDE PERFORMANCE® Bluetooth®-speaker 20 V, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp4be534a273a04e7da12c8eaf4860bd50.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51155,7 +51144,7 @@
       "title": "PARKSIDE PERFORMANCE® Cargador de baterías 12 V / 6 A",
       "image": "https://www.lidl.es/assets/gcp1484c466f053406ea57313522f99d6c8.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51198,7 +51187,7 @@
       "title": "PARKSIDE PERFORMANCE® Chargeur de batterie 12 V / 6 A »PLGK 12 6.0 B1«",
       "image": "https://www.lidl.fr/assets/gcpa92fc0e646294063a21c038df3b53358.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51281,7 +51270,7 @@
       "title": "PARKSIDE PERFORMANCE® Cirkelzaagblad »PKSBP 19024 A1 / PKSBP 19048 A1 / PKSBP 19060 A1«, Ø 190 mm.",
       "image": "https://www.lidl.nl/assets/gcpe36554d8fbd24ac48967af2b649f69ca.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51356,7 +51345,7 @@
       "title": "PARKSIDE PERFORMANCE® Diamantové vrtací korunky",
       "image": "https://www.lidl.cz/assets/gcp7b4869b8d59e4338bd14dc6c938d5edb.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51420,7 +51409,7 @@
       "title": "PARKSIDE PERFORMANCE® Diamantové vŕtacie korunky",
       "image": "https://www.lidl.sk/assets/gcp0b7ec42e0ed14280adc85311bfe4c133.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51459,7 +51448,7 @@
       "title": "PARKSIDE PERFORMANCE® Dámske strečové montérky",
       "image": "https://www.lidl.sk/assets/gcp9c215b83099b4a5e88a66c3687b9a9cf.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Pracovné odevy",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51505,7 +51494,7 @@
       "title": "PARKSIDE PERFORMANCE® Elektrická řetězová pila PPEKS 2500 B2",
       "image": "https://www.lidl.cz/assets/gcp4790a88b8454480aaec70f577a1dfc3c.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51551,7 +51540,7 @@
       "title": "PARKSIDE PERFORMANCE® Elektrický axiální foukač listí PPELB 1650 A1",
       "image": "https://www.lidl.cz/assets/gcpd77eea509e874e5496c3154f494405d6.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51604,7 +51593,7 @@
       "title": "PARKSIDE PERFORMANCE® Elektrische schaaf »PPEH 950 A1«",
       "image": "https://www.lidl.nl/assets/gcpa9fe880fb86e41d791e6618b2d96a639.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51672,7 +51661,7 @@
       "title": "PARKSIDE PERFORMANCE® Herramienta multifunción 550 W",
       "image": "https://www.lidl.es/assets/gcp72891cd4617544bf84d4965f02235d55.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51706,7 +51695,7 @@
       "title": "PARKSIDE PERFORMANCE® Herren S3-Sicherheitsschuhe »Limited Edition«",
       "image": "https://www.lidl.de/assets/gcp0191305e8265460bafc758a08e9f9b56.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51748,7 +51737,7 @@
       "title": "PARKSIDE PERFORMANCE® Juego de destornilladores de impacto, 15 piezas",
       "image": "https://www.lidl.es/assets/gcp886e51ea5bd3431c9f5bd15058b75494.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas manuales",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51790,7 +51779,7 @@
       "title": "PARKSIDE PERFORMANCE® Juego de llaves fijas, 3 piezas.",
       "image": "https://www.lidl.es/assets/gcpf64952dffdb347fb9e4cff333ea07779.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas manuales",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51825,7 +51814,7 @@
       "title": "PARKSIDE PERFORMANCE® Kladivo (zámočnícke kladivo)",
       "image": "https://www.lidl.sk/assets/gcpd5112923ca3b4081be1a8964e639ed65.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Ručné náradie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51890,7 +51879,7 @@
       "title": "PARKSIDE PERFORMANCE® Kleště",
       "image": "https://www.lidl.cz/assets/gcpd6cd3148687e478caed751b5deb90c10.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Ruční nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -51960,7 +51949,7 @@
       "title": "PARKSIDE PERFORMANCE® Laser en croix sans fil 20 V »PKLLP 3360 A1«, sans batterie ni chargeur.",
       "image": "https://www.lidl.fr/assets/gcp9092cd0716ad435cb920c2e15457b749.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52048,7 +52037,7 @@
       "title": "PARKSIDE PERFORMANCE® Martillo perforador y cincelador 1050 W",
       "image": "https://www.lidl.es/assets/gcp89738c399a7348db902358e76debe12b.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52079,7 +52068,7 @@
       "title": "PARKSIDE PERFORMANCE® Martillo perforador y cincelador 1600 W",
       "image": "https://www.lidl.es/assets/gcp2cdff0db06cb4b2082ab632b9d667982.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52186,7 +52175,7 @@
       "title": "PARKSIDE PERFORMANCE® Mini accu-kettingzaag 20 V, zonder accu en lader",
       "image": "https://www.lidl.nl/assets/gcp99e4be7d013a4591b903edc9806cd95d.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52217,7 +52206,7 @@
       "title": "PARKSIDE PERFORMANCE® Mochila de baterías 20 V / 40 V",
       "image": "https://www.lidl.es/assets/gcp67a9cb2364d94d11803caac69faed82c.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52270,7 +52259,7 @@
       "title": "PARKSIDE PERFORMANCE® Motosierra eléctrica 2500 W",
       "image": "https://www.lidl.es/assets/gcp4b550c3395f848328d3809bc3416a74b.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52356,7 +52345,7 @@
       "title": "PARKSIDE PERFORMANCE® Multifrees »PPMF 710 A1«",
       "image": "https://www.lidl.nl/assets/gcpfcd856dd6f154382b48145c44b19a0a1.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52402,7 +52391,7 @@
       "title": "PARKSIDE PERFORMANCE® Nivel láser de líneas cruzadas recargable 4 V",
       "image": "https://www.lidl.es/assets/gcp8b753bc5adc74619b5eaa429dc0984bf.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52433,7 +52422,7 @@
       "title": "PARKSIDE PERFORMANCE® Perceuse-visseuse sans fil 12 V »PBSPA 12 E4«, sans batterie ni chargeur.",
       "image": "https://www.lidl.fr/assets/gcp81b9d85dd7394896bb4446afbb2fa0e9.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52472,7 +52461,7 @@
       "title": "PARKSIDE PERFORMANCE® Perceuse-visseuse sans fil 20 V kit de démarrage »PBSAP 20-Li A1«, avec batterie et chargeur, dans une mallette en aluminium de haute qualité.",
       "image": "https://www.lidl.fr/assets/gcpf20d775d70eb45008b6db3d63adad816.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52549,7 +52538,7 @@
       "title": "PARKSIDE PERFORMANCE® Pila ocaska PPFS 1200 A1",
       "image": "https://www.lidl.cz/assets/gcpa3c0bc6b00ad40f6b53790d12a4e2aa1.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Elektrické nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52610,7 +52599,7 @@
       "title": "PARKSIDE PERFORMANCE® Pilový kotouč pro okružní pilu, 190 mm",
       "image": "https://www.lidl.cz/assets/gcp8f74e3cf02f443cba1a85e2ee8901e1e.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52649,7 +52638,7 @@
       "title": "PARKSIDE PERFORMANCE® Ponceuse excentrique »PPEXS 750 B2«, avec entraînement direct du plateau commutable.",
       "image": "https://www.lidl.fr/assets/gcpa194f4ac406949a8a79ac4f76df13917.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils électriques",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52714,7 +52703,7 @@
       "title": "PARKSIDE PERFORMANCE® Pracovní LED svítidlo PALS 50 B1",
       "image": "https://www.lidl.cz/assets/gcp02f12edfcee24627b738f490ae2b1516.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52753,7 +52742,7 @@
       "title": "PARKSIDE PERFORMANCE® Priemyselný vysávač PPWD 30 B2",
       "image": "https://www.lidl.sk/assets/gcp1f88f4966eeb4d40b0edb5d8c8bb8547.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Elektrické náradie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52784,7 +52773,7 @@
       "title": "PARKSIDE PERFORMANCE® Pánske montérky",
       "image": "https://www.lidl.sk/assets/gcp87c2df3e1c7e4159a7a030e0618ec989.jpeg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Pracovné odevy",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52831,7 +52820,7 @@
       "title": "PARKSIDE PERFORMANCE® Pánske montérky Limited Edition",
       "image": "https://www.lidl.sk/assets/gcp9c77ad43b4524fa4a44bef4f96199a98.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Pracovné odevy",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52862,7 +52851,7 @@
       "title": "PARKSIDE PERFORMANCE® Pánske pracovné nohavice",
       "image": "https://www.lidl.sk/assets/gcpcb50e2c044104302ba0e060f1d3212af.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Pracovné odevy",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52897,7 +52886,7 @@
           "price": 5.99,
           "priceEur": 5.99,
           "currency": "EUR",
-          "url": "https://www.lidl.fr/p/parkside-performance-lame-de-scie-pour-bois-lame-de-scie-pour-aluminium-lame-de-scie-pour-stratifie/p100391794",
+          "url": "https://www.lidl.fr/p/parkside-performance-lame-de-scie-pour-bois-lame-de-scie-pour-aluminium-lame-de-scie-pour-stratifie/p100391794003",
           "availableFrom": null,
           "availableUntil": null,
           "availabilityBadge": "Disponible à la livraison"
@@ -52937,7 +52926,7 @@
       "title": "PARKSIDE PERFORMANCE® Pílový kotúč, 140 mm (hliník, 44 zubov)",
       "image": "https://www.lidl.sk/assets/gcpf6afb6ef821744f29663aec9500baacd.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -52984,7 +52973,7 @@
       "title": "PARKSIDE PERFORMANCE® Pílový kotúč, 190 mm",
       "image": "https://www.lidl.sk/assets/gcpaa876ae5fe514c678b60c918337d511e.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53015,7 +53004,7 @@
       "title": "PARKSIDE PERFORMANCE® Pílový kotúč, Ø 140 mm (hliník, 44 zubov)",
       "image": "https://www.lidl.sk/assets/gcpa34955ed583840b88a8f476a4e52b581.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53069,7 +53058,7 @@
       "title": "PARKSIDE PERFORMANCE® Příslušenství k multifunkčnímu nářadí (Obrábění dřeva)",
       "image": "https://www.lidl.cz/assets/gcpbf1d5109af30483f8fed7b75958ace7b.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53111,7 +53100,7 @@
       "title": "PARKSIDE PERFORMANCE® Robot cortacésped 20V",
       "image": "https://www.lidl.es/assets/gcpdeacfaec8b094ced874b11d898975ec3.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Equipamiento y herramientas de jardinería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53142,7 +53131,7 @@
       "title": "PARKSIDE PERFORMANCE® Ruksak na akumulátory 20 V/40 V PPRA 20 B1 – bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcpb776d4ca0d3b44db9a323123d05aad24.png",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53199,7 +53188,7 @@
       "title": "PARKSIDE PERFORMANCE® Sada s aku rázovým utahovákem 1/2″ PASSP 20-Li C4, 4 Ah",
       "image": "https://www.lidl.cz/assets/gcp2987f3a39b2c4e6193dc4f4b9b2bc3db.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53392,7 +53381,7 @@
       "title": "PARKSIDE PERFORMANCE® Sada vrutů",
       "image": "https://www.lidl.cz/assets/gcp2575d45812cb400da97cb9cffd5b4073.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53436,7 +53425,7 @@
       "title": "PARKSIDE PERFORMANCE® Sada řezných kotoučů, 12dílná / Sada hrubovacích kotoučů, 4dílná / Diamantový řezný kotouč (sada hrubovacích kotoučů, 4dílná)",
       "image": "https://www.lidl.cz/assets/gcpcef0751f06b4481b9ac8c93a9d3fe517.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53477,7 +53466,7 @@
       "title": "PARKSIDE PERFORMANCE® Schlag-Steckschlüssel- und Bit-Satz, 21-teilig",
       "image": "https://www.lidl.de/assets/gcpdca86da393e34d51b5734ea57f8d140a.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Handwerkzeuge",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "470740",
@@ -53503,7 +53492,7 @@
       "title": "PARKSIDE PERFORMANCE® Scie circulaire à métaux sans fil 20 V »PPMSA 20-Li A1«, sans batterie ni chargeur.",
       "image": "https://www.lidl.fr/assets/gcp7911f404a4a04f3bb576c6fed2afd760.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53538,7 +53527,7 @@
       "title": "PARKSIDE PERFORMANCE® Set de tournevis-burins",
       "image": "https://www.lidl.fr/assets/gcpd86f89c2b4c94da78fb6036e25e4ad0c.jpg",
       "category": "Mondes de besoins/Bricolage & Jardinage/Outils à main",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53582,7 +53571,7 @@
       "title": "PARKSIDE PERFORMANCE® Sierra circular 1800 W",
       "image": "https://www.lidl.es/assets/gcpa592ea468dd1460ea4d6cb800d14a4ab.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas eléctricas",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53617,7 +53606,7 @@
       "title": "PARKSIDE PERFORMANCE® Sierra circular portátil recargable 40 V",
       "image": "https://www.lidl.es/assets/gcp5684552f757f4072b9ad934671e901be.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53700,7 +53689,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart accu 20 V - 4 Ah",
       "image": "https://www.lidl.nl/assets/gcpa85b9bdc93ca4354b3bd5c13d854b06c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53768,7 +53757,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart acculader 20 V - 12 A",
       "image": "https://www.lidl.nl/assets/gcp851c300fb5e245028c5b6140aa5589d5.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53818,7 +53807,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart akumulátor 20 V/4 Ah PAPS 204 B1",
       "image": "https://www.lidl.sk/assets/gcpfb5179b3218c4351b70756d35c2d7077.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53871,7 +53860,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart nabíjačka na akumulátor 20 V/12 A PLGS 2012 A1",
       "image": "https://www.lidl.sk/assets/gcpdfbe6cb147d14ff9b0d25a22ef7be1fb.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53914,7 +53903,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart nabíječka 20 V / 12 A PLGS 2012 A1",
       "image": "https://www.lidl.cz/assets/gcp2b44904406b241fa8d621eaeb624d29f.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53962,7 +53951,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart snellader 20 V - 12 A",
       "image": "https://www.lidl.nl/assets/gcp1fbb10d7c2bd4580a803117f1c0a46a0.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -53993,7 +53982,7 @@
       "title": "PARKSIDE PERFORMANCE® Stavebný Bluetooth® reproduktor PBL 40 A1 – bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcpf6cd431813a1424185f912f64da56421.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54024,7 +54013,7 @@
       "title": "PARKSIDE PERFORMANCE® Szlifierka mimośrodowa PPEXS 750 B2",
       "image": "https://www.lidl.pl/assets/gcp5b887947e31740589b8412d1aa5f0edb.jpg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Elektronarzędzia",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54099,7 +54088,7 @@
       "title": "PARKSIDE PERFORMANCE® Súprava torzných bitov PBSP 2 D4 (súprava torzných bitov a nástrčných kľúčov, 40-dielna)",
       "image": "https://www.lidl.sk/assets/gcp7d0d0f4088994ffbaa094eb418b72ed2.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54163,7 +54152,7 @@
       "title": "PARKSIDE PERFORMANCE® Vlies-filterzak »PPVFT 30 A1«, 4 stuks.",
       "image": "https://www.lidl.nl/assets/gcpdb6ffe55f51240ba9a9b064a81fb89a7.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54220,7 +54209,7 @@
       "title": "PARKSIDE PERFORMANCE® Vysokotlaký čistič PHDP 180 D3",
       "image": "https://www.lidl.cz/assets/gcp056daa47a925407ba29aa0608e3cce33.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Zahradní technika a zahradní nářadí",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54341,7 +54330,7 @@
       "title": "PARKSIDE® Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40 met 2 accu's en dubbele oplader",
       "image": "https://www.lidl.be/assets/gcp33e9519df5954e649fe90d832a8ecf66.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54384,7 +54373,7 @@
       "title": "PARKSIDE® Accukettingzaag 40 V PARKSIDE PERFORMANCE® PPKSA40 met 2 accu's en dubbele lader",
       "image": "https://www.lidl.be/assets/gcp23ee4d85cf0a4f4eb9935af8358c1626.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54425,7 +54414,7 @@
       "title": "PARKSIDE® Accuklopboormachine 20 V PARKSIDE PERFORMANCE® PPSBSA20 met accu en oplader",
       "image": "https://www.lidl.be/assets/gcp0b96b15f69bd4a7392325a0131773c07.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "449918",
@@ -54456,7 +54445,7 @@
       "title": "Plasmasnijder PARKSIDE PERFORMANCE® PPSK40",
       "image": "https://www.lidl.be/assets/gcp9940ec44b56d45efa8c1c5b9094033d8.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00"
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00"
     },
     {
       "key": "413643",
@@ -54492,7 +54481,7 @@
       "title": "SDS Plus boorset of beitel PARKSIDE PERFORMANCE® (2-delige SDS boorset )",
       "image": "https://www.lidl.be/assets/gcp7f1ff56bd44143e1ae9487784ebfc8e6.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -54556,7 +54545,7 @@
       "title": "Tapijtreiniger PARKSIDE PERFORMANCE® PPWS10",
       "image": "https://www.lidl.be/assets/gcpc71cc9e6dcb64ad1898ef42aeab61b69.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-09-21T11:04:02.761401+00:00",
+      "lastSeenAt": "2026-09-21T12:04:29.472905+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
