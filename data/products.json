@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T17:58:20.622181+00:00",
+  "generatedAt": "2026-11-10T01:12:27.118664+00:00",
   "countries": {
     "si": {
       "label": "Lidl Slovenija",
@@ -31,8 +31,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101926,
@@ -59,8 +60,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11102658,
@@ -91,8 +93,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11107580,
@@ -119,8 +122,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11109658,
@@ -147,8 +151,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11109741,
@@ -175,8 +180,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112312,
@@ -203,8 +209,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112415,
@@ -231,8 +238,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113148,
@@ -259,8 +267,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113165,
@@ -287,8 +296,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-25T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113193,
@@ -315,8 +325,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11116833,
@@ -343,8 +354,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11127217,
@@ -375,8 +387,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11127242,
@@ -407,8 +420,9 @@
           "availableFrom": "2026-11-12T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11128359,
@@ -435,8 +449,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11131633,
@@ -463,8 +478,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11131771,
@@ -491,8 +507,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11132177,
@@ -519,8 +536,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-14T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 18,
@@ -1937,8 +1955,9 @@
           "availableFrom": null,
           "availableUntil": "2026-09-12T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100409104,
@@ -2158,13 +2177,9 @@
           "availableFrom": null,
           "availableUntil": "2026-09-12T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 23.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100404581,
@@ -2322,13 +2337,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 11.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399743,
@@ -2541,13 +2552,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 8.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408669,
@@ -2742,13 +2749,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 60.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100409810,
@@ -2833,13 +2836,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 33.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100406324,
@@ -3151,13 +3150,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 31.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100368824,
@@ -3531,9 +3526,9 @@
           "previous": {}
         }
       ],
-      "numFound": 988,
+      "numFound": 982,
       "brandCounts": {
-        "PARKSIDE": 821,
+        "PARKSIDE": 815,
         "PARKSIDE PERFORMANCE": 157,
         "LUPILU": 5,
         "SILVERCREST KITCHEN TOOLS": 3,
@@ -3571,13 +3566,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 19.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399747,
@@ -3859,37 +3850,32 @@
           "previous": {}
         },
         {
-          "id": 100414311,
-          "key": "521732",
-          "ean": "521732",
-          "title": "PARKSIDE PERFORMANCE® Ponceuse vibrante sans fil 20V ou Ponceuse excentrique sans fil 20V, sans batterie ni chargeur",
-          "shortTitle": "Ponceuse vibrante sans fil 20V ou Ponceuse excentrique sans fil 20V, sans batterie ni chargeur",
-          "image": "https://www.lidl.fr/assets/gcpac8a003b84e34580b3ad97ecf1e1294f.jpg",
-          "brand": "PARKSIDE PERFORMANCE®",
-          "price": 49.99,
-          "priceEur": 49.99,
+          "id": 100410200,
+          "key": "514347",
+          "ean": "514347",
+          "title": "PARKSIDE® Chaussons homme, Fan Edition (Noir, 42/43)",
+          "shortTitle": "PARKSIDE® Chaussons homme, Fan Edition (Noir, 42/43)",
+          "image": "https://www.lidl.fr/assets/gcp85ca5d305adf43ceb4b86ea04e8d0e8b.jpg",
+          "brand": "PARKSIDE®",
+          "price": 4.99,
+          "priceEur": 4.99,
           "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
+          "online": null,
+          "inStoreNow": null,
           "onlineAvailable": true,
           "availabilityBadge": "Disponible à la livraison",
-          "category": "Mondes de besoins/Bricolage & Jardinage/Outils sans fil",
-          "url": "https://www.lidl.fr/p/parkside-performance-ponceuse-vibrante-sans-fil-20v-ou-ponceuse-excentrique-sans-fil-20v-sans-batterie-ni-chargeur/p100414311",
+          "category": "Mondes de besoins/Bricolage & Jardinage/Vêtements de travail",
+          "url": "https://www.lidl.fr/p/parkside-chaussons-homme-fan-edition/p100410200002",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "performance"
-            }
-          ],
+          "worthIt": false,
+          "worthItReasons": [],
           "availableFrom": null,
           "availableUntil": null,
-          "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100412477,
@@ -3916,8 +3902,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100404581,
@@ -3973,13 +3960,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 7.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100360779,
@@ -4163,8 +4146,71 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100406587,
+          "key": "508261",
+          "ean": "508261",
+          "title": "PARKSIDE® Set de mini tournevis à cliquet",
+          "shortTitle": "Set de mini tournevis à cliquet",
+          "image": "https://www.lidl.fr/assets/gcpba4a69541d0a4badb33668ffd61f3f36.jpg",
+          "brand": "PARKSIDE®",
+          "price": 5.99,
+          "priceEur": 5.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible à la livraison",
+          "category": "Mondes de besoins/Bricolage & Jardinage/Outils à main",
+          "url": "https://www.lidl.fr/p/parkside-set-de-mini-tournevis-a-cliquet/p100406587",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": "2026-07-01T21:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100409175,
+          "key": "515653",
+          "ean": "515653",
+          "title": "PARKSIDE® Lampe de poche LED sans fil 20V, PLHLA 20 Li A1 et PLHLA 20-Li C1, sans batterie ni chargeur. (20V PLHLA 20 Li C1)",
+          "shortTitle": "PARKSIDE® Lampe de poche LED sans fil 20V, PLHLA 20 Li A1 et PLHLA 20-Li C1, sans batterie ni chargeur. (20V PLHLA 20 Li C1)",
+          "image": "https://www.lidl.fr/assets/gcpf73b82cbf9eb490baa54eabe1247a8a1.png",
+          "brand": "PARKSIDE®",
+          "price": 8.99,
+          "priceEur": 8.99,
+          "currency": "EUR",
+          "online": null,
+          "inStoreNow": null,
+          "onlineAvailable": true,
+          "availabilityBadge": "Disponible à la livraison",
+          "category": "Mondes de besoins/Bricolage & Jardinage/Atelier & quincaillerie",
+          "url": "https://www.lidl.fr/p/parkside-lampe-de-poche-led-sans-fil-20v-plhla-20-li-a1-et-plhla-20-li-c1-sans-batterie-ni-chargeur/p100409175002",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": "2026-09-09T21:59:59+00:00",
+          "isPerformance": false,
+          "status": "changed",
+          "changedFields": [
+            "online"
+          ],
+          "previous": {
+            "online": true
+          }
         },
         {
           "id": 100413345,
@@ -4191,8 +4237,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408555,
@@ -4223,35 +4270,6 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100406587,
-          "key": "508261",
-          "ean": "508261",
-          "title": "PARKSIDE® Set de mini tournevis à cliquet",
-          "shortTitle": "Set de mini tournevis à cliquet",
-          "image": "https://www.lidl.fr/assets/gcpba4a69541d0a4badb33668ffd61f3f36.jpg",
-          "brand": "PARKSIDE®",
-          "price": 5.99,
-          "priceEur": 5.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Disponible à la livraison",
-          "category": "Mondes de besoins/Bricolage & Jardinage/Outils à main",
-          "url": "https://www.lidl.fr/p/parkside-set-de-mini-tournevis-a-cliquet/p100406587",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": "2026-07-01T21:59:59+00:00",
-          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -4472,35 +4490,6 @@
           "previous": {}
         },
         {
-          "id": 100409175,
-          "key": "515653",
-          "ean": "515653",
-          "title": "PARKSIDE® Lampe de poche LED sans fil 20V, PLHLA 20 Li A1 et PLHLA 20-Li C1, sans batterie ni chargeur.",
-          "shortTitle": "Lampe de poche LED sans fil 20V, PLHLA 20 Li A1 et PLHLA 20-Li C1, sans batterie ni chargeur.",
-          "image": "https://www.lidl.fr/assets/gcp0e6a28ab9c944df8a4c7c7e6bb3d297b.jpg",
-          "brand": "PARKSIDE®",
-          "price": 8.99,
-          "priceEur": 8.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "Bientôt commandable",
-          "category": "Mondes de besoins/Bricolage & Jardinage/Atelier & quincaillerie",
-          "url": "https://www.lidl.fr/p/parkside-lampe-de-poche-led-sans-fil-20v-plhla-20-li-a1-et-plhla-20-li-c1-sans-batterie-ni-chargeur/p100409175",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": "2026-09-09T21:59:59+00:00",
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100412471,
           "key": "524199",
           "ean": "524199",
@@ -4686,13 +4675,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 52.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100410696,
@@ -4719,13 +4704,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 119.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100410728,
@@ -4934,13 +4915,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 81.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100360230,
@@ -5340,10 +5317,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1230,
+      "numFound": 1224,
       "brandCounts": {
-        "PARKSIDE": 1018,
-        "PARKSIDE PERFORMANCE": 202,
+        "PARKSIDE": 1013,
+        "PARKSIDE PERFORMANCE": 201,
         "LUPILU": 4,
         "Parkside": 3,
         "SILVERCREST KITCHEN TOOLS": 3
@@ -6188,8 +6165,9 @@
           "availableFrom": null,
           "availableUntil": "2026-06-20T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398025,
@@ -6442,8 +6420,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100409310,
@@ -6503,13 +6482,9 @@
           "availableFrom": null,
           "availableUntil": "2026-11-01T22:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 219.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 800014761,
@@ -6602,13 +6577,9 @@
           "availableFrom": null,
           "availableUntil": "2026-11-01T22:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 289.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100411289,
@@ -6643,19 +6614,19 @@
           "id": 100409175,
           "key": "515653",
           "ean": "515653",
-          "title": "PARKSIDE® Akumulatorowa lampa ręczna (lub warsztatowa) 20 V (20V PLHLA 20 Li C1)",
-          "shortTitle": "PARKSIDE® Akumulatorowa lampa ręczna (lub warsztatowa) 20 V (20V PLHLA 20 Li C1)",
-          "image": "https://www.lidl.pl/assets/gcpf73b82cbf9eb490baa54eabe1247a8a1.png",
+          "title": "PARKSIDE® Akumulatorowa lampa ręczna (lub warsztatowa) 20 V",
+          "shortTitle": "Akumulatorowa lampa ręczna (lub warsztatowa) 20 V",
+          "image": "https://www.lidl.pl/assets/gcp0e6a28ab9c944df8a4c7c7e6bb3d297b.jpg",
           "brand": "PARKSIDE®",
           "price": 45.99,
           "priceEur": 10.81,
           "currency": "PLN",
-          "online": null,
-          "inStoreNow": null,
+          "online": true,
+          "inStoreNow": false,
           "onlineAvailable": true,
           "availabilityBadge": "Kup online",
           "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Warsztat i sprzęt",
-          "url": "https://www.lidl.pl/p/parkside-akumulatorowa-lampa-reczna-lub-warsztatowa-20-v/p100409175002",
+          "url": "https://www.lidl.pl/p/parkside-akumulatorowa-lampa-reczna-lub-warsztatowa-20-v/p100409175",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -6669,7 +6640,7 @@
             "online"
           ],
           "previous": {
-            "online": true
+            "online": null
           }
         },
         {
@@ -6701,13 +6672,9 @@
           "availableFrom": null,
           "availableUntil": "2026-08-01T21:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 259.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100395732,
@@ -7135,13 +7102,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 229.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398430,
@@ -7321,15 +7284,9 @@
           "availableFrom": "2026-11-20T23:00:00+00:00",
           "availableUntil": "2026-11-28T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "availableFrom",
-            "availableUntil"
-          ],
-          "previous": {
-            "availableFrom": null,
-            "availableUntil": null
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100395243,
@@ -7356,13 +7313,9 @@
           "availableFrom": null,
           "availableUntil": "2026-04-15T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 139.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100396109,
@@ -7513,17 +7466,9 @@
           "availableFrom": "2026-11-20T23:00:00+00:00",
           "availableUntil": "2026-11-28T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price",
-            "availableFrom",
-            "availableUntil"
-          ],
-          "previous": {
-            "price": 24.99,
-            "availableFrom": null,
-            "availableUntil": null
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100396719,
@@ -7806,13 +7751,9 @@
           "availableFrom": null,
           "availableUntil": "2024-04-17T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 129.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398463,
@@ -7876,13 +7817,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 119.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100393925,
@@ -8016,19 +7953,19 @@
           "id": 100409996,
           "key": "523193",
           "ean": "523193",
-          "title": "PARKSIDE® Stojak na drewno kominkowe, 164 x 84 x 157 cm",
-          "shortTitle": "Stojak na drewno kominkowe, 164 x 84 x 157 cm",
-          "image": "https://www.lidl.pl/assets/gcp114c23104dd74e1bb35512906c234ff2.jpg",
+          "title": "PARKSIDE® Stojak na drewno kominkowe, 164 x 84 x 157 cm (zielony)",
+          "shortTitle": "PARKSIDE® Stojak na drewno kominkowe, 164 x 84 x 157 cm (zielony)",
+          "image": "https://www.lidl.pl/assets/gcp60c5b86bb20b414183739384a1b94c22.png",
           "brand": "PARKSIDE®",
           "price": 389.0,
           "priceEur": 91.41,
           "currency": "PLN",
-          "online": true,
-          "inStoreNow": false,
+          "online": null,
+          "inStoreNow": null,
           "onlineAvailable": true,
           "availabilityBadge": "Kup online",
           "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Wiaty ogrodowe i zadaszenia",
-          "url": "https://www.lidl.pl/p/parkside-stojak-na-drewno-kominkowe-164-x-84-x-157-cm/p100409996",
+          "url": "https://www.lidl.pl/p/parkside-stojak-na-drewno-kominkowe-164-x-84-x-157-cm/p100409996002",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -8039,17 +7976,17 @@
           "isPerformance": false,
           "status": "changed",
           "changedFields": [
-            "price"
+            "online"
           ],
           "previous": {
-            "price": 429.0
+            "online": true
           }
         }
       ],
-      "numFound": 940,
+      "numFound": 941,
       "brandCounts": {
-        "PARKSIDE": 786,
-        "PARKSIDE PERFORMANCE": 151,
+        "PARKSIDE": 788,
+        "PARKSIDE PERFORMANCE": 150,
         "LUPILU": 3
       }
     },
@@ -8156,13 +8093,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 36.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398333,
@@ -8390,13 +8323,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 54.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100395397,
@@ -8740,13 +8669,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 34.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100345052,
@@ -8945,13 +8870,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 4.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100388445,
@@ -9098,13 +9019,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 38.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100395159,
@@ -9387,13 +9304,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 19.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399043,
@@ -9966,9 +9879,9 @@
           "previous": {}
         }
       ],
-      "numFound": 960,
+      "numFound": 959,
       "brandCounts": {
-        "PARKSIDE": 810,
+        "PARKSIDE": 809,
         "PARKSIDE PERFORMANCE": 142,
         "LUPILU": 3,
         "SILVERCREST KITCHEN TOOLS": 3,
@@ -10519,13 +10432,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 399.9
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100405817,
@@ -10651,13 +10560,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 269.9
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100411289,
@@ -10716,34 +10621,6 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
-        },
-        {
-          "id": 100409175,
-          "key": "515653",
-          "ean": "515653",
-          "title": "PARKSIDE® Aku ruční LED reflektor PLHLA 20 Li A1 / Aku ruční LED reflektor PLHLA 20-Li C1 – bez akumulátoru a nabíječky (20V PLHLA 20 Li C1)",
-          "shortTitle": "PARKSIDE® Aku ruční LED reflektor PLHLA 20 Li A1 / Aku ruční LED reflektor PLHLA 20-Li C1 – bez akumulátoru a nabíječky (20V PLHLA 20 Li C1)",
-          "image": "https://www.lidl.cz/assets/gcpf73b82cbf9eb490baa54eabe1247a8a1.png",
-          "brand": "PARKSIDE®",
-          "price": 249.9,
-          "priceEur": 10.0,
-          "currency": "CZK",
-          "online": null,
-          "inStoreNow": null,
-          "onlineAvailable": true,
-          "availabilityBadge": "Skladem online",
-          "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-          "url": "https://www.lidl.cz/p/parkside-aku-rucni-led-reflektor-plhla-20-li-a1-aku-rucni-led-reflektor-plhla-20-li-c1-bez-akumulatoru-a-nabijecky/p100409175002",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": "2026-09-20T21:59:59+00:00",
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
         },
         {
           "id": 100413363,
@@ -10976,6 +10853,38 @@
           "status": "same",
           "changedFields": [],
           "previous": {}
+        },
+        {
+          "id": 100395732,
+          "key": "487754",
+          "ean": "487754",
+          "title": "PARKSIDE PERFORMANCE® Sada s aku vrtacím šroubovákem PBSPA 12 E4",
+          "shortTitle": "Sada s aku vrtacím šroubovákem PBSPA 12 E4",
+          "image": "https://www.lidl.cz/assets/gcp29c6176d359e43a0b37753421c678b30.jpg",
+          "brand": "PARKSIDE PERFORMANCE®",
+          "price": 1199.0,
+          "priceEur": 47.96,
+          "currency": "CZK",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Skladem online",
+          "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
+          "url": "https://www.lidl.cz/p/parkside-performance-sada-s-aku-vrtacim-sroubovakem-pbspa-12-e4/p100395732",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "performance"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": "2026-09-27T21:59:59+00:00",
+          "isPerformance": true,
+          "status": "new",
+          "changedFields": []
         },
         {
           "id": 100413283,
@@ -11316,8 +11225,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100393618,
@@ -11811,13 +11721,9 @@
           "availableFrom": null,
           "availableUntil": "2024-10-13T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 279.9
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100382718,
@@ -11848,8 +11754,9 @@
           "availableFrom": null,
           "availableUntil": "2024-12-24T22:59:59+00:00",
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408555,
@@ -12041,13 +11948,9 @@
           "availableFrom": null,
           "availableUntil": "2024-06-16T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 2129.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100393587,
@@ -12107,13 +12010,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 499.9
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100389224,
@@ -12215,9 +12114,9 @@
           "previous": {}
         }
       ],
-      "numFound": 1393,
+      "numFound": 1382,
       "brandCounts": {
-        "PARKSIDE": 1104,
+        "PARKSIDE": 1093,
         "PARKSIDE PERFORMANCE": 280,
         "LUPILU": 5,
         "SILVERCREST KITCHEN TOOLS": 3,
@@ -12539,13 +12438,9 @@
           "availableFrom": null,
           "availableUntil": "2026-05-10T21:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 3.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399743,
@@ -12609,43 +12504,6 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 9.99
-          }
-        },
-        {
-          "id": 100399043,
-          "key": "496270",
-          "ean": "496270",
-          "title": "PARKSIDE® Aku stavebné rádio 20 V/12 V PBR 10 A1 – bez akumulátora",
-          "shortTitle": "Aku stavebné rádio 20 V/12 V PBR 10 A1 – bez akumulátora",
-          "image": "https://www.lidl.sk/assets/gcp0bc15916da514f21b67cd402d4aaa1dd.jpg",
-          "brand": "PARKSIDE®",
-          "price": 72.99,
-          "priceEur": 72.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Na sklade",
-          "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-          "url": "https://www.lidl.sk/p/parkside-aku-stavebne-radio-20-v-12-v-pbr-10-a1-bez-akumulatora/p100399043",
-          "warrantyYears": null,
-          "isX20vTeam": true,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "x20v"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": "2026-02-15T22:59:59+00:00",
-          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -12679,13 +12537,42 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100399043,
+          "key": "496270",
+          "ean": "496270",
+          "title": "PARKSIDE® Aku stavebné rádio 20 V/12 V PBR 10 A1 – bez akumulátora",
+          "shortTitle": "Aku stavebné rádio 20 V/12 V PBR 10 A1 – bez akumulátora",
+          "image": "https://www.lidl.sk/assets/gcp0bc15916da514f21b67cd402d4aaa1dd.jpg",
+          "brand": "PARKSIDE®",
+          "price": 72.99,
+          "priceEur": 72.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Na sklade",
+          "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
+          "url": "https://www.lidl.sk/p/parkside-aku-stavebne-radio-20-v-12-v-pbr-10-a1-bez-akumulatora/p100399043",
+          "warrantyYears": null,
+          "isX20vTeam": true,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "x20v"
+            }
           ],
-          "previous": {
-            "price": 44.99
-          }
+          "availableFrom": null,
+          "availableUntil": "2026-02-15T22:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100393594,
@@ -12749,13 +12636,9 @@
           "availableFrom": null,
           "availableUntil": "2025-09-28T21:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 39.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100406324,
@@ -12786,13 +12669,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 9.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100345052,
@@ -12852,13 +12731,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 339.0
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100405171,
@@ -12889,13 +12764,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 12.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100405670,
@@ -12929,13 +12800,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 99.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100382718,
@@ -12966,13 +12833,9 @@
           "availableFrom": null,
           "availableUntil": "2024-12-08T22:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 9.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398025,
@@ -13003,13 +12866,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 34.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398463,
@@ -13069,13 +12928,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 17.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100368824,
@@ -13102,13 +12957,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 3.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100397876,
@@ -13135,13 +12986,9 @@
           "availableFrom": null,
           "availableUntil": "2026-01-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 1.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100386704,
@@ -13393,13 +13240,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 12.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100370466,
@@ -13430,13 +13273,9 @@
           "availableFrom": null,
           "availableUntil": "2024-02-04T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 14.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100383175,
@@ -13503,13 +13342,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 6.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100377459,
@@ -13536,13 +13371,9 @@
           "availableFrom": null,
           "availableUntil": "2024-08-03T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 7.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408835,
@@ -13569,17 +13400,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price",
-            "online",
-            "worthIt"
-          ],
-          "previous": {
-            "price": 29.99,
-            "online": true,
-            "worthIt": true
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100405317,
@@ -13676,13 +13499,9 @@
           "availableFrom": null,
           "availableUntil": "2026-02-08T22:59:59+00:00",
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 22.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398668,
@@ -13713,13 +13532,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 27.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100405157,
@@ -13779,13 +13594,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 24.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100397981,
@@ -13878,13 +13689,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 29.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408038,
@@ -14006,13 +13813,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 59.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100396382,
@@ -14144,13 +13947,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 47.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100391503,
@@ -14184,13 +13983,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 29.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100395976,
@@ -14259,10 +14054,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1381,
+      "numFound": 1388,
       "brandCounts": {
-        "PARKSIDE": 1132,
-        "PARKSIDE PERFORMANCE": 242,
+        "PARKSIDE": 1140,
+        "PARKSIDE PERFORMANCE": 241,
         "LUPILU": 4,
         "SILVERCREST KITCHEN TOOLS": 3
       }
@@ -14463,8 +14258,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113165,
@@ -14491,8 +14287,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113176,
@@ -14585,8 +14382,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11044620,
@@ -14613,8 +14411,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11083841,
@@ -14641,8 +14440,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11084840,
@@ -14727,8 +14527,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101975,
@@ -14755,8 +14556,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101979,
@@ -14783,8 +14585,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11102235,
@@ -14905,8 +14708,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112120,
@@ -14933,8 +14737,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112129,
@@ -14961,8 +14766,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112166,
@@ -14989,8 +14795,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112320,
@@ -15116,8 +14923,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112537,
@@ -15144,8 +14952,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112550,
@@ -15205,8 +15014,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112647,
@@ -15266,8 +15076,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112693,
@@ -15294,8 +15105,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113155,
@@ -15355,8 +15167,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11120162,
@@ -15478,8 +15291,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11123802,
@@ -15506,8 +15320,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11124189,
@@ -15698,8 +15513,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11554800,
@@ -15726,8 +15542,9 @@
           "availableFrom": "2026-11-15T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 44,
@@ -15745,8 +15562,8 @@
       "brandCounts": {
         "Deluxe": 1,
         "DELUXE": 1,
-        "LEGO DISNEY": 1,
-        "Max & Mila's World": 1
+        "KULJANKA": 1,
+        "LEGO DISNEY": 1
       }
     },
     "gr": {
@@ -15779,8 +15596,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101891,
@@ -15807,8 +15625,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112962,
@@ -15864,8 +15683,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11116820,
@@ -15892,8 +15712,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11084528,
@@ -16007,8 +15828,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11111682,
@@ -16035,8 +15857,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11111695,
@@ -16063,8 +15886,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11118874,
@@ -16124,8 +15948,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11084534,
@@ -16152,8 +15977,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11084582,
@@ -16180,8 +16006,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101854,
@@ -16324,8 +16151,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112693,
@@ -16410,8 +16238,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11120857,
@@ -16438,8 +16267,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11123954,
@@ -16470,8 +16300,9 @@
           "availableFrom": "2026-11-13T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11124173,
@@ -16498,8 +16329,9 @@
           "availableFrom": "2026-11-13T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 26,
@@ -17055,7 +16887,7 @@
           "inStoreNow": false,
           "onlineAvailable": false,
           "availabilityBadge": "в магазините от 12.11. - 15.11.",
-          "category": "Светове на нуждата/Направи си сам & Градина/Акумулаторни уреди",
+          "category": "Светове на нуждата/Направи си сам & Градина/Градински помощници",
           "url": "https://www.lidl.bg/p/parkside-akumulatorna-dukalka-za-lista/p11107842",
           "warrantyYears": null,
           "isX20vTeam": false,
@@ -17587,8 +17419,9 @@
           "availableFrom": "2026-11-11T22:00:00+00:00",
           "availableUntil": "2026-11-15T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 38,
@@ -18076,8 +17909,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101880,
@@ -18104,8 +17938,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101975,
@@ -18132,8 +17967,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11109710,
@@ -18218,8 +18054,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112322,
@@ -18362,8 +18199,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112428,
@@ -18477,8 +18315,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113193,
@@ -18505,8 +18344,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11120894,
@@ -18533,8 +18373,9 @@
           "availableFrom": "2026-11-11T23:00:00+00:00",
           "availableUntil": "2026-11-18T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 21,
@@ -18574,8 +18415,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11042202,
@@ -18602,8 +18444,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11100412,
@@ -18630,8 +18473,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11100415,
@@ -18658,8 +18502,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11101880,
@@ -18686,8 +18531,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112322,
@@ -18714,8 +18560,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112415,
@@ -18742,8 +18589,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112428,
@@ -18770,8 +18618,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11112429,
@@ -18798,8 +18647,9 @@
           "availableFrom": "2026-11-18T23:00:00+00:00",
           "availableUntil": "2026-11-22T22:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         }
       ],
       "numFound": 9,
@@ -18959,6 +18809,34 @@
           "previous": {}
         },
         {
+          "id": 100406420,
+          "key": "508234",
+          "ean": "508234",
+          "title": "PARKSIDE® Alleszuiger PARKSIDE® »PWD 12 B1«",
+          "shortTitle": "Alleszuiger PARKSIDE® »PWD 12 B1«",
+          "image": "https://www.lidl.be/assets/gcp9ae4b5bd4858459ab601f16f3310c933.jpg",
+          "brand": "PARKSIDE®",
+          "price": 37.99,
+          "priceEur": 37.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/parkside-alleszuiger-parkside-pwd-12-b1/p100406420",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
+        },
+        {
           "id": 100394413,
           "key": "485313",
           "ean": "485313",
@@ -19045,13 +18923,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 294.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100408097,
@@ -19141,35 +19015,6 @@
           "previous": {}
         },
         {
-          "id": 800014210,
-          "key": "800014210",
-          "ean": "800014210",
-          "title": "PARKSIDE® Accukettingzaag 20 V PARKSIDE® PAKS20 met accu en oplader",
-          "shortTitle": "Accukettingzaag 20 V PARKSIDE® PAKS20 met accu en oplader",
-          "image": "https://www.lidl.be/assets/gcpb55b99190c8c4db686c7c37371a91b68.png",
-          "brand": "PARKSIDE®",
-          "price": 84.99,
-          "priceEur": 84.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/parkside-accukettingzaag-20-v-parkside-paks20-met-accu-en-oplader/p800014210",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
           "id": 100381667,
           "key": "457942",
           "ean": "457942",
@@ -19186,6 +19031,35 @@
           "availabilityBadge": "Leverbaar",
           "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
           "url": "https://www.lidl.be/p/nl-BE/boorset-parkside/p100381667",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 800014210,
+          "key": "800014210",
+          "ean": "800014210",
+          "title": "PARKSIDE® Accukettingzaag 20 V PARKSIDE® PAKS20 met accu en oplader",
+          "shortTitle": "Accukettingzaag 20 V PARKSIDE® PAKS20 met accu en oplader",
+          "image": "https://www.lidl.be/assets/gcpb55b99190c8c4db686c7c37371a91b68.png",
+          "brand": "PARKSIDE®",
+          "price": 84.99,
+          "priceEur": 84.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/parkside-accukettingzaag-20-v-parkside-paks20-met-accu-en-oplader/p800014210",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -19475,41 +19349,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 73.99
-          }
-        },
-        {
-          "id": 800014211,
-          "key": "800014211",
-          "ean": "800014211",
-          "title": "PARKSIDE® Accumultitrimmer 20 V 3-in-1 PARKSIDE® PAMT20 met accu en oplader",
-          "shortTitle": "Accumultitrimmer 20 V 3-in-1 PARKSIDE® PAMT20 met accu en oplader",
-          "image": "https://www.lidl.be/assets/gcpd39aa3457420451d966a3b42a8146bb8.png",
-          "brand": "PARKSIDE®",
-          "price": 89.99,
-          "priceEur": 89.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/parkside-accumultitrimmer-20-v-3-in-1-parkside-pamt20-met-accu-en-oplader/p800014211",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 800014197,
@@ -19656,13 +19498,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 43.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 800014219,
@@ -19693,6 +19531,35 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100405727,
+          "key": "507528",
+          "ean": "507528",
+          "title": "PARKSIDE® Accugrastrimmer 20 V PARKSIDE® PART20",
+          "shortTitle": "Accugrastrimmer 20 V PARKSIDE® PART20",
+          "image": "https://www.lidl.be/assets/gcp69e47e6d25ca4f1eba897292726464e6.jpg",
+          "brand": "PARKSIDE®",
+          "price": 19.99,
+          "priceEur": 19.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
+          "url": "https://www.lidl.be/p/nl-BE/parkside-accugrastrimmer-20-v-parkside-part20/p100405727",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -19788,35 +19655,6 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100405727,
-          "key": "507528",
-          "ean": "507528",
-          "title": "PARKSIDE® Accugrastrimmer 20 V PARKSIDE® PART20",
-          "shortTitle": "Accugrastrimmer 20 V PARKSIDE® PART20",
-          "image": "https://www.lidl.be/assets/gcp69e47e6d25ca4f1eba897292726464e6.jpg",
-          "brand": "PARKSIDE®",
-          "price": 19.99,
-          "priceEur": 19.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.be/p/nl-BE/parkside-accugrastrimmer-20-v-parkside-part20/p100405727",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -19999,13 +19837,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 43.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 800014060,
@@ -20024,6 +19858,35 @@
           "availabilityBadge": "Leverbaar",
           "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
           "url": "https://www.lidl.be/p/nl-BE/parkside-accuboorhamer-12-v-parkside-pbha12-met-accu-12-v-2-ah-papk12-met-oplader-parkside-plgk12/p800014060",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100379818,
+          "key": "458921",
+          "ean": "458921",
+          "title": "Hijsband 1.000/2.000 kg PARKSIDE®",
+          "shortTitle": "Hijsband 1.000/2.000 kg PARKSIDE®",
+          "image": "https://www.lidl.be/assets/gcp1f64aeccea794292b0f7181843eecff7.jpeg",
+          "brand": "PARKSIDE®",
+          "price": 9.99,
+          "priceEur": 9.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
+          "url": "https://www.lidl.be/p/nl-BE/hijsband-1-000-2-000-kg-parkside/p100379818",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -20144,35 +20007,6 @@
           "availabilityBadge": "Leverbaar",
           "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
           "url": "https://www.lidl.be/p/nl-BE/parkside-lijmpistool-of-graveerapparaat-accu-4-v-parkside-phpa4/p100368609002",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100379818,
-          "key": "458921",
-          "ean": "458921",
-          "title": "Hijsband 1.000/2.000 kg PARKSIDE®",
-          "shortTitle": "Hijsband 1.000/2.000 kg PARKSIDE®",
-          "image": "https://www.lidl.be/assets/gcp1f64aeccea794292b0f7181843eecff7.jpeg",
-          "brand": "PARKSIDE®",
-          "price": 9.99,
-          "priceEur": 9.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-          "url": "https://www.lidl.be/p/nl-BE/hijsband-1-000-2-000-kg-parkside/p100379818",
           "warrantyYears": null,
           "isX20vTeam": false,
           "competitorReference": null,
@@ -20399,13 +20233,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 249.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 800014156,
@@ -20775,10 +20605,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1183,
+      "numFound": 1178,
       "brandCounts": {
-        "PARKSIDE": 963,
-        "PARKSIDE PERFORMANCE": 214,
+        "PARKSIDE": 959,
+        "PARKSIDE PERFORMANCE": 213,
         "LUPILU": 4,
         "SILVERCREST KITCHEN TOOLS": 2
       }
@@ -20883,36 +20713,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
-          "id": 11084528,
-          "key": "524188",
-          "ean": "524188",
-          "title": "PARKSIDE Παντελόνι εργασίας με επένδυση",
-          "shortTitle": "Παντελόνι εργασίας με επένδυση",
-          "image": "https://www.lidl.com.cy/assets/gcpec74bcdc427e498ba95a02e331520c0d.png",
-          "brand": "PARKSIDE",
-          "price": 14.99,
-          "priceEur": 14.99,
-          "currency": "EUR",
-          "online": false,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "μόνο στο κατάστημα 16.11.",
-          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ενδύματα εργασίας",
-          "url": "https://www.lidl.com.cy/p/parkside-panteloni-ergasias-me-ependysi/p11084528",
-          "warrantyYears": null,
-          "isX20vTeam": false,
-          "competitorReference": null,
-          "worthIt": false,
-          "worthItReasons": [],
-          "availableFrom": "2026-11-15T22:00:00+00:00",
-          "availableUntil": "2026-11-18T21:59:59+00:00",
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11081496,
@@ -20938,6 +20741,35 @@
           "worthItReasons": [],
           "availableFrom": "2026-11-04T22:00:00+00:00",
           "availableUntil": "2026-11-11T21:59:59+00:00",
+          "isPerformance": false,
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 11084528,
+          "key": "524188",
+          "ean": "524188",
+          "title": "PARKSIDE Παντελόνι εργασίας με επένδυση",
+          "shortTitle": "Παντελόνι εργασίας με επένδυση",
+          "image": "https://www.lidl.com.cy/assets/gcpec74bcdc427e498ba95a02e331520c0d.png",
+          "brand": "PARKSIDE",
+          "price": 14.99,
+          "priceEur": 14.99,
+          "currency": "EUR",
+          "online": false,
+          "inStoreNow": false,
+          "onlineAvailable": false,
+          "availabilityBadge": "μόνο στο κατάστημα 16.11.",
+          "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ενδύματα εργασίας",
+          "url": "https://www.lidl.com.cy/p/parkside-panteloni-ergasias-me-ependysi/p11084528",
+          "warrantyYears": null,
+          "isX20vTeam": false,
+          "competitorReference": null,
+          "worthIt": false,
+          "worthItReasons": [],
+          "availableFrom": "2026-11-15T22:00:00+00:00",
+          "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
           "status": "same",
           "changedFields": [],
@@ -21201,8 +21033,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11121071,
@@ -21299,8 +21132,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11113158,
@@ -21327,8 +21161,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11116841,
@@ -21391,8 +21226,9 @@
           "availableFrom": "2026-11-15T22:00:00+00:00",
           "availableUntil": "2026-11-18T21:59:59+00:00",
           "isPerformance": false,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 11128359,
@@ -22681,13 +22517,9 @@
           "availableFrom": null,
           "availableUntil": "2026-09-15T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 35.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398643,
@@ -22823,8 +22655,46 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
+        },
+        {
+          "id": 100409175,
+          "key": "515653",
+          "ean": "515653",
+          "title": "PARKSIDE® 20 V Accu-LED-handlamp - 280 lumen (Excl. accu en lader) (20V PLHLA 20 Li C1)",
+          "shortTitle": "PARKSIDE® 20 V Accu-LED-handlamp - 280 lumen (Excl. accu en lader) (20V PLHLA 20 Li C1)",
+          "image": "https://www.lidl.nl/assets/gcpf73b82cbf9eb490baa54eabe1247a8a1.png",
+          "brand": "PARKSIDE®",
+          "price": 9.99,
+          "priceEur": 9.99,
+          "currency": "EUR",
+          "online": null,
+          "inStoreNow": null,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
+          "url": "https://www.lidl.nl/p/parkside-20-v-accu-led-handlamp-280-lumen-excl-accu-en-lader/p100409175002",
+          "warrantyYears": null,
+          "isX20vTeam": true,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "x20v"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": null,
+          "isPerformance": false,
+          "status": "changed",
+          "changedFields": [
+            "online"
+          ],
+          "previous": {
+            "online": true
+          }
         },
         {
           "id": 100399747,
@@ -22990,13 +22860,9 @@
           "availableFrom": null,
           "availableUntil": "2026-11-08T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "availableFrom"
-          ],
-          "previous": {
-            "availableFrom": "2026-11-01T23:00:00+00:00"
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398430,
@@ -23060,13 +22926,9 @@
           "availableFrom": null,
           "availableUntil": "2026-09-15T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 47.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398028,
@@ -23130,13 +22992,9 @@
           "availableFrom": null,
           "availableUntil": "2026-10-23T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 47.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398025,
@@ -23203,39 +23061,6 @@
           "availableFrom": null,
           "availableUntil": "2026-05-29T21:59:59+00:00",
           "isPerformance": true,
-          "status": "same",
-          "changedFields": [],
-          "previous": {}
-        },
-        {
-          "id": 100409175,
-          "key": "515653",
-          "ean": "515653",
-          "title": "PARKSIDE® 20 V Accu-LED-handlamp - 280 lumen (Excl. accu en lader)",
-          "shortTitle": "20 V Accu-LED-handlamp - 280 lumen (Excl. accu en lader)",
-          "image": "https://www.lidl.nl/assets/gcp0e6a28ab9c944df8a4c7c7e6bb3d297b.jpg",
-          "brand": "PARKSIDE®",
-          "price": 9.99,
-          "priceEur": 9.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": false,
-          "availabilityBadge": "Binnenkort beschikbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-          "url": "https://www.lidl.nl/p/parkside-20-v-accu-led-handlamp-280-lumen-excl-accu-en-lader/p100409175",
-          "warrantyYears": null,
-          "isX20vTeam": true,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "x20v"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
           "status": "same",
           "changedFields": [],
           "previous": {}
@@ -23340,6 +23165,38 @@
           "previous": {}
         },
         {
+          "id": 100400317,
+          "key": "494224",
+          "ean": "494224",
+          "title": "PARKSIDE® 20 V Accu-takkenzaag op steel - 20 cm (Excl. accu en lader)",
+          "shortTitle": "20 V Accu-takkenzaag op steel - 20 cm (Excl. accu en lader)",
+          "image": "https://www.lidl.nl/assets/gcp23858038adc047a196cc0bc2d2359ecb.jpg",
+          "brand": "PARKSIDE®",
+          "price": 47.99,
+          "priceEur": 47.99,
+          "currency": "EUR",
+          "online": true,
+          "inStoreNow": false,
+          "onlineAvailable": true,
+          "availabilityBadge": "Leverbaar",
+          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
+          "url": "https://www.lidl.nl/p/parkside-20-v-accu-takkenzaag-op-steel-20-cm-excl-accu-en-lader/p100400317",
+          "warrantyYears": null,
+          "isX20vTeam": true,
+          "competitorReference": null,
+          "worthIt": true,
+          "worthItReasons": [
+            {
+              "type": "x20v"
+            }
+          ],
+          "availableFrom": null,
+          "availableUntil": "2026-09-15T21:59:59+00:00",
+          "isPerformance": false,
+          "status": "new",
+          "changedFields": []
+        },
+        {
           "id": 100414311,
           "key": "521732",
           "ean": "521732",
@@ -23437,13 +23294,9 @@
           "availableFrom": null,
           "availableUntil": "2026-11-08T22:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "availableFrom"
-          ],
-          "previous": {
-            "availableFrom": "2026-11-01T23:00:00+00:00"
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399043,
@@ -23507,13 +23360,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 58.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100399191,
@@ -23544,13 +23393,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 18.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100400293,
@@ -23581,8 +23426,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398770,
@@ -23746,13 +23592,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 27.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100391503,
@@ -23917,13 +23759,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 12.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398278,
@@ -23954,13 +23792,9 @@
           "availableFrom": null,
           "availableUntil": "2026-05-29T21:59:59+00:00",
           "isPerformance": false,
-          "status": "changed",
-          "changedFields": [
-            "price"
-          ],
-          "previous": {
-            "price": 29.99
-          }
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100393608,
@@ -24227,38 +24061,6 @@
           "previous": {}
         },
         {
-          "id": 100399906,
-          "key": "494208",
-          "ean": "494208",
-          "title": "PARKSIDE® Accu-grastrimmer 20 V, zonder accu en lader",
-          "shortTitle": "Accu-grastrimmer 20 V, zonder accu en lader",
-          "image": "https://www.lidl.nl/assets/gcpafbe320d98254f38a0c32ca4995651db.jpg",
-          "brand": "PARKSIDE®",
-          "price": 49.99,
-          "priceEur": 49.99,
-          "currency": "EUR",
-          "online": true,
-          "inStoreNow": false,
-          "onlineAvailable": true,
-          "availabilityBadge": "Leverbaar",
-          "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-          "url": "https://www.lidl.nl/p/parkside-accu-grastrimmer-20-v-zonder-accu-en-lader/p100399906",
-          "warrantyYears": null,
-          "isX20vTeam": true,
-          "competitorReference": null,
-          "worthIt": true,
-          "worthItReasons": [
-            {
-              "type": "x20v"
-            }
-          ],
-          "availableFrom": null,
-          "availableUntil": null,
-          "isPerformance": false,
-          "status": "new",
-          "changedFields": []
-        },
-        {
           "id": 100389224,
           "key": "470740",
           "ean": "470740",
@@ -24356,8 +24158,9 @@
           "availableFrom": null,
           "availableUntil": null,
           "isPerformance": true,
-          "status": "new",
-          "changedFields": []
+          "status": "same",
+          "changedFields": [],
+          "previous": {}
         },
         {
           "id": 100398466,
@@ -24459,10 +24262,10 @@
           "previous": {}
         }
       ],
-      "numFound": 1012,
+      "numFound": 1006,
       "brandCounts": {
-        "PARKSIDE": 855,
-        "PARKSIDE PERFORMANCE": 149,
+        "PARKSIDE": 850,
+        "PARKSIDE PERFORMANCE": 148,
         "LUPILU": 4,
         "SILVERCREST KITCHEN TOOLS": 3,
         "CRIVIT": 1
@@ -24767,7 +24570,7 @@
       "title": "Parkside Performance 12V Cordless Drill Driver & Impact Screwdriver Starter Set",
       "image": "https://www.lidl.co.uk/assets/gcp1dbd07ef45ce401a9156ec16b4dcda45.png",
       "category": "Worlds of need/DIY store & garden/Battery tools",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -24953,7 +24756,7 @@
       "title": "PARKSIDE PERFORMANCE Aku udarni odvijač",
       "image": "https://www.lidl.hr/assets/gcp3fceaa56d8964ddeac82ccefc8ddfc1c.png",
       "category": "Svjetovi potreba/Uradi sam i vrt/akumulatorski alati",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "506411",
@@ -25180,7 +24983,7 @@
       "title": "Parkside Performance Bi-Metal Hole Saw Set, 11 pieces",
       "image": "https://www.lidl.com.mt/assets/gcpe9560074b9004141aed9aa46a745e000.png",
       "category": "Worlds of need/DIY store & garden/Workshop & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "528111",
@@ -25211,7 +25014,7 @@
       "title": "Parkside Performance Conjunto Combinado de Ferramentas 20 V",
       "image": "https://www.lidl.pt/assets/gcp972d6d7ffd0444239d5a7b6d714b7df9.png",
       "category": "Mundos de necessidade/Loja de bricolage e jardim/Ferramentas de bateria",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "545353",
@@ -25285,7 +25088,7 @@
       "title": "PARKSIDE PERFORMANCE Cordless Cross Line Laser",
       "image": "https://www.lidl.com.mt/assets/gcp33a234ffb4c14c30a161248cfbc7164b.png",
       "category": "Worlds of need/DIY store & garden/Battery tools",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "514440",
@@ -25384,7 +25187,7 @@
       "title": "Parkside Performance Cordless Impact Wrench",
       "image": "https://www.lidl.com.mt/assets/gcpd2ff8853855a4e599a05ce303180db1d.png",
       "category": "Worlds of need/DIY store & garden/Battery tools",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -26059,7 +25862,7 @@
       "title": "Parkside Performance Pantaloni da lavoro per donna",
       "image": "https://www.lidl.it/assets/gcp0911837b83ce4e049c51a0122bbe327d.png",
       "category": "I mondi del bisogno/Negozio di bricolage e giardino/Abbigliamento da lavoro",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "522266",
@@ -26090,7 +25893,7 @@
       "title": "Parkside Performance Perfuradora-Lixadora Precisão 12 V",
       "image": "https://www.lidl.pt/assets/gcpba3e01d01aac4bf4bf72fe0a631e86db.png",
       "category": "Mundos de necessidade/Loja de bricolage e jardim/Ferramentas de bateria",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "485600",
@@ -26385,7 +26188,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkumulátor, 4 ah",
       "image": "https://www.lidl.hu/assets/gcpd3a7068238354121afdd11f3e0d7e190.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -26499,7 +26302,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkumulátortöltő",
       "image": "https://www.lidl.hu/assets/gcp979367a875614d6e99a83e8a9c59b282.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -26562,7 +26365,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkus fúró- és vésőkalapács",
       "image": "https://www.lidl.hu/assets/gcpa1f879ef75014c74a28112fc33536530.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "521711",
@@ -26609,7 +26412,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkus gyalu",
       "image": "https://www.lidl.hu/assets/gcp5f7bdd629a36422ab58ead259fad5df0.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "514442",
@@ -26686,7 +26489,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkus led-reflektor",
       "image": "https://www.lidl.hu/assets/gcpb4d45213ea9a4aa4a3aa92c55a023d56.png",
       "category": "A szükség világai/Barkácsáruház és kert/Műhely és hardver",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "521710",
@@ -26717,7 +26520,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkus merülőfűrész",
       "image": "https://www.lidl.hu/assets/gcpb68ae8c99dc6401dbb1f9fcbb1451b09.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "514445",
@@ -26803,7 +26606,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium akkus szúrófűrész",
       "image": "https://www.lidl.hu/assets/gcp7105fa1f41094d2c9edc2578d7641b1f.png",
       "category": "A szükség világai/Barkácsáruház és kert/Akkumulátoros szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "51443701",
@@ -26866,7 +26669,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium egykezes szorító",
       "image": "https://www.lidl.hu/assets/gcpb65ce125371c4dd5a25d261a9eb92768.png",
       "category": "A szükség világai/Barkácsáruház és kert/Kézi szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "527767",
@@ -26912,7 +26715,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium forgómarkolatos dugókulcskészlet",
       "image": "https://www.lidl.hu/assets/gcp722690a2ddc547c3b053780bf8668145.png",
       "category": "A szükség világai/Barkácsáruház és kert/Kézi szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "514434",
@@ -26995,7 +26798,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium racsnis kábelvágó",
       "image": "https://www.lidl.hu/assets/gcp4c8417c345204485b9f21ab65a9b6fd8.png",
       "category": "A szükség világai/Barkácsáruház és kert/Kézi szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "521698",
@@ -27042,7 +26845,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium speciális fúrószárkészlet",
       "image": "https://www.lidl.hu/assets/gcpbcee19ca156f423cbf60609ebff1647e.png",
       "category": "A szükség világai/Barkácsáruház és kert/Műhely és hardver",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "521714",
@@ -27078,7 +26881,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium vésőcsavarhúzó készlet",
       "image": "https://www.lidl.hu/assets/gcpa9662cd763b942e5bb53fdc0f9d19646.png",
       "category": "A szükség világai/Barkácsáruház és kert/Kézi szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "545684",
@@ -27109,7 +26912,7 @@
       "title": "PARKSIDE PERFORMANCE Prémium vízmérték",
       "image": "https://www.lidl.hu/assets/gcpbae23bc851d745d2aad239bbd54766a1.png",
       "category": "A szükség világai/Barkácsáruház és kert/Kézi szerszámok",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "449968",
@@ -27166,7 +26969,7 @@
       "title": "PARKSIDE PERFORMANCE Set brusnih mreža",
       "image": "https://www.lidl.hr/assets/gcpa7d6fe89dd134f8191168b4a47465f3b.png",
       "category": "Svjetovi potreba/Uradi sam i vrt/Radionica i željezna roba",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "485594",
@@ -27235,7 +27038,7 @@
       "title": "PARKSIDE PERFORMANCE Set spojnica ili ugaonika",
       "image": "https://www.lidl.rs/assets/gcpe30e4aa39f694fce972f7ebcec3f2153.png",
       "category": "Светови потреба/Уради сам и башта/Радионица и гвожђе",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "521739",
@@ -27274,7 +27077,7 @@
       "title": "PARKSIDE PERFORMANCE Set udarnih ključeva",
       "image": "https://www.lidl.hr/assets/gcpf56fe00e95a646b4a2b52c211632a151.png",
       "category": "Svjetovi potreba/Uradi sam i vrt/ručni alati",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "460914",
@@ -27411,7 +27214,7 @@
       "title": "PARKSIDE PERFORMANCE Višenamjenska svrdla",
       "image": "https://www.lidl.hr/assets/gcp0ac20abfeba94db88600823a693366d3.png",
       "category": "Svjetovi potreba/Uradi sam i vrt/Radionica i željezna roba",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "465676",
@@ -27442,7 +27245,7 @@
       "title": "Parkside Performance Werkstatt-Sauger",
       "image": "https://www.lidl.at/assets/gcp240060b30d43417aa86e86c18ddb6613.png",
       "category": "Bedürfniswelten/Baumarkt & Garten/Elektrowerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "520541",
@@ -27480,7 +27283,7 @@
       "title": "Parkside Performance Έκκεντρο τριβείο",
       "image": "https://www.lidl.com.cy/assets/gcp6e35a31169b243f9bded4e8337dd782d.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ηλεκτρικά εργαλεία",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -27519,7 +27322,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενη μπαταρία",
       "image": "https://www.lidl.com.cy/assets/gcp7e1aeb3d9bb24b2faf54ad3c84f62af5.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία μπαταρίας",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -27611,7 +27414,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενο κρουστικό δράπανο",
       "image": "https://www.lidl.com.cy/assets/gcp54ba68eb7efb46b3816c1abf6338d3a9.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία μπαταρίας",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -27699,7 +27502,7 @@
       "title": "Parkside Performance Επαναφορτιζόμενο κρουστικό δραπανοκατσάβιδο",
       "image": "https://www.lidl.com.cy/assets/gcpfcbf25bfe4324dd08f50bd353250195c.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Εργαλεία μπαταρίας",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -27842,7 +27645,7 @@
       "title": "PARKSIDE PERFORMANCE Κοπτική μηχανή plasma με αεροσυμπιεστή",
       "image": "https://www.lidl.com.cy/assets/gcpbd2fe59577a64a5b812aeb813cbb5a42.png",
       "category": "Κόσμοι της ανάγκης/Κατάστημα DIY & κήπος/Ηλεκτρικά εργαλεία",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "440614",
@@ -27962,7 +27765,7 @@
       "title": "PARKSIDE PERFORMANCE Акумулаторен ръчен циркуляр",
       "image": "https://www.lidl.bg/assets/gcp1937ffddc1a8498881078b79944f4d19.png",
       "category": "Светове на нуждата/Направи си сам & Градина/Акумулаторни уреди",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "402248",
@@ -28184,7 +27987,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V / 2,5 Ah Akku »PAPK 12 2.5 A1« und Ladegerät »PLGK 12 6.0 A1«",
       "image": "https://www.lidl.de/assets/gcp3cf4d4a8e833493b9fa0ef3110667bf7.jpeg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28244,7 +28047,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V Accu-boorhamer - 1,1 joule (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp3aaec4b4a42b444bb31f410c92e7f374.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28323,7 +28126,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V Accu-cirkelzaag - Ø 140 mm (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcpc9d2c7aeb4a745f7b5b117165bcd5da7.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28412,7 +28215,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V Accu-kantenfrees (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp5cb6ba8be6e74ce08eab688dfaad7b2d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28475,7 +28278,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V Accu-schroefboormachine - 35 Nm (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp8560044ab22647f189e16a3530a44d90.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28618,7 +28421,7 @@
       "title": "PARKSIDE PERFORMANCE® 12 V Accu-schuurmachine - excentrisch of vlak (Excl. accu en lader) (Vlakschuurmachine)",
       "image": "https://www.lidl.nl/assets/gcp322972e21aa14c94bb7f3782f51f8f13.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28705,7 +28508,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V / 4 Ah Smart-Akku »PAPS 204 B1«, mit Cell Balancing",
       "image": "https://www.lidl.de/assets/gcpec46d3f663c44b81939c8c563886888d.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28745,7 +28548,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-boorhamer - 3 J (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp5c088c55cdde4fdf8fc41ab8e6de0c89.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28845,7 +28648,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-klopboormachine - 64 Nm (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp3785cbe4479847198d1e2fefdde46a12.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -28903,7 +28706,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-kruislijnlaser - zelfnivellerend (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp9092cd0716ad435cb920c2e15457b749.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29016,7 +28819,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-metaalcirkelzaag - Ø 190 mm (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp7911f404a4a04f3bb576c6fed2afd760.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29066,16 +28869,6 @@
           "availableFrom": "2026-11-10T23:00:00+00:00",
           "availableUntil": "2026-11-15T22:59:59+00:00",
           "availabilityBadge": "Od 11.11. do 15.11."
-        },
-        {
-          "country": "fr",
-          "price": 49.99,
-          "priceEur": 49.99,
-          "currency": "EUR",
-          "url": "https://www.lidl.fr/p/parkside-performance-ponceuse-vibrante-sans-fil-20v-ou-ponceuse-excentrique-sans-fil-20v-sans-batterie-ni-chargeur/p100414311",
-          "availableFrom": null,
-          "availableUntil": null,
-          "availabilityBadge": "Disponible à la livraison"
         },
         {
           "country": "pl",
@@ -29148,7 +28941,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-schuurmachine - excentrisch of vlak (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcpac8a003b84e34580b3ad97ecf1e1294f.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "485618",
@@ -29208,7 +29001,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-slagmoersleutel - 1/2\", 1356 Nm (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcpfa7d0a33fa8340ab8223804668dbfe8c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29260,7 +29053,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Accu-takkenschaar (Excl. accu en lader)",
       "image": "https://www.lidl.nl/assets/gcp12a8bb2cf59640b5a2cd6a3ab1f211c8.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29336,7 +29129,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Acculader Smart - 12 A (Excl. accu)",
       "image": "https://www.lidl.nl/assets/gcp0b3908d2d26247eda4715de6b2b4d378.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29474,7 +29267,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Akku-Kombihammer Limited Edition »PKHAP 2034-Li B1«, ohne Akku und Ladegerät",
       "image": "https://www.lidl.de/assets/gcpb4104c9b6f2a4363b429086f88df1239.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29534,7 +29327,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Akku-Kreuzlinienlaser Limited Edition »PKLLP 3360 A1« mit Akku – mit Ladegerät",
       "image": "https://www.lidl.de/assets/gcpbaad0335df874ef8bef5a899cba46a5b.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Akkuwerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29673,7 +29466,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Smart accu - 4 Ah",
       "image": "https://www.lidl.nl/assets/gcpa85b9bdc93ca4354b3bd5c13d854b06c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29744,7 +29537,7 @@
       "title": "PARKSIDE PERFORMANCE® 20 V Smart acculader - 12 A (Excl. accu)",
       "image": "https://www.lidl.nl/assets/gcp851c300fb5e245028c5b6140aa5589d5.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -29992,7 +29785,7 @@
       "title": "PARKSIDE PERFORMANCE® Accucombihamer 20 V PARKSIDE PERFORMANCE® PPAKH20 met smart accu en oplader",
       "image": "https://www.lidl.be/assets/gcp8fb66af55c844c3db06589eb9aad7b76.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-15T13:04:36.645162+00:00",
@@ -30038,7 +29831,7 @@
       "title": "PARKSIDE PERFORMANCE® Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40",
       "image": "https://www.lidl.be/assets/gcpd5bcf1994bba4b17ac183c8521ee7acb.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30119,7 +29912,7 @@
       "title": "PARKSIDE PERFORMANCE® Accuklopboormachine 12 V PARKSIDE PERFORMANCE® PSBSAP12",
       "image": "https://www.lidl.be/assets/gcpd71bf3e0be2344d08b9943358489197d.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30238,7 +30031,7 @@
       "title": "PARKSIDE PERFORMANCE® Acculedschijnwerper 20 V PARKSIDE PERFORMANCE® PPLSA20",
       "image": "https://www.lidl.be/assets/gcpc2834cd880294d62aaef834b3e7d6b07.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30321,7 +30114,7 @@
       "title": "PARKSIDE PERFORMANCE® Accumultifrees 20 V PARKSIDE PERFORMANCE® PMFAP20 met accu en oplader",
       "image": "https://www.lidl.be/assets/gcp9ded9e3b1eb14cc097fd271773b97cb9.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30380,7 +30173,7 @@
       "title": "PARKSIDE PERFORMANCE® Accuslagmoersleutel 20 V PARKSIDE PERFORMANCE® PPDSSA20",
       "image": "https://www.lidl.be/assets/gcpb15c3f1787b041619f3ebd2a69d813b7.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30447,7 +30240,7 @@
       "title": "PARKSIDE PERFORMANCE® Accuslagmoersleutel 20 V PASSP20 PARKSIDE PERFORMANCE® met accu en oplader",
       "image": "https://www.lidl.be/assets/gcpcd551f2ca2064ddf9a964468f45b33e4.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30521,7 +30314,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku excentrická bruska PAESP 12-Li A2 / Aku vibrační bruska PASSP 12-Li A2 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcpaf605a88664f4756828fcb001ebcdc71.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30638,7 +30431,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku příklepová vrtačka PSBSAP 20 Li-D4 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp5cc36e9d7427483ead45ab3e47a8ab37.jpeg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30739,7 +30532,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku přímočará pila PPSTKA 12 A1 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp69cb4378a8004648b7d68cd83940623c.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30882,7 +30675,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku rázový uťahovák PPDSSA 12 A1 – bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcp182f0e556fcc4773ac39699b594e8814.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -30943,7 +30736,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku tlakový postrekovač na chrbát 20 V PPARDS 16 D3 – bez akumulátora",
       "image": "https://www.lidl.sk/assets/gcp36b0b936a71f4a8899744bcaa34c05f8.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Záhradné vybavenie a záhradné náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31066,7 +30859,7 @@
       "title": "PARKSIDE PERFORMANCE® Aku úhlová bruska PPWSA 12 A1 – bez akumulátoru a nabíječky",
       "image": "https://www.lidl.cz/assets/gcp8fdf531451844ff2acb38b0176f54f31.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31156,7 +30949,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulatorowa wiertarko-wkrętarka 20 V (bez akumulatora i ładowarki)",
       "image": "https://www.lidl.pl/assets/gcpf845937f9a1f4a09a3b18242bab3e44e.jpg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Narzędzia akumulatorowe",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31189,108 +30982,6 @@
       ]
     },
     {
-      "key": "487754",
-      "ean": "487754",
-      "firstSeenAt": "2026-09-08T21:25:36.424086+00:00",
-      "countriesSeen": [
-        "fr",
-        "pl",
-        "cz",
-        "nl",
-        "se",
-        "bg",
-        "ch",
-        "pt",
-        "rs",
-        "es",
-        "it",
-        "mt",
-        "cy",
-        "at",
-        "hu",
-        "ro"
-      ],
-      "currentListings": [
-        {
-          "country": "pl",
-          "price": 299.0,
-          "priceEur": 70.27,
-          "currency": "PLN",
-          "url": "https://www.lidl.pl/p/parkside-performance-akumulatorowa-wiertarkowkretarka-12-v-zestaw-startowy-z-akumulatorem-i-ladowarka/p100395732",
-          "availableFrom": null,
-          "availableUntil": "2026-10-10T21:59:59+00:00",
-          "availabilityBadge": "Kup online"
-        }
-      ],
-      "currentlyListed": true,
-      "title": "PARKSIDE PERFORMANCE® Akumulatorowa wiertarkowkrętarka 12 V zestaw startowy (z akumulatorem i ładowarką)",
-      "image": "https://www.lidl.pl/assets/gcp29c6176d359e43a0b37753421c678b30.jpg",
-      "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Narzędzia akumulatorowe",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
-      "priceHistory": [
-        {
-          "date": "2026-09-11T11:03:39.896452+00:00",
-          "priceEur": 54.99
-        },
-        {
-          "date": "2026-09-13T22:03:52.736305+00:00",
-          "priceEur": 39.96
-        },
-        {
-          "date": "2026-09-27T22:03:27.151654+00:00",
-          "priceEur": 47.96
-        },
-        {
-          "date": "2026-09-27T23:03:36.522872+00:00",
-          "priceEur": 49.0
-        },
-        {
-          "date": "2026-10-02T23:03:03.563829+00:00",
-          "priceEur": 39.71
-        },
-        {
-          "date": "2026-10-04T23:03:02.719744+00:00",
-          "priceEur": 43.01
-        },
-        {
-          "date": "2026-10-19T00:36:22.373464+00:00",
-          "priceEur": 47.96
-        },
-        {
-          "date": "2026-10-23T23:39:57.588641+00:00",
-          "priceEur": 54.99
-        },
-        {
-          "date": "2026-10-24T22:06:46.950842+00:00",
-          "priceEur": 47.96
-        },
-        {
-          "date": "2026-10-25T00:40:52.707542+00:00",
-          "priceEur": 54.99
-        },
-        {
-          "date": "2026-10-26T00:52:25.910446+00:00",
-          "priceEur": 59.99
-        },
-        {
-          "date": "2026-10-26T17:54:12.784495+00:00",
-          "priceEur": 47.96
-        },
-        {
-          "date": "2026-10-27T23:20:40.481249+00:00",
-          "priceEur": 33.97
-        },
-        {
-          "date": "2026-11-09T00:19:10.410419+00:00",
-          "priceEur": 47.96
-        },
-        {
-          "date": "2026-11-09T17:58:20.622181+00:00",
-          "priceEur": 70.27
-        }
-      ]
-    },
-    {
       "key": "486237",
       "ean": "486237",
       "firstSeenAt": "2026-09-08T21:25:36.424086+00:00",
@@ -31316,7 +31007,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulatorowy naświetlacz roboczy, PALA 4000 B1",
       "image": "https://www.lidl.pl/assets/gcp69ec46f7bfa848c3995e38f2782ec8ef.jpg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Warsztat i sprzęt",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31555,7 +31246,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulátor 12 V/2,5 Ah PAPK 12 2.5 B1 + Nabíjačka 6 A PLGK 12 6.0 B1",
       "image": "https://www.lidl.sk/assets/gcpb20e6b46f2874b8d92841808a89988ca.png",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31604,7 +31295,7 @@
       "title": "PARKSIDE PERFORMANCE® Akumulátor 12 V/5 Ah PAPK 12 5.0 B2",
       "image": "https://www.lidl.sk/assets/gcp19512248e5c845418e379c08b9a734f7.png",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31690,7 +31381,7 @@
       "title": "PARKSIDE PERFORMANCE® Atornillador de impacto a batería de 20 V »PDSSAP 20-Li D3«, sin batería ni cargador.",
       "image": "https://www.lidl.es/assets/gcpc74bdaaf4f87411b993aebfb40cf59e4.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31735,7 +31426,7 @@
       "title": "PARKSIDE PERFORMANCE® Batería inteligente de 20 V / 4 Ah »PAPS 204 B1«, con Cell Balancing.",
       "image": "https://www.lidl.es/assets/gcpfb5179b3218c4351b70756d35c2d7077.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31774,7 +31465,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzin-Kettensäge »PPBKS-L 56 A1« mit Elektrostart",
       "image": "https://www.lidl.de/assets/gcp93ed208810bc410cb7510dbb3921116d.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Gartengeräte & Gartenwerkzeuge",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31854,7 +31545,7 @@
       "title": "PARKSIDE PERFORMANCE® Benzine kettingzaag 2,2 kW",
       "image": "https://www.lidl.nl/assets/gcp59f20aa632e041fb8abb242698ed7f0f.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31949,7 +31640,7 @@
       "title": "PARKSIDE PERFORMANCE® Bluetooth® stavebný reproduktor 12 V/20 V",
       "image": "https://www.lidl.sk/assets/gcp4be534a273a04e7da12c8eaf4860bd50.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -31994,7 +31685,7 @@
       "title": "PARKSIDE PERFORMANCE® Cargador de baterías de 12 V / 6 A »PLGK 12 6.0 A1«",
       "image": "https://www.lidl.es/assets/gcp1484c466f053406ea57313522f99d6c8.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32080,7 +31771,7 @@
       "title": "PARKSIDE PERFORMANCE® Cirkelzaag 1800 W",
       "image": "https://www.lidl.nl/assets/gcpa592ea468dd1460ea4d6cb800d14a4ab.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32194,7 +31885,7 @@
       "title": "PARKSIDE PERFORMANCE® Cirkelzaagblad 190 mm",
       "image": "https://www.lidl.nl/assets/gcp8f74e3cf02f443cba1a85e2ee8901e1e.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32296,7 +31987,7 @@
       "title": "PARKSIDE PERFORMANCE® Cirkelzaagblad »PKSBP 19024 A1 / PKSBP 19048 A1 / PKSBP 19060 A1«, Ø 190 mm.",
       "image": "https://www.lidl.nl/assets/gcpe36554d8fbd24ac48967af2b649f69ca.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32377,7 +32068,7 @@
       "title": "PARKSIDE PERFORMANCE® Diamantboorkronen PARKSIDE PERFORMANCE® (ø 83 mm)",
       "image": "https://www.lidl.be/assets/gcp9af11b23f9ab4a1090589ad431ad6b41.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32490,7 +32181,7 @@
       "title": "PARKSIDE PERFORMANCE® Diamantboren",
       "image": "https://www.lidl.nl/assets/gcp7b4869b8d59e4338bd14dc6c938d5edb.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32609,7 +32300,7 @@
       "title": "PARKSIDE PERFORMANCE® Draadloze robotmaaier 20 V PARKSIDE PERFORMANCE® PPAMR1250 met garage",
       "image": "https://www.lidl.be/assets/gcpc206ce4de8d84160b7bb0bbdbaa04b66.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32708,7 +32399,7 @@
       "title": "PARKSIDE PERFORMANCE® Elektrická reťazová píla PPEKS 2500 A1",
       "image": "https://www.lidl.sk/assets/gcp4b550c3395f848328d3809bc3416a74b.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Záhradné vybavenie a záhradné náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32791,7 +32482,7 @@
       "title": "PARKSIDE PERFORMANCE® Elektrische kettingzaag 2500 W",
       "image": "https://www.lidl.nl/assets/gcp4790a88b8454480aaec70f577a1dfc3c.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32874,7 +32565,7 @@
       "title": "PARKSIDE PERFORMANCE® Excentrická bruska PPEXS 750 B2",
       "image": "https://www.lidl.cz/assets/gcpa194f4ac406949a8a79ac4f76df13917.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Elektrické nářadí",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -32981,7 +32672,7 @@
       "title": "PARKSIDE PERFORMANCE® Excentrische schuurmachine 20 V PAESP20/ vlakschuurmachine 20 V PAMSP20 PARKSIDE PERFORMANCE® (Accu-vlakschuurmachine 20V)",
       "image": "https://www.lidl.be/assets/gcpe72dc8d2d52e4e938a968bcdf2ef559f.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33044,7 +32735,7 @@
       "title": "PARKSIDE PERFORMANCE® Haakse slijper accu 20 V PARKSIDE PERFORMANCE® PPWSA20",
       "image": "https://www.lidl.be/assets/gcp8ad13816a14b41e595b9c83262512d21.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33125,7 +32816,7 @@
       "title": "PARKSIDE PERFORMANCE® Herren Arbeitsbundhose »Limited Edition«, mit CORDURA® Knieverstärkung",
       "image": "https://www.lidl.de/assets/gcp9c77ad43b4524fa4a44bef4f96199a98.jpg",
       "category": "Bedürfniswelten/Baumarkt & Garten/Arbeitsbekleidung",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33272,7 +32963,7 @@
       "title": "PARKSIDE PERFORMANCE® Kleště",
       "image": "https://www.lidl.cz/assets/gcpd6cd3148687e478caed751b5deb90c10.png",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Ruční nářadí",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33369,7 +33060,7 @@
       "title": "PARKSIDE PERFORMANCE® LED-bouwlamp 360°",
       "image": "https://www.lidl.nl/assets/gcp673e9392ce204dd8adc5290dea9682c9.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33471,7 +33162,7 @@
       "title": "PARKSIDE PERFORMANCE® Martillo combinado a batería de 20 V »PKHAP 2058 A1«, sin batería ni cargador.",
       "image": "https://www.lidl.es/assets/gcp5e8351be886b4aa88b649779572b1a53.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "504703",
@@ -33550,7 +33241,7 @@
       "title": "PARKSIDE PERFORMANCE® Mastic parquet ou Colle de montage spéciale",
       "image": "https://www.lidl.fr/assets/gcp827b8d481f83466eb6be200f038f9fed.png",
       "category": "Mondes de besoins/Bricolage & Jardinage/Construire & Rénover",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "482911",
@@ -33586,7 +33277,7 @@
       "title": "PARKSIDE PERFORMANCE® Minikettingzaag accu 20 V PARKSIDE PERFORMANCE® PPAGHS20",
       "image": "https://www.lidl.be/assets/gcp99e4be7d013a4591b903edc9806cd95d.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33637,7 +33328,7 @@
       "title": "PARKSIDE PERFORMANCE® Mochila con batería de 20 V / 40 V »PPRA 20 A1«, sin batería ni cargador.",
       "image": "https://www.lidl.es/assets/gcp67a9cb2364d94d11803caac69faed82c.jpg",
       "category": "Mundos de necesidad/Tienda de bricolaje y jardín/Herramientas a batería",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33672,7 +33363,7 @@
       "title": "PARKSIDE PERFORMANCE® Multidetektor PPOG 120 A1",
       "image": "https://www.lidl.sk/assets/gcp45a7e75956f8469aa150a65a396f1b52.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Elektrické náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33766,7 +33457,7 @@
       "title": "PARKSIDE PERFORMANCE® Multifrees »PPMF 710 A1«",
       "image": "https://www.lidl.nl/assets/gcpfcd856dd6f154382b48145c44b19a0a1.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -33823,7 +33514,7 @@
       "title": "PARKSIDE PERFORMANCE® Multifunkčné náradie PPMFW 550 A1",
       "image": "https://www.lidl.sk/assets/gcp72891cd4617544bf84d4965f02235d55.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Elektrické náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34183,7 +33874,7 @@
       "title": "PARKSIDE PERFORMANCE® Príslušenstvo k multifunkčnému náradiu",
       "image": "https://www.lidl.sk/assets/gcp9e60600bb9124ffca79fc2d2299007b7.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Dielňa a hardvér",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34360,7 +34051,7 @@
       "title": "PARKSIDE PERFORMANCE® Ráčna s multifunkčním ořechem Best PGLR 2 A1",
       "image": "https://www.lidl.cz/assets/gcp481f9bb454c04475b40f5f0f6247e42c.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Ruční nářadí",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "506421",
@@ -34423,7 +34114,7 @@
       "title": "PARKSIDE PERFORMANCE® Sada s aku vrtacím šroubovákem PBSAP 20-Li A1",
       "image": "https://www.lidl.cz/assets/gcpf20d775d70eb45008b6db3d63adad816.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34448,6 +34139,122 @@
         {
           "date": "2026-10-06T13:06:53.151314+00:00",
           "priceEur": 119.96
+        }
+      ]
+    },
+    {
+      "key": "487754",
+      "ean": "487754",
+      "firstSeenAt": "2026-09-08T21:25:36.424086+00:00",
+      "countriesSeen": [
+        "fr",
+        "pl",
+        "cz",
+        "nl",
+        "se",
+        "bg",
+        "ch",
+        "pt",
+        "rs",
+        "es",
+        "it",
+        "mt",
+        "cy",
+        "at",
+        "hu",
+        "ro"
+      ],
+      "currentListings": [
+        {
+          "country": "pl",
+          "price": 299.0,
+          "priceEur": 70.27,
+          "currency": "PLN",
+          "url": "https://www.lidl.pl/p/parkside-performance-akumulatorowa-wiertarkowkretarka-12-v-zestaw-startowy-z-akumulatorem-i-ladowarka/p100395732",
+          "availableFrom": null,
+          "availableUntil": "2026-10-10T21:59:59+00:00",
+          "availabilityBadge": "Kup online"
+        },
+        {
+          "country": "cz",
+          "price": 1199.0,
+          "priceEur": 47.96,
+          "currency": "CZK",
+          "url": "https://www.lidl.cz/p/parkside-performance-sada-s-aku-vrtacim-sroubovakem-pbspa-12-e4/p100395732",
+          "availableFrom": null,
+          "availableUntil": "2026-09-27T21:59:59+00:00",
+          "availabilityBadge": "Skladem online"
+        }
+      ],
+      "currentlyListed": true,
+      "title": "PARKSIDE PERFORMANCE® Sada s aku vrtacím šroubovákem PBSPA 12 E4",
+      "image": "https://www.lidl.cz/assets/gcp29c6176d359e43a0b37753421c678b30.jpg",
+      "category": "Světy potřeb/Obchod pro kutily a zahrada/Bateriové nástroje",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
+      "priceHistory": [
+        {
+          "date": "2026-09-11T11:03:39.896452+00:00",
+          "priceEur": 54.99
+        },
+        {
+          "date": "2026-09-13T22:03:52.736305+00:00",
+          "priceEur": 39.96
+        },
+        {
+          "date": "2026-09-27T22:03:27.151654+00:00",
+          "priceEur": 47.96
+        },
+        {
+          "date": "2026-09-27T23:03:36.522872+00:00",
+          "priceEur": 49.0
+        },
+        {
+          "date": "2026-10-02T23:03:03.563829+00:00",
+          "priceEur": 39.71
+        },
+        {
+          "date": "2026-10-04T23:03:02.719744+00:00",
+          "priceEur": 43.01
+        },
+        {
+          "date": "2026-10-19T00:36:22.373464+00:00",
+          "priceEur": 47.96
+        },
+        {
+          "date": "2026-10-23T23:39:57.588641+00:00",
+          "priceEur": 54.99
+        },
+        {
+          "date": "2026-10-24T22:06:46.950842+00:00",
+          "priceEur": 47.96
+        },
+        {
+          "date": "2026-10-25T00:40:52.707542+00:00",
+          "priceEur": 54.99
+        },
+        {
+          "date": "2026-10-26T00:52:25.910446+00:00",
+          "priceEur": 59.99
+        },
+        {
+          "date": "2026-10-26T17:54:12.784495+00:00",
+          "priceEur": 47.96
+        },
+        {
+          "date": "2026-10-27T23:20:40.481249+00:00",
+          "priceEur": 33.97
+        },
+        {
+          "date": "2026-11-09T00:19:10.410419+00:00",
+          "priceEur": 47.96
+        },
+        {
+          "date": "2026-11-09T17:58:20.622181+00:00",
+          "priceEur": 70.27
+        },
+        {
+          "date": "2026-11-10T01:12:27.118664+00:00",
+          "priceEur": 47.96
         }
       ]
     },
@@ -34499,7 +34306,7 @@
       "title": "PARKSIDE PERFORMANCE® Sada řezných kotoučů, 12dílná / Sada hrubovacích kotoučů, 4dílná / Diamantový řezný kotouč (sada hrubovacích kotoučů, 4dílná)",
       "image": "https://www.lidl.cz/assets/gcpcef0751f06b4481b9ac8c93a9d3fe517.jpg",
       "category": "Světy potřeb/Obchod pro kutily a zahrada/Dílna & hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34559,7 +34366,7 @@
       "title": "PARKSIDE PERFORMANCE® SDS Plus boorset of beitel PARKSIDE PERFORMANCE® (2-delige SDS boorset )",
       "image": "https://www.lidl.be/assets/gcp7f1ff56bd44143e1ae9487784ebfc8e6.jpeg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34660,7 +34467,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart nabíjačka akumulátora 20 V/12 A PLGS 2012 A1",
       "image": "https://www.lidl.sk/assets/gcp2b44904406b241fa8d621eaeb624d29f.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34709,7 +34516,7 @@
       "title": "PARKSIDE PERFORMANCE® Smart nabíjačka na akumulátor 20 V/12 A PLGS 2012 A1",
       "image": "https://www.lidl.sk/assets/gcpdfbe6cb147d14ff9b0d25a22ef7be1fb.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Nástroje na batérie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34834,7 +34641,7 @@
       "title": "PARKSIDE PERFORMANCE® Spaanplaatschroeven",
       "image": "https://www.lidl.nl/assets/gcp2575d45812cb400da97cb9cffd5b4073.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Werkplaats & Hardware",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34919,7 +34726,7 @@
       "title": "PARKSIDE PERFORMANCE® Súprava otvorených kľúčov, 3-dielna",
       "image": "https://www.lidl.sk/assets/gcpf64952dffdb347fb9e4cff333ea07779.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Ručné náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -34966,7 +34773,7 @@
       "title": "PARKSIDE PERFORMANCE® Súprava sekacích skrutkovačov, 15-dielna",
       "image": "https://www.lidl.sk/assets/gcp886e51ea5bd3431c9f5bd15058b75494.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Ručné náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -35034,7 +34841,7 @@
       "title": "PARKSIDE PERFORMANCE® Súprava skrutkovačov, 13-dielna",
       "image": "https://www.lidl.sk/assets/gcpa94b7af5c84a4f16969a7881826c729b.jpg",
       "category": "Svety potrieb/Obchod pre domácich majstrov a záhrada/Ručné náradie",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "480892",
@@ -35140,7 +34947,7 @@
       "title": "PARKSIDE PERFORMANCE® Tapijtreiniger PARKSIDE PERFORMANCE® PPWS10",
       "image": "https://www.lidl.be/assets/gcpc71cc9e6dcb64ad1898ef42aeab61b69.jpg",
       "category": "Werelden van nood/Bouwmarkt & tuin/Elektrisch gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -35272,7 +35079,7 @@
       "title": "PARKSIDE PERFORMANCE® Zestaw akumulatorowych wiertarko-wkrętarek udarowych 20 V »PSBSAP 20-Li D4«, z akumulatorem i ładowarką.",
       "image": "https://www.lidl.pl/assets/gcpf716e6c164774ab2b9787a8f64bd5cc0.jpg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Narzędzia akumulatorowe",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -35369,7 +35176,7 @@
       "title": "PARKSIDE PERFORMANCE® Zestaw Parkside: Wiertarkowkrętarka 20 V z podpisem Arnolda Schwarzeneggera z dodatkowym akumulatorem 4 Ah",
       "image": "https://www.lidl.pl/assets/gcpbd667552a03647ae837fd7181ae3a4b7.jpg",
       "category": "Światy potrzeb/Sklep dla majsterkowiczów i ogród/Narzędzia akumulatorowe",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "495699",
@@ -35455,7 +35262,7 @@
       "title": "PARKSIDE® Accugrasmaaier 40 V PARKSIDE PERFORMANCE® PPRMA40 met 2 accu's en dubbele oplader",
       "image": "https://www.lidl.be/assets/gcp33e9519df5954e649fe90d832a8ecf66.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Tuinuitrusting & tuingereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -35510,7 +35317,7 @@
       "title": "PARKSIDE® Accukettingzaag 40 V PARKSIDE PERFORMANCE® PPKSA40 met 2 accu's en dubbele lader",
       "image": "https://www.lidl.be/assets/gcp23ee4d85cf0a4f4eb9935af8358c1626.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00",
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00",
       "priceHistory": [
         {
           "date": "2026-09-11T11:03:39.896452+00:00",
@@ -35551,7 +35358,7 @@
       "title": "PARKSIDE® Accuklopboormachine 20 V PARKSIDE PERFORMANCE® PPSBSA20 met accu en oplader",
       "image": "https://www.lidl.be/assets/gcp0b96b15f69bd4a7392325a0131773c07.png",
       "category": "Werelden van nood/Bouwmarkt & tuin/Batterij gereedschap",
-      "lastSeenAt": "2026-11-09T17:58:20.622181+00:00"
+      "lastSeenAt": "2026-11-10T01:12:27.118664+00:00"
     },
     {
       "key": "449918",
